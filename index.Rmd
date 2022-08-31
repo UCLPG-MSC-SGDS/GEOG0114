@@ -1,0 +1,78 @@
+--- 
+title: "GEOG0114: Principles of Spatial Analysis"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+link-citations: yes
+github-repo: "UCLPG-MSC-SGDS/GEOG0114"
+description: "GEOG0114: Principles of Spatial Analysis"
+#bibliography: [book.bib, packages.bib]
+---
+
+# Welcome {-}
+
+```{r echo=FALSE, out.width = "100%", fig.align='center', cache=TRUE,}
+knitr::include_graphics('images/general/intro_page_picture.jpeg') 
+```
+<br />
+
+Welcome to **GEOG0114: Principles of Spatial Analysis**, one of the core 1st term modules for this MSc programme ([**Social and Geographic Data Science**](https://www.geog.ucl.ac.uk/study/graduate-taught/msc-social-and-geographic-data-science)). This module has been designed as an introduction to the core tenets and principles of spatial analysis. Here, you will learn the key concepts and spatial analytical methods, which are applicable to the domains of social science and geography.
+
+In the first three weeks, we will cover **Spatial analysis for data science**, **Graphical representation of spatial data** and **Spatial autocorrelation**. 
+
+Afterwards, in week 4, 5 and 6, we will cover a variety of basic geostatistical techniques that require analysis of point and raster data - these include suitability mapping such as **Analytical Hierarchical Process (AHP)** and **Ecological Niche Modelling**; and then **Geostatistical analysis using Kriging**. 
+
+In week 7, 8, 9 and 10, we will learn specialised tools for performing spatial analysis on vector data (e.g., point, line and areal structures)- these include **Network Analysis**,  **Geodemographics**, as well as spatial regression models approaches such as **Geographical Weighted Regression (GWR)** and  **Spatial Lag & Error models**. All these tutorials will be covered in RStudio.
+
+## Structure {-}
+
+All lectures and computer practicals will be delivered in-person. All Lectures are held on Monday from 02:00pm to 03:00pm at the [**North West Wing (Room GO7)**](https://www.ucl.ac.uk/maps/north-west-wing-building). All computer lab seminars are delivered on Monday (after lectures) from 03:00pm to 05:00pm in the same room i.e., [**North West Wing (Room GO7)**](https://www.ucl.ac.uk/maps/north-west-wing-building). Technical support workshops are held on Thursday from 03:00pm to 05:00pm at the [**Institute of Education (IOE) (Bedford Way [20])(Room 604)**](http://www.ucl.ac.uk/maps/ioe).
+
+**See footage on how to get to venues**
+
+- Video 1: North West Wing (Room G07) [**insert link**]
+
+- Video 2: IOE Bedford Way [20] (Room 604) [**insert link**]
+
+<div class="note">
+**IMPORTANT NOTE**: Please bring your own laptops with you to the computer practicals and technical support sessions on Monday and Thursday, respectively   
+</div>
+
+## Moodle {-}
+
+[**Moodle**](https://moodle.ucl.ac.uk/) is the central point of your learning experience for **GEOG0114**. Please use it on a regular basis to check for updates concerning the schedule for weekly topics, access to the practical materials and assessment. All lecture notes, videos, practical materials including reading lists and downloadable data sets will be hosted on this webpage. 
+
+
+## Office hours for GEOG0114 {-}
+
+Feel free to drop-by in-person at our offices for additional support
+
+- Office hours with Dr Anwar Musah (TBC)  
+
+- Office hours with Dr Justin van Dijk (TBC)
+
+- Office hours with Shun-Chan (Dan) Tsai (TBC)
+
+Our contact information and office details are:
+
+**Dr Anwar Musah**
+<br/>
+UCL Department of Geography 
+<br/>
+Room 115, North West Wing Building, WC1E 6BT
+<br/>
+Email: [**a.musah@ucl.ac.uk**](a.musah@ucl.ac.uk)
+
+**Dr Justin van Dijk**
+<br/>
+UCL Department of Geography 
+<br/>
+Room 117, North West Wing Building, WC1E 6BT
+<br/>
+Email: [**j.t.vandijk@ucl.ac.uk**](j.t.vandijk@ucl.ac.uk)
+
+**Shun-Chan Tsai**
+<br/>
+UCL Department of Geography 
+<br/>
+Email: [**shun-chan.tsai.14@ucl.ac.uk**](shun-chan.tsai.14@ucl.ac.uk)
