@@ -1,0 +1,15 @@
+suitability-mapping-part-1
+introduction
+learning-outcomes
+datasets-setting-up-the-work-directory
+loading-and-installing-packages
+loading-datasets
+suitability-mapping-using-binary-classification-or-ratings
+finding-areas-of-suitability-by-multiplying-the-binary-maps
+finding-areas-of-suitability-by-summing-the-binary-maps-to-create-ratings
+standardizing-the-raster-variables-to-the-same-scale-from-1-to-10
+determining-the-weight-of-each-variable-using-saatys-ahp
+weighted-linear-combination-wlc-and-derivation-of-suitability-maps-based-from-ahp-analysis
+references
+recommended-reading
+data-sources
