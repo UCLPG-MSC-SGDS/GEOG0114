@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Raster Data and Geostatistics | GEOG0114: Principles of Spatial Analysis</title>
+  <meta name="description" content="2 Raster Data and Geostatistics | GEOG0114: Principles of Spatial Analysis" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Raster Data and Geostatistics | GEOG0114: Principles of Spatial Analysis" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="2 Raster Data and Geostatistics | GEOG0114: Principles of Spatial Analysis" />
+  <meta name="github-repo" content="UCLPG-MSC-SGDS/GEOG0114" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Raster Data and Geostatistics | GEOG0114: Principles of Spatial Analysis" />
+  
+  <meta name="twitter:description" content="2 Raster Data and Geostatistics | GEOG0114: Principles of Spatial Analysis" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="suitability-mapping-part-1.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="assets/custom.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="toc-logo">
+<a href="https://www.ucl.ac.uk/module-catalogue/modules/GEOG0114"><img src="images/general/ucl_logo.png">
+</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#structure"><i class="fa fa-check"></i>Structure</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#moodle"><i class="fa fa-check"></i>Moodle</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#office-hours-for-geog0114"><i class="fa fa-check"></i>Office hours for GEOG0114</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="suitability-mapping-part-1.html"><a href="suitability-mapping-part-1.html"><i class="fa fa-check"></i><b>1</b> Suitability Mapping: Part 1</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="suitability-mapping-part-1.html"><a href="suitability-mapping-part-1.html#introduction"><i class="fa fa-check"></i><b>1.1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="suitability-mapping-part-1.html"><a href="suitability-mapping-part-1.html#learning-outcomes"><i class="fa fa-check"></i><b>1.1.1</b> Learning outcomes</a></li>
+<li class="chapter" data-level="1.1.2" data-path="suitability-mapping-part-1.html"><a href="suitability-mapping-part-1.html#datasets-setting-up-the-work-directory"><i class="fa fa-check"></i><b>1.1.2</b> Datasets &amp; setting up the work directory</a></li>
+<li class="chapter" data-level="1.1.3" data-path="suitability-mapping-part-1.html"><a href="suitability-mapping-part-1.html#loading-and-installing-packages"><i class="fa fa-check"></i><b>1.1.3</b> Loading and installing packages</a></li>
+<li class="chapter" data-level="1.1.4" data-path="suitability-mapping-part-1.html"><a href="suitability-mapping-part-1.html#loading-datasets"><i class="fa fa-check"></i><b>1.1.4</b> Loading datasets</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="suitability-mapping-part-1.html"><a href="suitability-mapping-part-1.html#suitability-mapping-using-simple-overlays"><i class="fa fa-check"></i><b>1.2</b> Suitability mapping using Simple Overlays</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="suitability-mapping-part-1.html"><a href="suitability-mapping-part-1.html#setting-up-binary-classification-on-raster"><i class="fa fa-check"></i><b>1.2.1</b> Setting up binary classification on raster</a></li>
+<li class="chapter" data-level="1.2.2" data-path="suitability-mapping-part-1.html"><a href="suitability-mapping-part-1.html#finding-areas-of-suitability-by-multiplying-the-binary-rasters"><i class="fa fa-check"></i><b>1.2.2</b> Finding areas of suitability by multiplying the binary rasters</a></li>
+<li class="chapter" data-level="1.2.3" data-path="suitability-mapping-part-1.html"><a href="suitability-mapping-part-1.html#finding-areas-of-suitability-by-summing-the-binary-rasters"><i class="fa fa-check"></i><b>1.2.3</b> Finding areas of suitability by summing the binary rasters</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="suitability-mapping-part-1.html"><a href="suitability-mapping-part-1.html#analytical-hierarchy-process-ahp"><i class="fa fa-check"></i><b>1.3</b> Analytical Hierarchy Process (AHP)</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="suitability-mapping-part-1.html"><a href="suitability-mapping-part-1.html#standardizing-the-raster-variables-to-the-same-scale-from-1-to-10"><i class="fa fa-check"></i><b>1.3.1</b> Standardizing the raster variables to the same scale (from 1 to 10)</a></li>
+<li class="chapter" data-level="1.3.2" data-path="suitability-mapping-part-1.html"><a href="suitability-mapping-part-1.html#determining-the-weight-of-each-variable-using-saatys-ahp"><i class="fa fa-check"></i><b>1.3.2</b> Determining the weight of each variable using Saaty’s AHP</a></li>
+<li class="chapter" data-level="1.3.3" data-path="suitability-mapping-part-1.html"><a href="suitability-mapping-part-1.html#weighted-linear-combination-wlc-and-derivation-of-suitability-maps-based-from-ahp-analysis"><i class="fa fa-check"></i><b>1.3.3</b> Weighted Linear Combination (WLC) and derivation of Suitability Maps based from AHP analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="suitability-mapping-part-1.html"><a href="suitability-mapping-part-1.html#references"><i class="fa fa-check"></i><b>1.4</b> References</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="suitability-mapping-part-1.html"><a href="suitability-mapping-part-1.html#recommended-reading"><i class="fa fa-check"></i><b>1.4.1</b> Recommended reading</a></li>
+<li class="chapter" data-level="1.4.2" data-path="suitability-mapping-part-1.html"><a href="suitability-mapping-part-1.html#data-sources"><i class="fa fa-check"></i><b>1.4.2</b> Data Sources</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="raster-data-and-geostatistics.html"><a href="raster-data-and-geostatistics.html"><i class="fa fa-check"></i><b>2</b> Raster Data and Geostatistics</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="raster-data-and-geostatistics.html"><a href="raster-data-and-geostatistics.html#introduction-1"><i class="fa fa-check"></i><b>2.1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="raster-data-and-geostatistics.html"><a href="raster-data-and-geostatistics.html#learning-objectives"><i class="fa fa-check"></i><b>2.1.1</b> Learning objectives</a></li>
+<li class="chapter" data-level="2.1.2" data-path="raster-data-and-geostatistics.html"><a href="raster-data-and-geostatistics.html#datasets-setting-up-the-work-directory-1"><i class="fa fa-check"></i><b>2.1.2</b> Datasets &amp; setting up the work directory</a></li>
+<li class="chapter" data-level="2.1.3" data-path="raster-data-and-geostatistics.html"><a href="raster-data-and-geostatistics.html#loading-and-installing-packages-1"><i class="fa fa-check"></i><b>2.1.3</b> Loading and installing packages</a></li>
+<li class="chapter" data-level="2.1.4" data-path="raster-data-and-geostatistics.html"><a href="raster-data-and-geostatistics.html#loading-datasets-1"><i class="fa fa-check"></i><b>2.1.4</b> Loading datasets</a></li>
+<li class="chapter" data-level="2.1.5" data-path="raster-data-and-geostatistics.html"><a href="raster-data-and-geostatistics.html#data-preparation"><i class="fa fa-check"></i><b>2.1.5</b> Data preparation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="raster-data-and-geostatistics.html"><a href="raster-data-and-geostatistics.html#semivariogram-analysis"><i class="fa fa-check"></i><b>2.2</b> Semivariogram analysis</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="raster-data-and-geostatistics.html"><a href="raster-data-and-geostatistics.html#plotting-the-empirical-semivariogram"><i class="fa fa-check"></i><b>2.2.1</b> Plotting the Empirical Semivariogram</a></li>
+<li class="chapter" data-level="2.2.2" data-path="raster-data-and-geostatistics.html"><a href="raster-data-and-geostatistics.html#plotting-the-theoretical-semivariogram"><i class="fa fa-check"></i><b>2.2.2</b> Plotting the Theoretical Semivariogram</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="raster-data-and-geostatistics.html"><a href="raster-data-and-geostatistics.html#kriging-modelling-null"><i class="fa fa-check"></i><b>2.3</b> Kriging modelling (null)</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="raster-data-and-geostatistics.html"><a href="raster-data-and-geostatistics.html#building-a-blank-raster-template"><i class="fa fa-check"></i><b>2.3.1</b> Building a blank raster template</a></li>
+<li class="chapter" data-level="2.3.2" data-path="raster-data-and-geostatistics.html"><a href="raster-data-and-geostatistics.html#implementing-the-spatial-interpolation-on-blank-template-using-kriging"><i class="fa fa-check"></i><b>2.3.2</b> Implementing the spatial interpolation on blank template using Kriging**</a></li>
+<li class="chapter" data-level="2.3.3" data-path="raster-data-and-geostatistics.html"><a href="raster-data-and-geostatistics.html#how-to-export-the-results-as-.tiff-format-thematic-visualisation-in-tmap"><i class="fa fa-check"></i><b>2.3.3</b> How to export the results as .tiff format thematic visualisation in <code>tmap</code></a></li>
+<li class="chapter" data-level="2.3.4" data-path="raster-data-and-geostatistics.html"><a href="raster-data-and-geostatistics.html#thematic-visualisation-of-raster-data-using-tmap"><i class="fa fa-check"></i><b>2.3.4</b> Thematic visualisation of raster data using <code>tmap</code></a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="raster-data-and-geostatistics.html"><a href="raster-data-and-geostatistics.html#kriging-modelling-non-null"><i class="fa fa-check"></i><b>2.4</b> Kriging modelling (non-null)</a></li>
+<li class="chapter" data-level="2.5" data-path="raster-data-and-geostatistics.html"><a href="raster-data-and-geostatistics.html#references-1"><i class="fa fa-check"></i><b>2.5</b> References</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="raster-data-and-geostatistics.html"><a href="raster-data-and-geostatistics.html#recommended-reading-1"><i class="fa fa-check"></i><b>2.5.1</b> Recommended reading</a></li>
+<li class="chapter" data-level="2.5.2" data-path="raster-data-and-geostatistics.html"><a href="raster-data-and-geostatistics.html#data-sources-1"><i class="fa fa-check"></i><b>2.5.2</b> Data Sources</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">GEOG0114: Principles of Spatial Analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="raster-data-and-geostatistics" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> Raster Data and Geostatistics<a href="raster-data-and-geostatistics.html#raster-data-and-geostatistics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="introduction-1" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Introduction<a href="raster-data-and-geostatistics.html#introduction-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Today, we will learn how to do this through <strong>semivariogram</strong> analysis which can be used to create continuous predictive maps based on spatial interpolation technique called <strong>Kriging</strong>. In this session, we will investigate spatial variation in outcomes that are, in theory, <strong>spatially continuous</strong>; for example, the concentrations of ambient air pollutants such as Sulphur dioxide (<span class="math inline">\(SO_{2}\)</span>) (a toxic gas emitted from sulphur rich fuels (i.e., coal, oil or diesel) when burnt) which can be present anywhere but in practice are only measured in specified point locations, such as air quality monitoring stations.</p>
+<p>We will assess for the presence of spatial autocorrelation, which describes the correlation of a variable with itself through geographic space. Here, a <strong>Positive Autocorrelation</strong> exists when measurements close to one another are alike than they would be due to chance or through random sampling. The presence of autocorrelation for spatially continuous phenomena can be established by using <strong>semivariograms</strong>.</p>
+<p>Estimates from a semivariogram can be are used to <strong>interpolate</strong> across a study area, whereby values at unsampled locations are predicted from neighbouring sites. A popular form of interpolation, which is based on the spatial attribute’s outcome variable, is known as <strong>Kriging</strong> (a technique named after a South African engineer, Danie G. Krige (1919 to 2013)).</p>
+<div id="learning-objectives" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Learning objectives<a href="raster-data-and-geostatistics.html#learning-objectives" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The US Environmental Agency have positioned air quality monitors for surveillance of over 100 different types of pollutants that exist as toxic gases, particulates and heavy metals. For <strong>Sulphur Dioxide</strong> (<span class="math inline">\(SO_{2}\)</span>), there are 458 active air monitors that takes hourly readings for concentrations of <span class="math inline">\(SO_{2}\)</span> (in parts per billion (pbb)). An annual estimate for <span class="math inline">\(SO_{2}\)</span> was calculated for each station at its location. Car usage, urbanisation and social economic deprivation, alongside of other anthropogenic activities such as coal burning, across the USA increases the risk of elevated pollution of <span class="math inline">\(SO_{2}\)</span>.</p>
+<p>Using geostatistical methods and taking into account of <strong>car usage, urbanisation and levels of deprivation</strong> - what areas in USA have higher concentrations of <span class="math inline">\(SO_{2}\)</span> exceeding the annual average of 40 ppb which is a national safety limit for cause of concern?</p>
+<p>Let’s use Kriging to find out!</p>
+</div>
+<div id="datasets-setting-up-the-work-directory-1" class="section level3 hasAnchor" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Datasets &amp; setting up the work directory<a href="raster-data-and-geostatistics.html#datasets-setting-up-the-work-directory-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Before you begin do make sure to download all data by <a href=""><strong>clicking here</strong></a>. Create a folder on called “<strong>Week 6</strong>” within your “<strong>GEOG0114</strong>” folder stored in the desktop of your personal computer. Make sure to extract all data from the zip folder and store it into “<strong>Week 6</strong>” folder. Open a new R script and set the work directory to <strong>Week 6’s</strong> folder.</p>
+<p>For Windows, the work directory will be:</p>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="raster-data-and-geostatistics.html#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;C:/Users/AccountName/Desktop/GEOG0114/Week 6&quot;</span>)</span></code></pre></div>
+<p>For MAC, the work directory will be:</p>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="raster-data-and-geostatistics.html#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;/Users/AccountName/Desktop/GEOG0114/Week 6&quot;</span>)</span></code></pre></div>
+</div>
+<div id="loading-and-installing-packages-1" class="section level3 hasAnchor" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> Loading and installing packages<a href="raster-data-and-geostatistics.html#loading-and-installing-packages-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We will need to load the following packages:</p>
+<ul>
+<li><code>sf</code>: Simple Features</li>
+<li><code>tmap</code>: Thematic Mapping</li>
+<li><code>raster</code>: Raster/gridded data analysis and manipulation</li>
+<li><code>sp</code>: Package for providing classes for spatial data (points, lines, polygons and grids)</li>
+</ul>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="raster-data-and-geostatistics.html#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load packages using library() function</span></span>
+<span id="cb109-2"><a href="raster-data-and-geostatistics.html#cb109-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;sf&quot;</span>)</span>
+<span id="cb109-3"><a href="raster-data-and-geostatistics.html#cb109-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;tmap&quot;</span>)</span>
+<span id="cb109-4"><a href="raster-data-and-geostatistics.html#cb109-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;raster&quot;</span>)</span>
+<span id="cb109-5"><a href="raster-data-and-geostatistics.html#cb109-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;sp&quot;</span>)</span></code></pre></div>
+<p>The above packages <code>sf</code>, <code>tmap</code>, <code>raster</code> &amp; <code>sp</code> should have been installed in the previous session(s). We will need to
+install the following package:</p>
+<ul>
+<li><code>gstat</code>: provides functions for univariable and multivariable geostatistical analysis.</li>
+<li><code>geoR</code>: provides additional functions for geostatistical and variogram analysis.</li>
+</ul>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="raster-data-and-geostatistics.html#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install the packages: gstat using the install.package()</span></span>
+<span id="cb110-2"><a href="raster-data-and-geostatistics.html#cb110-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;gstat&quot;</span>)</span>
+<span id="cb110-3"><a href="raster-data-and-geostatistics.html#cb110-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;geoR&quot;</span>)</span>
+<span id="cb110-4"><a href="raster-data-and-geostatistics.html#cb110-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb110-5"><a href="raster-data-and-geostatistics.html#cb110-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the packages with library()</span></span>
+<span id="cb110-6"><a href="raster-data-and-geostatistics.html#cb110-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;gstat&quot;</span>)</span>
+<span id="cb110-7"><a href="raster-data-and-geostatistics.html#cb110-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;geoR&quot;</span>)</span></code></pre></div>
+</div>
+<div id="loading-datasets-1" class="section level3 hasAnchor" number="2.1.4">
+<h3><span class="header-section-number">2.1.4</span> Loading datasets<a href="raster-data-and-geostatistics.html#loading-datasets-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let us first import the quantitative data i.e., <code>US 2019 SO2 Emissions data.csv</code> into R/RStudio.</p>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="raster-data-and-geostatistics.html#cb111-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use read.csv() to import </span></span>
+<span id="cb111-2"><a href="raster-data-and-geostatistics.html#cb111-2" aria-hidden="true" tabindex="-1"></a>datafile <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&quot;US 2019 SO2 Emissions data.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">&quot;,&quot;</span>)</span></code></pre></div>
+<p><strong>NOTE</strong>: The description of the column names are as follows:</p>
+<table>
+<colgroup>
+<col width="48%" />
+<col width="52%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Column Name</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>CountyRef</code></td>
+<td>The County &amp; State for where the air quality monitors are located in US</td>
+</tr>
+<tr class="even">
+<td><code>Longitude</code></td>
+<td>Longitude (in decimal degrees)</td>
+</tr>
+<tr class="odd">
+<td><code>Latitude</code></td>
+<td>Latitude (in decimal degrees)</td>
+</tr>
+<tr class="even">
+<td><code>Mean_SO2</code></td>
+<td>Annual Mean (ppb) concentrations of Ambient sulphur dioxide (<span class="math inline">\(SO_{2}\)</span>) in 2019</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Shape file: US National border named <code>US Nation Border.shp</code></li>
+<li>Shape file: US State border named <code>US State Borders.shp</code></li>
+<li>Raster: US Car Usage (5000m resolution) named <code>US Prevalence of Car Usage 5km.tif</code></li>
+<li>Raster: US Urbanisation Index (5000m resolution) named <code>US Urbanisation Index 5km.tif</code></li>
+<li>Raster: US Socioeconomic Deprivation (5000m resolution) named <code>US Socioeconomic Deprivation 5km.tif</code></li>
+</ul>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="raster-data-and-geostatistics.html#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use read_sf() function to load shape file </span></span>
+<span id="cb112-2"><a href="raster-data-and-geostatistics.html#cb112-2" aria-hidden="true" tabindex="-1"></a>US_Nation_Border_shp <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;US Nation Border.shp&quot;</span>)</span>
+<span id="cb112-3"><a href="raster-data-and-geostatistics.html#cb112-3" aria-hidden="true" tabindex="-1"></a>US_State_Border_shp <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;US State Borders.shp&quot;</span>)</span></code></pre></div>
+</div>
+<div id="data-preparation" class="section level3 hasAnchor" number="2.1.5">
+<h3><span class="header-section-number">2.1.5</span> Data preparation<a href="raster-data-and-geostatistics.html#data-preparation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>There are a couple of things we need to do before proceeding with the analysis:</p>
+<ol style="list-style-type: decimal">
+<li>The <code>datafile</code> is a data frame object in RStudio’s memory, and not a spatial object. We need to coerce into a spatial <code>sf</code> object</li>
+<li>The shapefiles for <code>US Nation Border.shp</code> &amp; <code>US State Borders.shp</code> are in a different CRS called <strong>Spherical Mercator 3857</strong>
+which measures distance in meters and not in decimal degrees. We need to transform the <code>longitude</code> and <code>latitude</code> of our stations
+which are in decimal degrees to the CRS of <strong>Spherical Mercator 3857</strong></li>
+</ol>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="raster-data-and-geostatistics.html#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Coerce the spreadsheet into a sf object</span></span>
+<span id="cb113-2"><a href="raster-data-and-geostatistics.html#cb113-2" aria-hidden="true" tabindex="-1"></a><span class="co"># First tell R that it’s coordinates are currently in decimal degrees (i.e., WGS84 &#39;crs = 4326&#39;) before the transformation</span></span>
+<span id="cb113-3"><a href="raster-data-and-geostatistics.html#cb113-3" aria-hidden="true" tabindex="-1"></a>datafile_sf <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(datafile, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">&quot;Longitude&quot;</span>, <span class="st">&quot;Latitude&quot;</span>), <span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="cb113-4"><a href="raster-data-and-geostatistics.html#cb113-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Now apply the transformation from WGS84 to Mercator i.e., = 3857</span></span>
+<span id="cb113-5"><a href="raster-data-and-geostatistics.html#cb113-5" aria-hidden="true" tabindex="-1"></a>datafile_sf_prj <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(datafile_sf, <span class="dv">3857</span>)</span>
+<span id="cb113-6"><a href="raster-data-and-geostatistics.html#cb113-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspect the details</span></span>
+<span id="cb113-7"><a href="raster-data-and-geostatistics.html#cb113-7" aria-hidden="true" tabindex="-1"></a><span class="fu">st_crs</span>(datafile_sf_prj)</span></code></pre></div>
+<p>The code chunk below generates an empty map with the <code>tmap</code> functions. It shows just the border of USA and the point locations for the air quality monitoring stations superimposed.</p>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="raster-data-and-geostatistics.html#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(US_Nation_Border_shp) <span class="sc">+</span> <span class="fu">tm_polygons</span>(<span class="at">alpha =</span> <span class="dv">0</span>, <span class="at">border.col =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb114-2"><a href="raster-data-and-geostatistics.html#cb114-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_shape</span>(datafile_sf_prj) <span class="sc">+</span> <span class="fu">tm_dots</span>() <span class="sc">+</span> </span>
+<span id="cb114-3"><a href="raster-data-and-geostatistics.html#cb114-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_scale_bar</span>(<span class="at">position =</span> <span class="fu">c</span>(<span class="st">&quot;left&quot;</span>,<span class="st">&quot;bottom&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb114-4"><a href="raster-data-and-geostatistics.html#cb114-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_compass</span>(<span class="at">position =</span> <span class="fu">c</span>(<span class="st">&quot;right&quot;</span>, <span class="st">&quot;bottom&quot;</span>))</span></code></pre></div>
+<p><img src="images/general/week6/Image1_1.png" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="semivariogram-analysis" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Semivariogram analysis<a href="raster-data-and-geostatistics.html#semivariogram-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Semivariograms describe how data are related with distance by plotting the <strong>semivariance</strong> against the <strong>separation distance</strong>, known as the <strong>experimental</strong> or <strong>empirical semivariogram</strong>. The semivariance is defined as half the average squared difference between points separated by some distance <em>h</em>. As the separation distance <em>h</em> between samples increase, we would expect the semivariance to also increase (again, because near samples are more similar than distant samples).</p>
+<p><img src="images/general/week6/Image2_1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>In the generic semivariogram shown above, there are three important parameters:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Sill</strong>: The maximum semivariance value observed, and it indicates the threshold for values beyond (i.e., flatline) which
+there is no spatial autocorrelation. <strong>NOTE</strong>: the <strong>Partial Sill</strong> is a value calculated by taking the difference between
+the <strong>Sill</strong> and <strong>Nugget</strong> (i.e., <strong>Partial Sill = Sill - Nugget</strong>)</li>
+<li><strong>Range</strong>: The maximum separation distance <em>h</em> at which we will expect to find evidence of spatial autocorrelation. A
+separation distance beyond the <strong>range</strong> samples are no longer correlated.</li>
+<li><strong>Nugget</strong>: This describes the variance of the measurement error combined with spatially uncorrelated variations at distances
+shorter than the sample spacing, namely noise in the data. The larger the <strong>nugget</strong> relative to the <strong>sill</strong>, the less spatial
+dependence there is in the data and less useful Kriging will be.</li>
+</ol>
+<div class="note">
+<p><strong>IMPORTANT NOTES</strong>: Two important assumptions of a basic semivariogram are that the spatial process under investigation are: i.)
+<strong>stationary</strong>, i.e., the spatial autocorrelation between the measurements of same variables in a given area is the same for all
+locations; and ii.) <strong>isotropic</strong>, spatial autocorrelation is the same in every direction. If the autocorrelation differs by direction, it is termed as <strong>anisotropic</strong>.</p>
+</div>
+<p>To be used in Kriging, a semivariogram plot (akin to the above image) must be generated to estimate the 3 parameters (i.e., sill, nugget &amp; range) from the points termed <strong>experimental</strong> or <strong>empirical semivariogram</strong>. These are used as initial values to fit a <strong>modelled</strong> or <strong>theoretical semivariogram</strong> which can be in one of three major forms:</p>
+<ol style="list-style-type: decimal">
+<li>Gaussian Model (Left)</li>
+<li>Spherical Model (Center)</li>
+<li>Exponential Model (Right)</li>
+</ol>
+<p><img src="images/general/week6/Image2_1_5.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Once the modelled semivariogram has been defined, it can be used in Kriging.</p>
+<div id="plotting-the-empirical-semivariogram" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Plotting the Empirical Semivariogram<a href="raster-data-and-geostatistics.html#plotting-the-empirical-semivariogram" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Use the function <code>variogram()</code> to create the object for plotting the empirical variogram</p>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="raster-data-and-geostatistics.html#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="co"># coerce datafile_sf_prj to be a &#39;sp&#39; spatial dataframe object as it&#39;s </span></span>
+<span id="cb115-2"><a href="raster-data-and-geostatistics.html#cb115-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ---variogram does not use &#39;sf&#39; objects</span></span>
+<span id="cb115-3"><a href="raster-data-and-geostatistics.html#cb115-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-4"><a href="raster-data-and-geostatistics.html#cb115-4" aria-hidden="true" tabindex="-1"></a><span class="co"># ignore warning message</span></span>
+<span id="cb115-5"><a href="raster-data-and-geostatistics.html#cb115-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-6"><a href="raster-data-and-geostatistics.html#cb115-6" aria-hidden="true" tabindex="-1"></a>datafile_sp_prj <span class="ot">&lt;-</span> <span class="fu">as</span>(datafile_sf_prj, <span class="st">&quot;Spatial&quot;</span>)</span>
+<span id="cb115-7"><a href="raster-data-and-geostatistics.html#cb115-7" aria-hidden="true" tabindex="-1"></a><span class="co"># use variogram() function to compute the semivariance with a null model Mean_SO2 as outcome</span></span>
+<span id="cb115-8"><a href="raster-data-and-geostatistics.html#cb115-8" aria-hidden="true" tabindex="-1"></a>SO2_emp.variogram <span class="ot">&lt;-</span> <span class="fu">variogram</span>(Mean_SO2<span class="sc">~</span><span class="dv">1</span>, datafile_sp_prj)</span>
+<span id="cb115-9"><a href="raster-data-and-geostatistics.html#cb115-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the object to reveal a table</span></span>
+<span id="cb115-10"><a href="raster-data-and-geostatistics.html#cb115-10" aria-hidden="true" tabindex="-1"></a>SO2_emp.variogram</span></code></pre></div>
+<div class="note">
+<p><strong>IMPORTANT NOTES</strong>: <code>np</code> in the output is the number of paired considered within the separation distance <code>dist</code>; <code>gamma</code> is the averaged semivariance for the number of paired points within the separation distance <code>dist</code>.</p>
+</div>
+<p>Let us plot these values to see the empirical semivariogram</p>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="raster-data-and-geostatistics.html#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(SO2_emp.variogram)</span></code></pre></div>
+<p><img src="images/general/week6/Image2_2.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>From the output (i.e., plot and table), we should note the approximate values for the <code>partial sill</code>, <code>nugget</code> and <code>range</code>.</p>
+<ol style="list-style-type: decimal">
+<li>The <code>nugget</code> is roughly <strong>17</strong> (i.e. base on starting <code>gamma</code> value from the table).</li>
+<li>The <code>range</code> is roughly <strong>1180000</strong> meters (i.e. base on peak value for <code>gamma</code> and it’s corresponding <code>dist</code>).</li>
+<li>The <code>partial sill</code> is <strong>65</strong>. This is derived from the peak value for <code>gamma</code> subtracted by the <code>nugget</code> (<code>82 - 17 = 65</code>).</li>
+</ol>
+<p>These initial values give us an idea of what to expect when we proceed to fit a <strong>theoretical</strong> semivariogram using the <code>fit.variogram()</code>. It will help us to generate the fitted models.</p>
+</div>
+<div id="plotting-the-theoretical-semivariogram" class="section level3 hasAnchor" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Plotting the Theoretical Semivariogram<a href="raster-data-and-geostatistics.html#plotting-the-theoretical-semivariogram" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We are going to fit a model to the empirical semivariogram in order to determine the appropriate function for Kriging (i.e., spherical (<code>Sph</code>), exponential (<code>Exp</code>) or gaussian (<code>Gau</code>)).</p>
+<p>We will start fitting the various models:</p>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="raster-data-and-geostatistics.html#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit exponential</span></span>
+<span id="cb117-2"><a href="raster-data-and-geostatistics.html#cb117-2" aria-hidden="true" tabindex="-1"></a>exp_SO2_emp.variogram <span class="ot">&lt;-</span> <span class="fu">fit.variogram</span>(SO2_emp.variogram, <span class="at">model =</span> <span class="fu">vgm</span>(<span class="dv">65</span>, <span class="st">&quot;Exp&quot;</span>, <span class="dv">1180000</span>, <span class="dv">17</span>))</span>
+<span id="cb117-3"><a href="raster-data-and-geostatistics.html#cb117-3" aria-hidden="true" tabindex="-1"></a>exp_SO2_emp.variogram</span>
+<span id="cb117-4"><a href="raster-data-and-geostatistics.html#cb117-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(SO2_emp.variogram, exp_SO2_emp.variogram, <span class="at">main  =</span> <span class="st">&quot;Exponential model (Nug: 3.6, PSill: 55.9, Range: 296255m)&quot;</span>)</span></code></pre></div>
+<p><img src="images/general/week6/Image2_3.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="raster-data-and-geostatistics.html#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit Spherical</span></span>
+<span id="cb118-2"><a href="raster-data-and-geostatistics.html#cb118-2" aria-hidden="true" tabindex="-1"></a>sph_SO2_emp.variogram <span class="ot">&lt;-</span> <span class="fu">fit.variogram</span>(SO2_emp.variogram, <span class="at">model =</span> <span class="fu">vgm</span>(<span class="dv">65</span>, <span class="st">&quot;Sph&quot;</span>, <span class="dv">1180000</span>, <span class="dv">17</span>))</span>
+<span id="cb118-3"><a href="raster-data-and-geostatistics.html#cb118-3" aria-hidden="true" tabindex="-1"></a>sph_SO2_emp.variogram</span>
+<span id="cb118-4"><a href="raster-data-and-geostatistics.html#cb118-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(SO2_emp.variogram, sph_SO2_emp.variogram, <span class="at">main  =</span> <span class="st">&quot;Spherical model (Nug: 10.5, PSill: 49.6, Range: 857452m)&quot;</span>)</span></code></pre></div>
+<p><img src="images/general/week6/Image2_4.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="raster-data-and-geostatistics.html#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit gaussian</span></span>
+<span id="cb119-2"><a href="raster-data-and-geostatistics.html#cb119-2" aria-hidden="true" tabindex="-1"></a>gau_SO2_emp.variogram <span class="ot">&lt;-</span> <span class="fu">fit.variogram</span>(SO2_emp.variogram, <span class="at">model =</span> <span class="fu">vgm</span>(<span class="dv">65</span>, <span class="st">&quot;Gau&quot;</span>, <span class="dv">1180000</span>, <span class="dv">17</span>))</span>
+<span id="cb119-3"><a href="raster-data-and-geostatistics.html#cb119-3" aria-hidden="true" tabindex="-1"></a>gau_SO2_emp.variogram</span>
+<span id="cb119-4"><a href="raster-data-and-geostatistics.html#cb119-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(SO2_emp.variogram, gau_SO2_emp.variogram, <span class="at">main  =</span> <span class="st">&quot;Gaussian model (Nug: 12.8, PSill: 39.1, Range: 244807m)&quot;</span>)</span></code></pre></div>
+<p><img src="images/general/week6/Image2_5.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>By eyeballing the images - it difficult to discern whether the exponential or spherical model provides a better fit to the empirical semivariogram. We can use the <code>fit.variogram()</code> function to determine which is the best model amongst them.</p>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="raster-data-and-geostatistics.html#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="co"># select the best model</span></span>
+<span id="cb120-2"><a href="raster-data-and-geostatistics.html#cb120-2" aria-hidden="true" tabindex="-1"></a>best_SO2_emp.variogram <span class="ot">&lt;-</span> <span class="fu">fit.variogram</span>(SO2_emp.variogram, <span class="at">model =</span> <span class="fu">vgm</span>(<span class="fu">c</span>(<span class="st">&quot;Exp&quot;</span>, <span class="st">&quot;Gau&quot;</span>, <span class="st">&quot;Sph&quot;</span>)))</span>
+<span id="cb120-3"><a href="raster-data-and-geostatistics.html#cb120-3" aria-hidden="true" tabindex="-1"></a>best_SO2_emp.variogram</span></code></pre></div>
+<p>From the output (see column which says <code>model</code> and <code>row 2</code> it highlights <code>"Exp"</code>), it shows that the exponential model is the best fit with a <code>nugget = 3.6</code>, <code>Partial Sill =  55.9</code> and <code>Range = 296255m</code>. We therefore select the exponential model in our Kriging to make the spatial prediction for <span class="math inline">\(SO_{2}\)</span>. Lets proceed to Krige.</p>
+<p><img src="images/general/week6/Image2_3.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="note">
+<p><strong>IMPORTANT NOTES</strong>: The interpretation is as follows: the <code>nugget</code> in the exponential model is smaller than the other proposed models. It is small which is also an indication of evidence of larger spatial dependence in the concentrations for <span class="math inline">\(SO_{2}\)</span> across sampling sites in USA; A separation distance with values beyond <code>296255m</code> (where it curve starts to plateau) and beyond the semivariance’s threshold where it flat lines (sill of <code>59.5</code> (i.e., <code>55.9 + 3.6</code>)) - there should expect that the spatial autocorrelation in the observed levels of <span class="math inline">\(SO_{2}\)</span> are not present anymore.</p>
+</div>
+</div>
+</div>
+<div id="kriging-modelling-null" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Kriging modelling (null)<a href="raster-data-and-geostatistics.html#kriging-modelling-null" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="building-a-blank-raster-template" class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Building a blank raster template<a href="raster-data-and-geostatistics.html#building-a-blank-raster-template" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let us create a template raster for interpolation. The extent of the raster template should based on the points. We are going to make the resolution of grid be at 5000m by 5000m (5km by 5km) accordingly.</p>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="raster-data-and-geostatistics.html#cb121-1" aria-hidden="true" tabindex="-1"></a>RasterTemplate <span class="ot">&lt;-</span> <span class="fu">raster</span>(datafile_sp_prj)</span>
+<span id="cb121-2"><a href="raster-data-and-geostatistics.html#cb121-2" aria-hidden="true" tabindex="-1"></a><span class="fu">res</span>(RasterTemplate) <span class="ot">&lt;-</span> <span class="dv">5000</span></span></code></pre></div>
+<p>Next, declare template as a spatial grid</p>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="raster-data-and-geostatistics.html#cb122-1" aria-hidden="true" tabindex="-1"></a>grid.interpolation <span class="ot">&lt;-</span> <span class="fu">as</span>(RasterTemplate, <span class="st">&#39;SpatialGrid&#39;</span>)</span></code></pre></div>
+</div>
+<div id="implementing-the-spatial-interpolation-on-blank-template-using-kriging" class="section level3 hasAnchor" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> Implementing the spatial interpolation on blank template using Kriging**<a href="raster-data-and-geostatistics.html#implementing-the-spatial-interpolation-on-blank-template-using-kriging" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Now, we are going to use the parameters from the exponential theoretical semivariogram model to interpolate the concentrations of ambient SO2 for the entire study region</p>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="raster-data-and-geostatistics.html#cb123-1" aria-hidden="true" tabindex="-1"></a>modelKrigingExp <span class="ot">&lt;-</span> <span class="fu">gstat</span>(<span class="at">formula =</span> Mean_SO2<span class="sc">~</span><span class="dv">1</span>, <span class="at">locations =</span> datafile_sp_prj, <span class="at">model =</span> exp_SO2_emp.variogram)</span></code></pre></div>
+<p>The results are stored in <code>modelKrigingExp</code> object. Lets add the results of the interpolation to our grid template using the <code>predict()</code> function</p>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="raster-data-and-geostatistics.html#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="co"># this may take roughly 5mins</span></span>
+<span id="cb124-2"><a href="raster-data-and-geostatistics.html#cb124-2" aria-hidden="true" tabindex="-1"></a>Kriged_SO2 <span class="ot">&lt;-</span> <span class="fu">predict</span>(modelKrigingExp, grid.interpolation)</span></code></pre></div>
+<p>The above analysis produces two separate rasters: i.) Predicted <span class="math inline">\(SO_{2}\)</span> and ii.) Variation in <span class="math inline">\(SO_{2}\)</span>. Let export the results and make some visualisation using the <code>tmap</code> functions</p>
+</div>
+<div id="how-to-export-the-results-as-.tiff-format-thematic-visualisation-in-tmap" class="section level3 hasAnchor" number="2.3.3">
+<h3><span class="header-section-number">2.3.3</span> How to export the results as .tiff format thematic visualisation in <code>tmap</code><a href="raster-data-and-geostatistics.html#how-to-export-the-results-as-.tiff-format-thematic-visualisation-in-tmap" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Now, save both the prediction and variance a multi-layer raster (a ‘brick’ raster):</p>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="raster-data-and-geostatistics.html#cb125-1" aria-hidden="true" tabindex="-1"></a>brickedKriged_SO2_Results <span class="ot">&lt;-</span> <span class="fu">brick</span>(Kriged_SO2)</span></code></pre></div>
+<p>We can save them individually from the multi-layer raster as follows:</p>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="raster-data-and-geostatistics.html#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Separate the rasters accordingly</span></span>
+<span id="cb126-2"><a href="raster-data-and-geostatistics.html#cb126-2" aria-hidden="true" tabindex="-1"></a>exp.prediction <span class="ot">&lt;-</span> <span class="fu">raster</span>(brickedKriged_SO2_Results, <span class="at">layer =</span> <span class="dv">1</span>)</span>
+<span id="cb126-3"><a href="raster-data-and-geostatistics.html#cb126-3" aria-hidden="true" tabindex="-1"></a>exp.variance <span class="ot">&lt;-</span> <span class="fu">raster</span>(brickedKriged_SO2_Results, <span class="at">layer =</span> <span class="dv">2</span>)</span>
+<span id="cb126-4"><a href="raster-data-and-geostatistics.html#cb126-4" aria-hidden="true" tabindex="-1"></a><span class="co">#  save the output locally on your computer</span></span>
+<span id="cb126-5"><a href="raster-data-and-geostatistics.html#cb126-5" aria-hidden="true" tabindex="-1"></a><span class="fu">writeRaster</span>(exp.prediction, <span class="st">&quot;Predicted SO2 levels in USA.tif&quot;</span>, <span class="at">format=</span><span class="st">&quot;GTiff&quot;</span>, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb126-6"><a href="raster-data-and-geostatistics.html#cb126-6" aria-hidden="true" tabindex="-1"></a><span class="fu">writeRaster</span>(exp.variance, <span class="st">&quot;Variance SO2 levels in USA.tif&quot;</span>, <span class="at">format=</span><span class="st">&quot;GTiff&quot;</span>, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+</div>
+<div id="thematic-visualisation-of-raster-data-using-tmap" class="section level3 hasAnchor" number="2.3.4">
+<h3><span class="header-section-number">2.3.4</span> Thematic visualisation of raster data using <code>tmap</code><a href="raster-data-and-geostatistics.html#thematic-visualisation-of-raster-data-using-tmap" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let us visualise the predictions:</p>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="raster-data-and-geostatistics.html#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mask values of raster outside regions of US Border</span></span>
+<span id="cb127-2"><a href="raster-data-and-geostatistics.html#cb127-2" aria-hidden="true" tabindex="-1"></a>US_Nation_Border_sp_shp <span class="ot">&lt;-</span> <span class="fu">as</span>(US_Nation_Border_shp, <span class="st">&quot;Spatial&quot;</span>)</span>
+<span id="cb127-3"><a href="raster-data-and-geostatistics.html#cb127-3" aria-hidden="true" tabindex="-1"></a>exp.prediction_masked <span class="ot">&lt;-</span> <span class="fu">mask</span>(exp.prediction, US_Nation_Border_shp)</span>
+<span id="cb127-4"><a href="raster-data-and-geostatistics.html#cb127-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb127-5"><a href="raster-data-and-geostatistics.html#cb127-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(US_Nation_Border_shp) <span class="sc">+</span> <span class="fu">tm_polygons</span>(<span class="at">alpha =</span> <span class="dv">0</span>, <span class="at">border.col =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span> <span class="co"># add base map of borders here</span></span>
+<span id="cb127-6"><a href="raster-data-and-geostatistics.html#cb127-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_shape</span>(exp.prediction_masked) <span class="sc">+</span> <span class="fu">tm_raster</span>(<span class="at">title =</span> <span class="st">&quot;Predicted SO2 ppb&quot;</span>, <span class="at">style =</span> <span class="st">&quot;cont&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Reds&quot;</span>) <span class="sc">+</span></span>
+<span id="cb127-7"><a href="raster-data-and-geostatistics.html#cb127-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_shape</span>(US_State_Border_shp) <span class="sc">+</span> <span class="fu">tm_polygons</span>(<span class="at">alpha =</span> <span class="dv">0</span>, <span class="at">border.col =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb127-8"><a href="raster-data-and-geostatistics.html#cb127-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_text</span>(<span class="st">&quot;STUSPS&quot;</span>, <span class="at">size =</span> <span class="st">&quot;AREA&quot;</span>) <span class="sc">+</span></span>
+<span id="cb127-9"><a href="raster-data-and-geostatistics.html#cb127-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_shape</span>(datafile_sf_prj) <span class="sc">+</span> <span class="fu">tm_dots</span>() <span class="sc">+</span> </span>
+<span id="cb127-10"><a href="raster-data-and-geostatistics.html#cb127-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_scale_bar</span>(<span class="at">position =</span> <span class="fu">c</span>(<span class="st">&quot;left&quot;</span>,<span class="st">&quot;bottom&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb127-11"><a href="raster-data-and-geostatistics.html#cb127-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_compass</span>(<span class="at">position =</span> <span class="fu">c</span>(<span class="st">&quot;right&quot;</span>, <span class="st">&quot;bottom&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb127-12"><a href="raster-data-and-geostatistics.html#cb127-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_layout</span>(<span class="at">frame =</span> <span class="cn">FALSE</span>, <span class="at">legend.title.size =</span> <span class="fl">0.5</span>, <span class="at">legend.text.size =</span> <span class="fl">0.5</span>)</span></code></pre></div>
+<p><img src="images/general/week6/Image3_1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>The above shows the predicted concentrations of ambient <span class="math inline">\(SO_{2}\)</span>; however, the predicted surface is very smooth and it difficult to see the spatial patterns. One technique, which is sometimes useful, for raster data is to reclassify the pixels to zones instead of pixel-point estimates.</p>
+<p>We could reclassify the continuous values stored in the grids/pixels into discrete values using the following scheme:</p>
+<ul>
+<li>0 = <code>"&lt; 1.0 ppb"</code></li>
+<li>1 = <code>"1.0-4.9 ppb"</code></li>
+<li>2 = <code>"5.0-9.9 ppb"</code></li>
+<li>3 = <code>"10.0-14.9 ppb"</code></li>
+<li>4 = <code>"15.0-19.9 ppb"</code></li>
+<li>5 = <code>"20.0-29.9 ppb"</code></li>
+<li>6 = <code>"30.0-39.9 ppb"</code></li>
+<li>7 = <code>"+40.0 ppb"</code></li>
+</ul>
+<p>You can do this by using following code:</p>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="raster-data-and-geostatistics.html#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a vector for the reclassification -i.e., 1st row captures values </span></span>
+<span id="cb128-2"><a href="raster-data-and-geostatistics.html#cb128-2" aria-hidden="true" tabindex="-1"></a><span class="co"># --- between 0 and below 1 to reclassify a pixel as 0</span></span>
+<span id="cb128-3"><a href="raster-data-and-geostatistics.html#cb128-3" aria-hidden="true" tabindex="-1"></a><span class="co"># While the 2nd row in this vector captures values between 1 and below 5 to </span></span>
+<span id="cb128-4"><a href="raster-data-and-geostatistics.html#cb128-4" aria-hidden="true" tabindex="-1"></a><span class="co"># --- reclassify a pixel as 1 and so on and so forth</span></span>
+<span id="cb128-5"><a href="raster-data-and-geostatistics.html#cb128-5" aria-hidden="true" tabindex="-1"></a>reclassifyRaster <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,</span>
+<span id="cb128-6"><a href="raster-data-and-geostatistics.html#cb128-6" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">1</span>,</span>
+<span id="cb128-7"><a href="raster-data-and-geostatistics.html#cb128-7" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span>,<span class="dv">10</span>,<span class="dv">2</span>,</span>
+<span id="cb128-8"><a href="raster-data-and-geostatistics.html#cb128-8" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span>,<span class="dv">15</span>,<span class="dv">3</span>,</span>
+<span id="cb128-9"><a href="raster-data-and-geostatistics.html#cb128-9" aria-hidden="true" tabindex="-1"></a><span class="dv">15</span>,<span class="dv">20</span>,<span class="dv">4</span>,</span>
+<span id="cb128-10"><a href="raster-data-and-geostatistics.html#cb128-10" aria-hidden="true" tabindex="-1"></a><span class="dv">20</span>,<span class="dv">30</span>,<span class="dv">5</span>,</span>
+<span id="cb128-11"><a href="raster-data-and-geostatistics.html#cb128-11" aria-hidden="true" tabindex="-1"></a><span class="dv">30</span>,<span class="dv">40</span>,<span class="dv">6</span>,</span>
+<span id="cb128-12"><a href="raster-data-and-geostatistics.html#cb128-12" aria-hidden="true" tabindex="-1"></a><span class="dv">40</span>,<span class="dv">70</span>,<span class="dv">7</span>)</span>
+<span id="cb128-13"><a href="raster-data-and-geostatistics.html#cb128-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb128-14"><a href="raster-data-and-geostatistics.html#cb128-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Then store the values into a matrix </span></span>
+<span id="cb128-15"><a href="raster-data-and-geostatistics.html#cb128-15" aria-hidden="true" tabindex="-1"></a>reclassifyRaster_Mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(reclassifyRaster, <span class="at">ncol=</span><span class="dv">3</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
+<span id="cb128-16"><a href="raster-data-and-geostatistics.html#cb128-16" aria-hidden="true" tabindex="-1"></a>reclassifyRaster_Mat</span></code></pre></div>
+<p>Now, apply the matrix to the raster object to reclassify the pixels accordingly using the <code>reclassify()</code> function:</p>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="raster-data-and-geostatistics.html#cb129-1" aria-hidden="true" tabindex="-1"></a>exp.prediction_masked_rec <span class="ot">&lt;-</span> <span class="fu">reclassify</span>(exp.prediction_masked, reclassifyRaster_Mat)</span></code></pre></div>
+<p>Now, lets visualise the zones:</p>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="raster-data-and-geostatistics.html#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(US_Nation_Border_shp) <span class="sc">+</span> <span class="fu">tm_polygons</span>(<span class="at">alpha =</span> <span class="dv">0</span>, <span class="at">border.col =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span> <span class="co"># add base map of borders here</span></span>
+<span id="cb130-2"><a href="raster-data-and-geostatistics.html#cb130-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_shape</span>(exp.prediction_masked_rec) <span class="sc">+</span> <span class="fu">tm_raster</span>(<span class="at">title =</span> <span class="st">&quot;Predicted SO2 ppb&quot;</span>, <span class="at">style =</span> <span class="st">&quot;cat&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Reds&quot;</span>, </span>
+<span id="cb130-3"><a href="raster-data-and-geostatistics.html#cb130-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;&lt;1.0 ppbs&quot;</span>,<span class="st">&quot;1.0-4.9 ppb&quot;</span>,<span class="st">&quot;5.0-9.9 ppb&quot;</span>, <span class="st">&quot;10.0-14.9 ppb&quot;</span> , <span class="st">&quot;15.0-19.9 ppb&quot;</span>, <span class="st">&quot;20.0-29.9 ppb&quot;</span>, <span class="st">&quot;30.0-39.9 ppb&quot;</span>,<span class="st">&quot;+40.0ppb&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb130-4"><a href="raster-data-and-geostatistics.html#cb130-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_shape</span>(US_State_Border_shp) <span class="sc">+</span> <span class="fu">tm_polygons</span>(<span class="at">alpha =</span> <span class="dv">0</span>, <span class="at">border.col =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb130-5"><a href="raster-data-and-geostatistics.html#cb130-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_text</span>(<span class="st">&quot;STUSPS&quot;</span>, <span class="at">size =</span> <span class="st">&quot;AREA&quot;</span>) <span class="sc">+</span></span>
+<span id="cb130-6"><a href="raster-data-and-geostatistics.html#cb130-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_shape</span>(datafile_sf_prj) <span class="sc">+</span> <span class="fu">tm_dots</span>() <span class="sc">+</span> </span>
+<span id="cb130-7"><a href="raster-data-and-geostatistics.html#cb130-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_scale_bar</span>(<span class="at">position =</span> <span class="fu">c</span>(<span class="st">&quot;left&quot;</span>,<span class="st">&quot;bottom&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb130-8"><a href="raster-data-and-geostatistics.html#cb130-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_compass</span>(<span class="at">position =</span> <span class="fu">c</span>(<span class="st">&quot;right&quot;</span>, <span class="st">&quot;bottom&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb130-9"><a href="raster-data-and-geostatistics.html#cb130-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_layout</span>(<span class="at">frame =</span> <span class="cn">FALSE</span>, <span class="at">legend.title.size =</span> <span class="fl">0.5</span>, <span class="at">legend.text.size =</span> <span class="fl">0.5</span>)</span></code></pre></div>
+<p><img src="images/general/week6/Image3_2_5.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>You can visualise the variance:</p>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="raster-data-and-geostatistics.html#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mask values of raster outside regions of US Border</span></span>
+<span id="cb131-2"><a href="raster-data-and-geostatistics.html#cb131-2" aria-hidden="true" tabindex="-1"></a>exp.variance_masked <span class="ot">&lt;-</span> <span class="fu">mask</span>(exp.variance, US_Nation_Border_sp_shp)</span>
+<span id="cb131-3"><a href="raster-data-and-geostatistics.html#cb131-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb131-4"><a href="raster-data-and-geostatistics.html#cb131-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(US_Nation_Border_shp) <span class="sc">+</span> <span class="fu">tm_polygons</span>(<span class="at">alpha =</span> <span class="dv">0</span>, <span class="at">border.col =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span> <span class="co"># add base map of borders here</span></span>
+<span id="cb131-5"><a href="raster-data-and-geostatistics.html#cb131-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_shape</span>(exp.variance_masked) <span class="sc">+</span> <span class="fu">tm_raster</span>(<span class="at">title =</span> <span class="st">&quot;Variance SO2 ppb&quot;</span>, <span class="at">style =</span> <span class="st">&quot;cont&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Reds&quot;</span>) <span class="sc">+</span></span>
+<span id="cb131-6"><a href="raster-data-and-geostatistics.html#cb131-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_shape</span>(US_State_Border_shp) <span class="sc">+</span> <span class="fu">tm_polygons</span>(<span class="at">alpha =</span> <span class="dv">0</span>, <span class="at">border.col =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb131-7"><a href="raster-data-and-geostatistics.html#cb131-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_text</span>(<span class="st">&quot;STUSPS&quot;</span>, <span class="at">size =</span> <span class="st">&quot;AREA&quot;</span>) <span class="sc">+</span></span>
+<span id="cb131-8"><a href="raster-data-and-geostatistics.html#cb131-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_shape</span>(datafile_sf_prj) <span class="sc">+</span> <span class="fu">tm_dots</span>() <span class="sc">+</span> </span>
+<span id="cb131-9"><a href="raster-data-and-geostatistics.html#cb131-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_scale_bar</span>(<span class="at">position =</span> <span class="fu">c</span>(<span class="st">&quot;left&quot;</span>,<span class="st">&quot;bottom&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb131-10"><a href="raster-data-and-geostatistics.html#cb131-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_compass</span>(<span class="at">position =</span> <span class="fu">c</span>(<span class="st">&quot;right&quot;</span>, <span class="st">&quot;bottom&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb131-11"><a href="raster-data-and-geostatistics.html#cb131-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_layout</span>(<span class="at">frame =</span> <span class="cn">FALSE</span>, <span class="at">legend.title.size =</span> <span class="fl">0.5</span>, <span class="at">legend.text.size =</span> <span class="fl">0.5</span>)</span></code></pre></div>
+<p><img src="images/general/week6/Image3_2.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="note">
+<p><strong>IMPORTANT NOTES</strong>: The above example was a null model. We can include risk factors as adjustments for the prediction. The below code shows you how to incorporate other variables in the analysis. We will use the other raster data sets for urbanisation, deprivation and car usage as adjustments in the Kriging model.</p>
+</div>
+</div>
+</div>
+<div id="kriging-modelling-non-null" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Kriging modelling (non-null)<a href="raster-data-and-geostatistics.html#kriging-modelling-non-null" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The code is a repeat of the above but with regression covariate adjustment.</p>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="raster-data-and-geostatistics.html#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;sf&quot;</span>)</span>
+<span id="cb132-2"><a href="raster-data-and-geostatistics.html#cb132-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;sp&quot;</span>)</span>
+<span id="cb132-3"><a href="raster-data-and-geostatistics.html#cb132-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;raster&quot;</span>)</span>
+<span id="cb132-4"><a href="raster-data-and-geostatistics.html#cb132-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;tmap&quot;</span>)</span>
+<span id="cb132-5"><a href="raster-data-and-geostatistics.html#cb132-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;gstat&quot;</span>)</span>
+<span id="cb132-6"><a href="raster-data-and-geostatistics.html#cb132-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;geoR&quot;</span>)</span>
+<span id="cb132-7"><a href="raster-data-and-geostatistics.html#cb132-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-8"><a href="raster-data-and-geostatistics.html#cb132-8" aria-hidden="true" tabindex="-1"></a>datafile <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&quot;US 2019 SO2 Emissions data.csv&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">sep=</span><span class="st">&quot;,&quot;</span>)</span>
+<span id="cb132-9"><a href="raster-data-and-geostatistics.html#cb132-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-10"><a href="raster-data-and-geostatistics.html#cb132-10" aria-hidden="true" tabindex="-1"></a>US_Nation_Border_shp <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;US Nation Border.shp&quot;</span>)</span>
+<span id="cb132-11"><a href="raster-data-and-geostatistics.html#cb132-11" aria-hidden="true" tabindex="-1"></a>US_State_Borders_shp <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;US State Borders.shp&quot;</span>)</span>
+<span id="cb132-12"><a href="raster-data-and-geostatistics.html#cb132-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-13"><a href="raster-data-and-geostatistics.html#cb132-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Coerce the spreadsheet into a sf object</span></span>
+<span id="cb132-14"><a href="raster-data-and-geostatistics.html#cb132-14" aria-hidden="true" tabindex="-1"></a><span class="co"># First tell R that it’s coordinates are currently in decimal degrees (i.e., WGS84 &#39;crs = 4326&#39;) before the transformation</span></span>
+<span id="cb132-15"><a href="raster-data-and-geostatistics.html#cb132-15" aria-hidden="true" tabindex="-1"></a>datafile_sf <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(datafile, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">&quot;Longitude&quot;</span>, <span class="st">&quot;Latitude&quot;</span>), <span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="cb132-16"><a href="raster-data-and-geostatistics.html#cb132-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Now apply the transformation from WGS84 to Mercator i.e., = 3857</span></span>
+<span id="cb132-17"><a href="raster-data-and-geostatistics.html#cb132-17" aria-hidden="true" tabindex="-1"></a>datafile_sf_prj <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(datafile_sf, <span class="dv">3857</span>)</span>
+<span id="cb132-18"><a href="raster-data-and-geostatistics.html#cb132-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspect the details</span></span>
+<span id="cb132-19"><a href="raster-data-and-geostatistics.html#cb132-19" aria-hidden="true" tabindex="-1"></a><span class="fu">st_crs</span>(datafile_sf_prj)</span>
+<span id="cb132-20"><a href="raster-data-and-geostatistics.html#cb132-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-21"><a href="raster-data-and-geostatistics.html#cb132-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Load rasters. These are the covariates we will use in the gstat() function for the kriging regression</span></span>
+<span id="cb132-22"><a href="raster-data-and-geostatistics.html#cb132-22" aria-hidden="true" tabindex="-1"></a>US_urbanisation <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="st">&quot;US Urbanisation Index 5km.tif&quot;</span>)</span>
+<span id="cb132-23"><a href="raster-data-and-geostatistics.html#cb132-23" aria-hidden="true" tabindex="-1"></a>US_SVI <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="st">&quot;US Socioeconomic Deprivation 5km.tif&quot;</span>)</span>
+<span id="cb132-24"><a href="raster-data-and-geostatistics.html#cb132-24" aria-hidden="true" tabindex="-1"></a>US_CarUsage <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="st">&quot;US Prevalence of Car Usage 5km.tif&quot;</span>)</span>
+<span id="cb132-25"><a href="raster-data-and-geostatistics.html#cb132-25" aria-hidden="true" tabindex="-1"></a><span class="co"># ignore that stupid warning message as its related to outdated &#39;rgdal &amp; rgeos&#39;. All raster are in the CRS Mercator 3857</span></span>
+<span id="cb132-26"><a href="raster-data-and-geostatistics.html#cb132-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-27"><a href="raster-data-and-geostatistics.html#cb132-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Stack the three rasters together by using the stack() function </span></span>
+<span id="cb132-28"><a href="raster-data-and-geostatistics.html#cb132-28" aria-hidden="true" tabindex="-1"></a>predictors <span class="ot">&lt;-</span> <span class="fu">stack</span>(US_urbanisation, US_SVI, US_CarUsage)</span>
+<span id="cb132-29"><a href="raster-data-and-geostatistics.html#cb132-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-30"><a href="raster-data-and-geostatistics.html#cb132-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3: from the stacked data extract the raster values on the points of pollution stations using the extract() function</span></span>
+<span id="cb132-31"><a href="raster-data-and-geostatistics.html#cb132-31" aria-hidden="true" tabindex="-1"></a>predictors.values <span class="ot">&lt;-</span> <span class="fu">extract</span>(predictors, datafile_sp_prj)</span>
+<span id="cb132-32"><a href="raster-data-and-geostatistics.html#cb132-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-33"><a href="raster-data-and-geostatistics.html#cb132-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 4: Stitch the extraction to the spatial point data frame using the cbind() &quot;column bind&quot; function</span></span>
+<span id="cb132-34"><a href="raster-data-and-geostatistics.html#cb132-34" aria-hidden="true" tabindex="-1"></a>datafile_sp_prj<span class="sc">@</span>data <span class="ot">&lt;-</span> <span class="fu">cbind</span>(datafile_sp_prj<span class="sc">@</span>data, predictors.values)</span>
+<span id="cb132-35"><a href="raster-data-and-geostatistics.html#cb132-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-36"><a href="raster-data-and-geostatistics.html#cb132-36" aria-hidden="true" tabindex="-1"></a><span class="co"># You can view the dataframe to see the raster values. What has happened is we extracted the overlapping raster pixels on</span></span>
+<span id="cb132-37"><a href="raster-data-and-geostatistics.html#cb132-37" aria-hidden="true" tabindex="-1"></a><span class="co"># those pollution stations and assuming those are the levels of urbanisation, deprivation and car usage at those points for</span></span>
+<span id="cb132-38"><a href="raster-data-and-geostatistics.html#cb132-38" aria-hidden="true" tabindex="-1"></a><span class="co"># which the SO2 levels are observed. </span></span>
+<span id="cb132-39"><a href="raster-data-and-geostatistics.html#cb132-39" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(datafile_sp_prj<span class="sc">@</span>data)</span>
+<span id="cb132-40"><a href="raster-data-and-geostatistics.html#cb132-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-41"><a href="raster-data-and-geostatistics.html#cb132-41" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 5: Linear Regression model to determine which variables are worth to be included in the Kriging model. If the turn out</span></span>
+<span id="cb132-42"><a href="raster-data-and-geostatistics.html#cb132-42" aria-hidden="true" tabindex="-1"></a><span class="co"># to be statistical significant (i.e., p &lt; 0.05). Then include to include in the kriging.</span></span>
+<span id="cb132-43"><a href="raster-data-and-geostatistics.html#cb132-43" aria-hidden="true" tabindex="-1"></a>lm.model <span class="ot">&lt;-</span> <span class="fu">lm</span>(Mean_SO2 <span class="sc">~</span> US_Urbanisation_Index_5km <span class="sc">+</span> US_Socioeconomic_Deprivation_5km <span class="sc">+</span> US_Prevalence_of_Car_Usage_5km, <span class="at">data =</span> datafile_sp_prj<span class="sc">@</span>data)</span>
+<span id="cb132-44"><a href="raster-data-and-geostatistics.html#cb132-44" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm.model)</span>
+<span id="cb132-45"><a href="raster-data-and-geostatistics.html#cb132-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-46"><a href="raster-data-and-geostatistics.html#cb132-46" aria-hidden="true" tabindex="-1"></a><span class="co"># all variables are statistically significant. According to this model urbanisation and car usage marginally decreases SO2 levels,</span></span>
+<span id="cb132-47"><a href="raster-data-and-geostatistics.html#cb132-47" aria-hidden="true" tabindex="-1"></a><span class="co"># while areas of higher deprivation yields higher levels of SO2. Include all variables to the Kriging model since they are</span></span>
+<span id="cb132-48"><a href="raster-data-and-geostatistics.html#cb132-48" aria-hidden="true" tabindex="-1"></a><span class="co"># significant.</span></span>
+<span id="cb132-49"><a href="raster-data-and-geostatistics.html#cb132-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-50"><a href="raster-data-and-geostatistics.html#cb132-50" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 6: use variogram() function to compute the semivariance with variable in the model</span></span>
+<span id="cb132-51"><a href="raster-data-and-geostatistics.html#cb132-51" aria-hidden="true" tabindex="-1"></a>SO2_adj_emp.variogram <span class="ot">&lt;-</span> <span class="fu">variogram</span>(Mean_SO2 <span class="sc">~</span> US_Urbanisation_Index_5km <span class="sc">+</span> US_Socioeconomic_Deprivation_5km <span class="sc">+</span> US_Prevalence_of_Car_Usage_5km, datafile_sp_prj)</span>
+<span id="cb132-52"><a href="raster-data-and-geostatistics.html#cb132-52" aria-hidden="true" tabindex="-1"></a>SO2_adj_emp.variogram</span>
+<span id="cb132-53"><a href="raster-data-and-geostatistics.html#cb132-53" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(SO2_adj_emp.variogram)</span>
+<span id="cb132-54"><a href="raster-data-and-geostatistics.html#cb132-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-55"><a href="raster-data-and-geostatistics.html#cb132-55" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 7: Determine best model</span></span>
+<span id="cb132-56"><a href="raster-data-and-geostatistics.html#cb132-56" aria-hidden="true" tabindex="-1"></a>best_SO2_adj_emp.variogram <span class="ot">&lt;-</span> <span class="fu">fit.variogram</span>(SO2_adj_emp.variogram, <span class="at">model =</span> <span class="fu">vgm</span>(<span class="fu">c</span>(<span class="st">&quot;Exp&quot;</span>, <span class="st">&quot;Gau&quot;</span>, <span class="st">&quot;Sph&quot;</span>)))</span>
+<span id="cb132-57"><a href="raster-data-and-geostatistics.html#cb132-57" aria-hidden="true" tabindex="-1"></a>best_SO2_adj_emp.variogram</span>
+<span id="cb132-58"><a href="raster-data-and-geostatistics.html#cb132-58" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(SO2_adj_emp.variogram, best_SO2_adj_emp.variogram, <span class="at">main =</span> <span class="st">&quot;Best Model: Exponential (Nug: 5.63, PSill: 49.4, Range: 293891.2m)&quot;</span>)</span>
+<span id="cb132-59"><a href="raster-data-and-geostatistics.html#cb132-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-60"><a href="raster-data-and-geostatistics.html#cb132-60" aria-hidden="true" tabindex="-1"></a><span class="co"># HERE ARE THE CORRECTIONS</span></span>
+<span id="cb132-61"><a href="raster-data-and-geostatistics.html#cb132-61" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 8: Here is where we need to insert the raster values and not the points. In the previous iteration, I mistakenly used the</span></span>
+<span id="cb132-62"><a href="raster-data-and-geostatistics.html#cb132-62" aria-hidden="true" tabindex="-1"></a><span class="co"># point verison of the car usage data and adapted the code without verifying it to work. I sincerely apologise for this oversight!</span></span>
+<span id="cb132-63"><a href="raster-data-and-geostatistics.html#cb132-63" aria-hidden="true" tabindex="-1"></a>modelKrigingExp_adj <span class="ot">&lt;-</span> <span class="fu">gstat</span>(<span class="at">formula =</span> Mean_SO2<span class="sc">~</span>US_Urbanisation_Index_5km <span class="sc">+</span> US_Socioeconomic_Deprivation_5km <span class="sc">+</span> US_Prevalence_of_Car_Usage_5km, <span class="at">locations =</span> datafile_sp_prj, <span class="at">model =</span> best_SO2_adj_emp.variogram)</span>
+<span id="cb132-64"><a href="raster-data-and-geostatistics.html#cb132-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-65"><a href="raster-data-and-geostatistics.html#cb132-65" aria-hidden="true" tabindex="-1"></a><span class="co"># Take the stacked rasters for car usage, urbanisation and socioeconomic deprivation and convert it to a grid template</span></span>
+<span id="cb132-66"><a href="raster-data-and-geostatistics.html#cb132-66" aria-hidden="true" tabindex="-1"></a><span class="co"># Here, we need their values stored inside that grid template, to which we will apply the kriging model to make the prediction</span></span>
+<span id="cb132-67"><a href="raster-data-and-geostatistics.html#cb132-67" aria-hidden="true" tabindex="-1"></a><span class="co"># while at the same time make adjustments for their value.</span></span>
+<span id="cb132-68"><a href="raster-data-and-geostatistics.html#cb132-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-69"><a href="raster-data-and-geostatistics.html#cb132-69" aria-hidden="true" tabindex="-1"></a><span class="co"># we created the stacked into the &#39;predictors&#39; object</span></span>
+<span id="cb132-70"><a href="raster-data-and-geostatistics.html#cb132-70" aria-hidden="true" tabindex="-1"></a>predictors.grid <span class="ot">&lt;-</span> <span class="fu">as</span>(predictors, <span class="st">&quot;SpatialGridDataFrame&quot;</span>)</span>
+<span id="cb132-71"><a href="raster-data-and-geostatistics.html#cb132-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-72"><a href="raster-data-and-geostatistics.html#cb132-72" aria-hidden="true" tabindex="-1"></a><span class="co"># Last time it was just &quot;SpatialGrid&quot; because it was empty. This grid has values and thus not empty </span></span>
+<span id="cb132-73"><a href="raster-data-and-geostatistics.html#cb132-73" aria-hidden="true" tabindex="-1"></a><span class="co"># so we call it &quot;SpatialGridDataFrame&quot;</span></span>
+<span id="cb132-74"><a href="raster-data-and-geostatistics.html#cb132-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-75"><a href="raster-data-and-geostatistics.html#cb132-75" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 9: We can now do the predictions over the SpatialGridDataFrame</span></span>
+<span id="cb132-76"><a href="raster-data-and-geostatistics.html#cb132-76" aria-hidden="true" tabindex="-1"></a>Kriged_SO2_adj <span class="ot">&lt;-</span> <span class="fu">predict</span>(modelKrigingExp_adj, predictors.grid)</span>
+<span id="cb132-77"><a href="raster-data-and-geostatistics.html#cb132-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-78"><a href="raster-data-and-geostatistics.html#cb132-78" aria-hidden="true" tabindex="-1"></a><span class="co"># Brick the layer in order to separate the estimated prediction and variance accordingly</span></span>
+<span id="cb132-79"><a href="raster-data-and-geostatistics.html#cb132-79" aria-hidden="true" tabindex="-1"></a>brickedKriged_SO2_Results_adj <span class="ot">&lt;-</span> <span class="fu">brick</span>(Kriged_SO2_adj)</span>
+<span id="cb132-80"><a href="raster-data-and-geostatistics.html#cb132-80" aria-hidden="true" tabindex="-1"></a>exp.prediction_adj <span class="ot">&lt;-</span> <span class="fu">raster</span>(brickedKriged_SO2_Results_adj, <span class="at">layer =</span> <span class="dv">1</span>)</span>
+<span id="cb132-81"><a href="raster-data-and-geostatistics.html#cb132-81" aria-hidden="true" tabindex="-1"></a>exp.variance_adj <span class="ot">&lt;-</span> <span class="fu">raster</span>(brickedKriged_SO2_Results_adj, <span class="at">layer =</span> <span class="dv">2</span>)</span>
+<span id="cb132-82"><a href="raster-data-and-geostatistics.html#cb132-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-83"><a href="raster-data-and-geostatistics.html#cb132-83" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 10: Masking the prediction and reclassifying the layer</span></span>
+<span id="cb132-84"><a href="raster-data-and-geostatistics.html#cb132-84" aria-hidden="true" tabindex="-1"></a><span class="co"># You can mask the prediction with the outline of USA</span></span>
+<span id="cb132-85"><a href="raster-data-and-geostatistics.html#cb132-85" aria-hidden="true" tabindex="-1"></a>US_Nation_Border_sp_shp <span class="ot">&lt;-</span> <span class="fu">as</span>(US_Nation_Border_shp, <span class="st">&quot;Spatial&quot;</span>)</span>
+<span id="cb132-86"><a href="raster-data-and-geostatistics.html#cb132-86" aria-hidden="true" tabindex="-1"></a>exp.prediction_adj_masked <span class="ot">&lt;-</span> <span class="fu">mask</span>(exp.prediction_adj, US_Nation_Border_sp_shp)</span>
+<span id="cb132-87"><a href="raster-data-and-geostatistics.html#cb132-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-88"><a href="raster-data-and-geostatistics.html#cb132-88" aria-hidden="true" tabindex="-1"></a><span class="co"># Run this to see minimum and maximum value.</span></span>
+<span id="cb132-89"><a href="raster-data-and-geostatistics.html#cb132-89" aria-hidden="true" tabindex="-1"></a>exp.prediction_adj_masked</span>
+<span id="cb132-90"><a href="raster-data-and-geostatistics.html#cb132-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-91"><a href="raster-data-and-geostatistics.html#cb132-91" aria-hidden="true" tabindex="-1"></a><span class="co"># You can see there are negative value as some of the prediction for SO2. </span></span>
+<span id="cb132-92"><a href="raster-data-and-geostatistics.html#cb132-92" aria-hidden="true" tabindex="-1"></a><span class="co"># Lets reclassify these as an invalid prediction with value -1</span></span>
+<span id="cb132-93"><a href="raster-data-and-geostatistics.html#cb132-93" aria-hidden="true" tabindex="-1"></a>reclassifyRaster <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">0</span>,<span class="sc">-</span><span class="dv">1</span>, </span>
+<span id="cb132-94"><a href="raster-data-and-geostatistics.html#cb132-94" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,</span>
+<span id="cb132-95"><a href="raster-data-and-geostatistics.html#cb132-95" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">1</span>,</span>
+<span id="cb132-96"><a href="raster-data-and-geostatistics.html#cb132-96" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span>,<span class="dv">10</span>,<span class="dv">2</span>,</span>
+<span id="cb132-97"><a href="raster-data-and-geostatistics.html#cb132-97" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span>,<span class="dv">15</span>,<span class="dv">3</span>,</span>
+<span id="cb132-98"><a href="raster-data-and-geostatistics.html#cb132-98" aria-hidden="true" tabindex="-1"></a><span class="dv">15</span>,<span class="dv">20</span>,<span class="dv">4</span>,</span>
+<span id="cb132-99"><a href="raster-data-and-geostatistics.html#cb132-99" aria-hidden="true" tabindex="-1"></a><span class="dv">20</span>,<span class="dv">30</span>,<span class="dv">5</span>,</span>
+<span id="cb132-100"><a href="raster-data-and-geostatistics.html#cb132-100" aria-hidden="true" tabindex="-1"></a><span class="dv">30</span>,<span class="dv">40</span>,<span class="dv">6</span>,</span>
+<span id="cb132-101"><a href="raster-data-and-geostatistics.html#cb132-101" aria-hidden="true" tabindex="-1"></a><span class="dv">40</span>,<span class="dv">70</span>,<span class="dv">7</span>)</span>
+<span id="cb132-102"><a href="raster-data-and-geostatistics.html#cb132-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-103"><a href="raster-data-and-geostatistics.html#cb132-103" aria-hidden="true" tabindex="-1"></a>reclassifyRaster_Mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(reclassifyRaster, <span class="at">ncol=</span><span class="dv">3</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
+<span id="cb132-104"><a href="raster-data-and-geostatistics.html#cb132-104" aria-hidden="true" tabindex="-1"></a>reclassifyRaster_Mat</span>
+<span id="cb132-105"><a href="raster-data-and-geostatistics.html#cb132-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-106"><a href="raster-data-and-geostatistics.html#cb132-106" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply the categories to masked layer in order to reclassify the predictions that were adjusted those 3 variables</span></span>
+<span id="cb132-107"><a href="raster-data-and-geostatistics.html#cb132-107" aria-hidden="true" tabindex="-1"></a>exp.prediction_adj_masked_rec <span class="ot">&lt;-</span> <span class="fu">reclassify</span>(exp.prediction_adj_masked, reclassifyRaster_Mat)</span>
+<span id="cb132-108"><a href="raster-data-and-geostatistics.html#cb132-108" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the labels for the &#39;reclassifyRaster_Mat&quot; object</span></span>
+<span id="cb132-109"><a href="raster-data-and-geostatistics.html#cb132-109" aria-hidden="true" tabindex="-1"></a>SO2LevelsCategories <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Invalid&quot;</span>,<span class="st">&quot;&lt;1.0 ppbs&quot;</span>,<span class="st">&quot;1.0-4.9 ppb&quot;</span>,<span class="st">&quot;5.0-9.9 ppb&quot;</span>, <span class="st">&quot;10.0-14.9 ppb&quot;</span> , <span class="st">&quot;15.0-19.9 ppb&quot;</span>, <span class="st">&quot;20.0-29.9 ppb&quot;</span>, <span class="st">&quot;30.0-39.9 ppb&quot;</span>,<span class="st">&quot;+40.0ppb&quot;</span>)</span>
+<span id="cb132-110"><a href="raster-data-and-geostatistics.html#cb132-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-111"><a href="raster-data-and-geostatistics.html#cb132-111" aria-hidden="true" tabindex="-1"></a><span class="co"># Finally, we going to force the colour schemes we want. </span></span>
+<span id="cb132-112"><a href="raster-data-and-geostatistics.html#cb132-112" aria-hidden="true" tabindex="-1"></a><span class="co"># We want the &quot;Invalid&quot; category to have a grey colour; and the rest for lowest category</span></span>
+<span id="cb132-113"><a href="raster-data-and-geostatistics.html#cb132-113" aria-hidden="true" tabindex="-1"></a><span class="co"># ie., &quot;&lt;1.0ppbs&quot; to &quot;+40.0ppb&quot; to be increase red intensities&quot;</span></span>
+<span id="cb132-114"><a href="raster-data-and-geostatistics.html#cb132-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-115"><a href="raster-data-and-geostatistics.html#cb132-115" aria-hidden="true" tabindex="-1"></a><span class="co"># Force the colorbrewer schemes grey = #636363</span></span>
+<span id="cb132-116"><a href="raster-data-and-geostatistics.html#cb132-116" aria-hidden="true" tabindex="-1"></a><span class="co"># Force the reds (from light red down to solid-dark-red) = #fee5d9, #fcbba1, #fc9272, #fb6a4a, #ef3b2c, #cb181d, #99000d</span></span>
+<span id="cb132-117"><a href="raster-data-and-geostatistics.html#cb132-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-118"><a href="raster-data-and-geostatistics.html#cb132-118" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the colour scheme for the above &#39;SO2LevelsCategories&#39;</span></span>
+<span id="cb132-119"><a href="raster-data-and-geostatistics.html#cb132-119" aria-hidden="true" tabindex="-1"></a>HackedColourPalette <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;#636363&quot;</span>, <span class="st">&quot;#fee5d9&quot;</span>, <span class="st">&quot;#fcbba1&quot;</span>, <span class="st">&quot;#fc9272&quot;</span>, <span class="st">&quot;#fb6a4a&quot;</span>, <span class="st">&quot;#ef3b2c&quot;</span>, <span class="st">&quot;#cb181d&quot;</span>, <span class="st">&quot;#99000d&quot;</span>)</span>
+<span id="cb132-120"><a href="raster-data-and-geostatistics.html#cb132-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-121"><a href="raster-data-and-geostatistics.html#cb132-121" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 11: Visual the adjusted prediction from Universal Kriging Regression</span></span>
+<span id="cb132-122"><a href="raster-data-and-geostatistics.html#cb132-122" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(US_Nation_Border_shp) <span class="sc">+</span> </span>
+<span id="cb132-123"><a href="raster-data-and-geostatistics.html#cb132-123" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">alpha =</span> <span class="dv">0</span>, <span class="at">border.col =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span> <span class="co"># add base map of borders here</span></span>
+<span id="cb132-124"><a href="raster-data-and-geostatistics.html#cb132-124" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_shape</span>(exp.prediction_adj_masked_rec) <span class="sc">+</span> </span>
+<span id="cb132-125"><a href="raster-data-and-geostatistics.html#cb132-125" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_raster</span>(<span class="at">title =</span> <span class="st">&quot;Predicted adjusted SO2 ppb&quot;</span>, <span class="at">style =</span> <span class="st">&quot;cat&quot;</span>, <span class="at">palette =</span> HackedColourPalette, <span class="at">labels =</span> SO2LevelsCategories) <span class="sc">+</span></span>
+<span id="cb132-126"><a href="raster-data-and-geostatistics.html#cb132-126" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_shape</span>(US_State_Borders_shp) <span class="sc">+</span> <span class="fu">tm_polygons</span>(<span class="at">alpha =</span> <span class="dv">0</span>, <span class="at">border.col =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb132-127"><a href="raster-data-and-geostatistics.html#cb132-127" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_text</span>(<span class="st">&quot;STUSPS&quot;</span>, <span class="at">size =</span> <span class="st">&quot;AREA&quot;</span>) <span class="sc">+</span></span>
+<span id="cb132-128"><a href="raster-data-and-geostatistics.html#cb132-128" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_shape</span>(datafile_sf_prj) <span class="sc">+</span> <span class="fu">tm_dots</span>() <span class="sc">+</span> </span>
+<span id="cb132-129"><a href="raster-data-and-geostatistics.html#cb132-129" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_scale_bar</span>(<span class="at">position =</span> <span class="fu">c</span>(<span class="st">&quot;left&quot;</span>,<span class="st">&quot;bottom&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb132-130"><a href="raster-data-and-geostatistics.html#cb132-130" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_compass</span>(<span class="at">position =</span> <span class="fu">c</span>(<span class="st">&quot;right&quot;</span>, <span class="st">&quot;bottom&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb132-131"><a href="raster-data-and-geostatistics.html#cb132-131" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_layout</span>(<span class="at">frame =</span> <span class="cn">FALSE</span>, <span class="at">legend.title.size =</span> <span class="fl">0.5</span>, <span class="at">legend.text.size =</span> <span class="fl">0.5</span>)</span></code></pre></div>
+<p><img src="images/general/week6/Image3_3.png" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="references-1" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> References<a href="raster-data-and-geostatistics.html#references-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="recommended-reading-1" class="section level3 hasAnchor" number="2.5.1">
+<h3><span class="header-section-number">2.5.1</span> Recommended reading<a href="raster-data-and-geostatistics.html#recommended-reading-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><ol style="list-style-type: decimal">
+<li><strong>Technical Document</strong>: Gurpreet Singh and Biju Soman, (2020), Spatial Interpolation using Kriging in R. <a href="https://www.researchgate.net/profile/Gurpreet-Singh-183/publication/343601032_Spatial_interpolation_using_kriging_in_R/data/5f3390f2a6fdcccc43c20d3a/Spatial-interpolation-using-kriging-in-R.pdf?_sg%5B0%5D=Ox9zjHFKNoFXxoGzOO3eZtonzYqvi5LKBt84IU25txIK2YxGFuYQp96-kZNzD8Xlk9SsS7fwIJ7P1Yje1MHPGg.wf5dfrrtSj4GoBLWz3_do_QVk2whGjl0tCBt-45WueLKFrcj2fkFWkBI6Szh8nuaSkhsVHN0upqxoFuV7pYTtQ.HK05pv99BTeoysDHXvW7of8BAC3S9_e0uzhhnQdEq8M9ZC-Sr7Z-ZulLLI4I3xLuE0JWgA1A96-p29-HihUc9Q&amp;_sg%5B1%5D=YiMQs6tMalvBlWmTzIi0jKABG87VbWwU4PY6u-BDfGbolv2TzkoJbpXLDrpiD1NmGizLizQPPT5Av_ZQpl9R4R2VEcK9Qmr52p2LmRjb0peq.wf5dfrrtSj4GoBLWz3_do_QVk2whGjl0tCBt-45WueLKFrcj2fkFWkBI6Szh8nuaSkhsVHN0upqxoFuV7pYTtQ.HK05pv99BTeoysDHXvW7of8BAC3S9_e0uzhhnQdEq8M9ZC-Sr7Z-ZulLLI4I3xLuE0JWgA1A96-p29-HihUc9Q&amp;_sg%5B2%5D=2-ry5k1TH8C1tFxue0921sdsrR5DSFxdJSrPVPt-Wz5Km4X_9ftPpwzBMdPlW1yImyGxaOJ_G2zwZwY.SVz4moyyo-kgSfqcPMIgN1mOBRUMfLQTRdJl6UoOQtXFvbAYJqUa-n1_4g7_--KhC4bGWGaVo7C8vBcx9M1YEw&amp;_iepl="><strong>Download here</strong></a></li>
+</ol></li>
+<li><ol start="2" style="list-style-type: decimal">
+<li><strong>Technical Document</strong>: Fernando Antonanzas-Torres, (2014), Geostatistics examples in R: Ordinary Kriging, Universal Kriging and Inverse Distance Weighted. <a href="https://www.researchgate.net/profile/Fernando-Antonanzas/publication/268218675_Geostatistics_examples_in_R_ordinary_kriging_universal_kriging_and_inverse_distance_weighted/links/5465c8b80cf2052b509f5b9d/Geostatistics-examples-in-R-ordinary-kriging-universal-kriging-and-inverse-distance-weighted.pdf?_sg%5B0%5D=Mkjpzx1FsDKeIE3Lo1q2rqrsWq4ljtAtH-p_j-oWBVvgIOlkRhe4yfYyNtQOZz-LhMRtrjBmurZJUyMtfplPFg.s4Bw5xYEKdD2FNPvgh1VPmaE35AZ3mdAxQXxZz0ufA1Zft1uqIa4WDkCWO7H88fpGne1qR1KcpXHEEaKy94bMg.I3j_gqSSKDGjc-eV74OI8xSw7IOOnHcU4VggPGL2a9gBG9Uj_ddHoCJmFczOQkDqVxjsB_mwokLInnIZFVNKbg&amp;_sg%5B1%5D=Dms-97W1tB3ewXQZsY77sA0wUKF-xa51dOBC605DgRbjQ1X2XPkjf5YR9-op8AMbC5hKgAzwOaSPM75_2CgZAt-FDAbpBjaTFrMSoKehf-K6.s4Bw5xYEKdD2FNPvgh1VPmaE35AZ3mdAxQXxZz0ufA1Zft1uqIa4WDkCWO7H88fpGne1qR1KcpXHEEaKy94bMg.I3j_gqSSKDGjc-eV74OI8xSw7IOOnHcU4VggPGL2a9gBG9Uj_ddHoCJmFczOQkDqVxjsB_mwokLInnIZFVNKbg&amp;_sg%5B2%5D=KSvH3fFgAj4KplsBk1efwMm-HTXhdLTPcn_JBqO-J0qyEgbUzPNdqHj_cRJYHSSP5Y-82UHtt0xmuns.vbf9GVK0RjovGFHisDDaHgMOdhXt1gyWu0eJP_XghCtNvArd-dhZC8961ps-h79SdjYEDB9L4mnSvl8OciOj9w&amp;_iepl="><strong>Download here</strong></a></li>
+</ol></li>
+<li><ol start="3" style="list-style-type: decimal">
+<li><strong>Technical Document</strong>: Adela Volfova and Martin Smejkal, (2012), Geostatistical Methods in R. <a href="https://www.researchgate.net/publication/272387573_Geostatistical_Methods_in_R/fulltext/55d63b7708aec156b9a850ea/Geostatistical-Methods-in-R.pdf?_sg%5B0%5D=E5UZBMhmZTUl03YkyOT6gfvSk-S9g0IxXYiBhog_MfA9jqVOAzfTrAL3uMFSf0rrcKPuP9r3uyx6CMqQaA6bZQ.Cmagou1MIf5IxTr09yZJ-VhaHnbSDJ6y4NVO8_8-mibVZp-Gow6ZptzkVE5muRV48tnwPVS0-0k69RXQOqd_Xw.pIpgRxYsyH5s36fBIoOHiOIYoV8layFubFo7AgAin9lirZgLcebRlzWzo9omeCpcRwwfJqOs7mVjfc8QE2lrEQ&amp;_sg%5B1%5D=0nUelBLaKscENV-KeJ8660rYfLvHCPJdr9CCdXvdDdM4mdA0kk2JxyJSwF1Ymtgv9R_9naagCOgpmWgyq9Lfmwx3x5EFDIGePxNphad637Ey.Cmagou1MIf5IxTr09yZJ-VhaHnbSDJ6y4NVO8_8-mibVZp-Gow6ZptzkVE5muRV48tnwPVS0-0k69RXQOqd_Xw.pIpgRxYsyH5s36fBIoOHiOIYoV8layFubFo7AgAin9lirZgLcebRlzWzo9omeCpcRwwfJqOs7mVjfc8QE2lrEQ&amp;_sg%5B2%5D=QtqpO-j-RpX4hiitIj14MC5Gm1Gz1hZQSYmbLbJddRhf9DWkpUwzthLo5_11zPPhLWXWyi-9whnPTpo.41FOaAYvHKCCInPr1E1qE4k5xMCKLIRE1awT4SlB7Zvs3IJYERUdEGthq1WH5XTXdVPpt7yDbGXHCJQuoUlGmQ&amp;_iepl="><strong>Download here</strong></a></li>
+</ol></li>
+<li><ol start="4" style="list-style-type: decimal">
+<li><strong>Book</strong>: Roger S. Bivand, Edzer J. Pebesma and Virgilio Gomez-Rubio, (2008), Applied Spatial Data Analysis with R, Chapter 8: Interpolation and Geostatistics, pages 191 to 235.</li>
+</ol></li>
+<li><ol start="5" style="list-style-type: decimal">
+<li><strong>Book</strong>: Michael Dorman, (2014), Learning R for Geospatial Analysis, Chapter 8: Spatial Interpolation of Point Data, pages 241 to 279.</li>
+</ol></li>
+<li><ol start="6" style="list-style-type: decimal">
+<li><strong>Book</strong>: Christopher D. Lloyd, (2010), Spatial Data Analysis: An Introduction for GIS Users, Chapter 9: Spatial Interpolation (Section 9.7. Ordinary Kriging), pages 140 to 150.</li>
+</ol></li>
+</ul>
+</div>
+<div id="data-sources-1" class="section level3 hasAnchor" number="2.5.2">
+<h3><span class="header-section-number">2.5.2</span> Data Sources<a href="raster-data-and-geostatistics.html#data-sources-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>The pollution data was obtained from the United States Environmental Protection Agency (EPA) <a href="https://aqs.epa.gov/aqsweb/airdata/download_files.html"><strong>Click Here</strong></a></li>
+<li>Spatial data concerning car usage in the US was sourced from the ACS Vehicle Availability Variables project <a href="https://www.arcgis.com/home/item.html?id=9a9e43ec1603446880c50d4ed1df2207"><strong>Click Here</strong></a>. You would need to have Online ArcGIS account to access the resources.</li>
+<li>US raster data for Social Vulnerability Index 2018 and Urbanization Index (2015) were sourced from the NASA Socioeconomic Data &amp; Applications Center (SEDAC) <a href="https://sedac.ciesin.columbia.edu"><strong>Click Here</strong></a>. <strong>NOTE</strong>: Registeration required for free access to raster records</li>
+</ol>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="suitability-mapping-part-1.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/UCLPG-MSC-SGDS/GEOG0114/edit/main/06-Raster_data_and_geostatistics.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
