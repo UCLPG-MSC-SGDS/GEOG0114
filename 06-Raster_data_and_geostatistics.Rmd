@@ -18,7 +18,7 @@ Let's use Kriging to find out!
 
 ### Datasets & setting up the work directory 
 
-Before you begin do make sure to download all data by [**clicking here**](). Create a folder on called "**Week 6**" within your "**GEOG0114**" folder stored in the desktop of your personal computer. Make sure to extract all data from the zip folder and store it into "**Week 6**" folder. Open a new R script and set the work directory to **Week 6's** folder.
+Before you begin do make sure to download all data by [**clicking here**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%206%20-%20Dataset.zip). Create a folder on called "**Week 6**" within your "**GEOG0114**" folder stored in the desktop of your personal computer. Make sure to extract all data from the zip folder and store it into "**Week 6**" folder. Open a new R script and set the work directory to **Week 6's** folder.
 
 For Windows, the work directory will be:
 ```{r, eval = FALSE}
