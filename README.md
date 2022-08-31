@@ -1,13 +1,22 @@
-Welcome! 
+# GEOG0114: Principles of Spatial Analysis
 
-This is a minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown). 
+This GitHub repository creates the computer practicals for [GEOG0114 Principles of Spatial Analysis (2022/23)][course]. It contains the tutorials for the following weeks:
 
-This template provides a skeleton file structure that you can edit to create your book. 
+Week 1: Spatial analysis for data science <br/> Week 2: Graphical representation of spatial data <br/> Week 3: Spatial autocorrelation <br/> Week 4: Suitability mapping: Part 1 - Analytical Hierarchical Process (AHP) <br/> Week 5: Suitability mapping: Part 2 - Ecological Niche Modelling <br/> Week 6: Geostatistical analysis using Kriging <br/> Week 9: Spatial regression models: Part 1 - Geographical Weighted Regression <br/> Week 10: Spatial regression models: Part 2 - Spatial Lags and Errors
 
-The contents inside the .Rmd files provide some pointers to help you get started, but feel free to also delete the content in each file and start fresh.
+It can be found here: https://uclpg-msc-sgds.github.io/GEOG0114/
 
-Additional resources:
+The following tutorials for Network Analysis (Week 7) and Geodemographics (Week 8) were authored by [Dr Justin van Dijk][jtvd]. These are accessible here: https://jtvandijk.github.io/GEOG0114/
 
-The **bookdown** book: https://bookdown.org/yihui/bookdown/
+Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
 
-The **bookdown** package reference site: https://pkgs.rstudio.com/bookdown
+This work is licensed under a
+[Creative Commons Attribution-ShareAlike 4.0 International License][cc-by-sa].
+
+[![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]
+
+[cc-by-sa]: http://creativecommons.org/licenses/by-sa/4.0/
+[cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
+[cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
+[course]: https://www.ucl.ac.uk/module-catalogue/modules/GEOG0114
+[jtvd]: https://mappingdutchman.com
