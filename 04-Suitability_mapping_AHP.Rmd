@@ -109,9 +109,9 @@ kenya_border <- st_read("Kenya_Border_3857.shp")
 kenya_states <- st_read("Kenya_States_3857.shp")
 ```
 
-<p class="comment">
+<div class="note">
 **IMPORTANT NOTES**: All shape file and raster data were in projected to the CRS: Spherical mercator 3857
-</p>
+</div>
 
 You can inspect each raster to know its dimension, extent, resolution and minimum and maximum values. Since are going to stack all the rasters together, you definitely want the: `dimension`, `extent` and `resolution` to be the same. If there's a slight difference the stack won't work.
 
@@ -135,7 +135,9 @@ tm_shape(temp) + tm_raster(style = "cont", title = "Mean Temperature", palette= 
 knitr::include_graphics('images/general/week4/image1_1.png', error = FALSE) 
 ```
 
-## Suitability Mapping using Binary Classification OR Ratings
+## Suitability mapping using Simple Overlays
+
+### Setting up binary classification on raster
 
 One thing to know about this approach - the mappings are purely knowledge-driven and not analytical. For instance, according to previous studies (see example of papers: [**1**](https://parasitesandvectors.biomedcentral.com/articles/10.1186/s13071-014-0466-x) & [**2**](https://www.ajol.info/index.php/eamj/article/view/8950)), we have learnt a bit about the limits or thresholds for these predictors from or below which we can consider an area being suitable for the occurrence of **Lymphatic Filariasis (LF)**.
 
@@ -280,9 +282,7 @@ arid_recl <- reclassify(arid, arid_cl_mat)
 ```
 </details>
 
-</br>
-
-## Finding areas of suitability by multiplying the binary maps
+### Finding areas of suitability by multiplying the binary rasters
 
 We can identify the environmentally suitable areas for occurrence of **LF** by simply multiplying the binary maps. Therefore, only the cells or areas with the value of `1` will be kept in the output raster layer. You can do this by writing the following formula:
 
@@ -291,6 +291,7 @@ Suitable_LF_Binary <- temp_recl*nvdi_recl*prec_recl*elev_recl*popl_recl*arid_rec
 ```
 
 Visualizing the output:
+
 ```{r, eval=FALSE}
 tm_shape(Suitable_LF_Binary) + tm_raster(style = "cat", title = "", palette=c("#f0f0f0", "red"), labels=c("Zone: Not Suitable", "Zone: Highly Suitable")) +
 	tm_shape(kenya_states) + tm_polygons(alpha = 0, border.col = "black") +
@@ -305,7 +306,7 @@ knitr::include_graphics('images/general/week4/image2_3.png', error = FALSE)
 **IMPORTANT NOTES**: Red region corresponds to areas that are highly suitable for LF. South East of Kenya (i.e., Kwale, Kilifi and Lamu) are environmental suitable based on binary classification
 </div>
 
-## Finding areas of suitability by summing the binary maps to create ratings
+### Finding areas of suitability by summing the binary rasters
 
 We can identify the environmentally suitable areas for occurrence of **LF** by simply summing the binary maps generate ratings for each pixel to show the intensity of suitability for **LF**. A pixel with a summed value would mean the following:
 
@@ -327,6 +328,7 @@ Suitable_LF_Summed@data@max
 ```
 
 Visualizing the output:
+
 ```{r, eval=FALSE}
 tm_shape(Suitable_LF_Summed) + tm_raster(style = "cat", title = "Suitability score", palette=c("#FDFEFE", "#FADBD8", "#F5B7B1", "#F1948A", "#E74C3C"), labels=c("Low (2)", "Modest (3)", "Medium (4)", "High (5)", "Highest (6)")) +
 	tm_shape(kenya_states) + tm_polygons(alpha = 0, border.col = "black") + tm_text("NAME_1", size = "AREA") +
@@ -347,7 +349,9 @@ This approach is great for descriptive knowledge-based decision analysis; howeve
 
 We can take this into account by applying weights for each variable determined by importance for the MCDA process - this approach is referred to as the Saaty's Analytical Hierarchy Process (AHP). Let us see how we apply this methodology.
 
-## Standardizing the raster variables to the same scale (from 1 to 10)
+## Analytical Hierarchy Process (AHP)
+
+### Standardizing the raster variables to the same scale (from 1 to 10)
 
 We are going to use **Saaty’s Analytical Hierarchy Process (AHP)**. We will need to standardize our raster factors in order to make comparisons and combination possible, as all of them contain different measures: `temp` (degree Celsius), `prec` (mm), `elev` (meters), `popl` (counts/sqkm); while `nvdi` and `arid` are derived indices without any units. Before deriving the weights and applying to the equation that is a linear combination of the above variables to estimate the suitability index for LF, we can standardize them using the `Jenks Natural Breaks` algorithm.
 
@@ -632,7 +636,7 @@ tm_shape(rev_elev_jenks_recl) + tm_raster(style = "cont", title = "Inverted Elev
 knitr::include_graphics('images/general/week4/image3_2.png', error = FALSE) 
 ```
 
-## Determining the weight of each variable using Saaty's AHP
+### Determining the weight of each variable using Saaty's AHP
 
 To estimate the weights, a helpful tool has been developed and provided in an Excel Worksheet. It has been created for you so that you can see how the calculations are carryout step-by-step to derive the weights. You can interact with the cells to see the formulas and explanations are provided at each step of the way.
 
@@ -645,7 +649,7 @@ Open the spreadsheet `Guidance - AHP Calculator Tool.xlsx` and read & follow thr
 - **Normalization of matrix**: For each element in a column in that square matrix, divide it by it's corresponding column sum. Repeat this step for all other elements in that matrix. Once completed, sum-up the elements from the division for each row and finally divide it by the number of variables to obtain the **priority vector or weights**. You know that the calculations are correct if the sum of the weights are equal to `1` (see step 5).
 - **Validation of whether judgement values are reasonable**: We need to calculate a **Consistency Ratio (CR)**, which is derived from the **Consistency Index (CI)** divided by the **Random Index (RI)**. For the **CI**, we estimate an eigenvalue which is derived from the summed products between the summed column multplied by the weights (see step 6 and click on the cell `C75` to view formula). Use the eigenvalue and estimate the **CI** (see formula in the notes for step 6). Next, use the Random Index table (developed by Saaty, 1980) to determine the **RI** based on the dimension of the matrix (in this case, it is 6). Finally, calculate the **CR** by dividing the **CI**/**RI** (see step 6 and click on the cell `E91` to view the formula). If **CI** < 1., the judgement values assigned in step 1 are fine. If **CR** is bigger than 1.0, then judgement values in pairwise comparison in step 1 were unreasonable (and thus you'll have to repeat the step with different values again!)
 
-## Weighted Linear Combination (WLC) and derivation of Suitability Maps based from AHP analysis
+### Weighted Linear Combination (WLC) and derivation of Suitability Maps based from AHP analysis
 
 Our model uses the **Weighted Linear Combination (WLC)** approach as the decision rule. The formula to estimate the suitability of LF is as follows:
 
