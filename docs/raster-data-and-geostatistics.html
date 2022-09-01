@@ -29,7 +29,7 @@
   
   
 <link rel="prev" href="suitability-mapping-part-1.html"/>
-
+<link rel="next" href="spatial-regression-models-part-2.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -196,6 +196,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="2.5.1" data-path="raster-data-and-geostatistics.html"><a href="raster-data-and-geostatistics.html#recommended-reading-1"><i class="fa fa-check"></i><b>2.5.1</b> Recommended reading</a></li>
 <li class="chapter" data-level="2.5.2" data-path="raster-data-and-geostatistics.html"><a href="raster-data-and-geostatistics.html#data-sources-1"><i class="fa fa-check"></i><b>2.5.2</b> Data Sources</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="spatial-regression-models-part-2.html"><a href="spatial-regression-models-part-2.html"><i class="fa fa-check"></i><b>3</b> Spatial Regression Models: Part 2</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="spatial-regression-models-part-2.html"><a href="spatial-regression-models-part-2.html#introduction-2"><i class="fa fa-check"></i><b>3.1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="spatial-regression-models-part-2.html"><a href="spatial-regression-models-part-2.html#learning-objective"><i class="fa fa-check"></i><b>3.1.1</b> Learning objective</a></li>
+<li class="chapter" data-level="3.1.2" data-path="spatial-regression-models-part-2.html"><a href="spatial-regression-models-part-2.html#datasets-setting-up-the-work-directory-2"><i class="fa fa-check"></i><b>3.1.2</b> Datasets &amp; setting up the work directory</a></li>
+<li class="chapter" data-level="3.1.3" data-path="spatial-regression-models-part-2.html"><a href="spatial-regression-models-part-2.html#loading-and-installing-packages-2"><i class="fa fa-check"></i><b>3.1.3</b> Loading and installing packages</a></li>
+<li class="chapter" data-level="3.1.4" data-path="spatial-regression-models-part-2.html"><a href="spatial-regression-models-part-2.html#loading-datasets-2"><i class="fa fa-check"></i><b>3.1.4</b> Loading datasets</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="spatial-regression-models-part-2.html"><a href="spatial-regression-models-part-2.html#diagnostics-of-residuals"><i class="fa fa-check"></i><b>3.2</b> Diagnostics of residuals</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="spatial-regression-models-part-2.html"><a href="spatial-regression-models-part-2.html#reporting-basic-summary-statistical-measures"><i class="fa fa-check"></i><b>3.2.1</b> Reporting basic summary statistical measures</a></li>
+<li class="chapter" data-level="3.2.2" data-path="spatial-regression-models-part-2.html"><a href="spatial-regression-models-part-2.html#reporting-the-spatial-distribution-of-our-variables"><i class="fa fa-check"></i><b>3.2.2</b> Reporting the spatial distribution of our variables</a></li>
+<li class="chapter" data-level="3.2.3" data-path="spatial-regression-models-part-2.html"><a href="spatial-regression-models-part-2.html#fitting-a-non-spatial-linear-regression-on-spatial-data-checking-the-residuals"><i class="fa fa-check"></i><b>3.2.3</b> Fitting a non-spatial Linear Regression on spatial data &amp; checking the residuals</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="spatial-regression-models-part-2.html"><a href="spatial-regression-models-part-2.html#spatial-regression-models"><i class="fa fa-check"></i><b>3.3</b> Spatial Regression Models</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="spatial-regression-models-part-2.html"><a href="spatial-regression-models-part-2.html#model-formation-for-spatial-lag-or-error-models"><i class="fa fa-check"></i><b>3.3.1</b> Model formation for spatial lag or error models</a></li>
+<li class="chapter" data-level="3.3.2" data-path="spatial-regression-models-part-2.html"><a href="spatial-regression-models-part-2.html#spatial-lag-model-lagged-on-the-dependent-variable"><i class="fa fa-check"></i><b>3.3.2</b> Spatial Lag Model lagged on the dependent variable</a></li>
+<li class="chapter" data-level="3.3.3" data-path="spatial-regression-models-part-2.html"><a href="spatial-regression-models-part-2.html#spatial-error-models"><i class="fa fa-check"></i><b>3.3.3</b> Spatial Error Models</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="spatial-regression-models-part-2.html"><a href="spatial-regression-models-part-2.html#references-2"><i class="fa fa-check"></i><b>3.4</b> References</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="spatial-regression-models-part-2.html"><a href="spatial-regression-models-part-2.html#recommended-reading-2"><i class="fa fa-check"></i><b>3.4.1</b> Recommended reading</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -708,8 +734,8 @@ locations; and ii.) <strong>isotropic</strong>, spatial autocorrelation is the s
           </div>
         </div>
       </div>
-<a href="suitability-mapping-part-1.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="suitability-mapping-part-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="spatial-regression-models-part-2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
