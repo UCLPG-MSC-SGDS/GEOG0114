@@ -34,39 +34,27 @@ All lectures and computer practicals will be delivered in-person. All Lectures a
 
 ## Moodle {-}
 
-[**Moodle**](https://moodle.ucl.ac.uk/) is the central point of your learning experience for **GEOG0114**. Please use it on a regular basis to check for updates concerning the schedule for weekly topics, access to the practical materials and assessment. All lecture notes, videos, practical materials including reading lists and downloadable data sets will be hosted on this webpage. 
+[**Moodle**](https://moodle.ucl.ac.uk/) is the central point of your learning experience for **GEOG0114**. Please use it on a regular basis to check for updates concerning the schedule for weekly topics, access to the practical materials and assessment. However, note that all lecture notes, videos, practical materials including reading lists and downloadable data sets will be hosted on this webpage.
 
+You can download the lecture notes and datasets for the practical lesson from the table below.
 
-## Office hours for GEOG0114 {-}
+**Week**| **Downloads**
+------------ | -------------
+1| Spatial analysis for data science: [**Slides**]; [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%201%20-%20Dataset.zip)
+2| Graphical representation: [**Slides**]; [**Data**]
+3| Spatial autcorrelation: [**Slides**]; [**Data**]
+4| Suitability mapping I: [**Slides**]; [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%204%20-%20Dataset.zip)
+5| Suitability mapping II: [**Slides**]; [**Data**]
+6| Raster data and geostatistics: [**Slides**]; [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%206%20-%20Dataset.zip)
+9| Spatial regression models I: [**Slides**]; [**Data**]
+10| Spatial regression models II: [**Slides**]; [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%2010%20-%20Dataset.zip)
 
-Feel free to drop-by in-person at our offices for additional support
+## Module tutors and contacts for GEOG0114 {-}
 
-- Office hours with Dr Anwar Musah (TBC)  
+Feel free to contact us via email for help, or book appointments for additional support if need be. We are based at UCL Department of Geography, [**North West Wing building**](https://www.ucl.ac.uk/maps/north-west-wing-building). Our contact information and office details are:
 
-- Office hours with Dr Justin van Dijk (TBC)
-
-- Office hours with Shun-Chan (Dan) Tsai (TBC)
-
-Our contact information and office details are:
-
-**Dr Anwar Musah**
-<br/>
-UCL Department of Geography 
-<br/>
-Room 115, North West Wing Building, WC1E 6BT
-<br/>
-Email: [**a.musah@ucl.ac.uk**](a.musah@ucl.ac.uk)
-
-**Dr Justin van Dijk**
-<br/>
-UCL Department of Geography 
-<br/>
-Room 117, North West Wing Building, WC1E 6BT
-<br/>
-Email: [**j.t.vandijk@ucl.ac.uk**](j.t.vandijk@ucl.ac.uk)
-
-**Shun-Chan Tsai**
-<br/>
-UCL Department of Geography 
-<br/>
-Email: [**shun-chan.tsai.14@ucl.ac.uk**](shun-chan.tsai.14@ucl.ac.uk)
+**Name**| **Email**| **Room number**
+------------ | ------------- | -------------
+Anwar Musah|[**a.musah@ucl.ac.uk**](a.musah@ucl.ac.uk)| 115
+Justin van Dijk|[**j.t.vandijk@ucl.ac.uk**](j.t.vandijk@ucl.ac.uk)| 117
+Shun-Chan Tsai|[**shun-chan.tsai.14@ucl.ac.uk**](shun-chan.tsai.14@ucl.ac.uk)| --
