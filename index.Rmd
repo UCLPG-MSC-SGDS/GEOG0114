@@ -36,18 +36,21 @@ All lectures and computer practicals will be delivered in-person. All Lectures a
 
 [**Moodle**](https://moodle.ucl.ac.uk/) is the central point of your learning experience for **GEOG0114**. Please use it on a regular basis to check for updates concerning the schedule for weekly topics, access to the practical materials and assessment. However, note that all lecture notes, videos, practical materials including reading lists and downloadable data sets will be hosted on this webpage.
 
-You can download the lecture notes and datasets for the practical lesson from the table below.
+You can download the lecture notes and data sets for the practical lesson from the table below.
 
-**Week**| **Downloads**
------------- | -------------
-1| Spatial analysis for data science: [**Slides**]; [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%201%20-%20Dataset.zip)
-2| Graphical representation: [**Slides**]; [**Data**]
-3| Spatial autcorrelation: [**Slides**]; [**Data**]
-4| Suitability mapping I: [**Slides**]; [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%204%20-%20Dataset.zip)
-5| Suitability mapping II: [**Slides**]; [**Data**]
-6| Raster data and geostatistics: [**Slides**]; [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%206%20-%20Dataset.zip)
-9| Spatial regression models I: [**Slides**]; [**Data**]
-10| Spatial regression models II: [**Slides**]; [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%2010%20-%20Dataset.zip)
+|**Week**   |**Downloads**  |**Topics**  |
+|:---       |:------           |:------------------ |
+|1| [**Slides**]; [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%201%20-%20Dataset.zip) | Spatial analysis for data science |
+|2| [**Slides**]; [**Data**] | Graphical representation of spatial data |
+|3| [**Slides**]; [**Data**] | Spatial autcorrelation |
+|4| [**Slides**]; [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%204%20-%20Dataset.zip)| Suitability mapping I |
+|5| [**Slides**]; [**Data**] | Suitability mapping II |
+| | **Reading Week**| **Reading Week**|
+|6| [**Slides**]; [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%206%20-%20Dataset.zip) | Geostatistics using Kriging | 
+|7| [**Slides**]; [**Data**] | Geodemographics |
+|8| [**Slides**]; [**Data**] | Transport network analysis |
+|9| [**Slides**]; [**Data**] | Spatial regression models I |
+|10| [**Slides**]; [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%2010%20-%20Dataset.zip) | Spatial regression models II |
 
 ## Module tutors and contacts for GEOG0114 {-}
 
