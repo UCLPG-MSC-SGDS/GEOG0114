@@ -25,9 +25,12 @@ references
 recommended-reading
 data-sources
 practical-homework
-suitability-mapping-part-1
+graphical-representation-of-spatial-data
 introduction-1
 learning-outcomes-1
+suitability-mapping-part-1
+introduction-2
+learning-outcomes-2
 datasets-setting-up-the-work-directory
 loading-and-installing-packages
 loading-datasets
@@ -43,7 +46,7 @@ references-1
 recommended-reading-1
 data-sources-1
 raster-data-and-geostatistics
-introduction-2
+introduction-3
 learning-objectives
 datasets-setting-up-the-work-directory-1
 loading-and-installing-packages-1
@@ -62,7 +65,7 @@ references-2
 recommended-reading-2
 data-sources-2
 spatial-regression-models-part-2
-introduction-3
+introduction-4
 learning-objective
 datasets-setting-up-the-work-directory-2
 loading-and-installing-packages-2
