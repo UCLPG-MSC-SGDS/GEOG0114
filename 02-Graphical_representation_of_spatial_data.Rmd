@@ -279,7 +279,7 @@ tm_shape(gs_buffer_400m_single) +
 ```
 
 ```{r echo=FALSE, out.width = "100%", fig.align='center', cache=TRUE,}
-knitr::include_graphics('images/general/week2/image6_buffer.png', error = FALSE) 
+knitr::include_graphics('images/general/week2/image6_buffers.png', error = FALSE) 
 ```
 
 ## Greenspace in London
@@ -363,7 +363,7 @@ You should now see the data set appear in your files!
 This week's content and practical uses content and inspiration from:
 
 1. Wilkin, J. 2020. Analysing school access to greenspace in London. [**[Source]**](https://github.com/jo-wilkin/R-GIS-Tutorials/blob/master/greenspace_access.Rmd)
-2. Dijk, J.V. 2021. GEOG0114 [2021/22] Spatial Operations. [**[Source]**](https://github.com/jtvandijk/GEOG0114_20212022/blob/master/01-spatial-operations.Rmd)
+2. Dijk, J.V. 2021. Spatial Operations. [**[Source]**](https://github.com/jtvandijk/GEOG0114_20212022/blob/master/01-spatial-operations.Rmd)
 
 ## References {#reading_w03}
 
