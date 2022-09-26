@@ -22,6 +22,7 @@ This work is licensed under a
 [jtvd]: https://mappingdutchman.com
 [uni]: https://www.ucl.ac.uk
 [dept]: https://www.geog.ucl.ac.uk
+[PGTA]: https://uclpg-msc-sgds.github.io/PGTA-test-version-GEOG0114/
 
-Version 2022/23 [Official] <br/>
+Version 2022/23 | [Advanced access to complete version][PGTA] for PGTA <br/>
 Last updated: 26/09/2022 23:35pm
