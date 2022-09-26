@@ -23,5 +23,5 @@ This work is licensed under a
 [uni]: https://www.ucl.ac.uk
 [dept]: https://www.geog.ucl.ac.uk
 
-Version 2022/23 [Official]
+Version 2022/23 [Official] <br/>
 Last updated: 26/09/2022 23:35pm
