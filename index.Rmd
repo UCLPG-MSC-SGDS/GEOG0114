@@ -40,7 +40,7 @@ You can download the lecture notes and data sets for the practical lesson from t
 
 |**Week**   |**Downloads**  |**Topics**  |
 |:---       |:------           |:------------------ |
-|1| [**Slides**]; [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%201%20-%20Dataset.zip) | Spatial analysis for data science |
+|1| [**Slides**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Lecture_notes_PDFs/WK1%20Lecture%201%20Notes%202022-23.pdf); [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%201%20-%20Dataset.zip) | Spatial analysis for data science |
 |2| [**Slides**]; [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%202%20-%20Dataset.zip) | Graphical representation of spatial data |
 |3| [**Slides**]; [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%203%20-%20Dataset.zip) | Spatial autcorrelation |
 |4| [**Slides**]; [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%204%20-%20Dataset.zip)| Suitability mapping I |
