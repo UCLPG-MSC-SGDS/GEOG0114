@@ -1,0 +1,33 @@
+# Reading List for GEOG0114 2022/23 {-}
+
+## Week 1: Spatial analysis for data science {-}
+
+1. **Book**: [Theory] Longley, P. _et al_ (2015) Geographic Information Science & Systems (4th Edition); **Chapters 2: The Nature of Geographic Data** [**Click link**](https://rl.talis.com/3/ucl/items/61CF5A5F-A6A3-9506-1F94-DF3CBD81CC3A.html) (Note: use of your UCL login via institutional organisation (**UK Federation**) is required to access the digital book)
+2. **Book**: [Theory] Longley, P. _et al_ (2015) Geographic Information Science & Systems (4th Edition); **Chapters 3: Representing Geography** [**Click link**](https://rl.talis.com/3/ucl/items/61CF5A5F-A6A3-9506-1F94-DF3CBD81CC3A.html) (Note: use of your UCL login via institutional organisation (**UK Federation**) is required to access the digital book)
+3. **Book**: [R Programming] Brunsdon, C. _et al_ (2018) An Introduction to R for Spatial Analysis and Mapping; **Chapter 3: Basics of Handling Spatial Data in R** [**Click link**](https://ucl.primo.exlibrisgroup.com/discovery/search?query=any,contains,An%20Introduction%20to%20R%20for%20Spatial%20Analysis%20and%20Mapping&tab=Everything&search_scope=MyInst_and_CI&sortby=date_d&vid=44UCL_INST:UCL_VU2&facet=frbrgroupid,include,9076326046905167101&offset=0) (Note: Books can be borrowed from UCL's Library)
+4. **Book**: [R Programming] Dorman, M. (2014) Learning R for Geospatial Analysis; **Chapter 1: The R Environment** [**Click link**](https://learning.oreilly.com/library/view/learning-r-for/9781783984367/ch01.html) (Note: Digital book)
+5. **Book**: [R Programming] Dorman, M. (2014) Learning R for Geospatial Analysis; **Chapter 3: Working with tables** [**Click link**](https://learning.oreilly.com/library/view/learning-r-for/9781783984367/ch03.html) (Note: Digital book)
+6. **Paper**: [R Programming] Tennekes, M. (2018). **tmap: Thematic Maps in R**. Journal of Statistical Software, 84(6), 1–39. https://doi.org/10.18637/jss.v084.i06 ([**Download**](https://www.jstatsoft.org/index.php/jss/article/view/v084i06/1210))
+
+## Week 2: Graphical representation of spatial data {-}
+
+1. **Gitbook**: [R Programming] Gimond, M. (2021) Intro to GIS and spatial analysis. **Chapter 8: Spatial operations and vector overlays** [**Click link**](https://mgimond.github.io/Spatial/spatial-operations-and-vector-overlays.html)
+2. **Book**: [Theory] Longley, P. _et al_ (2015) Geographic Information Science & systems, **Chapter 13: Spatial Analysis** [**Click link**](https://rl.talis.com/3/ucl/items/fd38ec78-2bea-4165-aab3-0e9d9093db8e.html?lang=en-gb&login=1)
+3. **Gitbook**: [R Programming] Lovelace, R., Nowosad, J. and Muenchow, J. (2021) Geocomputation with R, **Chapter 4: Spatial data operations** [**Click link**](https://geocompr.robinlovelace.net/spatial-operations.html)
+4. **Gitbook**: [R Programming] Lovelace, R., Nowosad, J. and Muenchow, J. 2021. Geocomputation with R, **Chapter 5: Geometry operations** [**Click link**](https://geocompr.robinlovelace.net/geometric-operations.html)
+5. **Paper**: [Research] Bijnens, E. _et al_ (2020). Residential green space and child intelligence and behavior across urban, suburban, and rural areas in Belgium: A longitudinal birth cohort study of twins. *PLOS Medicine* 17(8), e1003213. [**Click link**](https://doi.org/10.1371/journal.pmed.1003213)
+
+## Week 3: Spatial autocorrelation {-}
+
+1. **Gitbook**: [R Programming] Gimond, M. (2021) Intro to GIS and spatial analysis. **Chapter 13: Spatial autocorrelation** [**Click link**](https://mgimond.github.io/Spatial/spatial-autocorrelation.html)
+2.  **Book**: [Theory] Longley, P. _et al_ (2015) Geographic Information Science & systems (4th Edition); **Chapter 2: The Nature of Geographic Data** [**Click link**](https://rl.talis.com/3/ucl/items/ea2386fb-19dc-460a-acba-bda3737546c2.html?lang=en-gb&login=1)
+3. **Book**: [Theory] Longley, P. _*et al_ (2015) Geographic Information Science & systems (4th Edition); **Chapter 13: Spatial Analysis** [**Click link**](https://rl.talis.com/3/ucl/items/fd38ec78-2bea-4165-aab3-0e9d9093db8e.html?lang=en-gb&login=1)
+4. **Paper**: [Research] Radil, S. 2016. Spatial analysis of crime. In: Huebner, B. and Bynum, T. *The Handbook of Measurement Issues in Criminology and Criminal Justice*, Chapter 24, pp.536-554. [**Click link**](https://doi.org/10.1002/9781118868799.ch24) (Note: use of your UCL login via institutional organisation (**UK Federation**) is required to access the digital paper)
+
+## Week 4: Suitability Mapping I {-}
+
+1. **Paper**: [Theory] R.W. Saaty (1987). The Analytical Hierarchy Process - What it is and how it is used, Mathl Modelling, Volume 9(3-5), pages 161 to 176 [**Click link**](https://core.ac.uk/download/pdf/82000104.pdf)
+2. **Technical Document**: [Theory] IDRISI Kilimanjaro: Guide to GIS and Image Processing. **Chapter 12: Decision Support - Decision Strategy Analysis**, Section on 'A Typology of Decisions', pages 151 to 154. [**Click link**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Free_downloadables/IDRISI_Kilimanjaro_Guide_to_GIS_and_Imag.pdf)
+3. **Paper**: [Application] A.A. Ali, A. Ahmad (2019). Spatial susceptibility analysis of vector-borne diseases in KMC using geospatial technique and MCDM approach, Modeling Earth Systems and Environment, Issue 5, pages 1135–1159 [**Click link**](https://link.springer.com/article/10.1007/s40808-019-00586-y)
+4. **Paper**: [Application] X. Zhao et al., (2020). Malaria Risk Map Using Spatial Multi-Criteria Decision Analysis along Yunnan Border During the Pre-elimination Period, Am J Trop Med Hyg, Volume 103 (2), pages 793–809 [**Click link**](https://www.ajtmh.org/view/journals/tpmd/103/2/article-p793.xml?tab_body=pdf) 
+5. **Paper**: [Application] B. Ahmed (2015). Landslide susceptibility mapping using multi-criteria evaluation techniques in Chittagong Metropolitan Area, Bangladesh. Landslides, Issue 12, pages 1077–1095 [**Click link**](https://link.springer.com/article/10.1007/s10346-014-0521-x)
