@@ -1,5 +1,17 @@
 # Spatial analysis for data sciences
 
+## Lecture recording (Length: 41:23 minutes)
+```{r, warnings=FALSE, message=FALSE, echo=FALSE}
+library(vembedr)
+embed_msstream('db79e9e7-d2ba-4c20-878c-9c1110f355bc') %>% use_align('center')
+```
+
+If the video does not play within this section, then try playing it from Microsoft Streams - you should be able to view there using this [[**LINK**]](https://web.microsoftstream.com/video/db79e9e7-d2ba-4c20-878c-9c1110f355bc).
+
+<div class="note">
+**Important Notes:** Access to Microsoft Steams will may require use of your UCL institutional login details 
+</div>
+
 ## Introduction
 
 The goal for this week’s session is to get you started with using RStudio, and being familiar with its environment. The session aims to introduce you to the basic programming etiquette, as well as building confidence for using RStudio as a GIS tool. At the end of this session, you should be able to perform some basic data managing tasks as well as generate a simple choropleth map in RStudio.
