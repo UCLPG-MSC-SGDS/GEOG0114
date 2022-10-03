@@ -1,4 +1,5 @@
 spatial-analysis-for-data-sciences
+lecture-recording-length-4123-minutes
 introduction
 learning-outcomes
 getting-started-with-rstudio
