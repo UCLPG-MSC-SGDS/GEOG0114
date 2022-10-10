@@ -26,7 +26,7 @@ In week 7, 8, 9 and 10, we will learn specialised tools for performing spatial a
 
 ## Structure {-}
 
-All lectures and computer practicals will be delivered in-person. All Lectures are held on Monday from 02:00pm to 03:00pm at the [**North West Wing (Room GO7)**](https://www.ucl.ac.uk/maps/north-west-wing-building). All computer lab seminars are delivered on Monday (after lectures) from 03:00pm to 05:00pm in the same room i.e., [**North West Wing (Room GO7)**](https://www.ucl.ac.uk/maps/north-west-wing-building). Technical support workshops are held on Thursday from 03:00pm to 05:00pm at the [**Malet Place Engineering Building (Room 1.20)**](https://www.ucl.ac.uk/maps/malet-place-engineering-building).
+All lectures and computer practicals will be delivered in-person. All Lectures are held on Monday from 02:00pm to 03:00pm at the [**North West Wing (Room G07)**](https://www.ucl.ac.uk/maps/north-west-wing-building). All computer lab seminars are delivered on Monday (after lectures) from 03:00pm to 05:00pm in the same room i.e., [**North West Wing (Room G07)**](https://www.ucl.ac.uk/maps/north-west-wing-building). Technical support workshops are held on Thursday from 03:00pm to 05:00pm at the [**Malet Place Engineering Building (Room 1.20)**](https://www.ucl.ac.uk/maps/malet-place-engineering-building).
 
 <div class="note">
 **IMPORTANT NOTE**: Please bring your own laptops with you to the computer practicals and technical support sessions on Monday and Thursday, respectively   
@@ -41,7 +41,7 @@ You can download the lecture notes and data sets for the practical lesson from t
 |**Week**   |**Downloads**  |**Topics**  |
 |:---       |:------           |:------------------ |
 |1| [**Slides**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Lecture_notes/WK1%20Lecture%201%20Notes%202022-23.pptx); [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%201%20-%20Dataset.zip) | Spatial analysis for data science |
-|2| [**Slides**]; [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%202%20-%20Dataset.zip) | Graphical representation of spatial data |
+|2| [**Slides**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Lecture_notes/WK2%20Lecture%202%20Notes%202022-23.pptx); [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%202%20-%20Dataset.zip) | Graphical representation of spatial data |
 |3| [**Slides**]; [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%203%20-%20Dataset.zip) | Spatial autcorrelation |
 |4| [**Slides**]; [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%204%20-%20Dataset.zip)| Suitability mapping I |
 |5| [**Slides**]; [**Data**] | Suitability mapping II |
