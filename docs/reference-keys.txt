@@ -27,7 +27,7 @@ recommended-reading-see-reading-list
 data-sources
 practical-homework
 graphical-representation-of-spatial-data
-lecture-recording-tbc
+lecture-recording-length-4331-minutes
 introduction-1
 learning-outcomes-1
 getting_started_w03
