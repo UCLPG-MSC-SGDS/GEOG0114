@@ -6,7 +6,7 @@ library(vembedr)
 embed_msstream('db79e9e7-d2ba-4c20-878c-9c1110f355bc') %>% use_align('center')
 ```
 
-If the video does not play within this section, then try playing it from Microsoft Streams - you should be able to view there using this [[**LINK**]](https://web.microsoftstream.com/video/db79e9e7-d2ba-4c20-878c-9c1110f355bc).
+If the video does not play within this section, then try playing it from Microsoft Streams - you should be able to view it there using this [[**LINK**]](https://web.microsoftstream.com/video/db79e9e7-d2ba-4c20-878c-9c1110f355bc).
 
 <div class="note">
 **Important Notes:** Access to Microsoft Steams will may require use of your UCL institutional login details 
