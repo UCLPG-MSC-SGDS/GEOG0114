@@ -42,7 +42,7 @@ You can download the lecture notes and data sets for the practical lesson from t
 |:---       |:------           |:------------------ |
 |1| [**Slides**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Lecture_notes/WK1%20Lecture%201%20Notes%202022-23.pptx); [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%201%20-%20Dataset.zip) | Spatial analysis for data science |
 |2| [**Slides**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Lecture_notes/WK2%20Lecture%202%20Notes%202022-23.pptx); [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%202%20-%20Dataset.zip) | Graphical representation of spatial data |
-|3| [**Slides**]; [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%203%20-%20Dataset.zip) | Spatial autcorrelation |
+|3| [**Slides**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Lecture_notes/WK3%20Lecture%203%20Notes%202022-23.pptx); [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%203%20-%20Dataset.zip) | Spatial autocorrelation |
 |4| [**Slides**]; [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%204%20-%20Dataset.zip)| Suitability mapping I |
 |5| [**Slides**]; [**Data**] | Suitability mapping II |
 | | | Reading Week: Assessment - Spatial Analysis Project |
@@ -60,4 +60,4 @@ Feel free to contact us via email for help, or book appointments for additional 
 ------------ | ------------- | -------------
 Anwar Musah|[**a.musah@ucl.ac.uk**](a.musah@ucl.ac.uk)| 115
 Justin van Dijk|[**j.t.vandijk@ucl.ac.uk**](j.t.vandijk@ucl.ac.uk)| 117
-Shun-Chan Tsai|[**shun-chan.tsai.14@ucl.ac.uk**](shun-chan.tsai.14@ucl.ac.uk)| --
+Shun-Chan Tsai|[**shun-chan.tsai.14@ucl.ac.uk**](shun-chan.tsai.14@ucl.ac.uk)| 110B
