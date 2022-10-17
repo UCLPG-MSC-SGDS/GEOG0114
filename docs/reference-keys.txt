@@ -48,6 +48,7 @@ attributions_w03
 reading_w03
 data-sources-1
 spatial-autocorrelation
+lecture-recording-length-1h07mins
 introduction-2
 learning-outcomes-2
 getting-started
