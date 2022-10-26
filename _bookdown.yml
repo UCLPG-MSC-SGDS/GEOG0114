@@ -3,14 +3,13 @@ rmd_files:
 - index.rmd
 - 01-Reading_list_for_GEOG0114.Rmd
 - 02-Spatial_analysis_for_data_science.Rmd
-#- 03-Graphical_representation_of_spatial_data.Rmd
-#- 04-Spatial_autocorrelation.Rmd
-#- 05-Suitability_mapping_AHP.Rmd
+- 03-Graphical_representation_of_spatial_data.Rmd
+- 04-Spatial_autocorrelation.Rmd
+- 05-Suitability_mapping_AHP.Rmd
 #- 06-Suitability_mapping_ecological_niche_models.Rmd
 #- 07-Raster_data_and_geostatistics.Rmd
 #- 08-Spatial_regression_models_lags_and_errors.Rmd
 #- 09-Spatial_regression_models_GWR.Rmd
-#- 10-Useful_videos.Rmd
 
 language:
   ui:
