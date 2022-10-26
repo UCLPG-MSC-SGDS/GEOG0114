@@ -65,6 +65,7 @@ local-morans-i-or-lisa
 attributions
 references-see-reading-list
 suitability-mapping-part-1
+lecture-recording-length-3831-mins
 introduction-3
 learning-outcomes-3
 datasets-setting-up-the-work-directory-2
