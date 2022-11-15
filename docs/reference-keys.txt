@@ -103,7 +103,7 @@ attributions-1
 references-see-reading-list-2
 data-sources-3
 geostatistical-modelling
-lecture-recording-length-0000-mins
+lecture-recording-length-1h06mins
 introduction-5
 learning-objectives
 datasets-setting-up-the-work-directory-4
