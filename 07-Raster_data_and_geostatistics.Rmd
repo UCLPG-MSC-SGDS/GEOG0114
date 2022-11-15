@@ -1,11 +1,12 @@
 # Geostatistical Modelling 
 
-## Lecture recording (Length: 00:00 mins)
+## Lecture recording (Length: 1h:06mins)
 ```{r, warnings=FALSE, message=FALSE, echo=FALSE}
+library(vembedr)
+embed_msstream('5a5be6cb-0695-4cf1-8138-d7157ffa3939') %>% use_align('center')
 ```
-**[PLACEHOLDER FOR VIDEO]**
 
-If the video does not play within this section, then try playing it from Microsoft Streams - you should be able to view it there using this [[**LINK**]]().
+If the video does not play within this section, then try playing it from Microsoft Streams - you should be able to view it there using this [[**LINK**]](https://web.microsoftstream.com/video/5a5be6cb-0695-4cf1-8138-d7157ffa3939).
 
 <div class="note">
 **Important Notes:** Access to Microsoft Steams will may require use of your UCL institutional login details. 
