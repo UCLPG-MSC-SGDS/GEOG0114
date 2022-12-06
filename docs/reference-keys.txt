@@ -122,7 +122,7 @@ kriging-modelling-non-null
 references-see-reading-list-3
 data-sources-4
 spatial-models-part-1
-lecture-recording-length-0000-mins
+lecture-recording-length-4137mins
 introduction-6
 learning-objective
 datasets-setting-up-the-work-directory-5
