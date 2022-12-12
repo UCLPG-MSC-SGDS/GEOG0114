@@ -8,8 +8,8 @@ rmd_files:
 - 05-Suitability_mapping_AHP.Rmd
 - 06-Suitability_mapping_ecological_niche_models.Rmd
 - 07-Raster_data_and_geostatistics.Rmd
-#- 08-Spatial_regression_models_lags_and_errors.Rmd
-#- 09-Spatial_regression_models_GWR.Rmd
+- 08-Spatial_regression_models_lags_and_errors.Rmd
+- 09-Spatial_regression_models_GWR.Rmd
 
 language:
   ui:
