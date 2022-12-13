@@ -141,7 +141,7 @@ references-see-reading-list-4
 data-sources-5
 useful-videos
 spatial-models-part-2
-lecture-recording-length-0000mins
+lecture-recording-length-3025mins
 introduction-7
 learning-outcomes-5
 datasets-setting-up-the-work-directory-6
