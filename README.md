@@ -25,5 +25,5 @@ This work is licensed under a
 [PGTA]: https://uclpg-msc-sgds.github.io/PGTA-test-version-GEOG0114/
 
 Author: Dr. Anwar Musah (a.musah@ucl.ac.uk) <br/>
-Version GEOGO114.2023/24 <br/>
+Version GEOG0114.2023/24 <br/>
 Last updated: 17/08/2023 11:39pm
