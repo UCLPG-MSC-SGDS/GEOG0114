@@ -1,6 +1,6 @@
 # GEOG0114: Principles of Spatial Analysis
 
-This GitHub repository creates the computer practicals for the module [GEOG0114 Principles of Spatial Analysis (2022/23)][course] at the [University College London][uni]'s [Department of Geography][dept]. It contains the tutorials for the following weeks:
+This GitHub repository creates the computer practicals for the module [GEOG0114 Principles of Spatial Analysis (2023/24)][course] at the [University College London][uni]'s [Department of Geography][dept]. It contains the tutorials for the following weeks:
 
 Week 1: Spatial analysis for data science <br/> Week 2: Graphical representation of spatial data <br/> Week 3: Spatial autocorrelation <br/> Week 4: Suitability mapping: Part 1 - Analytical Hierarchical Process (AHP) <br/> Week 5: Suitability mapping: Part 2 - Ecological Niche Modelling <br/> Week 6: Geostatistical analysis using Kriging <br/> Week 9: Spatial regression models: Part 1 - Spatial Lags and Errors <br/> Week 10: Spatial regression models: Part 2 - Geographically Weighted Regression
 
@@ -24,5 +24,5 @@ This work is licensed under a
 [dept]: https://www.geog.ucl.ac.uk
 [PGTA]: https://uclpg-msc-sgds.github.io/PGTA-test-version-GEOG0114/
 
-Version 2022/23 | [Advanced access to complete version][PGTA] for PGTA <br/>
-Last updated: 26/09/2022 23:35pm
+Version GEOGO114.2023/24
+Last updated: 17/08/2023 11:39pm
