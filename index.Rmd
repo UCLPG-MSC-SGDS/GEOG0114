@@ -1,5 +1,5 @@
 ---
-title: "GEOG0114: Principles of Spatial Analysis"
+title: "GEOG0114: Principles of Spatial Analysis (2023/24)"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -17,7 +17,7 @@ knitr::include_graphics('images/general/intro_page_picture.jpeg')
 
 <br />
 
-Welcome to **GEOG0114: Principles of Spatial Analysis**, one of the core 1st term modules for this MSc programme ([**Social and Geographic Data Science**](https://www.geog.ucl.ac.uk/study/graduate-taught/msc-social-and-geographic-data-science)). This module has been designed as an introduction to the core tenets and principles of spatial analysis. Here, you will learn the key concepts and spatial analytical methods, which are applicable to the domains of social science and geography.
+Welcome to **GEOG0114: Principles of Spatial Analysis**, one of the core 1st term modules for this MSc programme ([**Social and Geographic Data Science**](https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees/social-and-geographic-data-science-msc)). This module has been designed as an introduction to the core tenets and principles of spatial analysis. Here, you will learn the key concepts and spatial analytical methods, which are applicable to the domains of social science and geography.
 
 In the first three weeks, we will cover **Spatial analysis for data science**, **Graphical representation of spatial data** and **Spatial autocorrelation**.
 
@@ -27,7 +27,7 @@ In week 7, 8, 9 and 10, we will learn specialised tools for performing spatial a
 
 ## Structure {.unnumbered}
 
-All lectures and computer practicals will be delivered in-person. All Lectures are held on Monday from 02:00pm to 03:00pm at the [**North West Wing (Room G07)**](https://www.ucl.ac.uk/maps/north-west-wing-building). All computer lab seminars are delivered on Monday (after lectures) from 03:00pm to 05:00pm in the same room i.e., [**North West Wing (Room G07)**](https://www.ucl.ac.uk/maps/north-west-wing-building). Technical support workshops are held on Thursday from 03:00pm to 05:00pm at the [**Malet Place Engineering Building (Room 1.20)**](https://www.ucl.ac.uk/maps/malet-place-engineering-building).
+All lectures and computer practicals will be delivered in-person. All Lectures are held on **Monday from 03:00pm to 04:00pm** at the [**South Quad Pop Up Learning Hub (Room G01)**](https://www.ucl.ac.uk/maps/south-quad-learning-hub). All computer lab seminars are delivered on **Thursday from 11:00am to 01:00pm** at the [**North West Wing (Room G07)**](https://www.ucl.ac.uk/maps/north-west-wing-building).
 
 ::: note
 **IMPORTANT NOTE**: Please bring your own laptops with you to the computer practicals and technical support sessions on Monday and Thursday, respectively
@@ -41,20 +41,23 @@ You can download the lecture notes and data sets for the practical lesson from t
 
 | **Week** | **Downloads**                                                                                                                                                                                                        | **Topics**                                          |
 |:----------------|:----------------|:--------------------------------------|
-| 1        | [**Slides**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Lecture_notes/WK1%20Lecture%201%20Notes%202022-23.pptx); [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%201%20-%20Dataset.zip) | Spatial analysis for data science                   |
-| 2        | [**Slides**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Lecture_notes/WK2%20Lecture%202%20Notes%202022-23.pptx); [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%202%20-%20Dataset.zip) | Graphical representation of spatial data            |
-| 3        | [**Slides**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Lecture_notes/WK3%20Lecture%203%20Notes%202022-23.pptx); [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%203%20-%20Dataset.zip) | Spatial autocorrelation                             |
-| 4        | [**Slides**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Lecture_notes/WK4%20Lecture%204%20Notes%202022-23.pdf); [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%204%20-%20Dataset.zip)                                                                                                             | Suitability mapping I                               |
-| 5        | [**Slides**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Lecture_notes/WK5%20Lecture%205%20Notes%202022-23.pdf); [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%205%20-%20Dataset.zip)                                                                                                                                                                                             | Suitability mapping II                              |
+| 1        | [**Slides**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Lecture_notes/Week%201%20Lecture%20Notes%20-%20Introduction.pdf); [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%201%20-%20Dataset.zip) | Spatial analysis for data science                   |
+| 2        | [**Slides**]; [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%202%20-%20Dataset.zip) | Graphical representation of spatial data            |
+| 3        | [**Slides**]; [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%203%20-%20Dataset.zip) | Spatial autocorrelation                             |
+| 4        | [**Slides**]; [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%204%20-%20Dataset.zip)                                                                                                             | Suitability mapping I                               |
+| 5        | [**Slides**]; [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%205%20-%20Dataset.zip)                                                                                                                                                                                             | Suitability mapping II                              |
 |          |                                                                                                                                                                                                                      | Reading Week |
-| 6        | [**Slides**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Lecture_notes/WK6%20Lecture%206%20Notes%202022-23.pdf); [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%206%20-%20Dataset.zip)                                                                                                             | Geostatistics using Kriging                         |
-| 7        |                                                                                                                                                                                             | [**Geodemographics**](https://jtvandijk.github.io/GEOG0114/geodemographics.html)                                     |
-| 8        |                                                                                                                                                                                             | [**Transport network analysis**](https://jtvandijk.github.io/GEOG0114/transport-network-analysis.html)                          |
-| 9        | [**Slides**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Lecture_notes/WK9%20Lecture%209%20Notes%202022-23.pdf); [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%209%20-%20Dataset.zip); [**Test**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Formative_content/GEOG0014%20-%20Week%209%20Map%20Challenge.pdf)                                                                                                            | Spatial models I                         |
-| 10       | [**Slides**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Lecture_notes/WK10%20Lecture%2010%20Notes%202022-23.pdf)                                                                                                            | Spatial models II                        |
+| 6        | [**Slides**]; [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%206%20-%20Dataset.zip)                                                                                                             | Geostatistics using Kriging                         |
+| 7        |                                                                                                                                                                                             | **Geodemographics**                                     |
+| 8        |                                                                                                                                                                                             | **Transport network analysis**                          |
+| 9        | [**Slides**]; [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%209%20-%20Dataset.zip)                                                                                                            | Spatial models I                         |
+| 10       | [**Slides**]                                                                                                            | Spatial models II                        |
+
+**Solutions**: **[Week 1]** | **[Week 2]** | **[Week 3]** | **[Week 4]** | **[Week 5]** | **[Week 6]** | **[Week 9]** | **[Week 10]**
+
 
 ::: note
-**IMPORTANT NOTE**: All materials (including lecture slides, recordings, data sets for practical & reading list etc.) for Week 7 and 8 are hosted on an alternative page [**Link**](https://jtvandijk.github.io/GEOG0114/index.html). Week 10's computer practical uses the dataset provided in Week 9's session. 
+**IMPORTANT NOTE**: All materials (including lecture slides, recordings, data sets for practical & reading list etc.) for Week 7 and 8 are hosted on an alternative page [**Link**]. Week 10's computer practical uses the dataset provided in Week 9's session. 
 :::
 
 ## Module tutors and contacts for GEOG0114 {.unnumbered}
