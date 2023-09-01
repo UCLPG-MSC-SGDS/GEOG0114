@@ -1,55 +1,14 @@
 # Spatial analysis for data sciences
 
-## Lecture recording (Length: 41:23 minutes)
-```{r, warnings=FALSE, message=FALSE, echo=FALSE}
-library(vembedr)
-embed_msstream('db79e9e7-d2ba-4c20-878c-9c1110f355bc') %>% use_align('center')
-```
-
-If the video does not play within this section, then try playing it from Microsoft Streams - you should be able to view it there using this [[**LINK**]](https://web.microsoftstream.com/video/db79e9e7-d2ba-4c20-878c-9c1110f355bc).
-
-<div class="note">
-**Important Notes:** Access to Microsoft Steams will may require use of your UCL institutional login details 
-</div>
-
 ## Introduction
 
 The goal for this week’s session is to get you started with using RStudio, and being familiar with its environment. The session aims to introduce you to the basic programming etiquette, as well as building confidence for using RStudio as a GIS tool. At the end of this session, you should be able to perform some basic data managing tasks as well as generate a simple choropleth map in RStudio.
 
 ### Learning outcomes
 
-The first task includes getting you started with RStudio by installing the needed software(s) (i.e., **RStudio** and **R (Base)**) on to your personal laptop, and becoming familiar with its environment and panels. We will begin a soft introduction on the basics of managing data in RStudio. This includes learning how to create various objects in RStudio such as **vector** and **data frame** objects. The crucial part of this session we be to know how to the set working directories as well as import your dataset in RStudio. Finally, we will learn how to perform the basic visualisation of spatial data in RStudio.    
+The first task includes getting you started with RStudio by installing the needed software(s) (i.e., **RStudio** and **R**) on to your personal laptop, and becoming familiar with its environment and panels. We will begin a soft introduction on the basics of managing data in RStudio. This includes learning how to create various objects in RStudio such as **vector** and **data frame** objects. The crucial part of this session we be to know how to the set working directories as well as import your dataset in RStudio. Finally, we will learn how to perform the basic visualisation of spatial data in RStudio.    
 
 Let us begin.
-
-## Getting started with RStudio
-
-**What is RStudio (or R)?**
-
-R, or RStudio is a statistical software programming package that allows the user to carry out different types of statistical analysis. It can also be used as a GIS software to perform various kinds of spatial analysis as you will see throughout the course of GEOG0114. In the same vein, you can use it for data managing and geo-processing (i.e., importing different types of spatial formats for manipulation beforehand for spatial analysis). There are two versions:
-
-```{r echo=FALSE, out.width = "100%", fig.align='center', cache=TRUE,}
-knitr::include_graphics('images/general/week1/image1_R-versiontypes.png', error = FALSE) 
-```
-
-The famous icon on the left is the version for [**R (Base)**](https://www.r-project.org), and the one on the right is the version for [**RStudio**](https://www.rstudio.com). Both software packages are the same. The only difference is that RStudio is attractive, intuitive, and more importantly, it is user-friendly than Base R. So, we will be using this version (i.e., RStudio) throughout the course. 
-
-Let us talk about downloading RStudio.
-
-### Download and install RStudio on to your laptop
-
-RStudio is an open source software, and today its the go-to software for many researchers - its highly recommended for anyone in the domains of data science, scientific research, and technical communication. It is easy to access, and easy to download and install. In order for RStudio to work you must first install **R (Base)**. You can follow the steps and use the table below to download the correct version for your operating system (i.e., Windows or MAC).
-
-**STEPS**
-
-1. Download the file (i.e., `.exe` or `.pkg`) for **R (Base)** in accordance with your operating system from the links provided in the table below. Next, install it by clicking on the downloaded file (i.e., `.exe` or `.pkg`). 
-
-2. Now, we can download the file (i.e., `.exe` or `.dmg`) for **RStudio** in accordance with your operating system from the links provided in the table below. You can install it by clicking on the downloaded file (i.e., `.exe` or `.dmg`).  
-
-**OS User type**| **R (Base)** | **RStudio Desktop**
------------- | ------------- | -------------
-Windows | [**R-4.2.1-win.exe**](https://cran.ma.imperial.ac.uk/bin/windows/base/R-4.2.1-win.exe)| [**RStudio-2022.07.1-554.exe**](https://download1.rstudio.org/desktop/windows/RStudio-2022.07.1-554.exe)
-MAC | [**R-4.2.1.pkg**](https://cran.ma.imperial.ac.uk/bin/macosx/base/R-4.2.1.pkg)| [**RStudio-2022.07.1-554.dmg**](https://download1.rstudio.org/desktop/macos/RStudio-2022.07.1-554.dmg) 
 
 ### Becoming familiar with the panels in RStudio
 
@@ -616,7 +575,7 @@ The `title` argument applies it to the legend only (not the plot itself!). The `
 **Geography 101** – when creating a map, it is always best to add the North compass and scale bar. This is done with the `tm_compass()` and `tm_scale_bar()` functions. The `tm_layout()` allows you to make further customisations to the map such as placing the legends outside the plot region and modifying the text size etc. You can experiment with them by checking the help menu – just type: `?tm_layout()` in the console.
 
 ```{r echo=FALSE, out.width = "100%", fig.align='center', cache=TRUE,}
-knitr::include_graphics('images/general/week1/image9_finalmap.png', error = FALSE) 
+knitr::include_graphics('images/general/week1/Image9_finalmap.png', error = FALSE) 
 ```
 
 This concludes this computer lab session. Challenge yourself with the task placed in **section 1.6**
@@ -658,3 +617,7 @@ $I  = (E/T) × 1000$
 </br>
 
 Experiment the `tmap` functions and arguments
+
+::: note
+**IMPORTANT NOTE**: The solutions for this homework will be posted alongside with next week's content
+:::
