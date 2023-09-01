@@ -2,7 +2,7 @@ installation-of-r-and-rstudio
 what-is-r-and-rstudio
 downloading-and-install-r-and-rstudio-on-to-your-laptop
 installation-for-macos-users
-installation-process-for-windows-users
+installation-for-windows-users
 spatial-analysis-for-data-sciences
 introduction
 learning-outcomes
