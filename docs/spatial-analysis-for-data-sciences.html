@@ -50,6 +50,7 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -170,10 +171,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="2.1" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a>
 <ul>
-<li class="chapter" data-level="2.1.1" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#learning-outcomes"><i class="fa fa-check"></i><b>2.1.1</b> Learning outcomes</a></li>
-<li class="chapter" data-level="2.1.2" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#becoming-familiar-with-the-panels-in-rstudio"><i class="fa fa-check"></i><b>2.1.2</b> Becoming familiar with the panels in RStudio</a></li>
-<li class="chapter" data-level="2.1.3" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#using-r-console-as-a-calculator"><i class="fa fa-check"></i><b>2.1.3</b> Using R Console as a Calculator</a></li>
-<li class="chapter" data-level="2.1.4" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#creating-basic-objects-and-assigning-values-to-it"><i class="fa fa-check"></i><b>2.1.4</b> Creating basic objects and assigning values to it</a></li>
+<li class="chapter" data-level="2.1.1" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#lecture-video-length-010001"><i class="fa fa-check"></i><b>2.1.1</b> Lecture video (Length: 01:00:01)</a></li>
+<li class="chapter" data-level="2.1.2" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#learning-outcomes"><i class="fa fa-check"></i><b>2.1.2</b> Learning outcomes</a></li>
+<li class="chapter" data-level="2.1.3" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#becoming-familiar-with-the-panels-in-rstudio"><i class="fa fa-check"></i><b>2.1.3</b> Becoming familiar with the panels in RStudio</a></li>
+<li class="chapter" data-level="2.1.4" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#using-r-console-as-a-calculator"><i class="fa fa-check"></i><b>2.1.4</b> Using R Console as a Calculator</a></li>
+<li class="chapter" data-level="2.1.5" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#creating-basic-objects-and-assigning-values-to-it"><i class="fa fa-check"></i><b>2.1.5</b> Creating basic objects and assigning values to it</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#basics-of-managing-data-in-rstudio"><i class="fa fa-check"></i><b>2.2</b> Basics of managing data in RStudio</a>
 <ul>
@@ -261,14 +263,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">2</span> Spatial analysis for data sciences<a href="spatial-analysis-for-data-sciences.html#spatial-analysis-for-data-sciences" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="introduction" class="section level2 hasAnchor" number="2.1">
 <h2><span class="header-section-number">2.1</span> Introduction<a href="spatial-analysis-for-data-sciences.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="lecture-video-length-010001" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Lecture video (Length: 01:00:01)<a href="spatial-analysis-for-data-sciences.html#lecture-video-length-010001" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="vembedr" align="center">
+<div>
+<iframe src="https://www.youtube.com/embed/a-HcI_VfyYI" width="711" height="400" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+<p><a href="https://youtu.be/a-HcI_VfyYI">[<strong>Watch on YouTube</strong>]</a></p>
 <p>The goal for this week’s session is to get you started with using RStudio, and being familiar with its environment. The session aims to introduce you to the basic programming etiquette, as well as building confidence for using RStudio as a GIS tool. At the end of this session, you should be able to perform some basic data managing tasks as well as generate a simple choropleth map in RStudio.</p>
-<div id="learning-outcomes" class="section level3 hasAnchor" number="2.1.1">
-<h3><span class="header-section-number">2.1.1</span> Learning outcomes<a href="spatial-analysis-for-data-sciences.html#learning-outcomes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="learning-outcomes" class="section level3 hasAnchor" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Learning outcomes<a href="spatial-analysis-for-data-sciences.html#learning-outcomes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The first task includes getting you started with RStudio by installing the needed software(s) (i.e., <strong>RStudio</strong> and <strong>R</strong>) on to your personal laptop, and becoming familiar with its environment and panels. We will begin a soft introduction on the basics of managing data in RStudio. This includes learning how to create various objects in RStudio such as <strong>vector</strong> and <strong>data frame</strong> objects. The crucial part of this session we be to know how to the set working directories as well as import your dataset in RStudio. Finally, we will learn how to perform the basic visualisation of spatial data in RStudio.</p>
 <p>Let us begin.</p>
 </div>
-<div id="becoming-familiar-with-the-panels-in-rstudio" class="section level3 hasAnchor" number="2.1.2">
-<h3><span class="header-section-number">2.1.2</span> Becoming familiar with the panels in RStudio<a href="spatial-analysis-for-data-sciences.html#becoming-familiar-with-the-panels-in-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="becoming-familiar-with-the-panels-in-rstudio" class="section level3 hasAnchor" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> Becoming familiar with the panels in RStudio<a href="spatial-analysis-for-data-sciences.html#becoming-familiar-with-the-panels-in-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>You should by now have opened RStudio on your laptop. When opening RStudio for the first time, you are greeted with its interface. The window is split into three panels: 1.) R Console, 2.) Environments and 3.) Files, help &amp; Output.</p>
 <p><img src="images/general/week1/image2_panels.png" width="100%" style="display: block; margin: auto;" /></p>
 <ul>
@@ -286,8 +297,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Important Notes:</strong> Throughout the course, and in all practical tutorials, you will be encouraged to use an R Script for collating and saving the codes you have written for carrying out spatial analysis. However, we will start writing codes in a script later when we reach to section 1.3 of this tutorial. For now, let us start with the absolute basics, which is interacting with the R Console and using it as a basic calculator for typing simple code.</p>
 </div>
 </div>
-<div id="using-r-console-as-a-calculator" class="section level3 hasAnchor" number="2.1.3">
-<h3><span class="header-section-number">2.1.3</span> Using R Console as a Calculator<a href="spatial-analysis-for-data-sciences.html#using-r-console-as-a-calculator" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="using-r-console-as-a-calculator" class="section level3 hasAnchor" number="2.1.4">
+<h3><span class="header-section-number">2.1.4</span> Using R Console as a Calculator<a href="spatial-analysis-for-data-sciences.html#using-r-console-as-a-calculator" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The R console window (i.e., Panel 1) is the place where RStudio is waiting for you to tell it what to do. It will show the code you have commanded RStudio to execute, and it will also show the results from that command. You can type the commands directly into the window for execution as well.</p>
 <p>Let us start by using the console window as a basic calculator for typing in addition (<code>+</code>), subtraction (<code>-</code>), multiplication (<code>*</code>), division (<code>/</code>), exponents (<code>^</code>) and performing other complex sums.</p>
 <p>Click inside the R Console window and type <code>19+8</code>, and press enter key button <code>↵</code> to get your answer. Quickly perform the following maths by typing them inside the R Console window:</p>
@@ -320,8 +331,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-4"><a href="spatial-analysis-for-data-sciences.html#cb3-4" tabindex="-1"></a><span class="co"># use log() to transforrm a value on to a logarithm scale</span></span>
 <span id="cb3-5"><a href="spatial-analysis-for-data-sciences.html#cb3-5" tabindex="-1"></a><span class="fu">log</span>(<span class="dv">3</span>)</span></code></pre></div>
 </div>
-<div id="creating-basic-objects-and-assigning-values-to-it" class="section level3 hasAnchor" number="2.1.4">
-<h3><span class="header-section-number">2.1.4</span> Creating basic objects and assigning values to it<a href="spatial-analysis-for-data-sciences.html#creating-basic-objects-and-assigning-values-to-it" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="creating-basic-objects-and-assigning-values-to-it" class="section level3 hasAnchor" number="2.1.5">
+<h3><span class="header-section-number">2.1.5</span> Creating basic objects and assigning values to it<a href="spatial-analysis-for-data-sciences.html#creating-basic-objects-and-assigning-values-to-it" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Now that we are familiar with using the console as a calculator. Let us build from this and learn one of the most important codes in RStudio which is called the <strong>Assignment Operator</strong>.</p>
 <p>This arrow symbol <code>&lt;-</code> is called the <strong>Assignment Operator</strong>. It is typed by pressing the less than symbol key <code>&lt;</code> followed by the hyphen symbol key <code>-</code>. It allows the user to assign values to an <strong>Object</strong> in R.</p>
 <p><strong>Objects</strong> are defined as stored quantities in RStudio’s environment. These objects can be assigned anything from numeric values to character string values. For instance, say we want to create a numeric object called <code>x</code> and assign it with a value of <code>3</code>. We do this by typing <code>x &lt;- 3</code>. When you enter the object <code>x</code> in the console and press enter <code>↵</code>, it will return the numeric value <code>3</code>.</p>

@@ -5,6 +5,7 @@ installation-for-macos-users
 installation-for-windows-users
 spatial-analysis-for-data-sciences
 introduction
+lecture-video-length-010001
 learning-outcomes
 becoming-familiar-with-the-panels-in-rstudio
 using-r-console-as-a-calculator
