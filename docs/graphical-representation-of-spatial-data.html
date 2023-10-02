@@ -4,20 +4,20 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2 Graphical representation of spatial data | GEOG0114: Principles of Spatial Analysis</title>
-  <meta name="description" content="2 Graphical representation of spatial data | GEOG0114: Principles of Spatial Analysis" />
-  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+  <title>3 Graphical representation of spatial data | GEOG0114: Principles of Spatial Analysis (2023/24)</title>
+  <meta name="description" content="GEOG0114: Principles of Spatial Analysis" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2 Graphical representation of spatial data | GEOG0114: Principles of Spatial Analysis" />
+  <meta property="og:title" content="3 Graphical representation of spatial data | GEOG0114: Principles of Spatial Analysis (2023/24)" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="2 Graphical representation of spatial data | GEOG0114: Principles of Spatial Analysis" />
+  <meta property="og:description" content="GEOG0114: Principles of Spatial Analysis" />
   <meta name="github-repo" content="UCLPG-MSC-SGDS/GEOG0114" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2 Graphical representation of spatial data | GEOG0114: Principles of Spatial Analysis" />
+  <meta name="twitter:title" content="3 Graphical representation of spatial data | GEOG0114: Principles of Spatial Analysis (2023/24)" />
   
-  <meta name="twitter:description" content="2 Graphical representation of spatial data | GEOG0114: Principles of Spatial Analysis" />
+  <meta name="twitter:description" content="GEOG0114: Principles of Spatial Analysis" />
   
 
 
@@ -50,7 +50,6 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -91,7 +90,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -104,7 +103,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -118,6 +117,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="assets/custom.css" type="text/css" />
 </head>
@@ -143,233 +146,99 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#moodle"><i class="fa fa-check"></i>Moodle</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#module-tutors-and-contacts-for-geog0114"><i class="fa fa-check"></i>Module tutors and contacts for GEOG0114</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="reading-list-for-geog0114-202223.html"><a href="reading-list-for-geog0114-202223.html"><i class="fa fa-check"></i>Reading List for GEOG0114 2022/23</a>
+<li class="chapter" data-level="" data-path="reading-list-for-geog0114-202324.html"><a href="reading-list-for-geog0114-202324.html"><i class="fa fa-check"></i>Reading List for GEOG0114 2023/24</a>
 <ul>
-<li class="chapter" data-level="" data-path="reading-list-for-geog0114-202223.html"><a href="reading-list-for-geog0114-202223.html#week-1-spatial-analysis-for-data-science"><i class="fa fa-check"></i>Week 1: Spatial analysis for data science</a></li>
-<li class="chapter" data-level="" data-path="reading-list-for-geog0114-202223.html"><a href="reading-list-for-geog0114-202223.html#week-2-graphical-representation-of-spatial-data"><i class="fa fa-check"></i>Week 2: Graphical representation of spatial data</a></li>
-<li class="chapter" data-level="" data-path="reading-list-for-geog0114-202223.html"><a href="reading-list-for-geog0114-202223.html#week-3-spatial-autocorrelation"><i class="fa fa-check"></i>Week 3: Spatial autocorrelation</a></li>
-<li class="chapter" data-level="" data-path="reading-list-for-geog0114-202223.html"><a href="reading-list-for-geog0114-202223.html#week-4-suitability-mapping-part-1"><i class="fa fa-check"></i>Week 4: Suitability Mapping (Part 1)</a></li>
-<li class="chapter" data-level="" data-path="reading-list-for-geog0114-202223.html"><a href="reading-list-for-geog0114-202223.html#week-5-suitability-mapping-part-2"><i class="fa fa-check"></i>Week 5: Suitability Mapping (Part 2)</a></li>
-<li class="chapter" data-level="" data-path="reading-list-for-geog0114-202223.html"><a href="reading-list-for-geog0114-202223.html#week-6-geostatistical-modelling"><i class="fa fa-check"></i>Week 6: Geostatistical Modelling</a></li>
-<li class="chapter" data-level="" data-path="reading-list-for-geog0114-202223.html"><a href="reading-list-for-geog0114-202223.html#week-9-spatial-models-part-1"><i class="fa fa-check"></i>Week 9: Spatial Models (Part 1)</a></li>
-<li class="chapter" data-level="" data-path="reading-list-for-geog0114-202223.html"><a href="reading-list-for-geog0114-202223.html#week-10-spatial-models-part-2"><i class="fa fa-check"></i>Week 10: Spatial Models (Part 2)</a></li>
+<li class="chapter" data-level="" data-path="reading-list-for-geog0114-202324.html"><a href="reading-list-for-geog0114-202324.html#week-1-spatial-analysis-for-data-science"><i class="fa fa-check"></i>Week 1: Spatial analysis for data science</a></li>
+<li class="chapter" data-level="" data-path="reading-list-for-geog0114-202324.html"><a href="reading-list-for-geog0114-202324.html#week-2-graphical-representation-of-spatial-data"><i class="fa fa-check"></i>Week 2: Graphical representation of spatial data</a></li>
+<li class="chapter" data-level="" data-path="reading-list-for-geog0114-202324.html"><a href="reading-list-for-geog0114-202324.html#week-3-spatial-autocorrelation"><i class="fa fa-check"></i>Week 3: Spatial autocorrelation</a></li>
+<li class="chapter" data-level="" data-path="reading-list-for-geog0114-202324.html"><a href="reading-list-for-geog0114-202324.html#week-4-suitability-mapping-part-1"><i class="fa fa-check"></i>Week 4: Suitability Mapping (Part 1)</a></li>
+<li class="chapter" data-level="" data-path="reading-list-for-geog0114-202324.html"><a href="reading-list-for-geog0114-202324.html#week-5-suitability-mapping-part-2"><i class="fa fa-check"></i>Week 5: Suitability Mapping (Part 2)</a></li>
+<li class="chapter" data-level="" data-path="reading-list-for-geog0114-202324.html"><a href="reading-list-for-geog0114-202324.html#week-6-geostatistical-modelling"><i class="fa fa-check"></i>Week 6: Geostatistical Modelling</a></li>
+<li class="chapter" data-level="" data-path="reading-list-for-geog0114-202324.html"><a href="reading-list-for-geog0114-202324.html#week-9-spatial-models-part-1"><i class="fa fa-check"></i>Week 9: Spatial Models (Part 1)</a></li>
+<li class="chapter" data-level="" data-path="reading-list-for-geog0114-202324.html"><a href="reading-list-for-geog0114-202324.html#week-10-spatial-models-part-2"><i class="fa fa-check"></i>Week 10: Spatial Models (Part 2)</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html"><i class="fa fa-check"></i><b>1</b> Spatial analysis for data sciences</a>
+<li class="chapter" data-level="1" data-path="installation-of-r-and-rstudio.html"><a href="installation-of-r-and-rstudio.html"><i class="fa fa-check"></i><b>1</b> Installation of R and RStudio</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#lecture-recording-length-4123-minutes"><i class="fa fa-check"></i><b>1.1</b> Lecture recording (Length: 41:23 minutes)</a></li>
-<li class="chapter" data-level="1.2" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#introduction"><i class="fa fa-check"></i><b>1.2</b> Introduction</a>
+<li class="chapter" data-level="1.1" data-path="installation-of-r-and-rstudio.html"><a href="installation-of-r-and-rstudio.html#what-is-r-and-rstudio"><i class="fa fa-check"></i><b>1.1</b> What is R and RStudio?</a></li>
+<li class="chapter" data-level="1.2" data-path="installation-of-r-and-rstudio.html"><a href="installation-of-r-and-rstudio.html#downloading-and-install-r-and-rstudio-on-to-your-laptop"><i class="fa fa-check"></i><b>1.2</b> Downloading and install R and RStudio on to your laptop</a>
 <ul>
-<li class="chapter" data-level="1.2.1" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#learning-outcomes"><i class="fa fa-check"></i><b>1.2.1</b> Learning outcomes</a></li>
-</ul></li>
-<li class="chapter" data-level="1.3" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#getting-started-with-rstudio"><i class="fa fa-check"></i><b>1.3</b> Getting started with RStudio</a>
-<ul>
-<li class="chapter" data-level="1.3.1" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#download-and-install-rstudio-on-to-your-laptop"><i class="fa fa-check"></i><b>1.3.1</b> Download and install RStudio on to your laptop</a></li>
-<li class="chapter" data-level="1.3.2" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#becoming-familiar-with-the-panels-in-rstudio"><i class="fa fa-check"></i><b>1.3.2</b> Becoming familiar with the panels in RStudio</a></li>
-<li class="chapter" data-level="1.3.3" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#using-r-console-as-a-calculator"><i class="fa fa-check"></i><b>1.3.3</b> Using R Console as a Calculator</a></li>
-<li class="chapter" data-level="1.3.4" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#creating-basic-objects-and-assigning-values-to-it"><i class="fa fa-check"></i><b>1.3.4</b> Creating basic objects and assigning values to it</a></li>
-</ul></li>
-<li class="chapter" data-level="1.4" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#basics-of-managing-data-in-rstudio"><i class="fa fa-check"></i><b>1.4</b> Basics of managing data in RStudio</a>
-<ul>
-<li class="chapter" data-level="1.4.1" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#how-do-we-enter-data-into-rstudio"><i class="fa fa-check"></i><b>1.4.1</b> How do we enter data into RStudio?</a></li>
-<li class="chapter" data-level="1.4.2" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#how-do-we-create-a-variable-based-on-other-existing-variables-in-our-data-frame"><i class="fa fa-check"></i><b>1.4.2</b> How do we create a variable based on other existing variables in our data frame?</a></li>
-<li class="chapter" data-level="1.4.3" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#how-do-we-set-the-working-directory-in-our-computer-by-connecting-our-folder-to-rstudio-with-the-setwd-function"><i class="fa fa-check"></i><b>1.4.3</b> How do we set the working directory in our computer by connecting our folder to RStudio with the <code>setwd()</code> function?</a></li>
-<li class="chapter" data-level="1.4.4" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#how-do-we-import-merge-and-export-csv-data-with-rstudio"><i class="fa fa-check"></i><b>1.4.4</b> How do we import, merge and export CSV data with RStudio?</a></li>
-</ul></li>
-<li class="chapter" data-level="1.5" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#basic-visualisation-of-spatial-data-in-rstudio"><i class="fa fa-check"></i><b>1.5</b> Basic visualisation of spatial data in RStudio</a>
-<ul>
-<li class="chapter" data-level="1.5.1" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#installing-packages-into-rstudio"><i class="fa fa-check"></i><b>1.5.1</b> Installing packages into RStudio</a></li>
-<li class="chapter" data-level="1.5.2" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#adding-shapefiles-in-rstudio"><i class="fa fa-check"></i><b>1.5.2</b> Adding shapefiles in RStudio</a></li>
-<li class="chapter" data-level="1.5.3" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#mapping-with-tmap-functions-in-rstudio"><i class="fa fa-check"></i><b>1.5.3</b> Mapping with ‘tmap’ functions in RStudio</a></li>
-</ul></li>
-<li class="chapter" data-level="1.6" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#references"><i class="fa fa-check"></i><b>1.6</b> References</a>
-<ul>
-<li class="chapter" data-level="1.6.1" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#recommended-reading-see-reading-list"><i class="fa fa-check"></i><b>1.6.1</b> Recommended reading (see reading list)</a></li>
-</ul></li>
-<li class="chapter" data-level="1.7" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#data-sources"><i class="fa fa-check"></i><b>1.7</b> Data Sources</a></li>
-<li class="chapter" data-level="1.8" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#practical-homework"><i class="fa fa-check"></i><b>1.8</b> Practical homework</a></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html"><i class="fa fa-check"></i><b>2</b> Graphical representation of spatial data</a>
-<ul>
-<li class="chapter" data-level="2.1" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#lecture-recording-length-4331-minutes"><i class="fa fa-check"></i><b>2.1</b> Lecture recording (Length: 43:31 minutes)</a></li>
-<li class="chapter" data-level="2.2" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#introduction-1"><i class="fa fa-check"></i><b>2.2</b> Introduction</a>
-<ul>
-<li class="chapter" data-level="2.2.1" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#learning-outcomes-1"><i class="fa fa-check"></i><b>2.2.1</b> Learning outcomes</a></li>
-<li class="chapter" data-level="2.2.2" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#getting_started_w03"><i class="fa fa-check"></i><b>2.2.2</b> Getting started</a></li>
-<li class="chapter" data-level="2.2.3" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#datasets-setting-up-the-work-directory"><i class="fa fa-check"></i><b>2.2.3</b> Datasets &amp; setting up the work directory</a></li>
-<li class="chapter" data-level="2.2.4" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#loading-and-installing-packages"><i class="fa fa-check"></i><b>2.2.4</b> Loading and installing packages</a></li>
-</ul></li>
-<li class="chapter" data-level="2.3" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#case_study_w03"><i class="fa fa-check"></i><b>2.3</b> Case study</a></li>
-<li class="chapter" data-level="2.4" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#loading_data_w03"><i class="fa fa-check"></i><b>2.4</b> Loading our data sets for case study</a></li>
-<li class="chapter" data-level="2.5" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#data-processing"><i class="fa fa-check"></i><b>2.5</b> Data Processing</a>
-<ul>
-<li class="chapter" data-level="2.5.1" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#reprojecting"><i class="fa fa-check"></i><b>2.5.1</b> Reprojecting</a></li>
-<li class="chapter" data-level="2.5.2" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#dissolving"><i class="fa fa-check"></i><b>2.5.2</b> Dissolving</a></li>
-<li class="chapter" data-level="2.5.3" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#subsetting"><i class="fa fa-check"></i><b>2.5.3</b> Subsetting</a></li>
-<li class="chapter" data-level="2.5.4" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#unioning"><i class="fa fa-check"></i><b>2.5.4</b> Unioning</a></li>
-<li class="chapter" data-level="2.5.5" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#clipping"><i class="fa fa-check"></i><b>2.5.5</b> Clipping</a></li>
-<li class="chapter" data-level="2.5.6" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#attribute-selection"><i class="fa fa-check"></i><b>2.5.6</b> Attribute selection</a></li>
-<li class="chapter" data-level="2.5.7" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#buffering"><i class="fa fa-check"></i><b>2.5.7</b> Buffering</a></li>
-</ul></li>
-<li class="chapter" data-level="2.6" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#greenspace-in-london"><i class="fa fa-check"></i><b>2.6</b> Greenspace in London</a></li>
-<li class="chapter" data-level="2.7" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#attributions_w03"><i class="fa fa-check"></i><b>2.7</b> Attributions</a></li>
-<li class="chapter" data-level="2.8" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#reading_w03"><i class="fa fa-check"></i><b>2.8</b> References (see reading list)</a></li>
-<li class="chapter" data-level="2.9" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#data-sources-1"><i class="fa fa-check"></i><b>2.9</b> Data Sources</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="spatial-autocorrelation.html"><a href="spatial-autocorrelation.html"><i class="fa fa-check"></i><b>3</b> Spatial autocorrelation</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="spatial-autocorrelation.html"><a href="spatial-autocorrelation.html#lecture-recording-length-1h07mins"><i class="fa fa-check"></i><b>3.1</b> Lecture recording (Length: 1h:07mins)</a></li>
-<li class="chapter" data-level="3.2" data-path="spatial-autocorrelation.html"><a href="spatial-autocorrelation.html#introduction-2"><i class="fa fa-check"></i><b>3.2</b> Introduction</a>
-<ul>
-<li class="chapter" data-level="3.2.1" data-path="spatial-autocorrelation.html"><a href="spatial-autocorrelation.html#learning-outcomes-2"><i class="fa fa-check"></i><b>3.2.1</b> Learning outcomes</a></li>
-<li class="chapter" data-level="3.2.2" data-path="spatial-autocorrelation.html"><a href="spatial-autocorrelation.html#getting-started"><i class="fa fa-check"></i><b>3.2.2</b> Getting started</a></li>
-<li class="chapter" data-level="3.2.3" data-path="spatial-autocorrelation.html"><a href="spatial-autocorrelation.html#datasets-setting-up-the-work-directory-1"><i class="fa fa-check"></i><b>3.2.3</b> Datasets &amp; setting up the work directory</a></li>
-<li class="chapter" data-level="3.2.4" data-path="spatial-autocorrelation.html"><a href="spatial-autocorrelation.html#loading-and-installing-packages-1"><i class="fa fa-check"></i><b>3.2.4</b> Loading and installing packages</a></li>
-</ul></li>
-<li class="chapter" data-level="3.3" data-path="spatial-autocorrelation.html"><a href="spatial-autocorrelation.html#case-study"><i class="fa fa-check"></i><b>3.3</b> Case study</a>
-<ul>
-<li class="chapter" data-level="3.3.1" data-path="spatial-autocorrelation.html"><a href="spatial-autocorrelation.html#neighbours"><i class="fa fa-check"></i><b>3.3.1</b> Neighbours</a></li>
-<li class="chapter" data-level="3.3.2" data-path="spatial-autocorrelation.html"><a href="spatial-autocorrelation.html#theft-in-camden"><i class="fa fa-check"></i><b>3.3.2</b> Theft in Camden</a></li>
-<li class="chapter" data-level="3.3.3" data-path="spatial-autocorrelation.html"><a href="spatial-autocorrelation.html#global-morans-i"><i class="fa fa-check"></i><b>3.3.3</b> Global Moran’s I</a></li>
-<li class="chapter" data-level="3.3.4" data-path="spatial-autocorrelation.html"><a href="spatial-autocorrelation.html#local-morans-i-or-lisa"><i class="fa fa-check"></i><b>3.3.4</b> Local Moran’s I (or LISA)</a></li>
-</ul></li>
-<li class="chapter" data-level="3.4" data-path="spatial-autocorrelation.html"><a href="spatial-autocorrelation.html#attributions"><i class="fa fa-check"></i><b>3.4</b> Attributions</a></li>
-<li class="chapter" data-level="3.5" data-path="spatial-autocorrelation.html"><a href="spatial-autocorrelation.html#references-see-reading-list"><i class="fa fa-check"></i><b>3.5</b> References (see reading list)</a></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="suitability-mapping-part-1.html"><a href="suitability-mapping-part-1.html"><i class="fa fa-check"></i><b>4</b> Suitability Mapping: Part 1</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="suitability-mapping-part-1.html"><a href="suitability-mapping-part-1.html#lecture-recording-length-3831-mins"><i class="fa fa-check"></i><b>4.1</b> Lecture recording (Length: 38:31 mins)</a></li>
-<li class="chapter" data-level="4.2" data-path="suitability-mapping-part-1.html"><a href="suitability-mapping-part-1.html#introduction-3"><i class="fa fa-check"></i><b>4.2</b> Introduction</a>
-<ul>
-<li class="chapter" data-level="4.2.1" data-path="suitability-mapping-part-1.html"><a href="suitability-mapping-part-1.html#learning-outcomes-3"><i class="fa fa-check"></i><b>4.2.1</b> Learning outcomes</a></li>
-<li class="chapter" data-level="4.2.2" data-path="suitability-mapping-part-1.html"><a href="suitability-mapping-part-1.html#datasets-setting-up-the-work-directory-2"><i class="fa fa-check"></i><b>4.2.2</b> Datasets &amp; setting up the work directory</a></li>
-<li class="chapter" data-level="4.2.3" data-path="suitability-mapping-part-1.html"><a href="suitability-mapping-part-1.html#loading-and-installing-packages-2"><i class="fa fa-check"></i><b>4.2.3</b> Loading and installing packages</a></li>
-<li class="chapter" data-level="4.2.4" data-path="suitability-mapping-part-1.html"><a href="suitability-mapping-part-1.html#loading-datasets"><i class="fa fa-check"></i><b>4.2.4</b> Loading datasets</a></li>
-</ul></li>
-<li class="chapter" data-level="4.3" data-path="suitability-mapping-part-1.html"><a href="suitability-mapping-part-1.html#suitability-mapping-using-simple-overlays"><i class="fa fa-check"></i><b>4.3</b> Suitability mapping using Simple Overlays</a>
-<ul>
-<li class="chapter" data-level="4.3.1" data-path="suitability-mapping-part-1.html"><a href="suitability-mapping-part-1.html#setting-up-binary-classification-on-raster"><i class="fa fa-check"></i><b>4.3.1</b> Setting up binary classification on raster</a></li>
-<li class="chapter" data-level="4.3.2" data-path="suitability-mapping-part-1.html"><a href="suitability-mapping-part-1.html#finding-areas-of-suitability-by-multiplying-the-binary-rasters"><i class="fa fa-check"></i><b>4.3.2</b> Finding areas of suitability by multiplying the binary rasters</a></li>
-<li class="chapter" data-level="4.3.3" data-path="suitability-mapping-part-1.html"><a href="suitability-mapping-part-1.html#finding-areas-of-suitability-by-summing-the-binary-rasters"><i class="fa fa-check"></i><b>4.3.3</b> Finding areas of suitability by summing the binary rasters</a></li>
-</ul></li>
-<li class="chapter" data-level="4.4" data-path="suitability-mapping-part-1.html"><a href="suitability-mapping-part-1.html#analytical-hierarchy-process-ahp"><i class="fa fa-check"></i><b>4.4</b> Analytical Hierarchy Process (AHP)</a>
-<ul>
-<li class="chapter" data-level="4.4.1" data-path="suitability-mapping-part-1.html"><a href="suitability-mapping-part-1.html#standardizing-the-raster-variables-to-the-same-scale-from-1-to-10"><i class="fa fa-check"></i><b>4.4.1</b> Standardizing the raster variables to the same scale (from 1 to 10)</a></li>
-<li class="chapter" data-level="4.4.2" data-path="suitability-mapping-part-1.html"><a href="suitability-mapping-part-1.html#determining-the-weight-of-each-variable-using-saatys-ahp"><i class="fa fa-check"></i><b>4.4.2</b> Determining the weight of each variable using Saaty’s AHP</a></li>
-<li class="chapter" data-level="4.4.3" data-path="suitability-mapping-part-1.html"><a href="suitability-mapping-part-1.html#weighted-linear-combination-wlc-and-derivation-of-suitability-maps-based-from-ahp-analysis"><i class="fa fa-check"></i><b>4.4.3</b> Weighted Linear Combination (WLC) and derivation of Suitability Maps based from AHP analysis</a></li>
-</ul></li>
-<li class="chapter" data-level="4.5" data-path="suitability-mapping-part-1.html"><a href="suitability-mapping-part-1.html#references-see-reading-list-1"><i class="fa fa-check"></i><b>4.5</b> References (see reading list)</a>
-<ul>
-<li class="chapter" data-level="4.5.1" data-path="suitability-mapping-part-1.html"><a href="suitability-mapping-part-1.html#recommended-reading"><i class="fa fa-check"></i><b>4.5.1</b> Recommended reading</a></li>
-<li class="chapter" data-level="4.5.2" data-path="suitability-mapping-part-1.html"><a href="suitability-mapping-part-1.html#data-sources-2"><i class="fa fa-check"></i><b>4.5.2</b> Data Sources</a></li>
+<li class="chapter" data-level="1.2.1" data-path="installation-of-r-and-rstudio.html"><a href="installation-of-r-and-rstudio.html#installation-for-macos-users"><i class="fa fa-check"></i><b>1.2.1</b> Installation for MacOS users</a></li>
+<li class="chapter" data-level="1.2.2" data-path="installation-of-r-and-rstudio.html"><a href="installation-of-r-and-rstudio.html#installation-for-windows-users"><i class="fa fa-check"></i><b>1.2.2</b> Installation for Windows users</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="suitability-mapping-part-2.html"><a href="suitability-mapping-part-2.html"><i class="fa fa-check"></i><b>5</b> Suitability Mapping: Part 2</a>
+<li class="chapter" data-level="2" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html"><i class="fa fa-check"></i><b>2</b> Spatial analysis for data sciences</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="suitability-mapping-part-2.html"><a href="suitability-mapping-part-2.html#lecture-recording-length-4240-mins"><i class="fa fa-check"></i><b>5.1</b> Lecture recording (Length: 42:40 mins)</a></li>
-<li class="chapter" data-level="5.2" data-path="suitability-mapping-part-2.html"><a href="suitability-mapping-part-2.html#introduction-4"><i class="fa fa-check"></i><b>5.2</b> Introduction</a>
+<li class="chapter" data-level="2.1" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="suitability-mapping-part-2.html"><a href="suitability-mapping-part-2.html#learning-outcomes-4"><i class="fa fa-check"></i><b>5.2.1</b> Learning outcomes</a></li>
-<li class="chapter" data-level="5.2.2" data-path="suitability-mapping-part-2.html"><a href="suitability-mapping-part-2.html#datasets-setting-up-the-work-directory-3"><i class="fa fa-check"></i><b>5.2.2</b> Datasets &amp; setting up the work directory</a></li>
-<li class="chapter" data-level="5.2.3" data-path="suitability-mapping-part-2.html"><a href="suitability-mapping-part-2.html#loading-and-installing-packages-3"><i class="fa fa-check"></i><b>5.2.3</b> Loading and installing packages</a></li>
-<li class="chapter" data-level="5.2.4" data-path="suitability-mapping-part-2.html"><a href="suitability-mapping-part-2.html#loading-datasets-1"><i class="fa fa-check"></i><b>5.2.4</b> Loading datasets</a></li>
+<li class="chapter" data-level="2.1.1" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#learning-outcomes"><i class="fa fa-check"></i><b>2.1.1</b> Learning outcomes</a></li>
+<li class="chapter" data-level="2.1.2" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#becoming-familiar-with-the-panels-in-rstudio"><i class="fa fa-check"></i><b>2.1.2</b> Becoming familiar with the panels in RStudio</a></li>
+<li class="chapter" data-level="2.1.3" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#using-r-console-as-a-calculator"><i class="fa fa-check"></i><b>2.1.3</b> Using R Console as a Calculator</a></li>
+<li class="chapter" data-level="2.1.4" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#creating-basic-objects-and-assigning-values-to-it"><i class="fa fa-check"></i><b>2.1.4</b> Creating basic objects and assigning values to it</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="suitability-mapping-part-2.html"><a href="suitability-mapping-part-2.html#data-preparation-for-the-maxent-analysis"><i class="fa fa-check"></i><b>5.3</b> Data preparation for the MAXENT analysis</a>
+<li class="chapter" data-level="2.2" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#basics-of-managing-data-in-rstudio"><i class="fa fa-check"></i><b>2.2</b> Basics of managing data in RStudio</a>
 <ul>
-<li class="chapter" data-level="5.3.1" data-path="suitability-mapping-part-2.html"><a href="suitability-mapping-part-2.html#creating-a-multi-band-raster-using-the-stack-function"><i class="fa fa-check"></i><b>5.3.1</b> Creating a multi-band raster using the stack() function</a></li>
-<li class="chapter" data-level="5.3.2" data-path="suitability-mapping-part-2.html"><a href="suitability-mapping-part-2.html#preparing-data-for-pseudo-background-points-as-absence"><i class="fa fa-check"></i><b>5.3.2</b> Preparing data for pseudo-background points as absence</a></li>
-<li class="chapter" data-level="5.3.3" data-path="suitability-mapping-part-2.html"><a href="suitability-mapping-part-2.html#extraction-of-all-raster-values-from-predictor-variables-onto-presence-absence-points"><i class="fa fa-check"></i><b>5.3.3</b> Extraction of all raster values from predictor variables onto presence-absence points</a></li>
-<li class="chapter" data-level="5.3.4" data-path="suitability-mapping-part-2.html"><a href="suitability-mapping-part-2.html#preparation-of-training-test-data-for-prediction-model-cross-validation"><i class="fa fa-check"></i><b>5.3.4</b> Preparation of training &amp; test data for prediction &amp; model cross-validation</a></li>
+<li class="chapter" data-level="2.2.1" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#how-do-we-enter-data-into-rstudio"><i class="fa fa-check"></i><b>2.2.1</b> How do we enter data into RStudio?</a></li>
+<li class="chapter" data-level="2.2.2" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#how-do-we-create-a-variable-based-on-other-existing-variables-in-our-data-frame"><i class="fa fa-check"></i><b>2.2.2</b> How do we create a variable based on other existing variables in our data frame?</a></li>
+<li class="chapter" data-level="2.2.3" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#how-do-we-set-the-working-directory-in-our-computer-by-connecting-our-folder-to-rstudio-with-the-setwd-function"><i class="fa fa-check"></i><b>2.2.3</b> How do we set the working directory in our computer by connecting our folder to RStudio with the <code>setwd()</code> function?</a></li>
+<li class="chapter" data-level="2.2.4" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#how-do-we-import-merge-and-export-csv-data-with-rstudio"><i class="fa fa-check"></i><b>2.2.4</b> How do we import, merge and export CSV data with RStudio?</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="suitability-mapping-part-2.html"><a href="suitability-mapping-part-2.html#maxent-analysis"><i class="fa fa-check"></i><b>5.4</b> MAXENT Analysis</a>
+<li class="chapter" data-level="2.3" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#basic-visualisation-of-spatial-data-in-rstudio"><i class="fa fa-check"></i><b>2.3</b> Basic visualisation of spatial data in RStudio</a>
 <ul>
-<li class="chapter" data-level="5.4.1" data-path="suitability-mapping-part-2.html"><a href="suitability-mapping-part-2.html#examination-of-the-predictors-contribution-and-response-curves"><i class="fa fa-check"></i><b>5.4.1</b> Examination of the predictor’s contribution and response curves</a></li>
-<li class="chapter" data-level="5.4.2" data-path="suitability-mapping-part-2.html"><a href="suitability-mapping-part-2.html#model-validation"><i class="fa fa-check"></i><b>5.4.2</b> Model validation</a></li>
-<li class="chapter" data-level="5.4.3" data-path="suitability-mapping-part-2.html"><a href="suitability-mapping-part-2.html#mapping-the-predicted-probability-and-suitability"><i class="fa fa-check"></i><b>5.4.3</b> Mapping the predicted probability and suitability</a></li>
-<li class="chapter" data-level="5.4.4" data-path="suitability-mapping-part-2.html"><a href="suitability-mapping-part-2.html#supplementary-code-for-4-fold-analysis"><i class="fa fa-check"></i><b>5.4.4</b> Supplementary code for 4-fold analysis</a></li>
+<li class="chapter" data-level="2.3.1" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#installing-packages-into-rstudio"><i class="fa fa-check"></i><b>2.3.1</b> Installing packages into RStudio</a></li>
+<li class="chapter" data-level="2.3.2" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#adding-shapefiles-in-rstudio"><i class="fa fa-check"></i><b>2.3.2</b> Adding shapefiles in RStudio</a></li>
+<li class="chapter" data-level="2.3.3" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#mapping-with-tmap-functions-in-rstudio"><i class="fa fa-check"></i><b>2.3.3</b> Mapping with ‘tmap’ functions in RStudio</a></li>
 </ul></li>
-<li class="chapter" data-level="5.5" data-path="suitability-mapping-part-2.html"><a href="suitability-mapping-part-2.html#attributions-1"><i class="fa fa-check"></i><b>5.5</b> Attributions</a></li>
-<li class="chapter" data-level="5.6" data-path="suitability-mapping-part-2.html"><a href="suitability-mapping-part-2.html#references-see-reading-list-2"><i class="fa fa-check"></i><b>5.6</b> References (see reading list)</a></li>
-<li class="chapter" data-level="5.7" data-path="suitability-mapping-part-2.html"><a href="suitability-mapping-part-2.html#data-sources-3"><i class="fa fa-check"></i><b>5.7</b> Data Sources</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="geostatistical-modelling.html"><a href="geostatistical-modelling.html"><i class="fa fa-check"></i><b>6</b> Geostatistical Modelling</a>
+<li class="chapter" data-level="2.4" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#references"><i class="fa fa-check"></i><b>2.4</b> References</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="geostatistical-modelling.html"><a href="geostatistical-modelling.html#lecture-recording-length-1h06mins"><i class="fa fa-check"></i><b>6.1</b> Lecture recording (Length: 1h:06mins)</a></li>
-<li class="chapter" data-level="6.2" data-path="geostatistical-modelling.html"><a href="geostatistical-modelling.html#introduction-5"><i class="fa fa-check"></i><b>6.2</b> Introduction</a>
-<ul>
-<li class="chapter" data-level="6.2.1" data-path="geostatistical-modelling.html"><a href="geostatistical-modelling.html#learning-objectives"><i class="fa fa-check"></i><b>6.2.1</b> Learning objectives</a></li>
-<li class="chapter" data-level="6.2.2" data-path="geostatistical-modelling.html"><a href="geostatistical-modelling.html#datasets-setting-up-the-work-directory-4"><i class="fa fa-check"></i><b>6.2.2</b> Datasets &amp; setting up the work directory</a></li>
-<li class="chapter" data-level="6.2.3" data-path="geostatistical-modelling.html"><a href="geostatistical-modelling.html#loading-and-installing-packages-4"><i class="fa fa-check"></i><b>6.2.3</b> Loading and installing packages</a></li>
-<li class="chapter" data-level="6.2.4" data-path="geostatistical-modelling.html"><a href="geostatistical-modelling.html#loading-datasets-2"><i class="fa fa-check"></i><b>6.2.4</b> Loading datasets</a></li>
-<li class="chapter" data-level="6.2.5" data-path="geostatistical-modelling.html"><a href="geostatistical-modelling.html#data-preparation"><i class="fa fa-check"></i><b>6.2.5</b> Data preparation</a></li>
+<li class="chapter" data-level="2.4.1" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#recommended-reading-see-reading-list"><i class="fa fa-check"></i><b>2.4.1</b> Recommended reading (see reading list)</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="geostatistical-modelling.html"><a href="geostatistical-modelling.html#semivariogram-analysis"><i class="fa fa-check"></i><b>6.3</b> Semivariogram analysis</a>
-<ul>
-<li class="chapter" data-level="6.3.1" data-path="geostatistical-modelling.html"><a href="geostatistical-modelling.html#plotting-the-empirical-semivariogram"><i class="fa fa-check"></i><b>6.3.1</b> Plotting the Empirical Semivariogram</a></li>
-<li class="chapter" data-level="6.3.2" data-path="geostatistical-modelling.html"><a href="geostatistical-modelling.html#plotting-the-theoretical-semivariogram"><i class="fa fa-check"></i><b>6.3.2</b> Plotting the Theoretical Semivariogram</a></li>
+<li class="chapter" data-level="2.5" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#data-sources"><i class="fa fa-check"></i><b>2.5</b> Data Sources</a></li>
+<li class="chapter" data-level="2.6" data-path="spatial-analysis-for-data-sciences.html"><a href="spatial-analysis-for-data-sciences.html#practical-homework"><i class="fa fa-check"></i><b>2.6</b> Practical homework</a></li>
 </ul></li>
-<li class="chapter" data-level="6.4" data-path="geostatistical-modelling.html"><a href="geostatistical-modelling.html#kriging-modelling-null"><i class="fa fa-check"></i><b>6.4</b> Kriging modelling (null)</a>
+<li class="chapter" data-level="3" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html"><i class="fa fa-check"></i><b>3</b> Graphical representation of spatial data</a>
 <ul>
-<li class="chapter" data-level="6.4.1" data-path="geostatistical-modelling.html"><a href="geostatistical-modelling.html#building-a-blank-raster-template"><i class="fa fa-check"></i><b>6.4.1</b> Building a blank raster template</a></li>
-<li class="chapter" data-level="6.4.2" data-path="geostatistical-modelling.html"><a href="geostatistical-modelling.html#implementing-the-spatial-interpolation-on-blank-template-using-kriging"><i class="fa fa-check"></i><b>6.4.2</b> Implementing the spatial interpolation on blank template using Kriging</a></li>
-<li class="chapter" data-level="6.4.3" data-path="geostatistical-modelling.html"><a href="geostatistical-modelling.html#how-to-export-the-results-as-.tiff-format-thematic-visualisation-in-tmap"><i class="fa fa-check"></i><b>6.4.3</b> How to export the results as .tiff format thematic visualisation in <code>tmap</code></a></li>
-<li class="chapter" data-level="6.4.4" data-path="geostatistical-modelling.html"><a href="geostatistical-modelling.html#thematic-visualisation-of-raster-data-using-tmap"><i class="fa fa-check"></i><b>6.4.4</b> Thematic visualisation of raster data using <code>tmap</code></a></li>
-</ul></li>
-<li class="chapter" data-level="6.5" data-path="geostatistical-modelling.html"><a href="geostatistical-modelling.html#kriging-modelling-non-null"><i class="fa fa-check"></i><b>6.5</b> Kriging modelling (non-null)</a></li>
-<li class="chapter" data-level="6.6" data-path="geostatistical-modelling.html"><a href="geostatistical-modelling.html#references-see-reading-list-3"><i class="fa fa-check"></i><b>6.6</b> References (see reading list)</a></li>
-<li class="chapter" data-level="6.7" data-path="geostatistical-modelling.html"><a href="geostatistical-modelling.html#data-sources-4"><i class="fa fa-check"></i><b>6.7</b> Data Sources</a></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="spatial-models-part-1.html"><a href="spatial-models-part-1.html"><i class="fa fa-check"></i><b>7</b> Spatial Models: Part 1</a>
+<li class="chapter" data-level="3.1" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#introduction-1"><i class="fa fa-check"></i><b>3.1</b> Introduction</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="spatial-models-part-1.html"><a href="spatial-models-part-1.html#lecture-recording-length-4137mins"><i class="fa fa-check"></i><b>7.1</b> Lecture recording (Length: 41:37mins)</a></li>
-<li class="chapter" data-level="7.2" data-path="spatial-models-part-1.html"><a href="spatial-models-part-1.html#introduction-6"><i class="fa fa-check"></i><b>7.2</b> Introduction</a>
-<ul>
-<li class="chapter" data-level="7.2.1" data-path="spatial-models-part-1.html"><a href="spatial-models-part-1.html#learning-objective"><i class="fa fa-check"></i><b>7.2.1</b> Learning objective</a></li>
-<li class="chapter" data-level="7.2.2" data-path="spatial-models-part-1.html"><a href="spatial-models-part-1.html#datasets-setting-up-the-work-directory-5"><i class="fa fa-check"></i><b>7.2.2</b> Datasets &amp; setting up the work directory</a></li>
-<li class="chapter" data-level="7.2.3" data-path="spatial-models-part-1.html"><a href="spatial-models-part-1.html#loading-and-installing-packages-5"><i class="fa fa-check"></i><b>7.2.3</b> Loading and installing packages</a></li>
-<li class="chapter" data-level="7.2.4" data-path="spatial-models-part-1.html"><a href="spatial-models-part-1.html#loading-datasets-3"><i class="fa fa-check"></i><b>7.2.4</b> Loading datasets</a></li>
+<li class="chapter" data-level="3.1.1" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#learning-outcomes-1"><i class="fa fa-check"></i><b>3.1.1</b> Learning outcomes</a></li>
+<li class="chapter" data-level="3.1.2" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#getting_started_w03"><i class="fa fa-check"></i><b>3.1.2</b> Getting started</a></li>
+<li class="chapter" data-level="3.1.3" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#datasets-setting-up-the-work-directory"><i class="fa fa-check"></i><b>3.1.3</b> Datasets &amp; setting up the work directory</a></li>
+<li class="chapter" data-level="3.1.4" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#loading-and-installing-packages"><i class="fa fa-check"></i><b>3.1.4</b> Loading and installing packages</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="spatial-models-part-1.html"><a href="spatial-models-part-1.html#diagnostics-of-residuals"><i class="fa fa-check"></i><b>7.3</b> Diagnostics of residuals</a>
+<li class="chapter" data-level="3.2" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#case_study_w03"><i class="fa fa-check"></i><b>3.2</b> Case study</a></li>
+<li class="chapter" data-level="3.3" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#loading_data_w03"><i class="fa fa-check"></i><b>3.3</b> Loading our data sets for case study</a></li>
+<li class="chapter" data-level="3.4" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#data-processing"><i class="fa fa-check"></i><b>3.4</b> Data Processing</a>
 <ul>
-<li class="chapter" data-level="7.3.1" data-path="spatial-models-part-1.html"><a href="spatial-models-part-1.html#reporting-basic-summary-statistical-measures"><i class="fa fa-check"></i><b>7.3.1</b> Reporting basic summary statistical measures</a></li>
-<li class="chapter" data-level="7.3.2" data-path="spatial-models-part-1.html"><a href="spatial-models-part-1.html#reporting-the-spatial-distribution-of-our-variables"><i class="fa fa-check"></i><b>7.3.2</b> Reporting the spatial distribution of our variables</a></li>
-<li class="chapter" data-level="7.3.3" data-path="spatial-models-part-1.html"><a href="spatial-models-part-1.html#fitting-a-non-spatial-linear-regression-on-spatial-data-checking-the-residuals"><i class="fa fa-check"></i><b>7.3.3</b> Fitting a non-spatial Linear Regression on spatial data &amp; checking the residuals</a></li>
+<li class="chapter" data-level="3.4.1" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#reprojecting"><i class="fa fa-check"></i><b>3.4.1</b> Reprojecting</a></li>
+<li class="chapter" data-level="3.4.2" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#dissolving"><i class="fa fa-check"></i><b>3.4.2</b> Dissolving</a></li>
+<li class="chapter" data-level="3.4.3" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#subsetting"><i class="fa fa-check"></i><b>3.4.3</b> Subsetting</a></li>
+<li class="chapter" data-level="3.4.4" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#unioning"><i class="fa fa-check"></i><b>3.4.4</b> Unioning</a></li>
+<li class="chapter" data-level="3.4.5" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#clipping"><i class="fa fa-check"></i><b>3.4.5</b> Clipping</a></li>
+<li class="chapter" data-level="3.4.6" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#attribute-selection"><i class="fa fa-check"></i><b>3.4.6</b> Attribute selection</a></li>
+<li class="chapter" data-level="3.4.7" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#buffering"><i class="fa fa-check"></i><b>3.4.7</b> Buffering</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="spatial-models-part-1.html"><a href="spatial-models-part-1.html#spatial-regression-models"><i class="fa fa-check"></i><b>7.4</b> Spatial Regression Models</a>
+<li class="chapter" data-level="3.5" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#greenspace-in-london"><i class="fa fa-check"></i><b>3.5</b> Greenspace in London</a></li>
+<li class="chapter" data-level="3.6" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#attributions_w03"><i class="fa fa-check"></i><b>3.6</b> Attributions</a></li>
+<li class="chapter" data-level="3.7" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#reading_w03"><i class="fa fa-check"></i><b>3.7</b> References (see reading list)</a></li>
+<li class="chapter" data-level="3.8" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#data-sources-1"><i class="fa fa-check"></i><b>3.8</b> Data Sources</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="spatial-autocorrelation.html"><a href="spatial-autocorrelation.html"><i class="fa fa-check"></i><b>4</b> Spatial autocorrelation</a>
 <ul>
-<li class="chapter" data-level="7.4.1" data-path="spatial-models-part-1.html"><a href="spatial-models-part-1.html#model-formation-for-spatial-lag-or-error-models"><i class="fa fa-check"></i><b>7.4.1</b> Model formation for spatial lag or error models</a></li>
-<li class="chapter" data-level="7.4.2" data-path="spatial-models-part-1.html"><a href="spatial-models-part-1.html#spatial-lag-model-lagged-on-the-dependent-variable"><i class="fa fa-check"></i><b>7.4.2</b> Spatial Lag Model lagged on the dependent variable</a></li>
-<li class="chapter" data-level="7.4.3" data-path="spatial-models-part-1.html"><a href="spatial-models-part-1.html#spatial-error-models"><i class="fa fa-check"></i><b>7.4.3</b> Spatial Error Models</a></li>
-<li class="chapter" data-level="7.4.4" data-path="spatial-models-part-1.html"><a href="spatial-models-part-1.html#using-a-spatially-lagged-model-based-on-independent-variables"><i class="fa fa-check"></i><b>7.4.4</b> Using a Spatially lagged model based on independent variables</a></li>
-</ul></li>
-<li class="chapter" data-level="7.5" data-path="spatial-models-part-1.html"><a href="spatial-models-part-1.html#references-see-reading-list-4"><i class="fa fa-check"></i><b>7.5</b> References (see reading list)</a></li>
-<li class="chapter" data-level="7.6" data-path="spatial-models-part-1.html"><a href="spatial-models-part-1.html#data-sources-5"><i class="fa fa-check"></i><b>7.6</b> Data Sources</a></li>
-<li class="chapter" data-level="7.7" data-path="spatial-models-part-1.html"><a href="spatial-models-part-1.html#useful-videos"><i class="fa fa-check"></i><b>7.7</b> Useful videos</a></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="spatial-models-part-2.html"><a href="spatial-models-part-2.html"><i class="fa fa-check"></i><b>8</b> Spatial Models: Part 2</a>
+<li class="chapter" data-level="4.1" data-path="spatial-autocorrelation.html"><a href="spatial-autocorrelation.html#introduction-2"><i class="fa fa-check"></i><b>4.1</b> Introduction</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="spatial-models-part-2.html"><a href="spatial-models-part-2.html#lecture-recording-length-3025mins"><i class="fa fa-check"></i><b>8.1</b> Lecture recording (Length: 30:25mins)</a></li>
-<li class="chapter" data-level="8.2" data-path="spatial-models-part-2.html"><a href="spatial-models-part-2.html#introduction-7"><i class="fa fa-check"></i><b>8.2</b> Introduction</a>
-<ul>
-<li class="chapter" data-level="8.2.1" data-path="spatial-models-part-2.html"><a href="spatial-models-part-2.html#learning-outcomes-5"><i class="fa fa-check"></i><b>8.2.1</b> Learning outcomes</a></li>
-<li class="chapter" data-level="8.2.2" data-path="spatial-models-part-2.html"><a href="spatial-models-part-2.html#datasets-setting-up-the-work-directory-6"><i class="fa fa-check"></i><b>8.2.2</b> Datasets &amp; setting up the work directory</a></li>
-<li class="chapter" data-level="8.2.3" data-path="spatial-models-part-2.html"><a href="spatial-models-part-2.html#installing-packages"><i class="fa fa-check"></i><b>8.2.3</b> Installing packages</a></li>
-<li class="chapter" data-level="8.2.4" data-path="spatial-models-part-2.html"><a href="spatial-models-part-2.html#loading-datasets-4"><i class="fa fa-check"></i><b>8.2.4</b> Loading datasets</a></li>
+<li class="chapter" data-level="4.1.1" data-path="spatial-autocorrelation.html"><a href="spatial-autocorrelation.html#learning-outcomes-2"><i class="fa fa-check"></i><b>4.1.1</b> Learning outcomes</a></li>
+<li class="chapter" data-level="4.1.2" data-path="spatial-autocorrelation.html"><a href="spatial-autocorrelation.html#getting-started"><i class="fa fa-check"></i><b>4.1.2</b> Getting started</a></li>
+<li class="chapter" data-level="4.1.3" data-path="spatial-autocorrelation.html"><a href="spatial-autocorrelation.html#datasets-setting-up-the-work-directory-1"><i class="fa fa-check"></i><b>4.1.3</b> Datasets &amp; setting up the work directory</a></li>
+<li class="chapter" data-level="4.1.4" data-path="spatial-autocorrelation.html"><a href="spatial-autocorrelation.html#loading-and-installing-packages-1"><i class="fa fa-check"></i><b>4.1.4</b> Loading and installing packages</a></li>
 </ul></li>
-<li class="chapter" data-level="8.3" data-path="spatial-models-part-2.html"><a href="spatial-models-part-2.html#implementing-the-linear-regression-model"><i class="fa fa-check"></i><b>8.3</b> Implementing the Linear Regression model</a>
+<li class="chapter" data-level="4.2" data-path="spatial-autocorrelation.html"><a href="spatial-autocorrelation.html#case-study"><i class="fa fa-check"></i><b>4.2</b> Case study</a>
 <ul>
-<li class="chapter" data-level="8.3.1" data-path="spatial-models-part-2.html"><a href="spatial-models-part-2.html#obtaining-the-residuals-from-a-non-spatial-model"><i class="fa fa-check"></i><b>8.3.1</b> Obtaining the residuals from a non-spatial model</a></li>
-<li class="chapter" data-level="8.3.2" data-path="spatial-models-part-2.html"><a href="spatial-models-part-2.html#use-residuals-and-test-for-spatial-autocorrelation"><i class="fa fa-check"></i><b>8.3.2</b> Use residuals and test for spatial autocorrelation</a></li>
+<li class="chapter" data-level="4.2.1" data-path="spatial-autocorrelation.html"><a href="spatial-autocorrelation.html#neighbours"><i class="fa fa-check"></i><b>4.2.1</b> Neighbours</a></li>
+<li class="chapter" data-level="4.2.2" data-path="spatial-autocorrelation.html"><a href="spatial-autocorrelation.html#theft-in-camden"><i class="fa fa-check"></i><b>4.2.2</b> Theft in Camden</a></li>
+<li class="chapter" data-level="4.2.3" data-path="spatial-autocorrelation.html"><a href="spatial-autocorrelation.html#global-morans-i"><i class="fa fa-check"></i><b>4.2.3</b> Global Moran’s I</a></li>
+<li class="chapter" data-level="4.2.4" data-path="spatial-autocorrelation.html"><a href="spatial-autocorrelation.html#local-morans-i-or-lisa"><i class="fa fa-check"></i><b>4.2.4</b> Local Moran’s I (or LISA)</a></li>
 </ul></li>
-<li class="chapter" data-level="8.4" data-path="spatial-models-part-2.html"><a href="spatial-models-part-2.html#geographically-weighted-regression-gwr"><i class="fa fa-check"></i><b>8.4</b> Geographically Weighted Regression (GWR)</a>
-<ul>
-<li class="chapter" data-level="8.4.1" data-path="spatial-models-part-2.html"><a href="spatial-models-part-2.html#preparing-the-data-for-gwr-analysis"><i class="fa fa-check"></i><b>8.4.1</b> Preparing the data for GWR analysis</a></li>
-<li class="chapter" data-level="8.4.2" data-path="spatial-models-part-2.html"><a href="spatial-models-part-2.html#fitting-a-gwr-using-gwr.sel-and-gwr"><i class="fa fa-check"></i><b>8.4.2</b> Fitting a GWR using <code>gwr.sel()</code> and <code>gwr()</code></a></li>
-<li class="chapter" data-level="8.4.3" data-path="spatial-models-part-2.html"><a href="spatial-models-part-2.html#model-results"><i class="fa fa-check"></i><b>8.4.3</b> Model results</a></li>
-</ul></li>
-<li class="chapter" data-level="8.5" data-path="spatial-models-part-2.html"><a href="spatial-models-part-2.html#tasks"><i class="fa fa-check"></i><b>8.5</b> Tasks</a></li>
-<li class="chapter" data-level="8.6" data-path="spatial-models-part-2.html"><a href="spatial-models-part-2.html#attributions-2"><i class="fa fa-check"></i><b>8.6</b> Attributions</a></li>
-<li class="chapter" data-level="8.7" data-path="spatial-models-part-2.html"><a href="spatial-models-part-2.html#references-see-reading-list-5"><i class="fa fa-check"></i><b>8.7</b> References (see reading list)</a></li>
-<li class="chapter" data-level="8.8" data-path="spatial-models-part-2.html"><a href="spatial-models-part-2.html#data-sources-6"><i class="fa fa-check"></i><b>8.8</b> Data Sources</a></li>
+<li class="chapter" data-level="4.3" data-path="spatial-autocorrelation.html"><a href="spatial-autocorrelation.html#attributions"><i class="fa fa-check"></i><b>4.3</b> Attributions</a></li>
+<li class="chapter" data-level="4.4" data-path="spatial-autocorrelation.html"><a href="spatial-autocorrelation.html#references-see-reading-list"><i class="fa fa-check"></i><b>4.4</b> References (see reading list)</a></li>
 </ul></li>
 </ul>
 
@@ -380,7 +249,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">GEOG0114: Principles of Spatial Analysis</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">GEOG0114: Principles of Spatial Analysis (2023/24)</a>
           </h1>
         </div>
 
@@ -388,49 +257,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="graphical-representation-of-spatial-data" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">2</span> Graphical representation of spatial data<a href="graphical-representation-of-spatial-data.html#graphical-representation-of-spatial-data" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="lecture-recording-length-4331-minutes" class="section level2 hasAnchor" number="2.1">
-<h2><span class="header-section-number">2.1</span> Lecture recording (Length: 43:31 minutes)<a href="graphical-representation-of-spatial-data.html#lecture-recording-length-4331-minutes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="vembedr" align="center">
-<div>
-<iframe src="https://web.microsoftstream.com/embed/video/283a33f4-208b-499b-a483-212fa99b6279?autoplay=false&amp;showinfo=true" width="533" height="300" style="border:none;" data-external="1"></iframe>
-</div>
-</div>
-<p>If the video does not play within this section, then try playing it from Microsoft Streams - you should be able to view it there using this <a href="https://web.microsoftstream.com/video/283a33f4-208b-499b-a483-212fa99b6279">[<strong>LINK</strong>]</a>.</p>
-<div class="note">
-<p><strong>Important Notes:</strong> Access to Microsoft Steams will may require use of your UCL institutional login details</p>
-</div>
-<p><strong>Video for Coordinate Reference Systems (CRS) (Length: 17:53 minutes)</strong></p>
-<div class="vembedr" align="center">
-<div>
-<iframe src="https://www.youtube.com/embed/xJyJlKbZFlc" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
-</div>
-</div>
-<p><a href="https://www.youtube.com/watch?v=xJyJlKbZFlc">[<strong>Watch on YouTube</strong>]</a></p>
-</div>
-<div id="introduction-1" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> Introduction<a href="graphical-representation-of-spatial-data.html#introduction-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="graphical-representation-of-spatial-data" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">3</span> Graphical representation of spatial data<a href="graphical-representation-of-spatial-data.html#graphical-representation-of-spatial-data" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="introduction-1" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Introduction<a href="graphical-representation-of-spatial-data.html#introduction-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The goal for this week’s session is to introduce you to the various and most common geoprocessing (i.e., spatial operations) and data managing techniques for handling geospatial <em>vector</em> datasets. <strong>Geoprocessing</strong> is a framework and set of tools for processing geographic and related data - having this under your sleeve will help you to efficiently analyse and represent geospatial data.</p>
-<div id="learning-outcomes-1" class="section level3 hasAnchor" number="2.2.1">
-<h3><span class="header-section-number">2.2.1</span> Learning outcomes<a href="graphical-representation-of-spatial-data.html#learning-outcomes-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="learning-outcomes-1" class="section level3 hasAnchor" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> Learning outcomes<a href="graphical-representation-of-spatial-data.html#learning-outcomes-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Understanding spatial properties, relationships and how they are used within spatial operations are the building blocks to spatial data processing and analysis. This tutorial takes you through a simple approach to measuring greenspace access for schools in London, using geometric operations as the main methods for processing and analysing your data. You will construct a buffer data set around our greenspace and determine whether nearby schools intersect with this buffer. We will first visualise our data as points to see if we can identify areas of high versus low access - and then aggregate the data to the ward level for potential further use within analysis with statistical data, such as census information.</p>
 </div>
-<div id="getting_started_w03" class="section level3 hasAnchor" number="2.2.2">
-<h3><span class="header-section-number">2.2.2</span> Getting started<a href="graphical-representation-of-spatial-data.html#getting_started_w03" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="getting_started_w03" class="section level3 hasAnchor" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> Getting started<a href="graphical-representation-of-spatial-data.html#getting_started_w03" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To enable the efficient, repeatable and reproducible functionality of our work, we will use R-Studio’s ability to create and host code as a script. Before we do anything therefore, we will need to create a new R script: <strong>File</strong> &gt; <strong>New File</strong> &gt; <strong>R Script</strong></p>
 <p>Let’s go ahead and save our script now, so we know it’s stored in our system - and in the future, we only need to remind ourselves to complete a quick save (e.g. <code>cmd</code> + <code>s</code> (mac) / <code>ctrl</code> + <code>s</code> (windows)).</p>
 </div>
-<div id="datasets-setting-up-the-work-directory" class="section level3 hasAnchor" number="2.2.3">
-<h3><span class="header-section-number">2.2.3</span> Datasets &amp; setting up the work directory<a href="graphical-representation-of-spatial-data.html#datasets-setting-up-the-work-directory" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="datasets-setting-up-the-work-directory" class="section level3 hasAnchor" number="3.1.3">
+<h3><span class="header-section-number">3.1.3</span> Datasets &amp; setting up the work directory<a href="graphical-representation-of-spatial-data.html#datasets-setting-up-the-work-directory" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Before you begin, if you have not done so already, please make sure to download all data by <a href="https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%202%20-%20Dataset.zip"><strong>clicking here</strong></a>. Create a sub folder called “<strong>Week 2</strong>” within your “<strong>GEOG0114</strong>” folder stored in the desktop of your personal computer. Make sure to extract all data from the downloaded zip folder and store it into “<strong>Week 2</strong>” folder. Use your newly open R script and set the work directory to <strong>Week 2’s</strong> folder.</p>
 <p>For Windows, the code for setting the work directory will be:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="graphical-representation-of-spatial-data.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;C:/Users/AccountName/Desktop/GEOG0114/Week 2&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="graphical-representation-of-spatial-data.html#cb32-1" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;C:/Users/AccountName/Desktop/GEOG0114/Week 2&quot;</span>)</span></code></pre></div>
 <p>For MAC, the code for setting the work directory will be:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="graphical-representation-of-spatial-data.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;/Users/AccountName/Desktop/GEOG0114/Week 2&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="graphical-representation-of-spatial-data.html#cb33-1" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;/Users/AccountName/Desktop/GEOG0114/Week 2&quot;</span>)</span></code></pre></div>
 </div>
-<div id="loading-and-installing-packages" class="section level3 hasAnchor" number="2.2.4">
-<h3><span class="header-section-number">2.2.4</span> Loading and installing packages<a href="graphical-representation-of-spatial-data.html#loading-and-installing-packages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="loading-and-installing-packages" class="section level3 hasAnchor" number="3.1.4">
+<h3><span class="header-section-number">3.1.4</span> Loading and installing packages<a href="graphical-representation-of-spatial-data.html#loading-and-installing-packages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We will need to load the following packages:</p>
 <ul>
 <li><code>sf</code>: Simple Features</li>
@@ -441,194 +291,194 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>tidyverse</code>: this library is a efficient coding style in RStudio. It allows the use of a pipe function (<code>%&gt;%</code>), among other things, within our work and enables more efficient programming.</li>
 <li><code>units</code>: this library provide functions that support the conversion of measurement units in R vectors, matrices and arrays, and among other thing, the simplification of units.</li>
 </ul>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="graphical-representation-of-spatial-data.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install the packages using the install.package()</span></span>
-<span id="cb33-2"><a href="graphical-representation-of-spatial-data.html#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span>
-<span id="cb33-3"><a href="graphical-representation-of-spatial-data.html#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;units&quot;</span>)</span>
-<span id="cb33-4"><a href="graphical-representation-of-spatial-data.html#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-5"><a href="graphical-representation-of-spatial-data.html#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the packages with library()</span></span>
-<span id="cb33-6"><a href="graphical-representation-of-spatial-data.html#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;tidyverse&quot;</span>)</span>
-<span id="cb33-7"><a href="graphical-representation-of-spatial-data.html#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;units&quot;</span>)</span>
-<span id="cb33-8"><a href="graphical-representation-of-spatial-data.html#cb33-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;sf&quot;</span>)</span>
-<span id="cb33-9"><a href="graphical-representation-of-spatial-data.html#cb33-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;tmap&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="graphical-representation-of-spatial-data.html#cb34-1" tabindex="-1"></a><span class="co"># install the packages using the install.package()</span></span>
+<span id="cb34-2"><a href="graphical-representation-of-spatial-data.html#cb34-2" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span>
+<span id="cb34-3"><a href="graphical-representation-of-spatial-data.html#cb34-3" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;units&quot;</span>)</span>
+<span id="cb34-4"><a href="graphical-representation-of-spatial-data.html#cb34-4" tabindex="-1"></a></span>
+<span id="cb34-5"><a href="graphical-representation-of-spatial-data.html#cb34-5" tabindex="-1"></a><span class="co"># Load the packages with library()</span></span>
+<span id="cb34-6"><a href="graphical-representation-of-spatial-data.html#cb34-6" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;tidyverse&quot;</span>)</span>
+<span id="cb34-7"><a href="graphical-representation-of-spatial-data.html#cb34-7" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;units&quot;</span>)</span>
+<span id="cb34-8"><a href="graphical-representation-of-spatial-data.html#cb34-8" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;sf&quot;</span>)</span>
+<span id="cb34-9"><a href="graphical-representation-of-spatial-data.html#cb34-9" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;tmap&quot;</span>)</span></code></pre></div>
 </div>
 </div>
-<div id="case_study_w03" class="section level2 hasAnchor" number="2.3">
-<h2><span class="header-section-number">2.3</span> Case study<a href="graphical-representation-of-spatial-data.html#case_study_w03" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="case_study_w03" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Case study<a href="graphical-representation-of-spatial-data.html#case_study_w03" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Recent research (<a href="https://doi.org/10.1371/journal.pmed.1003213">Bijnens <em>et al.</em> 2020</a>) has shown that children brought up in proximity to greenspace have a higher IQ and fewer behavioral problems, irrespective of socio-economic background. In our analysis today, we will look to understand whether there are geographical patterns to schools that have high versus low access of greenspace and where a lack of greenspace needs to be addressed in London. In this practical we will try to quantify these visual patterns we may observe and find out which schools are within <strong>400 metres</strong> of greenspace that is larger than 50,000 square meters. We then calculate for each ward the percentage of schools that have access to a large greenspace.</p>
 </div>
-<div id="loading_data_w03" class="section level2 hasAnchor" number="2.4">
-<h2><span class="header-section-number">2.4</span> Loading our data sets for case study<a href="graphical-representation-of-spatial-data.html#loading_data_w03" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="loading_data_w03" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Loading our data sets for case study<a href="graphical-representation-of-spatial-data.html#loading_data_w03" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>For this analysis we have three different data sets available: schools in London, greenspace in London (split into two separate data sets), and wards (an administrative geography) in London. All three of our data sets are provided as shapefiles which will make working with the data relatively straight-forward (e.g. even for our point data, the schools, we do not need to convert them from a <code>csv</code> as we often find with this type of data). <strong>But</strong> we’ll need to do quite a few steps of processing to get our final data set.</p>
 <p>Let’s go ahead and load our three variables - we will use the <code>sf</code> library <code>st_read()</code> command to load our data sets into variables for use within our code:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="graphical-representation-of-spatial-data.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load london schools shapefile</span></span>
-<span id="cb34-2"><a href="graphical-representation-of-spatial-data.html#cb34-2" aria-hidden="true" tabindex="-1"></a>london_schools <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&#39;school_data_london_2016.shp&#39;</span>)</span>
-<span id="cb34-3"><a href="graphical-representation-of-spatial-data.html#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-4"><a href="graphical-representation-of-spatial-data.html#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="co"># load london wards shapefile</span></span>
-<span id="cb34-5"><a href="graphical-representation-of-spatial-data.html#cb34-5" aria-hidden="true" tabindex="-1"></a>london_wards <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&#39;london_wards.shp&#39;</span>)</span>
-<span id="cb34-6"><a href="graphical-representation-of-spatial-data.html#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-7"><a href="graphical-representation-of-spatial-data.html#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="co"># load the two london greenspace shapefiles</span></span>
-<span id="cb34-8"><a href="graphical-representation-of-spatial-data.html#cb34-8" aria-hidden="true" tabindex="-1"></a>TL_greenspace <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&#39;TL_GreenspaceSite.shp&#39;</span>)</span>
-<span id="cb34-9"><a href="graphical-representation-of-spatial-data.html#cb34-9" aria-hidden="true" tabindex="-1"></a>TQ_greenspace <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&#39;TQ_GreenspaceSite.shp&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="graphical-representation-of-spatial-data.html#cb35-1" tabindex="-1"></a><span class="co"># load london schools shapefile</span></span>
+<span id="cb35-2"><a href="graphical-representation-of-spatial-data.html#cb35-2" tabindex="-1"></a>london_schools <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&#39;school_data_london_2016.shp&#39;</span>)</span>
+<span id="cb35-3"><a href="graphical-representation-of-spatial-data.html#cb35-3" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="graphical-representation-of-spatial-data.html#cb35-4" tabindex="-1"></a><span class="co"># load london wards shapefile</span></span>
+<span id="cb35-5"><a href="graphical-representation-of-spatial-data.html#cb35-5" tabindex="-1"></a>london_wards <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&#39;london_wards.shp&#39;</span>)</span>
+<span id="cb35-6"><a href="graphical-representation-of-spatial-data.html#cb35-6" tabindex="-1"></a></span>
+<span id="cb35-7"><a href="graphical-representation-of-spatial-data.html#cb35-7" tabindex="-1"></a><span class="co"># load the two london greenspace shapefiles</span></span>
+<span id="cb35-8"><a href="graphical-representation-of-spatial-data.html#cb35-8" tabindex="-1"></a>TL_greenspace <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&#39;TL_GreenspaceSite.shp&#39;</span>)</span>
+<span id="cb35-9"><a href="graphical-representation-of-spatial-data.html#cb35-9" tabindex="-1"></a>TQ_greenspace <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&#39;TQ_GreenspaceSite.shp&#39;</span>)</span></code></pre></div>
 <p>To see what each variable looks like, you can type in <code>plot(name_of_variable)</code> into the R console. This is a quick command to understand both the spatial coverage and attributes of your data - as it will display the data by each of its attribute fields as a plot.</p>
 </div>
-<div id="data-processing" class="section level2 hasAnchor" number="2.5">
-<h2><span class="header-section-number">2.5</span> Data Processing<a href="graphical-representation-of-spatial-data.html#data-processing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="data-processing" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Data Processing<a href="graphical-representation-of-spatial-data.html#data-processing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Now we have our data loaded as variables, we’re ready to start processing! In spatial data processing, the question always is: where do I start first? And the easiest answer to that is: <strong>make sure all of your data is in the same Projected (or Coordinate) Reference System as each other</strong>. Checking - and changing projections - should always be the first step of any workflow as this will ensure you do not carry through any potential mistakes or errors that using the wrong system can cause.</p>
-<div id="reprojecting" class="section level3 hasAnchor" number="2.5.1">
-<h3><span class="header-section-number">2.5.1</span> Reprojecting<a href="graphical-representation-of-spatial-data.html#reprojecting" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="reprojecting" class="section level3 hasAnchor" number="3.4.1">
+<h3><span class="header-section-number">3.4.1</span> Reprojecting<a href="graphical-representation-of-spatial-data.html#reprojecting" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>When you loaded your data sets in the above step, you may have notice that in the console additional information about the data set is printed - this includes the metadata on the data set’s Coordinate Reference System! As a result, it is quite easy to simply scroll the terminal to check the CRS for each data set - which as you’ll see, all the data sets bar the school are using EPSG 27700, which is the code for British National Grid, whereas our schools data set shows 3857, the code for Web Mercator. That means we need to start with our <em>london_schools</em> variable - as we know that this is the only data set currently in the wrong projection instead of using British National Grid.</p>
 <p>To reproject our data set, we can use a function within the <code>sf</code> library, known as <code>st_transform()</code>. It is very simple to use - you only need to provide the function with the data set and the code for the new CRS you wish to use with the data. For now, we will simply store the result of this transformation as a new variable - but you could in the future, rewrite this code to use pipes to pipe this transformation when loading the data set.</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="graphical-representation-of-spatial-data.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># reproject london schools from Web Mercator to BNG </span></span>
-<span id="cb35-2"><a href="graphical-representation-of-spatial-data.html#cb35-2" aria-hidden="true" tabindex="-1"></a>london_schools_prj <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(london_schools, <span class="dv">27700</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="graphical-representation-of-spatial-data.html#cb36-1" tabindex="-1"></a><span class="co"># reproject london schools from Web Mercator to BNG </span></span>
+<span id="cb36-2"><a href="graphical-representation-of-spatial-data.html#cb36-2" tabindex="-1"></a>london_schools_prj <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(london_schools, <span class="dv">27700</span>)</span></code></pre></div>
 <p>We can now double-check our new variable is in the correct CRS by typing the following into the console and checking the result:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="graphical-representation-of-spatial-data.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check CRS </span></span>
-<span id="cb36-2"><a href="graphical-representation-of-spatial-data.html#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">st_crs</span>(london_schools_prj)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="graphical-representation-of-spatial-data.html#cb37-1" tabindex="-1"></a><span class="co"># check CRS </span></span>
+<span id="cb37-2"><a href="graphical-representation-of-spatial-data.html#cb37-2" tabindex="-1"></a><span class="fu">st_crs</span>(london_schools_prj)</span></code></pre></div>
 <p>As you can see from the output above, our data set has been reprojected into EPSG 27700 or British National Grid!</p>
 <p>The next step to process our <code>london_schools_prj</code> data set is to reduce the schools to only our chosen London extent. As you may have seen from the map above, our schools cover an area larger than our usual London extent. We can even make a quick map of this to check this properly:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="graphical-representation-of-spatial-data.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect</span></span>
-<span id="cb37-2"><a href="graphical-representation-of-spatial-data.html#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(london_wards) <span class="sc">+</span> </span>
-<span id="cb37-3"><a href="graphical-representation-of-spatial-data.html#cb37-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_polygons</span>() <span class="sc">+</span> </span>
-<span id="cb37-4"><a href="graphical-representation-of-spatial-data.html#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(london_schools_prj) <span class="sc">+</span> </span>
-<span id="cb37-5"><a href="graphical-representation-of-spatial-data.html#cb37-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_dots</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="graphical-representation-of-spatial-data.html#cb38-1" tabindex="-1"></a><span class="co"># inspect</span></span>
+<span id="cb38-2"><a href="graphical-representation-of-spatial-data.html#cb38-2" tabindex="-1"></a><span class="fu">tm_shape</span>(london_wards) <span class="sc">+</span> </span>
+<span id="cb38-3"><a href="graphical-representation-of-spatial-data.html#cb38-3" tabindex="-1"></a>  <span class="fu">tm_polygons</span>() <span class="sc">+</span> </span>
+<span id="cb38-4"><a href="graphical-representation-of-spatial-data.html#cb38-4" tabindex="-1"></a><span class="fu">tm_shape</span>(london_schools_prj) <span class="sc">+</span> </span>
+<span id="cb38-5"><a href="graphical-representation-of-spatial-data.html#cb38-5" tabindex="-1"></a>  <span class="fu">tm_dots</span>()</span></code></pre></div>
 <p><img src="images/general/week2/image1_outline.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>As we can see, we indeed have schools outside of our London wards - as a result, we want to remove those schools outside of this boundary. We will do this by first dissolving our ward file to create a more simplified shapefile for use as a “cookie-cutter”.</p>
 </div>
-<div id="dissolving" class="section level3 hasAnchor" number="2.5.2">
-<h3><span class="header-section-number">2.5.2</span> Dissolving<a href="graphical-representation-of-spatial-data.html#dissolving" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="dissolving" class="section level3 hasAnchor" number="3.4.2">
+<h3><span class="header-section-number">3.4.2</span> Dissolving<a href="graphical-representation-of-spatial-data.html#dissolving" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To dissolve a polygon shapefile using R code, we will use the <code>summarise()</code> function that comes from the <code>dplyr</code> library (part of the <code>tidyverse</code>) and summarise our London wards data set by summing its total area (supplied in the <em>HECTARES</em> attribute field/column) across all records. This will reduce our data frame to a single row, which will only contain one attribute - our total area of London, which we can then map/use as our clip (cookie-cutter) feature!</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="graphical-representation-of-spatial-data.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># dissolve</span></span>
-<span id="cb38-2"><a href="graphical-representation-of-spatial-data.html#cb38-2" aria-hidden="true" tabindex="-1"></a>london_outline <span class="ot">&lt;-</span> london_wards <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">area =</span> <span class="fu">sum</span>(HECTARES))</span>
-<span id="cb38-3"><a href="graphical-representation-of-spatial-data.html#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-4"><a href="graphical-representation-of-spatial-data.html#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect</span></span>
-<span id="cb38-5"><a href="graphical-representation-of-spatial-data.html#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(london_outline) <span class="sc">+</span></span>
-<span id="cb38-6"><a href="graphical-representation-of-spatial-data.html#cb38-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_polygons</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="graphical-representation-of-spatial-data.html#cb39-1" tabindex="-1"></a><span class="co"># dissolve</span></span>
+<span id="cb39-2"><a href="graphical-representation-of-spatial-data.html#cb39-2" tabindex="-1"></a>london_outline <span class="ot">&lt;-</span> london_wards <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">area =</span> <span class="fu">sum</span>(HECTARES))</span>
+<span id="cb39-3"><a href="graphical-representation-of-spatial-data.html#cb39-3" tabindex="-1"></a></span>
+<span id="cb39-4"><a href="graphical-representation-of-spatial-data.html#cb39-4" tabindex="-1"></a><span class="co"># inspect</span></span>
+<span id="cb39-5"><a href="graphical-representation-of-spatial-data.html#cb39-5" tabindex="-1"></a><span class="fu">tm_shape</span>(london_outline) <span class="sc">+</span></span>
+<span id="cb39-6"><a href="graphical-representation-of-spatial-data.html#cb39-6" tabindex="-1"></a>  <span class="fu">tm_polygons</span>()</span></code></pre></div>
 <p><img src="images/general/week2/image2_dissolved.png" width="100%" style="display: block; margin: auto;" /></p>
 </div>
-<div id="subsetting" class="section level3 hasAnchor" number="2.5.3">
-<h3><span class="header-section-number">2.5.3</span> Subsetting<a href="graphical-representation-of-spatial-data.html#subsetting" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="subsetting" class="section level3 hasAnchor" number="3.4.3">
+<h3><span class="header-section-number">3.4.3</span> Subsetting<a href="graphical-representation-of-spatial-data.html#subsetting" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Now we have our London outline, we can go ahead and clip our schools data set by our London outline. Whilst there is a clip function within the <code>sf</code> library, what we will do here is use a techinque known as spatial subsetting, which is more similar to <em>selecting by location</em>: we will subset our london schools data set by filtering out those that are not within the London Outline. This approach in R is much quicker than using the clip function - although deciding which approach to use is not only a question of speed but also how each function will affect the filtered data. When using a clip function, the function acts exactly like a cookie-cutter and will trim off any data that overlaps with the boundaries used. Conversely, when using a subsetting approach, if a data point or polygon overlaps on the boundary, it will still be included (depending on the <em>topological relationship</em> used) but in its entirety (i.e. no trimming!).</p>
 <p>As we’re using point data, it is generally easier to use a <strong>subset approach</strong>. There are multiple ways and notations to conduct spatial subsetting within R:</p>
 <p>First, we can either use the <code>[]</code> notation just like you would use for selecting and slicing a normal (table-based) dataframe from R’s base package. Second, <code>sf</code> has its own named functions for geometric operations, including: intersection, difference, symmetrical difference and snap. What actually happens is that when you use the <code>[]</code> notation on the background one of those <code>sf</code> named functions get called. More details on manipulating simple features can be found in this <a href="https://r-spatial.github.io/sf/articles/sf4.html">vignette</a>.</p>
 <p>To keep things simple, we will use the base subsetting approach - which also works similarly when programming in Python, for instance.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="graphical-representation-of-spatial-data.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># subset London schools</span></span>
-<span id="cb39-2"><a href="graphical-representation-of-spatial-data.html#cb39-2" aria-hidden="true" tabindex="-1"></a>london_schools_prj_ss <span class="ot">&lt;-</span> london_schools_prj[london_outline,]</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="graphical-representation-of-spatial-data.html#cb40-1" tabindex="-1"></a><span class="co"># subset London schools</span></span>
+<span id="cb40-2"><a href="graphical-representation-of-spatial-data.html#cb40-2" tabindex="-1"></a>london_schools_prj_ss <span class="ot">&lt;-</span> london_schools_prj[london_outline,]</span></code></pre></div>
 <div class="note">
 <p><strong>Note</strong><br/>
 In a case like above, you can just overwrite the current <em>london_schools_prj</em> variable as you know it is the data set you want to use. Much of this code could be condensed into several lines using pipes to make our code shorter and more efficient - but then it would be harder to explain! As you progress with R and programming, you are welcome to bring pipes and restructuring into own your code - but even if you don’t, as long as your code does what you need it to do, then that’s our main aim with this course!</p>
 </div>
 <p>Once you have run the above code, you should notice that your <em>london_schools_prj_ss</em> variable now only contains 3,372 records, instead of the original 3,889. We can also plot our variable using the same code as above, to double-check that it worked:</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="graphical-representation-of-spatial-data.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect</span></span>
-<span id="cb40-2"><a href="graphical-representation-of-spatial-data.html#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(london_wards) <span class="sc">+</span> </span>
-<span id="cb40-3"><a href="graphical-representation-of-spatial-data.html#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_polygons</span>() <span class="sc">+</span> </span>
-<span id="cb40-4"><a href="graphical-representation-of-spatial-data.html#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(london_schools_prj_ss) <span class="sc">+</span> </span>
-<span id="cb40-5"><a href="graphical-representation-of-spatial-data.html#cb40-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_dots</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="graphical-representation-of-spatial-data.html#cb41-1" tabindex="-1"></a><span class="co"># inspect</span></span>
+<span id="cb41-2"><a href="graphical-representation-of-spatial-data.html#cb41-2" tabindex="-1"></a><span class="fu">tm_shape</span>(london_wards) <span class="sc">+</span> </span>
+<span id="cb41-3"><a href="graphical-representation-of-spatial-data.html#cb41-3" tabindex="-1"></a>  <span class="fu">tm_polygons</span>() <span class="sc">+</span> </span>
+<span id="cb41-4"><a href="graphical-representation-of-spatial-data.html#cb41-4" tabindex="-1"></a><span class="fu">tm_shape</span>(london_schools_prj_ss) <span class="sc">+</span> </span>
+<span id="cb41-5"><a href="graphical-representation-of-spatial-data.html#cb41-5" tabindex="-1"></a>  <span class="fu">tm_dots</span>()</span></code></pre></div>
 <p><img src="images/general/week2/image3_cropped_points.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>We should now see that our schools are all contained within our ward data set, so we know this data set is ready to be used for analysis. We will now explore which schools are within 400m of greenspace and which are not. But first, we need to get our greenspace data ready so we can create the 400m buffers needed for this analysis.</p>
 </div>
-<div id="unioning" class="section level3 hasAnchor" number="2.5.4">
-<h3><span class="header-section-number">2.5.4</span> Unioning<a href="graphical-representation-of-spatial-data.html#unioning" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="unioning" class="section level3 hasAnchor" number="3.4.4">
+<h3><span class="header-section-number">3.4.4</span> Unioning<a href="graphical-representation-of-spatial-data.html#unioning" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We’ve done a lot of processing so far to do with our schools and ward data, but now it’s time for the greenspace data sets. If you look back at your code, you should remember that we have two data sets for our greenspace in London, which we now need to join together. This type of join is typically known as a <strong>union</strong> - and this is the type of tool you would want to look for across any GUI system.</p>
 <p>When it comes to programming, however, in either R or python, there is a much simpler way of joining data sets - and that’s simply copying over the records or observations from one variable into another - and the <code>base</code> library has a ready-to-go function for us to use, known as <code>rbind()</code>. This function allows you to ‘bind’ rows from one or more data sets together. This also works for <code>sf</code> objects.</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="graphical-representation-of-spatial-data.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># join greenspace data sets together</span></span>
-<span id="cb41-2"><a href="graphical-representation-of-spatial-data.html#cb41-2" aria-hidden="true" tabindex="-1"></a>greenspace <span class="ot">=</span> <span class="fu">rbind</span>(TQ_greenspace, TL_greenspace)</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="graphical-representation-of-spatial-data.html#cb42-1" tabindex="-1"></a><span class="co"># join greenspace data sets together</span></span>
+<span id="cb42-2"><a href="graphical-representation-of-spatial-data.html#cb42-2" tabindex="-1"></a>greenspace <span class="ot">=</span> <span class="fu">rbind</span>(TQ_greenspace, TL_greenspace)</span></code></pre></div>
 </div>
-<div id="clipping" class="section level3 hasAnchor" number="2.5.5">
-<h3><span class="header-section-number">2.5.5</span> Clipping<a href="graphical-representation-of-spatial-data.html#clipping" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="clipping" class="section level3 hasAnchor" number="3.4.5">
+<h3><span class="header-section-number">3.4.5</span> Clipping<a href="graphical-representation-of-spatial-data.html#clipping" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The next step is to clip our reduced greenspace data to our London outline. Within <code>sf</code>, the clip function is known as the <code>st_intersection()</code> function - not to be confused with <code>st_intersects()</code> from above! A clip will change the geometry of some of our greenspaces on the outskirts of London, i.e. cookie-cut them precisely to the London outline. If we used the subset approach approach as we did earlier with our point data, we would simply extract all greenspaces that intersect with the London outline - but not change their geometry.</p>
 <p>What we can do however if reduce the processing required by our computer by using a mixture of these two methods - if we first subset our all_greenspace data set by our London outline and then run the clip, our processing will be much faster:</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="graphical-representation-of-spatial-data.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># subset and clip</span></span>
-<span id="cb42-2"><a href="graphical-representation-of-spatial-data.html#cb42-2" aria-hidden="true" tabindex="-1"></a>london_greenspace <span class="ot">&lt;-</span> greenspace[london_outline,] <span class="sc">%&gt;%</span> <span class="fu">st_intersection</span>(london_outline)</span>
-<span id="cb42-3"><a href="graphical-representation-of-spatial-data.html#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-4"><a href="graphical-representation-of-spatial-data.html#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect</span></span>
-<span id="cb42-5"><a href="graphical-representation-of-spatial-data.html#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(london_outline) <span class="sc">+</span> </span>
-<span id="cb42-6"><a href="graphical-representation-of-spatial-data.html#cb42-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_polygons</span>() <span class="sc">+</span> </span>
-<span id="cb42-7"><a href="graphical-representation-of-spatial-data.html#cb42-7" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(london_greenspace) <span class="sc">+</span> </span>
-<span id="cb42-8"><a href="graphical-representation-of-spatial-data.html#cb42-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_polygons</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="graphical-representation-of-spatial-data.html#cb43-1" tabindex="-1"></a><span class="co"># subset and clip</span></span>
+<span id="cb43-2"><a href="graphical-representation-of-spatial-data.html#cb43-2" tabindex="-1"></a>london_greenspace <span class="ot">&lt;-</span> greenspace[london_outline,] <span class="sc">%&gt;%</span> <span class="fu">st_intersection</span>(london_outline)</span>
+<span id="cb43-3"><a href="graphical-representation-of-spatial-data.html#cb43-3" tabindex="-1"></a></span>
+<span id="cb43-4"><a href="graphical-representation-of-spatial-data.html#cb43-4" tabindex="-1"></a><span class="co"># inspect</span></span>
+<span id="cb43-5"><a href="graphical-representation-of-spatial-data.html#cb43-5" tabindex="-1"></a><span class="fu">tm_shape</span>(london_outline) <span class="sc">+</span> </span>
+<span id="cb43-6"><a href="graphical-representation-of-spatial-data.html#cb43-6" tabindex="-1"></a>  <span class="fu">tm_polygons</span>() <span class="sc">+</span> </span>
+<span id="cb43-7"><a href="graphical-representation-of-spatial-data.html#cb43-7" tabindex="-1"></a><span class="fu">tm_shape</span>(london_greenspace) <span class="sc">+</span> </span>
+<span id="cb43-8"><a href="graphical-representation-of-spatial-data.html#cb43-8" tabindex="-1"></a>  <span class="fu">tm_polygons</span>()</span></code></pre></div>
 <p><img src="images/general/week2/image4_clipped_greens.png" width="100%" style="display: block; margin: auto;" /></p>
 </div>
-<div id="attribute-selection" class="section level3 hasAnchor" number="2.5.6">
-<h3><span class="header-section-number">2.5.6</span> Attribute selection<a href="graphical-representation-of-spatial-data.html#attribute-selection" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="attribute-selection" class="section level3 hasAnchor" number="3.4.6">
+<h3><span class="header-section-number">3.4.6</span> Attribute selection<a href="graphical-representation-of-spatial-data.html#attribute-selection" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Now we have only London greenspaces in our data set, the next step, is to reduce the number of greenspaces to only those bigger than 50,000 square meters. To do this, we will use another type of subsetting you’ve probably come across, which is attribute subsetting - by using a simple query to subset only records that have an area larger than 50,000 square metres. To do this, we’ll use the <code>filter()</code> function from the <code>dplyr</code> library we mentioned earlier as well as another function called <code>set_units()</code> which is from the <code>unit</code> library that you’ve loaded - but we haven’t yet discussed. The <code>set_units()</code> function allows us to assign units to numerical values we are using within our query, i.e. here, for our query to run, our value must be in square metres to match the unit of the <code>area_m</code> column.</p>
 <p>To be able to query on our area, we must first calculate the area of each of our greenspaces. To do so in R, we can use the <code>st_area()</code> function within <code>sf</code>, which will calculate the area of each of our records/observations in our greenspace data set. To store the output of this function as a new column in our <code>london_greenspace</code> data set, we use a simple notation at the end of our <em>london_greenspace</em> variable: <code>$area_m</code>. The <code>$</code> in R means for this data frame, access the column that proceeds this sign. In our case, we do not as yet have a column called <code>area_m</code>, therefore R will automatically create this column and then store the outputs of the function in this column:</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="graphical-representation-of-spatial-data.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate area</span></span>
-<span id="cb43-2"><a href="graphical-representation-of-spatial-data.html#cb43-2" aria-hidden="true" tabindex="-1"></a>london_greenspace<span class="sc">$</span>area_m <span class="ot">&lt;-</span> <span class="fu">st_area</span>(london_greenspace)</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="graphical-representation-of-spatial-data.html#cb44-1" tabindex="-1"></a><span class="co"># calculate area</span></span>
+<span id="cb44-2"><a href="graphical-representation-of-spatial-data.html#cb44-2" tabindex="-1"></a>london_greenspace<span class="sc">$</span>area_m <span class="ot">&lt;-</span> <span class="fu">st_area</span>(london_greenspace)</span></code></pre></div>
 <p>Once we have our area column, we can now filter our data set based on that column and filter out all greenspace with an area that is smaller than 50,000 square meters.</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="graphical-representation-of-spatial-data.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># filter large greenspaces</span></span>
-<span id="cb44-2"><a href="graphical-representation-of-spatial-data.html#cb44-2" aria-hidden="true" tabindex="-1"></a>large_london_greenspace <span class="ot">&lt;-</span> london_greenspace <span class="sc">%&gt;%</span> <span class="fu">filter</span>(area_m <span class="sc">&gt;</span> <span class="fu">set_units</span>(<span class="fl">50000.0</span>, m<span class="sc">^</span><span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="graphical-representation-of-spatial-data.html#cb45-1" tabindex="-1"></a><span class="co"># filter large greenspaces</span></span>
+<span id="cb45-2"><a href="graphical-representation-of-spatial-data.html#cb45-2" tabindex="-1"></a>large_london_greenspace <span class="ot">&lt;-</span> london_greenspace <span class="sc">%&gt;%</span> <span class="fu">filter</span>(area_m <span class="sc">&gt;</span> <span class="fu">set_units</span>(<span class="fl">50000.0</span>, m<span class="sc">^</span><span class="dv">2</span>))</span></code></pre></div>
 <p>We now can look at our final greenspace data set against our london outline to see its final coverage:</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="graphical-representation-of-spatial-data.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect</span></span>
-<span id="cb45-2"><a href="graphical-representation-of-spatial-data.html#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(london_outline) <span class="sc">+</span> </span>
-<span id="cb45-3"><a href="graphical-representation-of-spatial-data.html#cb45-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_polygons</span>() <span class="sc">+</span> </span>
-<span id="cb45-4"><a href="graphical-representation-of-spatial-data.html#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(large_london_greenspace) <span class="sc">+</span> </span>
-<span id="cb45-5"><a href="graphical-representation-of-spatial-data.html#cb45-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_polygons</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="graphical-representation-of-spatial-data.html#cb46-1" tabindex="-1"></a><span class="co"># inspect</span></span>
+<span id="cb46-2"><a href="graphical-representation-of-spatial-data.html#cb46-2" tabindex="-1"></a><span class="fu">tm_shape</span>(london_outline) <span class="sc">+</span> </span>
+<span id="cb46-3"><a href="graphical-representation-of-spatial-data.html#cb46-3" tabindex="-1"></a>  <span class="fu">tm_polygons</span>() <span class="sc">+</span> </span>
+<span id="cb46-4"><a href="graphical-representation-of-spatial-data.html#cb46-4" tabindex="-1"></a><span class="fu">tm_shape</span>(large_london_greenspace) <span class="sc">+</span> </span>
+<span id="cb46-5"><a href="graphical-representation-of-spatial-data.html#cb46-5" tabindex="-1"></a>  <span class="fu">tm_polygons</span>()</span></code></pre></div>
 <p><img src="images/general/week2/image5_attribute_selection.png" width="100%" style="display: block; margin: auto;" /></p>
 </div>
-<div id="buffering" class="section level3 hasAnchor" number="2.5.7">
-<h3><span class="header-section-number">2.5.7</span> Buffering<a href="graphical-representation-of-spatial-data.html#buffering" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="buffering" class="section level3 hasAnchor" number="3.4.7">
+<h3><span class="header-section-number">3.4.7</span> Buffering<a href="graphical-representation-of-spatial-data.html#buffering" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We now have our London greenspace data set - we are ready for the last step of processing with this data set - generating our buffers that we can use to find all schools within 400 meters of the large greenspace areas. Once again, the <code>sf</code> library has a function for generating buffers - we just need to know how to deploy it successfully on our London greenspace data set - and this involves understanding how to denote our distance correctly - as well as understanding if and how we can dissolve our buffer into a single record.</p>
 <p>To do this, we would investigate the documentation of the function <code>st_buffer()</code> to find out what additional parameters it takes - and how. What we can find out is that we need to (of course!) provide a distance for our buffer - <strong>but</strong> whatever figure we supply, this will be interpreted within the <strong>units</strong> of the CRS we are using. In our case, we are using <em>British National Grid</em> and, luckily for us, the units of the CRS is metres - which makes are life significantly easier when calculating these buffers. For other CRS, many use a base unit of an Arc Degree, e.g. WGS84. In this case, you technically have two options: 1) reproject your data into a CRS that uses metres as its base unit OR 2) convert your distance into an Arc Degree measurement. <strong>Always choose Option 1.</strong></p>
 <p>Fortunately none of this is our concern - we know we can simply input the figure of 400 into our buffer and this will generate a buffer of 400m.</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="graphical-representation-of-spatial-data.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># greenspace buffer</span></span>
-<span id="cb46-2"><a href="graphical-representation-of-spatial-data.html#cb46-2" aria-hidden="true" tabindex="-1"></a>gs_buffer_400m <span class="ot">&lt;-</span> <span class="fu">st_buffer</span>(large_london_greenspace, <span class="at">dist=</span><span class="dv">400</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="graphical-representation-of-spatial-data.html#cb47-1" tabindex="-1"></a><span class="co"># greenspace buffer</span></span>
+<span id="cb47-2"><a href="graphical-representation-of-spatial-data.html#cb47-2" tabindex="-1"></a>gs_buffer_400m <span class="ot">&lt;-</span> <span class="fu">st_buffer</span>(large_london_greenspace, <span class="at">dist=</span><span class="dv">400</span>)</span></code></pre></div>
 <p>As our final bit of processing with our greenspace buffer, we want to dissolve the whole buffer into a single record. To do this, we’ll replicate the code used for our London ward dissolve, creating a an area value for our buffer records in the process to be used within the summarisation - and then result in a new <em>gs_buffer_400m_single</em> variable:</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="graphical-representation-of-spatial-data.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># dissolve greenspace buffer</span></span>
-<span id="cb47-2"><a href="graphical-representation-of-spatial-data.html#cb47-2" aria-hidden="true" tabindex="-1"></a>gs_buffer_400m_single <span class="ot">&lt;-</span> gs_buffer_400m <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">area =</span> <span class="fu">sum</span>(<span class="fu">st_area</span>(gs_buffer_400m)))</span>
-<span id="cb47-3"><a href="graphical-representation-of-spatial-data.html#cb47-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-4"><a href="graphical-representation-of-spatial-data.html#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect</span></span>
-<span id="cb47-5"><a href="graphical-representation-of-spatial-data.html#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(london_outline) <span class="sc">+</span> </span>
-<span id="cb47-6"><a href="graphical-representation-of-spatial-data.html#cb47-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_polygons</span>() <span class="sc">+</span> </span>
-<span id="cb47-7"><a href="graphical-representation-of-spatial-data.html#cb47-7" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(gs_buffer_400m_single) <span class="sc">+</span> </span>
-<span id="cb47-8"><a href="graphical-representation-of-spatial-data.html#cb47-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_polygons</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="graphical-representation-of-spatial-data.html#cb48-1" tabindex="-1"></a><span class="co"># dissolve greenspace buffer</span></span>
+<span id="cb48-2"><a href="graphical-representation-of-spatial-data.html#cb48-2" tabindex="-1"></a>gs_buffer_400m_single <span class="ot">&lt;-</span> gs_buffer_400m <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">area =</span> <span class="fu">sum</span>(<span class="fu">st_area</span>(gs_buffer_400m)))</span>
+<span id="cb48-3"><a href="graphical-representation-of-spatial-data.html#cb48-3" tabindex="-1"></a></span>
+<span id="cb48-4"><a href="graphical-representation-of-spatial-data.html#cb48-4" tabindex="-1"></a><span class="co"># inspect</span></span>
+<span id="cb48-5"><a href="graphical-representation-of-spatial-data.html#cb48-5" tabindex="-1"></a><span class="fu">tm_shape</span>(london_outline) <span class="sc">+</span> </span>
+<span id="cb48-6"><a href="graphical-representation-of-spatial-data.html#cb48-6" tabindex="-1"></a>  <span class="fu">tm_polygons</span>() <span class="sc">+</span> </span>
+<span id="cb48-7"><a href="graphical-representation-of-spatial-data.html#cb48-7" tabindex="-1"></a><span class="fu">tm_shape</span>(gs_buffer_400m_single) <span class="sc">+</span> </span>
+<span id="cb48-8"><a href="graphical-representation-of-spatial-data.html#cb48-8" tabindex="-1"></a>  <span class="fu">tm_polygons</span>()</span></code></pre></div>
 <p><img src="images/general/week2/image6_buffers.png" width="100%" style="display: block; margin: auto;" /></p>
 </div>
 </div>
-<div id="greenspace-in-london" class="section level2 hasAnchor" number="2.6">
-<h2><span class="header-section-number">2.6</span> Greenspace in London<a href="graphical-representation-of-spatial-data.html#greenspace-in-london" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="greenspace-in-london" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> Greenspace in London<a href="graphical-representation-of-spatial-data.html#greenspace-in-london" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Great, we are now ready to bring our two data sets together ready for analysis - and to do so, we’ll use subsetting as well as the <code>st_intersects()</code> function, although with this one, we’ll use it in two different ways!</p>
 <p>Our first task is to identify those schools that have access to greenspace - and extract them to create a new variable for use within our final point-in-polygon count (i.e. how many schools within each ward has access to greenspace). As we know, we can subset our london_schools data set by our greenspace buffer quite easily using the subset approach:</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="graphical-representation-of-spatial-data.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># schools within 400m of greenspace</span></span>
-<span id="cb48-2"><a href="graphical-representation-of-spatial-data.html#cb48-2" aria-hidden="true" tabindex="-1"></a>london_schools_gs <span class="ot">&lt;-</span> london_schools_prj_ss[gs_buffer_400m_single,]</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="graphical-representation-of-spatial-data.html#cb49-1" tabindex="-1"></a><span class="co"># schools within 400m of greenspace</span></span>
+<span id="cb49-2"><a href="graphical-representation-of-spatial-data.html#cb49-2" tabindex="-1"></a>london_schools_gs <span class="ot">&lt;-</span> london_schools_prj_ss[gs_buffer_400m_single,]</span></code></pre></div>
 <p>Our <em>london_schools_gs</em> variable has been subsetted correctly if we end up with 1,770 records, instead of the 3,372 records we had previously. We can now use this data set and our previous <em>london_schools_prj_ss</em> data set to create counts at the ward level. But before we do that, we will create a binary attribute of greenspace access within our <em>london_schools_prj_ss</em> variable to visualise our school ‘points’. To do this, we’ll use the <code>st_intersects()</code> function mentioned above and add a new column, <em>gs_access</em> (i.e. greenspace access), which will tell us which schools have access to greenspace or not.</p>
 <p>The <code>st_intersects()</code> function is really useful as its output is a simple <code>TRUE</code> or <code>FALSE</code> statement - does this record intersect with the greenspace buffer? This result is what will be stored in our new column as a TRUE or FALSE response and what we can use to map our schools and their greenspace access:</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="graphical-representation-of-spatial-data.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># greenspace access</span></span>
-<span id="cb49-2"><a href="graphical-representation-of-spatial-data.html#cb49-2" aria-hidden="true" tabindex="-1"></a>london_schools_prj_ss<span class="sc">$</span>gs_access <span class="ot">&lt;-</span> <span class="fu">st_intersects</span>(london_schools_prj_ss, gs_buffer_400m_single, <span class="at">sparse=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="graphical-representation-of-spatial-data.html#cb50-1" tabindex="-1"></a><span class="co"># greenspace access</span></span>
+<span id="cb50-2"><a href="graphical-representation-of-spatial-data.html#cb50-2" tabindex="-1"></a>london_schools_prj_ss<span class="sc">$</span>gs_access <span class="ot">&lt;-</span> <span class="fu">st_intersects</span>(london_schools_prj_ss, gs_buffer_400m_single, <span class="at">sparse=</span><span class="cn">FALSE</span>)</span></code></pre></div>
 <p>We could go ahead and recode this to create a 1 or 0, or YES or NO after processing, but for now we’ll leave it as <code>TRUE</code> or <code>FALSE</code>. We can go head and now visualise our schools based on this column, to see if they have access (<code>TRUE</code>) or do not have access (<code>FALSE</code>) to greenspace. To do this, we’ll use the <code>tmap</code> library again:</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="graphical-representation-of-spatial-data.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect</span></span>
-<span id="cb50-2"><a href="graphical-representation-of-spatial-data.html#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(london_schools_prj_ss) <span class="sc">+</span> </span>
-<span id="cb50-3"><a href="graphical-representation-of-spatial-data.html#cb50-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_dots</span>(<span class="at">col=</span><span class="st">&#39;gs_access&#39;</span>, <span class="at">palette=</span><span class="st">&#39;BuGn&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="graphical-representation-of-spatial-data.html#cb51-1" tabindex="-1"></a><span class="co"># inspect</span></span>
+<span id="cb51-2"><a href="graphical-representation-of-spatial-data.html#cb51-2" tabindex="-1"></a><span class="fu">tm_shape</span>(london_schools_prj_ss) <span class="sc">+</span> </span>
+<span id="cb51-3"><a href="graphical-representation-of-spatial-data.html#cb51-3" tabindex="-1"></a>  <span class="fu">tm_dots</span>(<span class="at">col=</span><span class="st">&#39;gs_access&#39;</span>, <span class="at">palette=</span><span class="st">&#39;BuGn&#39;</span>)</span></code></pre></div>
 <p><img src="images/general/week2/image7_dots_T_F.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>You’ll be pleased to read that we are finally here - we are at the last stage of our processing and can finally create the ward-level percentage of schools that have greenspace access, versus those that do not! To do this, we’ll be counting the number of points in each of our polygons, i.e. the number of schools in each ward.</p>
 <p>To do so in R and with <code>sf</code>, it is one line of code - which at first look does not sound at all like it is completing a point-in-polygon calculation - but it does! To create a PIP count within <code>sf</code>, we use the <code>st_intersects()</code> function again - but instead of using the output of <code>TRUE</code> or <code>FALSE</code>, what we actually extract from our function is its <code>lengths</code> recording. The <code>lengths</code> part of this function records how many times a join feature (i.e. our schools) intersects with our main features (i.e. our wards). (Note here, we <em>do not</em> set the sparse function to <code>FALSE</code> but leave it as TRUE/its default by not entering the parameter). As a result, the length of this list is equal to the count of how many schools are within the polygon - i.e. a PIP calculation.</p>
 <p>This is a really simple way of doing a PIP calculation - and makes it easy for us to store the output of the function and its <code>lengths</code> (and thus the count) directly as a column within our <code>london_wards</code> data set, as so:</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="graphical-representation-of-spatial-data.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># total number of schools in each ward </span></span>
-<span id="cb51-2"><a href="graphical-representation-of-spatial-data.html#cb51-2" aria-hidden="true" tabindex="-1"></a>london_wards<span class="sc">$</span>total_schools <span class="ot">&lt;-</span> <span class="fu">lengths</span>(<span class="fu">st_intersects</span>(london_wards, london_schools_prj_ss))</span>
-<span id="cb51-3"><a href="graphical-representation-of-spatial-data.html#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-4"><a href="graphical-representation-of-spatial-data.html#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="co"># total number of schools with greenspace access in each ward</span></span>
-<span id="cb51-5"><a href="graphical-representation-of-spatial-data.html#cb51-5" aria-hidden="true" tabindex="-1"></a>london_wards<span class="sc">$</span>gs_schools <span class="ot">&lt;-</span> <span class="fu">lengths</span>(<span class="fu">st_intersects</span>(london_wards, london_schools_gs))</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="graphical-representation-of-spatial-data.html#cb52-1" tabindex="-1"></a><span class="co"># total number of schools in each ward </span></span>
+<span id="cb52-2"><a href="graphical-representation-of-spatial-data.html#cb52-2" tabindex="-1"></a>london_wards<span class="sc">$</span>total_schools <span class="ot">&lt;-</span> <span class="fu">lengths</span>(<span class="fu">st_intersects</span>(london_wards, london_schools_prj_ss))</span>
+<span id="cb52-3"><a href="graphical-representation-of-spatial-data.html#cb52-3" tabindex="-1"></a></span>
+<span id="cb52-4"><a href="graphical-representation-of-spatial-data.html#cb52-4" tabindex="-1"></a><span class="co"># total number of schools with greenspace access in each ward</span></span>
+<span id="cb52-5"><a href="graphical-representation-of-spatial-data.html#cb52-5" tabindex="-1"></a>london_wards<span class="sc">$</span>gs_schools <span class="ot">&lt;-</span> <span class="fu">lengths</span>(<span class="fu">st_intersects</span>(london_wards, london_schools_gs))</span></code></pre></div>
 <p>As you can see from the code above, we’ve now calculated this for our total schools data set and the schools that have access to greenspace. The final step in our processing therefore is to create our rate. To do so, we’ll use the same approach of generating a new column within our <code>london_wards</code> data set - and then use a mathematical formula to calculate our rates:</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="graphical-representation-of-spatial-data.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># percentage of schools with greenspace access</span></span>
-<span id="cb52-2"><a href="graphical-representation-of-spatial-data.html#cb52-2" aria-hidden="true" tabindex="-1"></a>london_wards<span class="sc">$</span>gs_rate <span class="ot">&lt;-</span> (london_wards<span class="sc">$</span>gs_schools<span class="sc">/</span>london_wards<span class="sc">$</span>total_schools)<span class="sc">*</span><span class="dv">100</span></span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="graphical-representation-of-spatial-data.html#cb53-1" tabindex="-1"></a><span class="co"># percentage of schools with greenspace access</span></span>
+<span id="cb53-2"><a href="graphical-representation-of-spatial-data.html#cb53-2" tabindex="-1"></a>london_wards<span class="sc">$</span>gs_rate <span class="ot">&lt;-</span> (london_wards<span class="sc">$</span>gs_schools<span class="sc">/</span>london_wards<span class="sc">$</span>total_schools)<span class="sc">*</span><span class="dv">100</span></span></code></pre></div>
 <p>And that’s it! We now have our greenspace rate for our wards, which we can now again map:</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="graphical-representation-of-spatial-data.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect</span></span>
-<span id="cb53-2"><a href="graphical-representation-of-spatial-data.html#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(london_wards) <span class="sc">+</span> </span>
-<span id="cb53-3"><a href="graphical-representation-of-spatial-data.html#cb53-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_polygons</span>(<span class="at">col=</span><span class="st">&#39;gs_rate&#39;</span>, <span class="at">palette=</span><span class="st">&#39;Greens&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="graphical-representation-of-spatial-data.html#cb54-1" tabindex="-1"></a><span class="co"># inspect</span></span>
+<span id="cb54-2"><a href="graphical-representation-of-spatial-data.html#cb54-2" tabindex="-1"></a><span class="fu">tm_shape</span>(london_wards) <span class="sc">+</span> </span>
+<span id="cb54-3"><a href="graphical-representation-of-spatial-data.html#cb54-3" tabindex="-1"></a>  <span class="fu">tm_polygons</span>(<span class="at">col=</span><span class="st">&#39;gs_rate&#39;</span>, <span class="at">palette=</span><span class="st">&#39;Greens&#39;</span>)</span></code></pre></div>
 <p><img src="images/general/week2/image8_gsrate.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>We now have our final data set ready for analysis. Right now, we haven’t introduced you to any statistical or spatial analysis techniques to fully analyse our data set - but instead, we can focus on what are data shows visually!</p>
 <p>The last step of any programming is to extract our variables into permanent data sets for use at a later time. You can at any point in this practical, extract a permanent data file for each of our variables. For now, we’ll extract our new <code>london_wards</code> data set as we might want to use this in some additional analysis that we could look at next week or for our assessments at a later stage. The great thing about coding this up now, is that it will be easy to re-run all of this analysis and export any of the variables, again, at a later time!</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="graphical-representation-of-spatial-data.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># write</span></span>
-<span id="cb54-2"><a href="graphical-representation-of-spatial-data.html#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">st_write</span>(<span class="at">obj=</span>london_wards, <span class="at">dsn=</span><span class="st">&#39;london_ward_gs.shp&#39;</span>, <span class="at">delete_dsn=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="graphical-representation-of-spatial-data.html#cb55-1" tabindex="-1"></a><span class="co"># write</span></span>
+<span id="cb55-2"><a href="graphical-representation-of-spatial-data.html#cb55-2" tabindex="-1"></a><span class="fu">st_write</span>(<span class="at">obj=</span>london_wards, <span class="at">dsn=</span><span class="st">&#39;london_ward_gs.shp&#39;</span>, <span class="at">delete_dsn=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <p>You should now see the data set appear in your files!</p>
 </div>
-<div id="attributions_w03" class="section level2 hasAnchor" number="2.7">
-<h2><span class="header-section-number">2.7</span> Attributions<a href="graphical-representation-of-spatial-data.html#attributions_w03" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="attributions_w03" class="section level2 hasAnchor" number="3.6">
+<h2><span class="header-section-number">3.6</span> Attributions<a href="graphical-representation-of-spatial-data.html#attributions_w03" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This week’s practical uses content and inspiration from:</p>
 <ol style="list-style-type: decimal">
 <li>Wilkin, J. 2020. Analysing school access to greenspace in London. <a href="https://github.com/jo-wilkin/R-GIS-Tutorials/blob/master/greenspace_access.Rmd"><strong>[Source]</strong></a></li>
 <li>Dijk, J.V. 2021. Spatial Operations. <a href="https://github.com/jtvandijk/GEOG0114_20212022/blob/master/01-spatial-operations.Rmd"><strong>[Source]</strong></a></li>
 </ol>
 </div>
-<div id="reading_w03" class="section level2 hasAnchor" number="2.8">
-<h2><span class="header-section-number">2.8</span> References (see reading list)<a href="graphical-representation-of-spatial-data.html#reading_w03" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="reading_w03" class="section level2 hasAnchor" number="3.7">
+<h2><span class="header-section-number">3.7</span> References (see reading list)<a href="graphical-representation-of-spatial-data.html#reading_w03" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li><strong>Gitbook</strong>: [R Programming] Gimond, M. (2021) Intro to GIS and spatial analysis. <strong>Chapter 8: Spatial operations and vector overlays</strong> <a href="https://mgimond.github.io/Spatial/spatial-operations-and-vector-overlays.html"><strong>Click link</strong></a></li>
 <li><strong>Book</strong>: [Theory] Longley, P. <em>et al</em> (2015) Geographic Information Science &amp; systems, <strong>Chapter 13: Spatial Analysis</strong> <a href="https://rl.talis.com/3/ucl/items/fd38ec78-2bea-4165-aab3-0e9d9093db8e.html?lang=en-gb&amp;login=1"><strong>Click link</strong></a></li>
@@ -637,8 +487,8 @@ In a case like above, you can just overwrite the current <em>london_schools_prj<
 <li><strong>Paper</strong>: [Research] Bijnens, E. <em>et al</em> (2020). Residential green space and child intelligence and behavior across urban, suburban, and rural areas in Belgium: A longitudinal birth cohort study of twins. <em>PLOS Medicine</em> 17(8), e1003213. <a href="https://doi.org/10.1371/journal.pmed.1003213"><strong>Click link</strong></a></li>
 </ol>
 </div>
-<div id="data-sources-1" class="section level2 hasAnchor" number="2.9">
-<h2><span class="header-section-number">2.9</span> Data Sources<a href="graphical-representation-of-spatial-data.html#data-sources-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="data-sources-1" class="section level2 hasAnchor" number="3.8">
+<h2><span class="header-section-number">3.8</span> Data Sources<a href="graphical-representation-of-spatial-data.html#data-sources-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li>UK Shape files for different geographic units [Source: <strong>Office for National Statistics, Open Geography Portal</strong>] <a href="https://geoportal.statistics.gov.uk"><strong>Click Here</strong></a></li>
 <li>UK OS Greenspace open data [Source: <strong>Ordinance Survey</strong>] <a href="https://osdatahub.os.uk/downloads/open/OpenGreenspace"><strong>Click Here</strong></a></li>
