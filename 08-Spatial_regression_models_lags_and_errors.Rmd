@@ -600,8 +600,8 @@ IMPACTS_SLX
 
 ## Useful videos
 
-**Spatial Regression in R (Part One): The Four Simplest Models (Length: 40:36 minutes)**
+**Spatial Regression in R (Part One): The Four Simplest Models (Length: 00:40:36)**
 ```{r 09-spatial-regression-model, warnings=FALSE, message=FALSE, echo=FALSE}
-embed_youtube('b3HtV2Mhmvk') %>% use_align('center')
+embed_youtube('b3HtV2Mhmvk', height = 400) %>% use_align('center')
 ```
 [[**Watch on YouTube**]](https://youtu.be/b3HtV2Mhmvk)
