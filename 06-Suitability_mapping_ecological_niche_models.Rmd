@@ -1,17 +1,5 @@
 # Suitability Mapping: Part 2
 
-## Lecture recording (Length: 42:40 mins)
-```{r, warnings=FALSE, message=FALSE, echo=FALSE}
-library(vembedr)
-embed_msstream('3fc99219-cb40-4548-bb5a-6084b22e93a3') %>% use_align('center')
-```
-
-If the video does not play within this section, then try playing it from Microsoft Streams - you should be able to view it there using this [[**LINK**]](https://web.microsoftstream.com/video/3fc99219-cb40-4548-bb5a-6084b22e93a3).
-
-<div class="note">
-**Important Notes:** Access to Microsoft Steams will may require use of your UCL institutional login details. 
-</div>
-
 ## Introduction 
 
 Last week, we described how knowledge-driven methods informed by expert opinion (often drawn from experience or literature) can be used to predict locations that are suitable (or favourable) for a specific outcome given a set of environmental factors, which in turn, can be outputted as a thematic raster map. Last week's approach uses a mixed (i.e., qualitative and quantitative) methodology through the use of **Overlay Mapping** and **Analytical Hierarchy Process (AHP)** for suitability mapping, and these approaches are used strictly when there are no point occurrence data. 

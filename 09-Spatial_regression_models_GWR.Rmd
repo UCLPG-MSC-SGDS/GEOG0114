@@ -1,14 +1,5 @@
 # Spatial Models: Part 2
 
-## Lecture recording (Length: 00:00mins)
-**[PLACEHOLDER FOR VIDEO]**
-
-If the video does not play within this section, then try playing it from Microsoft Streams - you should be able to view it there using this [[**LINK**]]().
-
-<div class="note">
-**Important Notes:** Access to Microsoft Steams will may require use of your UCL institutional login details. 
-</div>
-
 ## Introduction
 
 The goal for this week’s session is to introduce you to a type of spatial model known as the **Geographically Weighted Regression (GWR)**. GWR is a statistical model which can indicate where non-stationarity may take place across space; it can be used to identify how **locally** weighted regression coefficients may vary across the study area (unlike its counterpart i.e., the **Spatial Lagged and/or Error Models** which provides **global coefficients**). Similar to last week's sessions, we will first need to explore the residuals from a linear regression model to identify evidence of **spatial autocorrelation** before implementing a spatial model. But, this time round, we will run a GWR and observe how the coefficients for a set of independent variables vary across space.

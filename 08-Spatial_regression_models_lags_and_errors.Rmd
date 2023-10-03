@@ -1,14 +1,5 @@
 # Spatial Models: Part 1
 
-## Lecture recording (Length: 00:00 mins)
-**[PLACEHOLDER FOR LECTURE VIDEO]**
-
-If the video does not play within this section, then try playing it from Microsoft Streams - you should be able to view it there using this [[**LINK**]]().
-
-<div class="note">
-**Important Notes:** Access to Microsoft Steams will may require use of your UCL institutional login details. 
-</div>
-
 ## Introduction
 
 This session builds on the techniques taught in week 3's tutorials focused on spatial dependence & spatial autocorrelation. Today, you will learn how to build spatially-based regression models for dealing with spatial autocorrelation whenever you want to determine relationship between an outcome and other independent variables. These are known as **Spatial Lag** or **Spatial Error** regression models. 

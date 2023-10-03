@@ -612,7 +612,7 @@ An incidence rate (IR) is typically a measure of frequency used to quantify the 
 
 This basic quantitative measure is often applied in social sciences (e.g., criminology for crime rates, in education on pass rates for grades), epidemiology and disaster sciences as well. The study of fire hazards and safety is an intersection of these three fields.
 
-**Objectives**: Use the spatial data you have built throughout the exercise to visual the distribution of incidence of fires that occurred in residential premises across postcodes in London in 2019. 
+**Objectives**: Use the spatial data you have built throughout the exercise to visualise the distribution of incidence of fires that occurred in residential premises across postcodes in London in 2019. 
 
 **HINTS**: 
 
@@ -627,6 +627,8 @@ $I  = (E/T) × 1000$
 - Experiment with the `tmap` functions and arguments to create a map showing the incidence rate of fire hazards across LSOAs in London.
 - In the arguments for the `tm_fill()` function - include the following: 1.) use `"Reds"` as colour palette scheme in the `palette =` argument; 2.) continuous legend scheme for the `style=` argument; and 3.) an appropriate title such as `"Fires per 1000"` for the legends in the `title =` argument.
 - Include the following customizations: 1.) a scale bar and a north arrow in the visualisation using the `tm_scale_bar()` and `tm_compass()`; and 2.) an overlay the London Borough shapefile on top of the London LSOA shapefile, and render it transparent. Try using the `tm_text()` function to include the names of the Boroughs in the visualisation - this is column called `ctyua16nm` in the Borough's shapefile.
+
+**Question:** How would you provide a descriptive interpretation of the spatial distribution/incidence of residential fires across LSOAs in London? 
 
 ::: note
 **IMPORTANT NOTE**: The solutions for this homework will be released next week

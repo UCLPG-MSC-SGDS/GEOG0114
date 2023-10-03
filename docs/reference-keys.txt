@@ -1,3 +1,8 @@
+installation-of-r-and-rstudio
+what-is-r-and-rstudio
+downloading-and-install-r-and-rstudio-on-to-your-laptop
+installation-for-macos-users
+installation-for-windows-users
 spatial-analysis-for-data-sciences
 introduction
 lecture-video-length-010001
@@ -25,7 +30,6 @@ recommended-reading-see-reading-list
 data-sources
 practical-homework
 graphical-representation-of-spatial-data
-lecture-recording-length-4331-minutes
 introduction-1
 learning-outcomes-1
 getting_started_w03
@@ -79,7 +83,6 @@ references-see-reading-list-1
 recommended-reading
 data-sources-2
 suitability-mapping-part-2
-lecture-recording-length-4240-mins
 introduction-4
 learning-outcomes-4
 datasets-setting-up-the-work-directory-3
@@ -99,7 +102,6 @@ attributions-1
 references-see-reading-list-2
 data-sources-3
 geostatistical-modelling
-lecture-recording-length-1h06mins
 introduction-5
 learning-objectives
 datasets-setting-up-the-work-directory-4
@@ -118,7 +120,6 @@ kriging-modelling-non-null
 references-see-reading-list-3
 data-sources-4
 spatial-models-part-1
-lecture-recording-length-0000-mins
 introduction-6
 learning-objective
 datasets-setting-up-the-work-directory-5
@@ -137,7 +138,6 @@ references-see-reading-list-4
 data-sources-5
 useful-videos
 spatial-models-part-2
-lecture-recording-length-0000mins
 introduction-7
 learning-outcomes-5
 datasets-setting-up-the-work-directory-6

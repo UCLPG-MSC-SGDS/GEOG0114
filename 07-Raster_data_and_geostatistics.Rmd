@@ -1,17 +1,5 @@
 # Geostatistical Modelling 
 
-## Lecture recording (Length: 1h:06mins)
-```{r, warnings=FALSE, message=FALSE, echo=FALSE}
-library(vembedr)
-embed_msstream('5a5be6cb-0695-4cf1-8138-d7157ffa3939') %>% use_align('center')
-```
-
-If the video does not play within this section, then try playing it from Microsoft Streams - you should be able to view it there using this [[**LINK**]](https://web.microsoftstream.com/video/5a5be6cb-0695-4cf1-8138-d7157ffa3939).
-
-<div class="note">
-**Important Notes:** Access to Microsoft Steams will may require use of your UCL institutional login details. 
-</div>
-
 ## Introduction
 
 Today, we will learn how to perform **semivariogram** analysis which can be used to create continuous predictive maps based on spatial interpolation technique called **Kriging**. In this session, we will investigate spatial variation in outcomes that are, in theory, **spatially continuous**; for example, the concentrations of ambient air pollutants such as Sulphur dioxide ($SO_{2}$) (a toxic gas emitted from sulphur rich fuels (i.e., coal, oil or diesel) when burnt) which can be present anywhere but in practice are only measured at specified point locations, such as air quality monitoring stations.

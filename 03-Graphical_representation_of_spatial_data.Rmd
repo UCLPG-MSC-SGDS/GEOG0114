@@ -1,23 +1,5 @@
 # Graphical representation of spatial data
 
-## Lecture recording (Length: 43:31 minutes)
-```{r, warnings=FALSE, message=FALSE, echo=FALSE}
-library(vembedr)
-embed_msstream('283a33f4-208b-499b-a483-212fa99b6279') %>% use_align('center')
-```
-
-If the video does not play within this section, then try playing it from Microsoft Streams - you should be able to view it there using this [[**LINK**]](https://web.microsoftstream.com/video/283a33f4-208b-499b-a483-212fa99b6279).
-
-<div class="note">
-**Important Notes:** Access to Microsoft Steams will may require use of your UCL institutional login details 
-</div>
-
-**Video for Coordinate Reference Systems (CRS) (Length: 17:53 minutes)**
-```{r 03-data-visualisation-rosling, warnings=FALSE, message=FALSE, echo=FALSE}
-embed_youtube('xJyJlKbZFlc') %>% use_align('center')
-```
-[[**Watch on YouTube**]](https://www.youtube.com/watch?v=xJyJlKbZFlc)
-
 ## Introduction
 
 The goal for this week’s session is to introduce you to the various and most common geoprocessing (i.e., spatial operations) and data managing techniques for handling geospatial *vector* datasets. **Geoprocessing** is a framework and set of tools for processing geographic and related data - having this under your sleeve will help you to efficiently analyse and represent geospatial data. 
