@@ -759,12 +759,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 <p>We can easily load them in RStudio as <strong>Spatial Polygon</strong> objects, type into your script:</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="spatial-analysis-for-data-sciences.html#cb25-1" tabindex="-1"></a><span class="co"># Add shapefiles for LSOA and Boroughs</span></span>
-<span id="cb25-2"><a href="spatial-analysis-for-data-sciences.html#cb25-2" tabindex="-1"></a>london_lsoa_shapefile <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="st">&quot;London_LSOA_areas.shp&quot;</span></span>
+<span id="cb25-2"><a href="spatial-analysis-for-data-sciences.html#cb25-2" tabindex="-1"></a>london_lsoa_shapefile <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="st">&quot;London_LSOA_areas.shp&quot;</span>)</span>
 <span id="cb25-3"><a href="spatial-analysis-for-data-sciences.html#cb25-3" tabindex="-1"></a>london_borough_shapefile <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="st">&quot;London_Boroughs_Shapefile.shp&quot;</span>)</span></code></pre></div>
 <p>We interested in visualising the data at an LSOA-level. We would need to merge the non-spatial (aka ordinary) data i.e., Full_data, uniquely in to the Spatial Polygon object we loaded in previously i.e., <code>london_lsoa_shapefile</code>, using the <code>LSOA_code</code> column.</p>
 <p>Again, we can use the <code>merge()</code> function to perform this task the same way we carried out the joining of the two ordinary data frames in <strong>section 1.3.4.2</strong>. Consequently, we want the format of the merge code to look something akin to this syntax <code>merge(target_spatial_object, selected_non_spatial_object, by=”LSOA”)</code>.</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="spatial-analysis-for-data-sciences.html#cb26-1" tabindex="-1"></a><span class="co"># Using the merge() function </span></span>
-<span id="cb26-2"><a href="spatial-analysis-for-data-sciences.html#cb26-2" tabindex="-1"></a>Spatial_data <span class="ot">&lt;-</span> <span class="fu">merge</span>(London_lsoa_shapefile, Full_data, <span class="at">by.x =</span> “LSOA_code”, <span class="at">by.y =</span> “LSOA_code”, <span class="at">all.x =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb26-2"><a href="spatial-analysis-for-data-sciences.html#cb26-2" tabindex="-1"></a>Spatial_data <span class="ot">&lt;-</span> <span class="fu">merge</span>(london_lsoa_shapefile, Full_data, <span class="at">by.x =</span> “LSOA_code”, <span class="at">by.y =</span> “LSOA_code”, <span class="at">all.x =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb26-3"><a href="spatial-analysis-for-data-sciences.html#cb26-3" tabindex="-1"></a></span>
 <span id="cb26-4"><a href="spatial-analysis-for-data-sciences.html#cb26-4" tabindex="-1"></a><span class="co"># View the datasets</span></span>
 <span id="cb26-5"><a href="spatial-analysis-for-data-sciences.html#cb26-5" tabindex="-1"></a><span class="fu">View</span>(Spatial_data)</span></code></pre></div>
@@ -897,18 +897,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>An incidence rate (IR) is typically a measure of frequency used to quantify the occurrence of an event.</p>
 <p>This basic quantitative measure is often applied in social sciences (e.g., criminology for crime rates, in education on pass rates for grades), epidemiology and disaster sciences as well. The study of fire hazards and safety is an intersection of these three fields.</p>
 <p><strong>Objectives</strong>: Use the spatial data you have built throughout the exercise to visual the distribution of incidence of fires that occurred in residential premises across postcodes in London in 2019.</p>
-<p><strong>CLUE</strong>: The incidence rate (<strong>I</strong>) formula for calculating fires hazards across LSOAs in London is the reported number of residential premises in an LSOA that experienced a fire event (<strong>E</strong>) divided by the total number of residential premises in an LOSA (<strong>T</strong>). This is shown below expressed per 1,000 residence (per capita).</p>
-<p>The formula is:</p>
+<p><strong>HINTS</strong>:</p>
+<ul>
+<li>The incidence rate (<strong>I</strong>) formula for calculating fires hazards across LSOAs in London is the reported number of residential premises in an LSOA that experienced a fire event (<strong>E</strong>) divided by the total number of residential premises in an LOSA (<strong>T</strong>). This is shown below expressed per 1,000 residence (per capita). The reported number of residential premises is the column <code>Fires2019</code>. The total number of houses in an LSOA is the column <code>TotalHouses2019</code> The incidence rate formula is:</li>
+</ul>
 </br>
 <center>
 <span class="math inline">\(I = (E/T) × 1000\)</span>
 </center>
 <p></br></p>
-<p>Experiment the <code>tmap</code> functions and arguments</p>
+<ul>
+<li>Experiment with the <code>tmap</code> functions and arguments to create a map showing the incidence rate of fire hazards across LSOAs in London.</li>
+<li>In the arguments for the <code>tm_fill()</code> function - include the following: 1.) use <code>"Reds"</code> as colour palette scheme in the <code>palette =</code> argument; 2.) continuous legend scheme for the <code>style=</code> argument; and 3.) an appropriate title such as <code>"Fires per 1000"</code> for the legends in the <code>title =</code> argument.</li>
+<li>Include the following customizations: 1.) a scale bar and a north arrow in the visualisation using the <code>tm_scale_bar()</code> and <code>tm_compass()</code>; and 2.) an overlay the London Borough shapefile on top of the London LSOA shapefile, and render it transparent. Try using the <code>tm_text()</code> function to include the names of the Boroughs in the visualisation - this is column called <code>ctyua16nm</code> in the Borough’s shapefile.</li>
+</ul>
 <div class="note">
-<p><strong>IMPORTANT NOTE</strong>: The solutions for this homework will be posted alongside with next week’s content</p>
+<p><strong>IMPORTANT NOTE</strong>: The solutions for this homework will be released next week</p>
 </div>
-<p>More details</p>
 
 </div>
 </div>

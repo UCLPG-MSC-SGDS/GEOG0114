@@ -472,7 +472,7 @@ We can easily load them in RStudio as **Spatial Polygon** objects, type into you
 
 ```{r, eval=FALSE}
 # Add shapefiles for LSOA and Boroughs
-london_lsoa_shapefile <- read_sf("London_LSOA_areas.shp"
+london_lsoa_shapefile <- read_sf("London_LSOA_areas.shp")
 london_borough_shapefile <- read_sf("London_Boroughs_Shapefile.shp")
 ```
 
@@ -482,7 +482,7 @@ Again, we can use the `merge()` function to perform this task the same way we ca
 
 ```{r, eval=FALSE}
 # Using the merge() function 
-Spatial_data <- merge(London_lsoa_shapefile, Full_data, by.x = “LSOA_code”, by.y = “LSOA_code”, all.x = TRUE)
+Spatial_data <- merge(london_lsoa_shapefile, Full_data, by.x = “LSOA_code”, by.y = “LSOA_code”, all.x = TRUE)
 
 # View the datasets
 View(Spatial_data)
@@ -614,9 +614,9 @@ This basic quantitative measure is often applied in social sciences (e.g., crimi
 
 **Objectives**: Use the spatial data you have built throughout the exercise to visual the distribution of incidence of fires that occurred in residential premises across postcodes in London in 2019. 
 
-**CLUE**: The incidence rate (**I**) formula for calculating fires hazards across LSOAs in London is the reported number of residential premises in an LSOA that experienced a fire event (**E**) divided by the total number of residential premises in an LOSA (**T**). This is shown below expressed per 1,000 residence (per capita). 
+**HINTS**: 
 
-The formula is:
+- The incidence rate (**I**) formula for calculating fires hazards across LSOAs in London is the reported number of residential premises in an LSOA that experienced a fire event (**E**) divided by the total number of residential premises in an LOSA (**T**). This is shown below expressed per 1,000 residence (per capita). The reported number of residential premises is the column `Fires2019`. The total number of houses in an LSOA is the column `TotalHouses2019` The incidence rate formula is:
 
 </br>
 <center>
@@ -624,10 +624,10 @@ $I  = (E/T) × 1000$
 </center>
 </br>
 
-Experiment the `tmap` functions and arguments
+- Experiment with the `tmap` functions and arguments to create a map showing the incidence rate of fire hazards across LSOAs in London.
+- In the arguments for the `tm_fill()` function - include the following: 1.) use `"Reds"` as colour palette scheme in the `palette =` argument; 2.) continuous legend scheme for the `style=` argument; and 3.) an appropriate title such as `"Fires per 1000"` for the legends in the `title =` argument.
+- Include the following customizations: 1.) a scale bar and a north arrow in the visualisation using the `tm_scale_bar()` and `tm_compass()`; and 2.) an overlay the London Borough shapefile on top of the London LSOA shapefile, and render it transparent. Try using the `tm_text()` function to include the names of the Boroughs in the visualisation - this is column called `ctyua16nm` in the Borough's shapefile.
 
 ::: note
-**IMPORTANT NOTE**: The solutions for this homework will be posted alongside with next week's content
+**IMPORTANT NOTE**: The solutions for this homework will be released next week
 :::
-
-More details
