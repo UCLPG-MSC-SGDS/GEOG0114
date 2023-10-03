@@ -27,7 +27,7 @@ In week 7, 8, 9 and 10, we will learn specialised tools for performing spatial a
 
 ## Structure {.unnumbered}
 
-All lectures and computer practicals will be delivered in-person. All Lectures are held on **Monday from 03:00pm to 04:00pm** at the [**South Quad Pop Up Learning Hub (Room G01)**](https://www.ucl.ac.uk/maps/south-quad-learning-hub). All computer lab seminars are delivered on **Thursday from 11:00am to 01:00pm** at the [**North West Wing (Room G07)**](https://www.ucl.ac.uk/maps/north-west-wing-building).
+All lectures and computer practicals will be delivered in-person. All Lectures are held on **Monday from 03:00pm to 04:00pm** at the [**North West Wing (Room G07)**](https://www.ucl.ac.uk/maps/north-west-wing-building). All computer lab seminars are delivered on **Thursday from 11:00am to 01:00pm** at the [**North West Wing (Room G07)**](https://www.ucl.ac.uk/maps/north-west-wing-building).
 
 ::: note
 **IMPORTANT NOTE**: Please bring your own laptops with you to the computer practicals and technical support sessions on Monday and Thursday, respectively
@@ -42,8 +42,8 @@ You can download the lecture notes and data sets for the practical lesson from t
 | **Week** | **Downloads**                                                                                                                                                                                                        | **Topics**                                          |
 |:----------------|:----------------|:--------------------------------------|
 | 1        | [**Slides**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Lecture_notes/Week%201%20Lecture%20Notes%20-%20Introduction.pdf); [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%201%20-%20Dataset.zip) | Spatial analysis for data science                   |
-| 2        | [**Slides**]; [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%202%20-%20Dataset.zip) | Graphical representation of spatial data            |
-| 3        | [**Slides**]; [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%203%20-%20Dataset.zip) | Spatial autocorrelation                             |
+| 2        | [**Slides**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Lecture_notes/Week%202%20Lecture%20Notes%20-%20Graphical%20Representation.pdf); [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%202%20-%20Dataset.zip) | Graphical representation of spatial data            |
+| 3        | [**Slides**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Lecture_notes/Week%203%20Lecture%20Notes%20-%20Spatial%20Autocorrelation.pdf); [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%203%20-%20Dataset.zip) | Spatial autocorrelation                             |
 | 4        | [**Slides**]; [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%204%20-%20Dataset.zip)                                                                                                             | Suitability mapping I                               |
 | 5        | [**Slides**]; [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%205%20-%20Dataset.zip)                                                                                                                                                                                             | Suitability mapping II                              |
 |          |                                                                                                                                                                                                                      | Reading Week |
@@ -58,6 +58,10 @@ You can download the lecture notes and data sets for the practical lesson from t
 
 ::: note
 **IMPORTANT NOTE**: All materials (including lecture slides, recordings, data sets for practical & reading list etc.) for Week 7 and 8 are hosted on an alternative page [**Link**]. Week 10's computer practical uses the dataset provided in Week 9's session. 
+:::
+
+::: note
+Created through automated procedure.
 :::
 
 ## Module tutors and contacts for GEOG0114 {.unnumbered}
