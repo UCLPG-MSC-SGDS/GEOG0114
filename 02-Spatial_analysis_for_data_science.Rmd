@@ -629,3 +629,5 @@ Experiment the `tmap` functions and arguments
 ::: note
 **IMPORTANT NOTE**: The solutions for this homework will be posted alongside with next week's content
 :::
+
+More details

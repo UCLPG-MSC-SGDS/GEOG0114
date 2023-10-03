@@ -60,10 +60,6 @@ You can download the lecture notes and data sets for the practical lesson from t
 **IMPORTANT NOTE**: All materials (including lecture slides, recordings, data sets for practical & reading list etc.) for Week 7 and 8 are hosted on an alternative page [**Link**]. Week 10's computer practical uses the dataset provided in Week 9's session. 
 :::
 
-::: note
-Created through automated procedure.
-:::
-
 ## Module tutors and contacts for GEOG0114 {.unnumbered}
 
 Feel free to contact us via email for help, or book appointments for additional support if need be. We are based at UCL Department of Geography, [**North West Wing building**](https://www.ucl.ac.uk/maps/north-west-wing-building). Our contact information and office details are:
@@ -71,5 +67,5 @@ Feel free to contact us via email for help, or book appointments for additional 
 | **Name**        | **Email**                                                       | **Room number** |
 |-----------------------|-------------------------|-------------------------|
 | Anwar Musah     | [**a.musah\@ucl.ac.uk**](a.musah@ucl.ac.uk)                     | 115             |
-| Justin van Dijk | [**j.t.vandijk\@ucl.ac.uk**](j.t.vandijk@ucl.ac.uk)             | 117             |
+| Justin van Dijk | [**j.t.vandijk\@ucl.ac.uk**](j.t.vandijk@ucl.ac.uk)             | 118             |
 | Shun-Chan Tsai  | [**shun-chan.tsai.14\@ucl.ac.uk**](shun-chan.tsai.14@ucl.ac.uk) | 110B            |
