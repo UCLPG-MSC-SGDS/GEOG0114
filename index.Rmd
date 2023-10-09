@@ -53,7 +53,7 @@ You can download the lecture notes and data sets for the practical lesson from t
 | 9        | [**Slides**]; [**Data**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%209%20-%20Dataset.zip)                                                                                                            | Spatial models I                         |
 | 10       | [**Slides**]                                                                                                            | Spatial models II                        |
 
-**Solution codes**: **[Week 1]** | **[Week 2]** | **[Week 3]** | **[Week 4]** | **[Week 5]** | **[Week 6]** | **[Week 9]** | **[Week 10]**
+**Solution codes**: [**[Week 1]**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/blob/main/Solutions%201.zip) | **[Week 2]** | **[Week 3]** | **[Week 4]** | **[Week 5]** | **[Week 6]** | **[Week 9]** | **[Week 10]**
 
 
 ::: note
