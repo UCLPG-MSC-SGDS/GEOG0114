@@ -57,7 +57,7 @@ You can download the lecture notes and data sets for the practical lesson from t
 
 
 ::: note
-**IMPORTANT NOTE**: All materials (including lecture slides, recordings, data sets for practical & reading list etc.) for Week 7 and 8 are hosted on an alternative page [**Link**]. Week 10's computer practical uses the dataset provided in Week 9's session. 
+**IMPORTANT NOTE**: All materials (including lecture slides, recordings, data sets for practical & reading list etc.) for Week 7 and 8 are hosted on an alternative page [**Link**](https://jtvandijk.github.io/GEOG0114/). Week 10's computer practical uses the dataset provided in Week 9's session. 
 :::
 
 ## Module tutors and contacts for GEOG0114 {.unnumbered}
