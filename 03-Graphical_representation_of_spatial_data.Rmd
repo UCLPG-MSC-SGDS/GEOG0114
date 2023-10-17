@@ -377,6 +377,6 @@ This week's practical uses content and inspiration from:
 2. UK OS Greenspace open data [Source: **Ordinance Survey**] [**Click Here**](https://osdatahub.os.uk/downloads/open/OpenGreenspace)
 3. Earthquake Catalog data [Source: **USGS - Science for a changing world**] [**Click Here**](https://earthquake.usgs.gov/earthquakes/search/)
 4. The national & administrative areas for Turkiye [Source: **Database of Global Administrative Areas**] [**Click Here**](https://gadm.org)
-5. Building footprints in Türkiye [Source: **The Humanitarian Data Exchange**](https://data.humdata.org)
+5. Building footprints in Türkiye [Source: **The Humanitarian Data Exchange**] [**Click Here**](https://data.humdata.org)
 
 [INSERT PRACTICAL]
