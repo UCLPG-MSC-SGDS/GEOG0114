@@ -27,7 +27,7 @@ In week 7, 8, 9 and 10, we will learn specialised tools for performing spatial a
 
 ## Structure {.unnumbered}
 
-All lectures and computer practicals will be delivered in-person. All Lectures are held on **Monday from 03:00pm to 04:00pm** at the [**North West Wing (Room G07)**](https://www.ucl.ac.uk/maps/north-west-wing-building). All computer lab seminars are delivered on **Thursday from 11:00am to 01:00pm** at the [**North West Wing (Room G07)**](https://www.ucl.ac.uk/maps/north-west-wing-building).
+All lectures and computer practicals will be delivered in-person. All Lectures are held on **Monday from 04:00pm to 05:00pm** at the [**North West Wing (Room 305)**](https://www.ucl.ac.uk/maps/north-west-wing-building). All computer lab seminars are delivered on **Thursday from 11:00am to 01:00pm** at the [**North West Wing (Room G07)**](https://www.ucl.ac.uk/maps/north-west-wing-building).
 
 ::: note
 **IMPORTANT NOTE**: Please bring your own laptops with you to the computer practicals and technical support sessions on Monday and Thursday, respectively
@@ -68,4 +68,3 @@ Feel free to contact us via email for help, or book appointments for additional 
 |-----------------------|-------------------------|-------------------------|
 | Anwar Musah     | [**a.musah\@ucl.ac.uk**](a.musah@ucl.ac.uk)                     | 115             |
 | Justin van Dijk | [**j.t.vandijk\@ucl.ac.uk**](j.t.vandijk@ucl.ac.uk)             | 118             |
-| Shun-Chan Tsai  | [**shun-chan.tsai.14\@ucl.ac.uk**](shun-chan.tsai.14@ucl.ac.uk) | 110B            |

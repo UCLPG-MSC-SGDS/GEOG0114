@@ -2,6 +2,22 @@
 
 ## Introduction
 
+### Lecture video (Length: 43:13)
+
+```{r, warnings=FALSE, message=FALSE, echo=FALSE}
+library(vembedr)
+embed_youtube('9ONOy4NvRPM', height=400) %>% use_align('center')
+```
+[[**Watch on YouTube**]](https://youtu.be/9ONOy4NvRPM)
+
+### Computer practical video (Length: 01:59:48)
+
+```{r, warnings=FALSE, message=FALSE, echo=FALSE}
+library(vembedr)
+embed_youtube('MejBelvj7Jg', height=400) %>% use_align('center')
+```
+[[**Watch on YouTube**]](https://youtu.be/MejBelvj7Jg)
+
 The goal for this week’s session is to introduce you to the various and most common geoprocessing (i.e., spatial operations) and data managing techniques for handling geospatial *vector* datasets. **Geoprocessing** is a framework and set of tools for processing geographic and related data - having this under your sleeve will help you to efficiently analyse and represent geospatial data. 
 
 ### Learning outcomes
@@ -359,3 +375,7 @@ This week's practical uses content and inspiration from:
 ## Data Sources
 1. UK Shape files for different geographic units [Source: **Office for National Statistics, Open Geography Portal**] [**Click Here**](https://geoportal.statistics.gov.uk)
 2. UK OS Greenspace open data [Source: **Ordinance Survey**] [**Click Here**](https://osdatahub.os.uk/downloads/open/OpenGreenspace)
+3. Earthquake Catalog data [Source: **USGS - Science for a changing world**] [**Click Here**](https://earthquake.usgs.gov/earthquakes/search/)
+4. The national & administrative areas for Turkiye [Source: **Database of Global Administrative Areas**] [**Click Here**](https://gadm.org)
+5. Building footprints in Türkiye [Source: **The Humanitarian Data Exchange**](https://data.humdata.org)
+
