@@ -379,3 +379,4 @@ This week's practical uses content and inspiration from:
 4. The national & administrative areas for Turkiye [Source: **Database of Global Administrative Areas**] [**Click Here**](https://gadm.org)
 5. Building footprints in Türkiye [Source: **The Humanitarian Data Exchange**](https://data.humdata.org)
 
+[INSERT PRACTICAL]

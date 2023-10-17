@@ -52,8 +52,9 @@ greenspace-in-london
 attributions_w03
 reading_w03
 data-sources-1
-spatial-autocorrelation
+spatial-autocorrelation-and-dependence
 introduction-2
+lecture-video-length-010642
 learning-outcomes-2
 getting-started
 datasets-setting-up-the-work-directory-1

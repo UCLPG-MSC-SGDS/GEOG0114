@@ -1,6 +1,14 @@
-# Spatial autocorrelation
+# Spatial autocorrelation and dependence
 
 ## Introduction
+
+### Lecture video (Length: 01:06:42)
+
+```{r, warnings=FALSE, message=FALSE, echo=FALSE}
+library(vembedr)
+embed_youtube('znukVzQEQUQ', height=400) %>% use_align('center')
+```
+[[**Watch on YouTube**]](https://youtu.be/znukVzQEQUQ)
 
 This week, we focus on the first of two key properties of spatial data: spatial dependence. Spatial dependence is the idea that the observed value of a variable in one location is often dependent (to some degree) on the observed value of the same value in a nearby location. For spatial analysis, this dependence can be assessed and measured statistically by considering the level of spatial autocorrelation between values of a specific variable, observed in either different locations or between pairs of variables observed at the same location. Spatial autocorrelation occurs when these values are not independent of one another and instead cluster together across geographic space.
 
@@ -549,3 +557,5 @@ This week's practical uses content and inspiration from:
 2.  **Book**: [Theory] Longley, P. _et al_ (2015) Geographic Information Science & systems (4th Edition); **Chapter 2: The Nature of Geographic Data** [**Click link**](https://rl.talis.com/3/ucl/items/ea2386fb-19dc-460a-acba-bda3737546c2.html?lang=en-gb&login=1)
 3. **Book**: [Theory] Longley, P. _*et al_ (2015) Geographic Information Science & systems (4th Edition); **Chapter 13: Spatial Analysis** [**Click link**](https://rl.talis.com/3/ucl/items/fd38ec78-2bea-4165-aab3-0e9d9093db8e.html?lang=en-gb&login=1)
 4. **Paper**: [Research] Radil, S. 2016. Spatial analysis of crime. In: Huebner, B. and Bynum, T. *The Handbook of Measurement Issues in Criminology and Criminal Justice*, Chapter 24, pp.536-554. [**Click link**](https://doi.org/10.1002/9781118868799.ch24) (Note: use of your UCL login via institutional organisation (**UK Federation**) is required to access the digital paper)
+
+[INSERT PRACTICAL]
