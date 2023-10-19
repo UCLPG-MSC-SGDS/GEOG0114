@@ -52,6 +52,7 @@ greenspace-in-london
 attributions_w03
 reading_w03
 data-sources-1
+practical-homework-1
 spatial-autocorrelation-and-dependence
 introduction-2
 lecture-video-length-010642

@@ -379,4 +379,44 @@ This week's practical uses content and inspiration from:
 4. The national & administrative areas for Turkiye [Source: **Database of Global Administrative Areas**] [**Click Here**](https://gadm.org)
 5. Building footprints in Türkiye [Source: **The Humanitarian Data Exchange**] [**Click Here**](https://data.humdata.org)
 
-[INSERT PRACTICAL]
+## Practical homework
+
+**Geoprocessing of spatial-referenced natural hazards: Earthquakes**
+
+There are severe economic and social consequence of natural hazards such as earthquakes which result innumerable disasters that are instant (e.g., deaths, injury, homes destroyed, transport and communication links disrupted, water pipes burst and water supplies contaminated and many more) and long-term (e.g., disease may spread, re-housing, and most often refugee camps). You can download freely available open-source data on earthquake occurrence worldwide here: https://earthquake.usgs.gov/earthquakes/search/ 
+
+Türkiye (or Turkey) is a nation that often experience earthquakes on a frequent basis with nearly over 20 earth tremors in 2022 according to the [Turkish Disaster & Emergency Management Authority](https://en.afad.gov.tr).
+
+You can download the dataset for this homework exercise: [**[CLICK HERE]**]()
+
+You are given the following spatial datasets:
+
+1. `All_earthquake_points_in_Turkey.shp`: 984-point locations of where earthquakes/tremors occurred in Greece and Türkiye in 2019 to 2023 as a shapefile;
+2. `gadm41_TUR_1.shp`: The administrative areas of Türkiye as a shapefile; and
+3. `Konya_buildings_at_risk.shp`: 25,000+ building footprints from small administrative area in Türkiye called Konya, as a shapefile.
+4. `Earthquake_point_in_Konya.shp`: Single point location of an earthquake that is a focal point in Konya. 
+
+Your goal for this homework practical is to use the appropriate geoprocessing task to achieve the following tasks:
+
+**Task 1**: Use the dataset `All_earthquake_points_in_Turkey.shp` and `gadm41_TUR_1.shp` to visualise the distribution of ALL point locations of where earthquakes had occurred ONLY in Türkiye?
+
+**Hints**: You may want to consider using the following operations: using the `st_area()` before dissolving to create an outline, and then sub-setting.
+
+**Task 2**: How would you go about calculating the overall numbers of reporte earthquakes for each administrative area in Türkiye? Visualise this output as a map. 
+
+**Hints**: You may want to consider creating a new variable `total_earthquakes` using the `st_interects()` and `lengths()` functions.
+
+**Task 3**: Use the dataset `Konya_buildings_at_risk.shp` and `Earthquake_point_in_Konya.shp` to create a map showing three ringed buffer zones around the focal point of the earthquake. Within each buffer region estimate the number of buildings that are: 
+
+-	At risk of being destroyed if within distance 0-2000m (1st buffer zone);
+-	Those that are at risk of being severely damaged if within a distance of 2000-5000m (2nd buffer zone);
+-	Those that are at risk of receiving partial damages if within a distance of 5000-9000m (last buffer zone);
+
+**Hints**: You may want to consider using the `st_buffer()`, `st_centroids()`, `st_interects()` and `st_difference()` functions for capturing the buildings within the 0-2000m (1st ring), 2000-5000m (2nd ring), and 5000-9000m (3rd ring) zones. The expected output should look as follows:
+
+```{r echo=FALSE, out.width = "100%", fig.align='center', cache=TRUE,}
+knitr::include_graphics('images/general/week2/image9_Expected_output.png', error = FALSE) 
+```
+
+
+

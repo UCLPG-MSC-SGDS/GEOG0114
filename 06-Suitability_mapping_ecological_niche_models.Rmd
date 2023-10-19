@@ -112,11 +112,6 @@ The occurrence data imported into RStudio is a data frame object. We will need t
 coordinates(california_fires) = ~longitude+latitude
 ```
 
-```{r setpath_GEOG0114_wk5, include = FALSE}
-knitr::opts_knit$set(root.dir = "/Volumes/Anwar-HHD/GEOG0114/Github/2022_2023/datasets/week-5")
-knitr::opts_chunk$set(cache = FALSE)
-```
-
 Now, we need to define its coordinate reference system for the points which should be the same as any of the raster data. You can get this information by simple typing the raster object to console and printing its info there:
 
 ```{r, eval=FALSE}

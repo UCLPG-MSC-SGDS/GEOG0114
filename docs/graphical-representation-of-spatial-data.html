@@ -225,6 +225,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.6" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#attributions_w03"><i class="fa fa-check"></i><b>3.6</b> Attributions</a></li>
 <li class="chapter" data-level="3.7" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#reading_w03"><i class="fa fa-check"></i><b>3.7</b> References (see reading list)</a></li>
 <li class="chapter" data-level="3.8" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#data-sources-1"><i class="fa fa-check"></i><b>3.8</b> Data Sources</a></li>
+<li class="chapter" data-level="3.9" data-path="graphical-representation-of-spatial-data.html"><a href="graphical-representation-of-spatial-data.html#practical-homework-1"><i class="fa fa-check"></i><b>3.9</b> Practical homework</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="spatial-autocorrelation-and-dependence.html"><a href="spatial-autocorrelation-and-dependence.html"><i class="fa fa-check"></i><b>4</b> Spatial autocorrelation and dependence</a>
 <ul>
@@ -649,9 +650,35 @@ In a case like above, you can just overwrite the current <em>london_schools_prj<
 <li>UK OS Greenspace open data [Source: <strong>Ordinance Survey</strong>] <a href="https://osdatahub.os.uk/downloads/open/OpenGreenspace"><strong>Click Here</strong></a></li>
 <li>Earthquake Catalog data [Source: <strong>USGS - Science for a changing world</strong>] <a href="https://earthquake.usgs.gov/earthquakes/search/"><strong>Click Here</strong></a></li>
 <li>The national &amp; administrative areas for Turkiye [Source: <strong>Database of Global Administrative Areas</strong>] <a href="https://gadm.org"><strong>Click Here</strong></a></li>
-<li>Building footprints in Türkiye <a href="https://data.humdata.org">Source: <strong>The Humanitarian Data Exchange</strong></a></li>
+<li>Building footprints in Türkiye [Source: <strong>The Humanitarian Data Exchange</strong>] <a href="https://data.humdata.org"><strong>Click Here</strong></a></li>
 </ol>
-<p>[INSERT PRACTICAL]</p>
+</div>
+<div id="practical-homework-1" class="section level2 hasAnchor" number="3.9">
+<h2><span class="header-section-number">3.9</span> Practical homework<a href="graphical-representation-of-spatial-data.html#practical-homework-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Geoprocessing of spatial-referenced natural hazards: Earthquakes</strong></p>
+<p>There are severe economic and social consequence of natural hazards such as earthquakes which result innumerable disasters that are instant (e.g., deaths, injury, homes destroyed, transport and communication links disrupted, water pipes burst and water supplies contaminated and many more) and long-term (e.g., disease may spread, re-housing, and most often refugee camps). You can download freely available open-source data on earthquake occurrence worldwide here: <a href="https://earthquake.usgs.gov/earthquakes/search/" class="uri">https://earthquake.usgs.gov/earthquakes/search/</a></p>
+<p>Türkiye (or Turkey) is a nation that often experience earthquakes on a frequent basis with nearly over 20 earth tremors in 2022 according to the <a href="https://en.afad.gov.tr">Turkish Disaster &amp; Emergency Management Authority</a>.</p>
+<p>You can download the dataset for this homework exercise: <a href=""><strong>[CLICK HERE]</strong></a></p>
+<p>You are given the following spatial datasets:</p>
+<ol style="list-style-type: decimal">
+<li><code>All_earthquake_points_in_Turkey.shp</code>: 984-point locations of where earthquakes/tremors occurred in Greece and Türkiye in 2019 to 2023 as a shapefile;</li>
+<li><code>gadm41_TUR_1.shp</code>: The administrative areas of Türkiye as a shapefile; and</li>
+<li><code>Konya_buildings_at_risk.shp</code>: 25,000+ building footprints from small administrative area in Türkiye called Konya, as a shapefile.</li>
+<li><code>Earthquake_point_in_Konya.shp</code>: Single point location of an earthquake that is a focal point in Konya.</li>
+</ol>
+<p>Your goal for this homework practical is to use the appropriate geoprocessing task to achieve the following tasks:</p>
+<p><strong>Task 1</strong>: Use the dataset <code>All_earthquake_points_in_Turkey.shp</code> and <code>gadm41_TUR_1.shp</code> to visualise the distribution of ALL point locations of where earthquakes had occurred ONLY in Türkiye?</p>
+<p><strong>Hints</strong>: You may want to consider using the following operations: using the <code>st_area()</code> before dissolving to create an outline, and then sub-setting.</p>
+<p><strong>Task 2</strong>: How would you go about calculating the overall numbers of reporte earthquakes for each administrative area in Türkiye? Visualise this output as a map.</p>
+<p><strong>Hints</strong>: You may want to consider creating a new variable <code>total_earthquakes</code> using the <code>st_interects()</code> and <code>lengths()</code> functions.</p>
+<p><strong>Task 3</strong>: Use the dataset <code>Konya_buildings_at_risk.shp</code> and <code>Earthquake_point_in_Konya.shp</code> to create a map showing three ringed buffer zones around the focal point of the earthquake. Within each buffer region estimate the number of buildings that are:</p>
+<ul>
+<li>At risk of being destroyed if within distance 0-2000m (1st buffer zone);</li>
+<li>Those that are at risk of being severely damaged if within a distance of 2000-5000m (2nd buffer zone);</li>
+<li>Those that are at risk of receiving partial damages if within a distance of 5000-9000m (last buffer zone);</li>
+</ul>
+<p><strong>Hints</strong>: You may want to consider using the <code>st_buffer()</code>, <code>st_centroids()</code>, <code>st_interects()</code> and <code>st_difference()</code> functions for capturing the buildings within the 0-2000m (1st ring), 2000-5000m (2nd ring), and 5000-9000m (3rd ring) zones. The expected output should look as follows:</p>
+<p><img src="images/general/week2/image9_Expected_output.png" width="100%" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>
