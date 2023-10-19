@@ -387,7 +387,7 @@ There are severe economic and social consequence of natural hazards such as eart
 
 Türkiye (or Turkey) is a nation that often experience earthquakes on a frequent basis with nearly over 20 earth tremors in 2022 according to the [Turkish Disaster & Emergency Management Authority](https://en.afad.gov.tr).
 
-You can download the dataset for this homework exercise: [**[CLICK HERE]**]()
+You can download the dataset for this homework exercise: [**[CLICK HERE]**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%202%20-%20Homework%20Dataset.zip)
 
 You are given the following spatial datasets:
 
