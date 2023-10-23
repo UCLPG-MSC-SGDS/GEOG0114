@@ -56,6 +56,7 @@ practical-homework-1
 spatial-autocorrelation-and-dependence
 introduction-2
 lecture-video-length-010642
+computer-practical-video-length-020001
 learning-outcomes-2
 getting-started
 datasets-setting-up-the-work-directory-1

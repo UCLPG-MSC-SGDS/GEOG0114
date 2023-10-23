@@ -565,11 +565,3 @@ This week's practical uses content and inspiration from:
 2.  **Book**: [Theory] Longley, P. _et al_ (2015) Geographic Information Science & systems (4th Edition); **Chapter 2: The Nature of Geographic Data** [**Click link**](https://rl.talis.com/3/ucl/items/ea2386fb-19dc-460a-acba-bda3737546c2.html?lang=en-gb&login=1)
 3. **Book**: [Theory] Longley, P. _*et al_ (2015) Geographic Information Science & systems (4th Edition); **Chapter 13: Spatial Analysis** [**Click link**](https://rl.talis.com/3/ucl/items/fd38ec78-2bea-4165-aab3-0e9d9093db8e.html?lang=en-gb&login=1)
 4. **Paper**: [Research] Radil, S. 2016. Spatial analysis of crime. In: Huebner, B. and Bynum, T. *The Handbook of Measurement Issues in Criminology and Criminal Justice*, Chapter 24, pp.536-554. [**Click link**](https://doi.org/10.1002/9781118868799.ch24) (Note: use of your UCL login via institutional organisation (**UK Federation**) is required to access the digital paper)
-
-## Practical homework
-
-**Detecting Evidence of Spatial Patterns of Depression**
-
-Depression is one of the most prevalent mental health disorders, affecting around 1 in 6 adults in the UK. It is also linked with other mental health issues, such as anxiety, stress and loneliness. There are a plethora of social factors that contribute to this outcome, these include risk factors such as negative social life events, low levels of social support, occupation and many more, all of which have been found to affect the likelihood of someone experiencing major depression, the length of the depression, or the severity of the symptoms [**(see review)**](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8699555/).
-
-**Objectives**: Use the spatial data you have built throughout the exercise to visualise the distribution of incidence of fires that occurred in residential premises across postcodes in London in 2019. 
