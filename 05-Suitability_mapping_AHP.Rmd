@@ -78,8 +78,7 @@ nvdi <- raster("Kenya NDVI.tif")
 prec <- raster("Kenya Precipitation.tif")
 popl <- raster("Kenya Population Density.tif")
 elev <- raster("Kenya Elevation.tif")
-arid <- raster("Kenya Aridity Index.tif")
-# ignore those stupid warning messages as these are annoying as hell and are related to same migration/updates done on PROJ4 to PROJ6 - which I can't for the life of me figure out how to implement this bloody update.
+arid <- raster("Kenya Aridity Index.tif"
 ```
 
 Load the shapefile nation and state borders for Kenya:
@@ -145,14 +144,14 @@ Let us reclassify each layer according to the above criteria, starting with temp
 temp
 # lowest value = 1.2
 # highest value = 29.6
-# reclassify anything below 15 as 0 and above as 1
-# take the minimum value and minus 1 to it to ensure that lowest
-# ---value is included in the categorization for 0 
-# take the maximum value and add 1 to it to also ensure that the highest 
-# ---value is included in the categorization for 1
+# reclassify anything below 15 as 0, and the rest above 15 as 1
 
-# c(from lowest value, to threshold, class as 0, from thresholds, to maximum value, class as 1)
-temp_cl <- c(temp@data@min-1, 15, 0, 15, temp@data@max+1, 1) 
+# reclassify the values into two groups 
+# all values > 0 and <= 15 change to 0
+# all values > 15 and <= 30 change to 1
+temp_cl <- c(0, 15, 0, 
+						15, 30, 1)
+
 # convert into a matrix format
 temp_cl_mat <- matrix(temp_cl, ncol = 3, byrow = TRUE)
 # see matrix
@@ -181,14 +180,13 @@ Lets repeat the same steps for elevation to reclassify it's layer according to t
 elev
 # lowest value = -11m (below sea level)
 # highest value = 4865m (above sea level)
-# reclassify anything below 1200m as 1 and above as 0
-# again, take the minimum value and minus 1 to it to 
-# ---ensure that lowest value is included in the categorization for 0 
-# again, take the maximum value and add 1 to it to also ensure that 
-# ---the highest value is included in the categorization for 1
+# reclassify anything below 1200m as 1, and the rest above 1200m as 0
 
-# c(from lowest value, to threshold, class as 1, from thresholds, to maximum value, class as 0)
-elev_cl <- c(elev@data@min-1, 1200, 1, 1200, elev@data@max+1, 0)
+# all values > -12 and <= 1199.999 change to 0
+# all values > 1199.999 and <= 4900 change to 1
+elev_cl <- c(-12, 1199.999, 1, 
+							1199.999, 4900, 0)
+
 # convert into a matrix format
 elev_cl_mat <- matrix(elev_cl, ncol = 3, byrow = TRUE) 
 # see matrix
@@ -218,33 +216,59 @@ Try reclassifying the remaining raster `arid`, `prec`, `popl` and `ndvi`. The so
 # nvdi
 nvdi
 
-nvdi_cl <- c(nvdi@data@min-1, 0.5, 0, 0.5, nvdi@data@max+1, 1)
-nvdi_cl_mat <- matrix(nvdi_cl, ncol = 3, byrow = TRUE); nvdi_cl_mat
+nvdi_cl <- c(-1, 0.5, 0, 
+						0.5, 0.9, 1)
+
+nvdi_cl_mat <- matrix(nvdi_cl, ncol = 3, byrow = TRUE)
+nvdi_cl_mat
 nvdi_recl <- reclassify(nvdi, nvdi_cl_mat)
+
+tm_shape(nvdi_recl) + tm_raster(style = "cat", title = "NDVI (Vegetation)", palette= c("grey", "green"), labels = c("Unsuitable (0.5 & Below)", "Suitable (> 0.5)")) +
+	tm_shape(kenya_states) + tm_polygons(alpha = 0, border.col = "black") +
+	tm_layout(frame = FALSE, legend.outside = TRUE)
 
 # prec
 prec
 
-prec_cl <- c(prec@data@min-1, 350, 0, 350, prec@data@max+1, 1)
-prec_cl_mat <- matrix(prec_cl, ncol = 3, byrow = TRUE); 
+prec_cl <- c(0, 350, 0, 
+						350, 2700, 1)
+
+prec_cl_mat <- matrix(prec_cl, ncol = 3, byrow = TRUE) 
 prec_cl_mat
+
 prec_recl <- reclassify(prec, prec_cl_mat)
+
+tm_shape(prec_recl) + tm_raster(style = "cat", title = "Precipitation (mm)", palette= c("grey", "skyblue"), labels = c("Unsuitable (350mm & Below)", "Suitable (> 350mm)")) +
+	tm_shape(kenya_states) + tm_polygons(alpha = 0, border.col = "black") +
+	tm_layout(frame = FALSE, legend.outside = TRUE)
 
 # popl
 popl
 
-popl_cl <- c(popl@data@min-1, 0, 0, 0, popl@data@max+1, 1)
+popl_cl <- c(-1, 0, 0, 
+						0, 126300, 1)
+
 popl_cl_mat <- matrix(popl_cl, ncol = 3, byrow = TRUE)
 popl_cl_mat
 popl_recl <- reclassify(popl , popl_cl_mat)
 
+tm_shape(popl_recl) + tm_raster(style = "cat", title = "Population density", palette= c("grey", "orange"), labels = c("Unsuitable (0 people)", "Suitable (at least 1 person)")) +
+	tm_shape(kenya_states) + tm_polygons(alpha = 0, border.col = "black") +
+	tm_layout(frame = FALSE, legend.outside = TRUE)
+
 # arid
 arid
 
-arid_cl <- c(arid@data@min-1, 0.20, 0, 0.20, arid@data@max+1, 1)
+arid_cl <- c(0, 0.20, 0, 
+						0.20, 3, 1)
+
 arid_cl_mat <- matrix(arid_cl, ncol = 3, byrow = TRUE)
 arid_cl_mat
 arid_recl <- reclassify(arid, arid_cl_mat)
+
+tm_shape(arid_recl) + tm_raster(style = "cat", title = "Aridity (Dryness)", palette= c("grey", "orange"), labels = c("Unsuitable (0.2 & below)", "Suitable (> 0.2)")) +
+	tm_shape(kenya_states) + tm_polygons(alpha = 0, border.col = "black") +
+	tm_layout(frame = FALSE, legend.outside = TRUE)
 ```
 </details>
 
@@ -260,7 +284,7 @@ Visualizing the output:
 
 ```{r, eval=FALSE}
 tm_shape(Suitable_LF_Binary) + tm_raster(style = "cat", title = "", palette=c("#f0f0f0", "red"), labels=c("Zone: Not Suitable", "Zone: Highly Suitable")) +
-	tm_shape(kenya_states) + tm_polygons(alpha = 0, border.col = "black") +
+	tm_shape(kenya_states) + tm_polygons(alpha = 0, border.col = "black") + tm_text("NAME_1", size = "AREA") +
 	tm_layout(frame = FALSE, legend.outside = TRUE)
 ```
 
@@ -386,7 +410,7 @@ tm_shape(temp_jenks_recl) + tm_raster(style = "cont", title = "Temp (on Jenks sc
 knitr::include_graphics('images/general/week4/image3_1.png', error = FALSE) 
 ```
 
-We need to repeat this process of reclassification and standardization using natural breaks for the remaining raster grids for `prec`, `arid`, `popl` and `ndvi`. The solutions are provided in the hidden code chunks below. For `elev`, we will treat this differently. 
+We need to repeat this process of reclassification and standardization using natural breaks for the remaining raster grids for `prec`, `popl` and `ndvi`. The solutions are provided in the hidden code chunks below. For `elev`, we will treat this differently. Note that for `arid` we are going to treat as a constraint (i.e., binary). Anything below `0.2` threshold are environments considered as hyperarid (extremely dry) areas and thus mosquitoes are non-existent there (- meaning that there is no point for us to include that part of the map wit hyperarid environments in the suitability analysis!). Note that we will use the existing `arid_recl` raster later to cancel out those areas from the final AHP generated map!
 
 <details><summary>Click here</summary>
 **Solutions**
@@ -494,36 +518,6 @@ nvdi_jenks_cl_mat <- matrix(nvdi_jenks_cl, ncol = 3, byrow = TRUE)
 nvdi_jenks_cl_mat
 # reclassify original raster using the jenks classifications
 nvdi_jenks_recl <- reclassify(nvdi, nvdi_jenks_cl_mat)
-
-
-# 5. arid
-# Extract values from Raster
-aridValues <- values(arid) 
-# Change the values from vector object to data.frame object
-aridDF <- as.data.frame(aridValues)
-# Remove missing values and reapply column name
-aridDF <- as.data.frame(aridDF[!is.na(aridDF$aridValues),])
-colnames(aridDF) <- "aridValues"
-# Use the getJenksBreaks() function. Sample 0.10 (10%) of the pixels at random and base the categorisation on this. 
-# NOTE: Doing this on the full data will take forever - so use the subset argument.
-# EXTRA NOTE: The values for aridity are very close to each other and so the algorithm splits it to just two cateogries
-aridJenks <- getJenksBreaks(aridDF$aridValues, 2, subset = nrow(aridDF)*0.10)
-# See value in vector
-aridJenks
-# shows first element
-aridJenks[1] 
-# shows second element
-aridJenks[2] 
-# so on and so further...
-# Create categorisation by using the Jenks values in the vector
-arid_jenks_cl <- c(arid@data@min-1, aridJenks[1], 1,
-aridJenks[1], arid@data@max+1, 2) 
-# create matrix
-arid_jenks_cl_mat <- matrix(arid_jenks_cl, ncol = 3, byrow = TRUE)
-# view categorisation in matrix
-arid_jenks_cl_mat
-# reclassify original raster using the jenks classifications
-arid_jenks_recl <- reclassify(arid, arid_jenks_cl_mat)
 ```
 </details>
 
@@ -564,11 +558,16 @@ elev_jenks_cl <- c(elev@data@min-1, elevJenks[1], 1,
 elev_jenks_cl_mat <- matrix(elev_jenks_cl, ncol = 3, byrow = TRUE)
 # view categorisation in matrix
 elev_jenks_cl_mat
-# reclassify original raster using the jenks classifications
+# reclassify original raster using the Jenks classifications
 elev_jenks_recl <- reclassify(elev, elev_jenks_cl_mat)
 
-# Now flip the values using raster.invert() function
-rev_elev_jenks_recl <- raster.invert(elev_jenks_recl)
+# see plot in its original form
+plot(elev_jenks_recl)
+# Now flip the values by subtracting the values from the max value (here its 10)
+rev_elev_jenks_recl <- elev_jenks_recl
+values(rev_elev_jenks_recl) <- elev_jenks_recl@data@max - values(elev_jenks_recl)
+# see plot flipped/inverted
+plot(rev_elev_jenks_recl)
 ```
 
 Visualize the inverted output (NOTE: Blue: High elevation, Red: low elevation):
@@ -584,16 +583,17 @@ knitr::include_graphics('images/general/week4/image3_2.png', error = FALSE)
 
 ### Determining the weight of each variable using Saaty's AHP
 
-To estimate the weights, a helpful tool has been developed and provided in an Excel Worksheet. It has been created for you so that you can see how the calculations are carryout step-by-step to derive the weights. You can interact with the cells to see the formulas and explanations are provided at each step of the way.
+To estimate the weights, a helpful tool has been developed and provided in an Excel Worksheet. It has been created for you so that you can see how the calculations are carried out step-by-step to derive the weights. You can interact with the cells to see the formulas and explanations are provided at each step.
 
-Open the spreadsheet `Guidance - AHP Calculator Tool.xlsx` and read & follow through the steps carefully. These are steps summarized here:
+Open the spreadsheet `Guidance - AHP Calculator Tool.xlsx` and read to follow through the steps carefully. These are steps summarized here:
 
-- **Pairwise comparison & Judgement values**: Carry out a pairwise comparison of the factors by constructing a matrix as seen in step 1 in the spreadsheet. Use the criteria and make a **"Judgement"** on the pairwise comparison (it could be based on expert opinion or from literature) asserting a variable's importance over the other.
-- **Matrices**: Create a square matrix with the judgement values inserted accordingly (see step 2)
+- **Pairwise comparison & Judgement values**: Carry out a pairwise comparison of the factors by constructing a matrix as seen in step 1 in the spreadsheet. Use the criteria and make a **"Judgement"** on the pairwise variables/factors (it could be based on expert opinion or from literature) asserting a variable's importance over the other.
+- **Matrices**: Create a square matrix with the judgement values inserted to the matrix accordingly (see step 2)
 - **Reciprocals**: Take the reciprocals in the matrix (see step 3)
 - **Take column sums**: Sum each of the columns accordingly (see step 4)
-- **Normalization of matrix**: For each element in a column in that square matrix, divide it by it's corresponding column sum. Repeat this step for all other elements in that matrix. Once completed, sum-up the elements from the division for each row and finally divide it by the number of variables to obtain the **priority vector or weights**. You know that the calculations are correct if the sum of the weights are equal to `1` (see step 5).
-- **Validation of whether judgement values are reasonable**: We need to calculate a **Consistency Ratio (CR)**, which is derived from the **Consistency Index (CI)** divided by the **Random Index (RI)**. For the **CI**, we estimate an eigenvalue which is derived from the summed products between the summed column multplied by the weights (see step 6 and click on the cell `C75` to view formula). Use the eigenvalue and estimate the **CI** (see formula in the notes for step 6). Next, use the Random Index table (developed by Saaty, 1980) to determine the **RI** based on the dimension of the matrix (in this case, it is 6). Finally, calculate the **CR** by dividing the **CI**/**RI** (see step 6 and click on the cell `E91` to view the formula). If **CI** < 1., the judgement values assigned in step 1 are fine. If **CR** is bigger than 1.0, then judgement values in pairwise comparison in step 1 were unreasonable (and thus you'll have to repeat the step with different values again!)
+- **Normalization of matrix**: For each element in a column of the square matrix, divide it by it's corresponding column sum. Repeat this step for all other elements in that matrix (see step 5). 
+- **Priority Vectors/Weights**: Once completed, sum-up the elements across each row and divide it by the number of variables to obtain the **priority vector or weights**. As a sanity check, you will know that the calculations are correct if the sum of the weights are equal to `1` (see step 6).
+- **Validation of whether the judgement values are reasonable**: We need to calculate a **Consistency Ratio (CR)**, which is derived from the **Consistency Index (CI)** divided by the **Random Index (RI)**. For the **CI**, we must estimate an eigenvalue which is derived from the summed products between the summed column and weights (see step 7 and click on the cell `E94` to view the formula). Use that eigenvalue (i.e., `Lambda_Max`) and estimate the **CI** (see formula in the lecture notes (slide 25), and click on the cell `E95`). Next, use the Random Index table (developed by Saaty, 1980) to determine the **RI** based on the number of factors (in this case, it is 5). Finally, calculate the **CR** by dividing the **CI**/**RI** (see step 7 and click on the cell `E111` to view the formula). Note that if the **CI** < 0.1, the judgement values assigned in step 1 were **acceptable**. If **CR** is bigger than 0.1, then the judgement values in the pairwise comparison in step 1 were unreasonable (and thus you will have to repeat the step with different values again until you get an acceptable CR estimate that is below 0.1!). Here, our CR is 0.0351 < 0.1.
 
 ### Weighted Linear Combination (WLC) and derivation of Suitability Maps based from AHP analysis
 
@@ -603,21 +603,39 @@ Our model uses the **Weighted Linear Combination (WLC)** approach as the decisio
 **Suitability (LF)** = **$w_1x_1 + w_2x_2 + w_3x_3 + w_4x_4 + w_5x_5 + w_6x_6$**
 </center>
 
-The $w_i$ and $x_i$ represent the weights deprived from AHP analysis and raster variables. The weights are multiplied to it corresponding raster to obtain a raster with values weighted but ultimately scaled with an upper limit of `10` (but slightly adjusted for NDVI and Aridity because their scaled to `2`).
+The $w_i$ and $x_i$ represent the weights deprived from AHP analysis and raster variables, respectively. The weights are multiplied to its corresponding raster to obtain a raster with values weighted but ultimately scaled with an upper limit of `10`. We will also multiply the summed product with the `arid_recl` binary raster to retain or constraint the output to non-hyperarid areas (> 0.2).
 
 This is the derived formula to use in calculating the suitability regions for LF in RStudio:
 
 ```{r, eval=FALSE}
-# use the rescaled columns in the formula (not the originals!)
-suitablemap_WLC <- 0.3324*prec_jenks_recl + 0.2775*temp_jenks_recl + 0.1571*popl_jenks_recl + 0.0901*nvdi_jenks_recl + 0.0767*arid_jenks_recl + 0.0659*rev_elev_jenks_recl
-
-suitablemap_WLC
+# use the rescaled columns in the formula
+suitablemap_WLC <- (0.372*prec_jenks_recl + 0.356*temp_jenks_recl + 0.159*popl_jenks_recl + 0.077*rev_elev_jenks_recl + 0.037*nvdi_jenks_recl) * arid_recl 
+# see plot
+plot(suitablemap_WLC)
 ```
 
 Finally, visualize the output:
 
 ```{r, eval=FALSE}
-tm_shape(suitablemap_WLC) + tm_raster(style = "cont", title = "LF Suitability (AHP WLC)", palette= "-Spectral") +
+# create custom map by categorising the final raster output
+suitablemap_WLC_cl <- c(-1, 1, 1,
+	1, 2, 2,
+	2, 3, 3,
+	3, 4, 4,
+	4, 5, 5,
+	5, 6, 6,
+	6, 7, 7,
+	7, 8, 8,
+	8, 10, 9)
+
+suitablemap_WLC_cl_mat <- matrix(suitablemap_WLC_cl, ncol = 3, byrow = TRUE)
+suitablemap_WLC_cl_recl <- reclassify(suitablemap_WLC, suitablemap_WLC_cl_mat)
+
+tm_shape(suitablemap_WLC_cl_recl) + 
+	tm_raster(style = "cat", 
+		title = "LF Suitability (AHP WLC)", 
+		palette= "Reds",
+		labels=c("Negligable (\u22641)", ">1-2", ">2-3", ">3-4", ">4-5", ">5-6", ">6-7", ">7-8", ">8-10")) +
 	tm_shape(kenya_states) + tm_polygons(alpha = 0, border.col = "black") + tm_text("NAME_1", size = "AREA") +
 	tm_layout(frame = FALSE, legend.outside = TRUE, legend.title.size = 0.5, legend.text.size = 0.5) + 
 	tm_scale_bar(position = c("left","bottom")) + tm_compass(position = c("right", "top"))
