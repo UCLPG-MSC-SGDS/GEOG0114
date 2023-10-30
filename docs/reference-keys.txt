@@ -73,6 +73,8 @@ attributions
 references-see-reading-list
 suitability-mapping-part-1
 introduction-3
+lecture-video-tbc
+computer-practical-video-length-020001-1
 learning-outcomes-3
 datasets-setting-up-the-work-directory-2
 loading-and-installing-packages-2
@@ -90,6 +92,8 @@ recommended-reading
 data-sources-2
 suitability-mapping-part-2
 introduction-4
+lecture-video-length-010642-1
+computer-practical-video-tbc
 learning-outcomes-4
 datasets-setting-up-the-work-directory-3
 loading-and-installing-packages-3
@@ -107,6 +111,7 @@ supplementary-code-for-4-fold-analysis
 attributions-1
 references-see-reading-list-2
 data-sources-3
+practical-homework-2
 geostatistical-modelling
 introduction-5
 learning-objectives

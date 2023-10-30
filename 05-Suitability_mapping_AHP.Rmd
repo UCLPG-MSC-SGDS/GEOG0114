@@ -2,6 +2,16 @@
 
 ## Introduction 
 
+### Lecture video (TBC)
+
+### Computer practical video (Length: 02:00:01)
+
+```{r, warnings=FALSE, message=FALSE, echo=FALSE}
+library(vembedr)
+embed_youtube('ocXeZn8WV0I', height=400) %>% use_align('center')
+```
+[[**Watch on YouTube**]](https://youtu.be/ocXeZn8WV0I)
+
 Now, with the proliferation of open spatial dataset, risk models derived from environmental, sociodemographic and topological factors are becoming increasingly available for open research. Such models have broadly shown to be useful in delineating geographical areas of risk or suitability for a certain outcomes. Today, we are going to explore this qualitatively using a knowledge-driven approach. 
 
 ### Learning outcomes 

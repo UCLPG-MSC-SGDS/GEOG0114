@@ -1,6 +1,16 @@
 # Suitability Mapping: Part 2
 
-## Introduction 
+## Introduction
+
+### Lecture video (Length: 01:06:42)
+
+```{r, warnings=FALSE, message=FALSE, echo=FALSE}
+library(vembedr)
+embed_youtube('uAakkG-l-r0', height=400) %>% use_align('center')
+```
+[[**Watch on YouTube**]](https://youtu.be/uAakkG-l-r0)
+
+### Computer practical video (TBC)
 
 Last week, we described how knowledge-driven methods informed by expert opinion (often drawn from experience or literature) can be used to predict locations that are suitable (or favourable) for a specific outcome given a set of environmental factors, which in turn, can be outputted as a thematic raster map. Last week's approach uses a mixed (i.e., qualitative and quantitative) methodology through the use of **Overlay Mapping** and **Analytical Hierarchy Process (AHP)** for suitability mapping, and these approaches are used strictly when there are no point occurrence data. 
 
@@ -525,3 +535,32 @@ Taylor, L. 2022. The social side of fire: assessing the inclusion of human socia
 5. Digital Elevation Model [Source: **SRTM 90m DEM Digital Elevation Database**] [**Click Here**](https://srtm.csi.cgiar.org)
 6. Evapotranspiration (aridity) 1.0km [Source: **NASA MODIS MOD16A2**] [**Click Here**](https://modis.gsfc.nasa.gov/data/dataprod/mod16.php)
 7. Normalised Differenced Vegetation Index (NDVI) 250m [Source: **NASA MODIS MOD13Q1**] [**Click Here**](https://modis.gsfc.nasa.gov/data/dataprod/mod13.php)
+
+## Practical homework
+
+**Suitability mapping of the Aedes mosquito and infestation in Brazil**
+
+Many regions in Brazil were hit hard by the Zika virus infection outbreak in 2015. Zika infection is caused by the arboviruses transmitted by the Aedes mosquitoes which are abundant in Brazil. It is a known fact that increased abundance of the Aedes mosquito is typically associated with standing (or stagnant) water which serves as a reservoir or hotspot for breeding. Apart from the presence of standing (or stagnated) water in human dwellings, it is important to consider other intermediate factors that drive the mosquitoes to increase in population size. These factors are the following:
+
+- Temperature
+- Precipitation
+- Population Density
+- NDVI
+- Land surface elevation
+- Natural lighting
+- Urban-rural classification
+
+The above listed variables are gridded datasets which can be downloaded by clicking [**[HERE]**](https://github.com/UCLPG-MSC-SGDS/Data-Sources/raw/main/Gridded%20datasets.zip). Create a map which should the following: 1.) The predicted probability of infestation of the Aedes mosquito in Brazil; and 2.) the suitability map based on the `max TPR + TNR` threshold to illustrate where the Aedes mosquito will thrive in Brazil.
+
+All identified points for mosquito breeding including background points can downloaded from [**[HERE]**](https://github.com/UCLPG-MSC-SGDS/Data-Sources/raw/main/Points.zip). The boundaries for Brazil can be downloaded from [**[HERE]**](https://github.com/UCLPG-MSC-SGDS/Data-Sources/raw/main/Shapefiles.zip).
+
+The expected output should look like:
+
+```{r echo=FALSE, out.width = "100%", fig.align='center', cache=TRUE,}
+knitr::include_graphics('images/general/week5/image8_FinalPicture.png', error = FALSE) 
+```
+
+**Notes:**
+
+- For the predicted probability map (A), reclassify the predictions to the following categories - `0-0.2`, `0.2-0.4`, `0.4-0.6`, `0.6-0.8` and `0.8-1.0`.
+- For the second suitability map (B), reclassify the probabilities based on the  `max TPR + TNR` threshold i.e., below it as `0` and labelled as 'None infested areas' and above as `1` labelled as 'Infested areas'.
