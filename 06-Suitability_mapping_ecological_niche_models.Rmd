@@ -41,7 +41,11 @@ setwd("/Users/AccountName/Desktop/GEOG0114/Week 5")
 
 ### Loading and installing packages
 
-We will need to load the following packages:
+<div class="warning">
+IMPORTANT NOTE: We will need to install **Java** for the `rjava` package as well as the `maxent()` function and other functions associated with performing MAXENT to work. You can download the latest version of Java [**[HERE]**](https://www.java.com/en/download/)
+</div>
+
+Next, we will need to load the following packages:
 
 - `raster`: Raster/gridded data analysis and manipulation
 - `sf`: Simple Features
