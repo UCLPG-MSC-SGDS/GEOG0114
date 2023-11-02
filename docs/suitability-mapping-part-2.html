@@ -282,7 +282,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.1" data-path="suitability-mapping-part-2.html"><a href="suitability-mapping-part-2.html#introduction-4"><i class="fa fa-check"></i><b>6.1</b> Introduction</a>
 <ul>
 <li class="chapter" data-level="6.1.1" data-path="suitability-mapping-part-2.html"><a href="suitability-mapping-part-2.html#lecture-video-length-010642-1"><i class="fa fa-check"></i><b>6.1.1</b> Lecture video (Length: 01:06:42)</a></li>
-<li class="chapter" data-level="6.1.2" data-path="suitability-mapping-part-2.html"><a href="suitability-mapping-part-2.html#computer-practical-video-tbc"><i class="fa fa-check"></i><b>6.1.2</b> Computer practical video (TBC)</a></li>
+<li class="chapter" data-level="6.1.2" data-path="suitability-mapping-part-2.html"><a href="suitability-mapping-part-2.html#computer-practical-video-length-020001-2"><i class="fa fa-check"></i><b>6.1.2</b> Computer practical video (Length 02:00:01)</a></li>
 <li class="chapter" data-level="6.1.3" data-path="suitability-mapping-part-2.html"><a href="suitability-mapping-part-2.html#learning-outcomes-4"><i class="fa fa-check"></i><b>6.1.3</b> Learning outcomes</a></li>
 <li class="chapter" data-level="6.1.4" data-path="suitability-mapping-part-2.html"><a href="suitability-mapping-part-2.html#datasets-setting-up-the-work-directory-3"><i class="fa fa-check"></i><b>6.1.4</b> Datasets &amp; setting up the work directory</a></li>
 <li class="chapter" data-level="6.1.5" data-path="suitability-mapping-part-2.html"><a href="suitability-mapping-part-2.html#loading-and-installing-packages-3"><i class="fa fa-check"></i><b>6.1.5</b> Loading and installing packages</a></li>
@@ -414,8 +414,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p><a href="https://youtu.be/uAakkG-l-r0">[<strong>Watch on YouTube</strong>]</a></p>
 </div>
-<div id="computer-practical-video-tbc" class="section level3 hasAnchor" number="6.1.2">
-<h3><span class="header-section-number">6.1.2</span> Computer practical video (TBC)<a href="suitability-mapping-part-2.html#computer-practical-video-tbc" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="computer-practical-video-length-020001-2" class="section level3 hasAnchor" number="6.1.2">
+<h3><span class="header-section-number">6.1.2</span> Computer practical video (Length 02:00:01)<a href="suitability-mapping-part-2.html#computer-practical-video-length-020001-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="vembedr" align="center">
+<div>
+<iframe src="https://www.youtube.com/embed/C_aGyS5Cmos" width="711" height="400" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+<p><a href="https://youtu.be/C_aGyS5Cmos">[<strong>Watch on YouTube</strong>]</a></p>
 <p>Last week, we described how knowledge-driven methods informed by expert opinion (often drawn from experience or literature) can be used to predict locations that are suitable (or favourable) for a specific outcome given a set of environmental factors, which in turn, can be outputted as a thematic raster map. Last week’s approach uses a mixed (i.e., qualitative and quantitative) methodology through the use of <strong>Overlay Mapping</strong> and <strong>Analytical Hierarchy Process (AHP)</strong> for suitability mapping, and these approaches are used strictly when there are no point occurrence data.</p>
 <p>This week, we are using distributional niche models, often term as either: <strong>Ecological (or Environmental) Niche Models</strong>, or <strong>Environmental or Habitat Suitability Models</strong>. These are quantitative methods that use occurrence data in conjunction with environmental data to make a correlative model of the environmental conditions that meet an outcome’s environmental (or ecological) requirements, which in turn, can predict the relative suitability of habitat for that outcome. It has many applications in ecology, epidemiology, disaster risk reduction and social sciences (e.g., crime patterns). Today, we are going to use the <strong>Maximum Entropy Model (MAXENT)</strong> to infer zones for disaster hazards such as wildfires in California given a set of predictor variables (i.e, climate, vegetation, anthropogenic and socioeconomic risk factors which are raster).</p>
 </div>
@@ -823,6 +829,10 @@ A: Temperature (degree Celsius); B: Precipitation (mm); C: Dryness (Evapotranspi
 <ul>
 <li>For the predicted probability map (A), reclassify the predictions to the following categories - <code>0-0.2</code>, <code>0.2-0.4</code>, <code>0.4-0.6</code>, <code>0.6-0.8</code> and <code>0.8-1.0</code>.</li>
 <li>For the second suitability map (B), reclassify the probabilities based on the <code>max TPR + TNR</code> threshold i.e., below it as <code>0</code> and labelled as ‘None infested areas’ and above as <code>1</code> labelled as ‘Infested areas’.</li>
+</ul>
+<p>This week’s homework practical was based on the original research paper:</p>
+<ul>
+<li>Musah <em>et al</em> (2023). Coalescing disparate data sources for the geospatial prediction of mosquito abundance, using Brazil as a motivating case study. <strong>Frontiers in Tropical Diseases</strong>. Volume 4. DOI: <a href="https://doi.org/10.3389/fitd.2023.1039735" class="uri">https://doi.org/10.3389/fitd.2023.1039735</a></li>
 </ul>
 
 </div>

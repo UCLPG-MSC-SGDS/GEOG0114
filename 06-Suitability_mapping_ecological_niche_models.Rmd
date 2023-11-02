@@ -10,7 +10,13 @@ embed_youtube('uAakkG-l-r0', height=400) %>% use_align('center')
 ```
 [[**Watch on YouTube**]](https://youtu.be/uAakkG-l-r0)
 
-### Computer practical video (TBC)
+### Computer practical video (Length 02:00:01)
+
+```{r, warnings=FALSE, message=FALSE, echo=FALSE}
+library(vembedr)
+embed_youtube('C_aGyS5Cmos', height=400) %>% use_align('center')
+```
+[[**Watch on YouTube**]](https://youtu.be/C_aGyS5Cmos)
 
 Last week, we described how knowledge-driven methods informed by expert opinion (often drawn from experience or literature) can be used to predict locations that are suitable (or favourable) for a specific outcome given a set of environmental factors, which in turn, can be outputted as a thematic raster map. Last week's approach uses a mixed (i.e., qualitative and quantitative) methodology through the use of **Overlay Mapping** and **Analytical Hierarchy Process (AHP)** for suitability mapping, and these approaches are used strictly when there are no point occurrence data. 
 
@@ -568,3 +574,7 @@ knitr::include_graphics('images/general/week5/image8_FinalPicture.png', error = 
 
 - For the predicted probability map (A), reclassify the predictions to the following categories - `0-0.2`, `0.2-0.4`, `0.4-0.6`, `0.6-0.8` and `0.8-1.0`.
 - For the second suitability map (B), reclassify the probabilities based on the  `max TPR + TNR` threshold i.e., below it as `0` and labelled as 'None infested areas' and above as `1` labelled as 'Infested areas'.
+
+This week’s homework practical was based on the original research paper:
+
+- Musah _et al_ (2023). Coalescing disparate data sources for the geospatial prediction of mosquito abundance, using Brazil as a motivating case study. **Frontiers in Tropical Diseases**. Volume 4. DOI: https://doi.org/10.3389/fitd.2023.1039735
