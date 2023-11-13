@@ -311,11 +311,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="7.1" data-path="geostatistical-modelling.html"><a href="geostatistical-modelling.html#introduction-5"><i class="fa fa-check"></i><b>7.1</b> Introduction</a>
 <ul>
-<li class="chapter" data-level="7.1.1" data-path="geostatistical-modelling.html"><a href="geostatistical-modelling.html#learning-objectives"><i class="fa fa-check"></i><b>7.1.1</b> Learning objectives</a></li>
-<li class="chapter" data-level="7.1.2" data-path="geostatistical-modelling.html"><a href="geostatistical-modelling.html#datasets-setting-up-the-work-directory-4"><i class="fa fa-check"></i><b>7.1.2</b> Datasets &amp; setting up the work directory</a></li>
-<li class="chapter" data-level="7.1.3" data-path="geostatistical-modelling.html"><a href="geostatistical-modelling.html#loading-and-installing-packages-4"><i class="fa fa-check"></i><b>7.1.3</b> Loading and installing packages</a></li>
-<li class="chapter" data-level="7.1.4" data-path="geostatistical-modelling.html"><a href="geostatistical-modelling.html#loading-datasets-2"><i class="fa fa-check"></i><b>7.1.4</b> Loading datasets</a></li>
-<li class="chapter" data-level="7.1.5" data-path="geostatistical-modelling.html"><a href="geostatistical-modelling.html#data-preparation"><i class="fa fa-check"></i><b>7.1.5</b> Data preparation</a></li>
+<li class="chapter" data-level="7.1.1" data-path="geostatistical-modelling.html"><a href="geostatistical-modelling.html#lecture-video-length-010617"><i class="fa fa-check"></i><b>7.1.1</b> Lecture video (Length: 01:06:17)</a></li>
+<li class="chapter" data-level="7.1.2" data-path="geostatistical-modelling.html"><a href="geostatistical-modelling.html#learning-objectives"><i class="fa fa-check"></i><b>7.1.2</b> Learning objectives</a></li>
+<li class="chapter" data-level="7.1.3" data-path="geostatistical-modelling.html"><a href="geostatistical-modelling.html#datasets-setting-up-the-work-directory-4"><i class="fa fa-check"></i><b>7.1.3</b> Datasets &amp; setting up the work directory</a></li>
+<li class="chapter" data-level="7.1.4" data-path="geostatistical-modelling.html"><a href="geostatistical-modelling.html#loading-and-installing-packages-4"><i class="fa fa-check"></i><b>7.1.4</b> Loading and installing packages</a></li>
+<li class="chapter" data-level="7.1.5" data-path="geostatistical-modelling.html"><a href="geostatistical-modelling.html#loading-datasets-2"><i class="fa fa-check"></i><b>7.1.5</b> Loading datasets</a></li>
+<li class="chapter" data-level="7.1.6" data-path="geostatistical-modelling.html"><a href="geostatistical-modelling.html#data-preparation"><i class="fa fa-check"></i><b>7.1.6</b> Data preparation</a></li>
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="geostatistical-modelling.html"><a href="geostatistical-modelling.html#semivariogram-analysis"><i class="fa fa-check"></i><b>7.2</b> Semivariogram analysis</a>
 <ul>
@@ -405,26 +406,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">7</span> Geostatistical Modelling<a href="geostatistical-modelling.html#geostatistical-modelling" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="introduction-5" class="section level2 hasAnchor" number="7.1">
 <h2><span class="header-section-number">7.1</span> Introduction<a href="geostatistical-modelling.html#introduction-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="lecture-video-length-010617" class="section level3 hasAnchor" number="7.1.1">
+<h3><span class="header-section-number">7.1.1</span> Lecture video (Length: 01:06:17)<a href="geostatistical-modelling.html#lecture-video-length-010617" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="vembedr" align="center">
+<div>
+<iframe src="https://www.youtube.com/embed/oh1IXzUu2AU" width="711" height="400" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+<p><a href="https://youtu.be/oh1IXzUu2AU">[<strong>Watch on YouTube</strong>]</a></p>
 <p>Today, we will learn how to perform <strong>semivariogram</strong> analysis which can be used to create continuous predictive maps based on spatial interpolation technique called <strong>Kriging</strong>. In this session, we will investigate spatial variation in outcomes that are, in theory, <strong>spatially continuous</strong>; for example, the concentrations of ambient air pollutants such as Sulphur dioxide (<span class="math inline">\(SO_{2}\)</span>) (a toxic gas emitted from sulphur rich fuels (i.e., coal, oil or diesel) when burnt) which can be present anywhere but in practice are only measured at specified point locations, such as air quality monitoring stations.</p>
 <p>We will assess for the presence of spatial autocorrelation using <strong>semivariogram</strong> which is distance-based, which describes the correlation of a variable with itself through geographic space. Here, a <strong>Positive Autocorrelation</strong> exists when measurements close to one another are alike than they would be due to chance or through random sampling. The presence of autocorrelation for spatially continuous phenomena can be established by using <strong>semivariograms</strong>.</p>
 <p>Estimates from a semivariogram can be are used from model construction for spatial interpolation across a study area, whereby values at unsampled locations are predicted from neighbouring sites. A popular form of interpolation, which is based on the spatial attribute’s outcome variable, is known as <strong>Kriging</strong> (a technique named after a South African engineer, Danie G. Krige (1919 to 2013)).</p>
 <p>In you own time, see who Danie G. Krige is in this lecture <a href="https://www.youtube.com/watch?v=0cYZcmS48jI"><strong>[watch video]</strong></a></p>
-<div id="learning-objectives" class="section level3 hasAnchor" number="7.1.1">
-<h3><span class="header-section-number">7.1.1</span> Learning objectives<a href="geostatistical-modelling.html#learning-objectives" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="learning-objectives" class="section level3 hasAnchor" number="7.1.2">
+<h3><span class="header-section-number">7.1.2</span> Learning objectives<a href="geostatistical-modelling.html#learning-objectives" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The US Environmental Agency have positioned air quality monitors for surveillance of over 100 different types of pollutants that exist as toxic gases, particulates and heavy metals. For <strong>Sulphur Dioxide</strong> (<span class="math inline">\(SO_{2}\)</span>), there are 458 active air monitors that takes hourly readings for concentrations of <span class="math inline">\(SO_{2}\)</span> (in parts per billion (pbb)). An annual estimate for <span class="math inline">\(SO_{2}\)</span> was calculated for each station at its location. Car usage, urbanisation and social economic deprivation, alongside of other anthropogenic activities such as coal burning, across the USA increases the risk of elevated pollution of <span class="math inline">\(SO_{2}\)</span>.</p>
 <p>Using geostatistical methods and taking into account of <strong>car usage, urbanisation and levels of deprivation</strong> - what areas in USA have higher concentrations of <span class="math inline">\(SO_{2}\)</span> exceeding the annual average of 40 ppb which is a national safety limit for cause of concern?</p>
 <p>Let’s use Kriging to find out!</p>
 </div>
-<div id="datasets-setting-up-the-work-directory-4" class="section level3 hasAnchor" number="7.1.2">
-<h3><span class="header-section-number">7.1.2</span> Datasets &amp; setting up the work directory<a href="geostatistical-modelling.html#datasets-setting-up-the-work-directory-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="datasets-setting-up-the-work-directory-4" class="section level3 hasAnchor" number="7.1.3">
+<h3><span class="header-section-number">7.1.3</span> Datasets &amp; setting up the work directory<a href="geostatistical-modelling.html#datasets-setting-up-the-work-directory-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Before you begin do make sure to download all data by <a href="https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%206%20-%20Dataset.zip"><strong>clicking here</strong></a>. Create a folder on called “<strong>Week 6</strong>” within your “<strong>GEOG0114</strong>” folder stored in the desktop of your personal computer. Make sure to extract all data from the zip folder and store it into “<strong>Week 6</strong>” folder. Open a new R script and set the work directory to <strong>Week 6’s</strong> folder.</p>
 <p>For Windows, the work directory will be:</p>
 <div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="geostatistical-modelling.html#cb146-1" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;C:/Users/AccountName/Desktop/GEOG0114/Week 6&quot;</span>)</span></code></pre></div>
 <p>For MAC, the work directory will be:</p>
 <div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="geostatistical-modelling.html#cb147-1" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;/Users/AccountName/Desktop/GEOG0114/Week 6&quot;</span>)</span></code></pre></div>
 </div>
-<div id="loading-and-installing-packages-4" class="section level3 hasAnchor" number="7.1.3">
-<h3><span class="header-section-number">7.1.3</span> Loading and installing packages<a href="geostatistical-modelling.html#loading-and-installing-packages-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="loading-and-installing-packages-4" class="section level3 hasAnchor" number="7.1.4">
+<h3><span class="header-section-number">7.1.4</span> Loading and installing packages<a href="geostatistical-modelling.html#loading-and-installing-packages-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We will need to load the following packages:</p>
 <ul>
 <li><code>sf</code>: Simple Features</li>
@@ -450,8 +460,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb149-6"><a href="geostatistical-modelling.html#cb149-6" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;gstat&quot;</span>)</span>
 <span id="cb149-7"><a href="geostatistical-modelling.html#cb149-7" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;geoR&quot;</span>)</span></code></pre></div>
 </div>
-<div id="loading-datasets-2" class="section level3 hasAnchor" number="7.1.4">
-<h3><span class="header-section-number">7.1.4</span> Loading datasets<a href="geostatistical-modelling.html#loading-datasets-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="loading-datasets-2" class="section level3 hasAnchor" number="7.1.5">
+<h3><span class="header-section-number">7.1.5</span> Loading datasets<a href="geostatistical-modelling.html#loading-datasets-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Let us first import the quantitative data i.e., <code>US 2019 SO2 Emissions data.csv</code> into R/RStudio.</p>
 <div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="geostatistical-modelling.html#cb150-1" tabindex="-1"></a><span class="co"># Use read.csv() to import </span></span>
 <span id="cb150-2"><a href="geostatistical-modelling.html#cb150-2" tabindex="-1"></a>datafile <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&quot;US 2019 SO2 Emissions data.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">&quot;,&quot;</span>)</span></code></pre></div>
@@ -501,8 +511,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb151-2"><a href="geostatistical-modelling.html#cb151-2" tabindex="-1"></a>US_Nation_Border_shp <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;US Nation Border.shp&quot;</span>)</span>
 <span id="cb151-3"><a href="geostatistical-modelling.html#cb151-3" tabindex="-1"></a>US_State_Border_shp <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;US State Borders.shp&quot;</span>)</span></code></pre></div>
 </div>
-<div id="data-preparation" class="section level3 hasAnchor" number="7.1.5">
-<h3><span class="header-section-number">7.1.5</span> Data preparation<a href="geostatistical-modelling.html#data-preparation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="data-preparation" class="section level3 hasAnchor" number="7.1.6">
+<h3><span class="header-section-number">7.1.6</span> Data preparation<a href="geostatistical-modelling.html#data-preparation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>There are a couple of things we need to do before proceeding with the analysis:</p>
 <ol style="list-style-type: decimal">
 <li>The <code>datafile</code> is a data frame object in RStudio’s memory, and not a spatial object. We need to coerce into a spatial <code>sf</code> object</li>

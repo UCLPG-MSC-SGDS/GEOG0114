@@ -2,6 +2,14 @@
 
 ## Introduction
 
+### Lecture video (Length: 01:06:17)
+
+```{r, warnings=FALSE, message=FALSE, echo=FALSE}
+library(vembedr)
+embed_youtube('oh1IXzUu2AU', height=400) %>% use_align('center')
+```
+[[**Watch on YouTube**]](https://youtu.be/oh1IXzUu2AU)
+
 Today, we will learn how to perform **semivariogram** analysis which can be used to create continuous predictive maps based on spatial interpolation technique called **Kriging**. In this session, we will investigate spatial variation in outcomes that are, in theory, **spatially continuous**; for example, the concentrations of ambient air pollutants such as Sulphur dioxide ($SO_{2}$) (a toxic gas emitted from sulphur rich fuels (i.e., coal, oil or diesel) when burnt) which can be present anywhere but in practice are only measured at specified point locations, such as air quality monitoring stations.
 
 We will assess for the presence of spatial autocorrelation using **semivariogram** which is distance-based, which describes the correlation of a variable with itself through geographic space. Here, a **Positive Autocorrelation** exists when measurements close to one another are alike than they would be due to chance or through random sampling. The presence of autocorrelation for spatially continuous phenomena can be established by using **semivariograms**.
