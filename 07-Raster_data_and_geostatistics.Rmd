@@ -648,7 +648,7 @@ We will use data on the prevalence of hookworm collected from 393 villages in Ug
 - Shapefile of region: `Study_Area_UG_TZ.shp`
 - Shapefile of region with districts: `Study_Area_UG_TZ_Districts.shp`
 
-These data can be downloaded [**[HERE]**]()
+These data can be downloaded [**[HERE]**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%206%20-%20Homework%20Dataset.zip)
 
 As shown in the practical, this analysis involves going through five stages: 
 
