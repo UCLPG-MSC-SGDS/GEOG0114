@@ -333,6 +333,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.4" data-path="geostatistical-modelling.html"><a href="geostatistical-modelling.html#kriging-modelling-non-null"><i class="fa fa-check"></i><b>7.4</b> Kriging modelling (non-null)</a></li>
 <li class="chapter" data-level="7.5" data-path="geostatistical-modelling.html"><a href="geostatistical-modelling.html#references-see-reading-list-3"><i class="fa fa-check"></i><b>7.5</b> References (see reading list)</a></li>
 <li class="chapter" data-level="7.6" data-path="geostatistical-modelling.html"><a href="geostatistical-modelling.html#data-sources-4"><i class="fa fa-check"></i><b>7.6</b> Data Sources</a></li>
+<li class="chapter" data-level="7.7" data-path="geostatistical-modelling.html"><a href="geostatistical-modelling.html#practical-homework-3"><i class="fa fa-check"></i><b>7.7</b> Practical homework</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="spatial-models-part-1.html"><a href="spatial-models-part-1.html"><i class="fa fa-check"></i><b>8</b> Spatial Models: Part 1</a>
 <ul>
@@ -916,8 +917,38 @@ locations; and ii.) <strong>isotropic</strong>, spatial autocorrelation is the s
 <ol style="list-style-type: decimal">
 <li>The pollution data was obtained from the United States Environmental Protection Agency (EPA) <a href="https://aqs.epa.gov/aqsweb/airdata/download_files.html"><strong>Click Here</strong></a></li>
 <li>Spatial data concerning car usage in the US was sourced from the ACS Vehicle Availability Variables project <a href="https://www.arcgis.com/home/item.html?id=9a9e43ec1603446880c50d4ed1df2207"><strong>Click Here</strong></a>. You would need to have Online ArcGIS account to access the resources.</li>
-<li>US raster data for Social Vulnerability Index 2018 and Urbanization Index (2015) were sourced from the NASA Socioeconomic Data &amp; Applications Center (SEDAC) <a href="https://sedac.ciesin.columbia.edu"><strong>Click Here</strong></a>. <strong>NOTE</strong>: Registeration required for free access to raster records</li>
+<li>US raster data for Social Vulnerability Index 2018 and Urbanization Index (2015) were sourced from the NASA Socioeconomic Data &amp; Applications Center (SEDAC) <a href="https://sedac.ciesin.columbia.edu"><strong>Click Here</strong></a>. <strong>NOTE</strong>: Registration required for free access to raster records.</li>
+<li>The Global Atlas for Helminths Infections (GAHI) <a href="https://www.thiswormyworld.org"><strong>Click Here</strong></a></li>
+<li>Expanded Special Project for Elimination of Neglected Tropical Diseases (ESPEN-NTD) <a href="https://espen.afro.who.int"><strong>Click Here</strong></a></li>
 </ol>
+</div>
+<div id="practical-homework-3" class="section level2 hasAnchor" number="7.7">
+<h2><span class="header-section-number">7.7</span> Practical homework<a href="geostatistical-modelling.html#practical-homework-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Case study: Village survey of hookworm infection in Uganda and Tanzania</strong></p>
+<p>We will use data on the prevalence of hookworm collected from 393 villages in Uganda and Tanzania. The dataset includes coordinates for each village, which have been geo-referenced to a specific longitude and latitude, as well as the boundaries of the study area for the two countries:</p>
+<ul>
+<li>Point data: <code>Soil_Transmitted_Helminth_Data.csv</code></li>
+<li>Shapefile of region: <code>Study_Area_UG_TZ.shp</code></li>
+<li>Shapefile of region with districts: <code>Study_Area_UG_TZ_Districts.shp</code></li>
+</ul>
+<p>These data can be downloaded <a href=""><strong>[HERE]</strong></a></p>
+<p>As shown in the practical, this analysis involves going through five stages:</p>
+<ol style="list-style-type: decimal">
+<li>Data preparation and checking the distribution of points within the study area</li>
+<li>Variogram analysis for generating an empirical variogram</li>
+<li>Variogram analysis for generating a theoretical variogram to determine the appropriate model</li>
+<li>Geostatistical prediction (Ordinary Kriging [null model])</li>
+<li>Thematic mapping and visualisation.</li>
+</ol>
+<p>Use Kriging to generate a predicted prevalence map of Hookworm infection for the entire study area in Uganda and Tanzania. The World Health Organisation has a classification for grading disease burden of this type of illness in the Global South:</p>
+<ul>
+<li>Areas with prevalence of &lt; 1% are deemed as “Negligible”</li>
+<li>Areas with a prevalence from 1% to 10% are deemed “Low risk”</li>
+<li>Areas with a prevalence from 10% to 20% are deemed “Moderate risk”</li>
+<li>Areas with a prevalence from 20% to 50% are deemed “High risk”</li>
+<li>Areas with a prevalence from 50% and more are zones where risks are “Excessive”</li>
+</ul>
+<p>Produce an output that reflect the WHO’s classification for this disease.</p>
 
 </div>
 </div>

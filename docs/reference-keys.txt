@@ -131,6 +131,7 @@ thematic-visualisation-of-raster-data-using-tmap
 kriging-modelling-non-null
 references-see-reading-list-3
 data-sources-4
+practical-homework-3
 spatial-models-part-1
 introduction-6
 learning-objective

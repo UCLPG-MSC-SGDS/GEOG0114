@@ -634,4 +634,36 @@ knitr::include_graphics('images/general/week6/image3_3.png', error = FALSE)
 ## Data Sources
 1. The pollution data was obtained from the United States Environmental Protection Agency (EPA) [**Click Here**](https://aqs.epa.gov/aqsweb/airdata/download_files.html) 
 2. Spatial data concerning car usage in the US was sourced from the ACS Vehicle Availability Variables project [**Click Here**](https://www.arcgis.com/home/item.html?id=9a9e43ec1603446880c50d4ed1df2207). You would need to have Online ArcGIS account to access the resources.
-3. US raster data for Social Vulnerability Index 2018 and Urbanization Index (2015) were sourced from the NASA Socioeconomic Data & Applications Center (SEDAC) [**Click Here**](https://sedac.ciesin.columbia.edu). **NOTE**: Registeration required for free access to raster records
+3. US raster data for Social Vulnerability Index 2018 and Urbanization Index (2015) were sourced from the NASA Socioeconomic Data & Applications Center (SEDAC) [**Click Here**](https://sedac.ciesin.columbia.edu). **NOTE**: Registration required for free access to raster records.
+4. The Global Atlas for Helminths Infections (GAHI) [**Click Here**](https://www.thiswormyworld.org)
+5. Expanded Special Project for Elimination of Neglected Tropical Diseases (ESPEN-NTD) [**Click Here**](https://espen.afro.who.int)
+
+## Practical homework
+
+**Case study: Village survey of hookworm infection in Uganda and Tanzania**
+
+We will use data on the prevalence of hookworm collected from 393 villages in Uganda and Tanzania. The dataset includes coordinates for each village, which have been geo-referenced to a specific longitude and latitude, as well as the boundaries of the study area for the two countries:
+
+- Point data: `Soil_Transmitted_Helminth_Data.csv`
+- Shapefile of region: `Study_Area_UG_TZ.shp`
+- Shapefile of region with districts: `Study_Area_UG_TZ_Districts.shp`
+
+These data can be downloaded [**[HERE]**]()
+
+As shown in the practical, this analysis involves going through five stages: 
+
+1. Data preparation and checking the distribution of points within the study area
+2. Variogram analysis for generating an empirical variogram
+3. Variogram analysis for generating a theoretical variogram to determine the appropriate model
+4. Geostatistical prediction (Ordinary Kriging [null model])
+5. Thematic mapping and visualisation.
+
+Use Kriging to generate a predicted prevalence map of Hookworm infection for the entire study area in Uganda and Tanzania. The World Health Organisation has a classification for grading disease burden of this type of illness in the Global South:
+
+- Areas with prevalence of < 1% are deemed as "Negligible" 
+- Areas with a prevalence from 1% to 10% are deemed "Low risk"
+- Areas with a prevalence from 10% to 20% are deemed "Moderate risk"
+- Areas with a prevalence from 20% to 50% are deemed "High risk"
+- Areas with a prevalence from 50% and more are zones where risks are "Excessive"
+
+Produce an output that reflect the WHO's classification for this disease.
