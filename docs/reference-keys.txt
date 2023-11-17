@@ -115,6 +115,7 @@ practical-homework-2
 geostatistical-modelling
 introduction-5
 lecture-video-length-010617
+computer-practical-video-length-015949-1
 learning-objectives
 datasets-setting-up-the-work-directory-4
 loading-and-installing-packages-4
