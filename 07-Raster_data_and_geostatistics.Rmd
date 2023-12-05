@@ -10,7 +10,7 @@ embed_youtube('oh1IXzUu2AU', height=400) %>% use_align('center')
 ```
 [[**Watch on YouTube**]](https://youtu.be/oh1IXzUu2AU)
 
-### Computer practical video (Length: 01:59:49)
+### Computer practical video (Length: 02:00:01)
 
 ```{r, warnings=FALSE, message=FALSE, echo=FALSE}
 library(vembedr)
