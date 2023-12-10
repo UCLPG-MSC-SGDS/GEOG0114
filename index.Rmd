@@ -30,7 +30,7 @@ In week 7, 8, 9 and 10, we will learn specialised tools for performing spatial a
 All lectures and computer practicals will be delivered in-person. All Lectures are held on **Monday from 04:00pm to 05:00pm** at the [**North West Wing (Room 305)**](https://www.ucl.ac.uk/maps/north-west-wing-building). All computer lab seminars are delivered on **Thursday from 12:00pm to 02:00pm** at the [**North West Wing (Room G07)**](https://www.ucl.ac.uk/maps/north-west-wing-building).
 
 ::: note
-**IMPORTANT NOTE**: Please bring your own laptops with you to the computer practicals and technical support sessions on Monday and Thursday, respectively
+**IMPORTANT NOTE**: Please bring your own laptops with you to the computer practicals on Thursday
 :::
 
 ## Moodle {.unnumbered}

@@ -135,6 +135,8 @@ data-sources-4
 practical-homework-3
 spatial-models-part-1
 introduction-6
+lecture-video-length-004147
+computer-practical-video-length-020001-4
 learning-objective
 datasets-setting-up-the-work-directory-5
 loading-and-installing-packages-5

@@ -2,6 +2,22 @@
 
 ## Introduction
 
+### Lecture video (Length: 00:41:47)
+
+```{r, warnings=FALSE, message=FALSE, echo=FALSE}
+library(vembedr)
+embed_youtube('llsnOzmJYH4', height=400) %>% use_align('center')
+```
+[[**Watch on YouTube**]](https://youtu.be/llsnOzmJYH4)
+
+### Computer practical video (Length: 02:00:01)
+
+```{r, warnings=FALSE, message=FALSE, echo=FALSE}
+library(vembedr)
+embed_youtube('RnQkzPiPoSw', height=400) %>% use_align('center')
+```
+[[**Watch on YouTube**]](https://youtu.be/RnQkzPiPoSw)
+
 This session builds on the techniques taught in week 3's tutorials focused on spatial dependence & spatial autocorrelation. Today, you will learn how to build spatially-based regression models for dealing with spatial autocorrelation whenever you want to determine relationship between an outcome and other independent variables. These are known as **Spatial Lag** or **Spatial Error** regression models. 
 
 ### Learning objective
