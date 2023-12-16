@@ -1,6 +1,6 @@
 # Spatial Models: Part 2
 
-### Computer practical video (Length: 01:57:53)
+## Computer practical video (Length: 01:57:53)
 
 ```{r, warnings=FALSE, message=FALSE, echo=FALSE}
 library(vembedr)
