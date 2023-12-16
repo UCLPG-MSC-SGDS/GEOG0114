@@ -154,6 +154,7 @@ references-see-reading-list-4
 data-sources-5
 useful-videos
 spatial-models-part-2
+computer-practical-video-length-015753
 introduction-7
 learning-outcomes-5
 datasets-setting-up-the-work-directory-6

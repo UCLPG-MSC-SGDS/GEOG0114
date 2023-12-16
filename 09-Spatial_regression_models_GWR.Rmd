@@ -1,5 +1,13 @@
 # Spatial Models: Part 2
 
+### Computer practical video (Length: 01:57:53)
+
+```{r, warnings=FALSE, message=FALSE, echo=FALSE}
+library(vembedr)
+embed_youtube('T-SgrbzisgM', height=400) %>% use_align('center')
+```
+[[**Watch on YouTube**]](https://youtu.be/T-SgrbzisgM)
+
 ## Introduction
 
 The goal for this week’s session is to introduce you to a type of spatial model known as the **Geographically Weighted Regression (GWR)**. GWR is a statistical model which can indicate where non-stationarity may take place across space; it can be used to identify how **locally** weighted regression coefficients may vary across the study area (unlike its counterpart i.e., the **Spatial Lagged and/or Error Models** which provides **global coefficients**). Similar to last week's sessions, we will first need to explore the residuals from a linear regression model to identify evidence of **spatial autocorrelation** before implementing a spatial model. But, this time round, we will run a GWR and observe how the coefficients for a set of independent variables vary across space.
@@ -326,6 +334,9 @@ The results are always stored as a `SDF` object within the `gwr.model` output we
 
 ```{r eval=FALSE}
 gwr.data <- as.data.frame(gwr.model$SDF)
+
+# save the output as a csv so you don't have to run the model again and use in the future!
+write.csv(gwr.data, file = "gwr output.csv", row.names = FALSE)
 ```
 
 **Very important notes** about the `gwr.data` object:
@@ -338,7 +349,7 @@ We can generate these results as maps. Now, let us bring the results together in
 
 ```{r eval=FALSE}
 # create neat spatial data frame by keeping first two columns
-lsoa_result <- lsoa.shp
+lsoa_result <- st_drop_geometry(spatialdatafile[,c(1,2)])
 
 # insert coefficients into lsoa_result object
 lsoa_result$CoefLogInc <- gwr.data[,"log10.AVEINCOME."]
@@ -420,7 +431,7 @@ knitr::include_graphics('images/general/week10/Sig_IMD.png', error = FALSE)
 ```
 
 <div class="note">
-**INTEPRETATION:** For instance, in the Borough of Hounslow, we can see a significant reduction in house prices in relation to increased levels of socioeconomic deprivation (adjusted for income and accessibility). Such associations are clustered in the North-East and South-South West of Hounslow. The regions coloured white are not significant relationships and blues are a chance finding. 
+**INTEPRETATION:** For instance, in the Borough of Hounslow, we can see a significant reduction in house prices in relation to increased levels of socioeconomic deprivation (adjusted for income and accessibility). Such reduction are clustered in the **mid-section** of Borough of Hounslow which were coloured **red**. Note that in **far north eastern** section of the Borough of Hounslow with pockets of LSOA's coloured **blue** shows a significant increase in house price in relationship to IMD which is difficult to explain and thus can be interpreted as a chance finding. All sections that are **white** are not significant. 
 </div>
 
 Let finally map the local r-square values to examine model performance:

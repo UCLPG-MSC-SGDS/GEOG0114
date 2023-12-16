@@ -366,6 +366,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9" data-path="spatial-models-part-2.html"><a href="spatial-models-part-2.html"><i class="fa fa-check"></i><b>9</b> Spatial Models: Part 2</a>
 <ul>
+<li class="chapter" data-level="9.0.1" data-path="spatial-models-part-2.html"><a href="spatial-models-part-2.html#computer-practical-video-length-015753"><i class="fa fa-check"></i><b>9.0.1</b> Computer practical video (Length: 01:57:53)</a></li>
 <li class="chapter" data-level="9.1" data-path="spatial-models-part-2.html"><a href="spatial-models-part-2.html#introduction-7"><i class="fa fa-check"></i><b>9.1</b> Introduction</a>
 <ul>
 <li class="chapter" data-level="9.1.1" data-path="spatial-models-part-2.html"><a href="spatial-models-part-2.html#learning-outcomes-5"><i class="fa fa-check"></i><b>9.1.1</b> Learning outcomes</a></li>
@@ -408,6 +409,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="spatial-models-part-2" class="section level1 hasAnchor" number="9">
 <h1><span class="header-section-number">9</span> Spatial Models: Part 2<a href="spatial-models-part-2.html#spatial-models-part-2" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="computer-practical-video-length-015753" class="section level3 hasAnchor" number="9.0.1">
+<h3><span class="header-section-number">9.0.1</span> Computer practical video (Length: 01:57:53)<a href="spatial-models-part-2.html#computer-practical-video-length-015753" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="vembedr" align="center">
+<div>
+<iframe src="https://www.youtube.com/embed/T-SgrbzisgM" width="711" height="400" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+<p><a href="https://youtu.be/T-SgrbzisgM">[<strong>Watch on YouTube</strong>]</a></p>
+</div>
 <div id="introduction-7" class="section level2 hasAnchor" number="9.1">
 <h2><span class="header-section-number">9.1</span> Introduction<a href="spatial-models-part-2.html#introduction-7" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The goal for this week’s session is to introduce you to a type of spatial model known as the <strong>Geographically Weighted Regression (GWR)</strong>. GWR is a statistical model which can indicate where non-stationarity may take place across space; it can be used to identify how <strong>locally</strong> weighted regression coefficients may vary across the study area (unlike its counterpart i.e., the <strong>Spatial Lagged and/or Error Models</strong> which provides <strong>global coefficients</strong>). Similar to last week’s sessions, we will first need to explore the residuals from a linear regression model to identify evidence of <strong>spatial autocorrelation</strong> before implementing a spatial model. But, this time round, we will run a GWR and observe how the coefficients for a set of independent variables vary across space.</p>
@@ -670,7 +680,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="model-results" class="section level3 hasAnchor" number="9.3.3">
 <h3><span class="header-section-number">9.3.3</span> Model results<a href="spatial-models-part-2.html#model-results" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The results are always stored as a <code>SDF</code> object within the <code>gwr.model</code> output we generated from the <code>gwr()</code>. We can extract the <code>SDF</code> object according with the code below:</p>
-<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="spatial-models-part-2.html#cb227-1" tabindex="-1"></a>gwr.data <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(gwr.model<span class="sc">$</span>SDF)</span></code></pre></div>
+<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="spatial-models-part-2.html#cb227-1" tabindex="-1"></a>gwr.data <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(gwr.model<span class="sc">$</span>SDF)</span>
+<span id="cb227-2"><a href="spatial-models-part-2.html#cb227-2" tabindex="-1"></a></span>
+<span id="cb227-3"><a href="spatial-models-part-2.html#cb227-3" tabindex="-1"></a><span class="co"># save the output as a csv so you don&#39;t have to run the model again and use in the future!</span></span>
+<span id="cb227-4"><a href="spatial-models-part-2.html#cb227-4" tabindex="-1"></a><span class="fu">write.csv</span>(gwr.data, <span class="at">file =</span> <span class="st">&quot;gwr output.csv&quot;</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <p><strong>Very important notes</strong> about the <code>gwr.data</code> object:</p>
 <ol style="list-style-type: decimal">
 <li>The following columns in the <code>gwr.data</code> contain our LSOA-specific coefficients for log-transformed income, deprivation and accessibility: <code>log10.AVEINCOME.</code>, <code>log10.IMDSCORE.</code> and <code>log10.PTAINDEX.</code> respectively. These results tell us the association between the dependent and independent variable within an LSOA.</li>
@@ -679,7 +692,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 <p>We can generate these results as maps. Now, let us bring the results together into one clean spatial data frame:</p>
 <div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="spatial-models-part-2.html#cb228-1" tabindex="-1"></a><span class="co"># create neat spatial data frame by keeping first two columns</span></span>
-<span id="cb228-2"><a href="spatial-models-part-2.html#cb228-2" tabindex="-1"></a>lsoa_result <span class="ot">&lt;-</span> lsoa.shp</span>
+<span id="cb228-2"><a href="spatial-models-part-2.html#cb228-2" tabindex="-1"></a>lsoa_result <span class="ot">&lt;-</span> <span class="fu">st_drop_geometry</span>(spatialdatafile[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)])</span>
 <span id="cb228-3"><a href="spatial-models-part-2.html#cb228-3" tabindex="-1"></a></span>
 <span id="cb228-4"><a href="spatial-models-part-2.html#cb228-4" tabindex="-1"></a><span class="co"># insert coefficients into lsoa_result object</span></span>
 <span id="cb228-5"><a href="spatial-models-part-2.html#cb228-5" tabindex="-1"></a>lsoa_result<span class="sc">$</span>CoefLogInc <span class="ot">&lt;-</span> gwr.data[,<span class="st">&quot;log10.AVEINCOME.&quot;</span>]</span>
@@ -729,7 +742,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Output from the above <code>tmap()</code> functions:</p>
 <p><img src="images/general/week10/Sig_IMD.png" width="100%" style="display: block; margin: auto;" /></p>
 <div class="note">
-<p><strong>INTEPRETATION:</strong> For instance, in the Borough of Hounslow, we can see a significant reduction in house prices in relation to increased levels of socioeconomic deprivation (adjusted for income and accessibility). Such associations are clustered in the North-East and South-South West of Hounslow. The regions coloured white are not significant relationships and blues are a chance finding.</p>
+<p><strong>INTEPRETATION:</strong> For instance, in the Borough of Hounslow, we can see a significant reduction in house prices in relation to increased levels of socioeconomic deprivation (adjusted for income and accessibility). Such reduction are clustered in the <strong>mid-section</strong> of Borough of Hounslow which were coloured <strong>red</strong>. Note that in <strong>far north eastern</strong> section of the Borough of Hounslow with pockets of LSOA’s coloured <strong>blue</strong> shows a significant increase in house price in relationship to IMD which is difficult to explain and thus can be interpreted as a chance finding. All sections that are <strong>white</strong> are not significant.</p>
 </div>
 <p>Let finally map the local r-square values to examine model performance:</p>
 <div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="spatial-models-part-2.html#cb234-1" tabindex="-1"></a><span class="co"># map localR2 to examine model performance</span></span>
