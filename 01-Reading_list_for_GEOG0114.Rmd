@@ -1,4 +1,4 @@
-# Reading List for GEOG0114 2023/24 {-}
+# Reading List for GEOG0114 {-}
 
 ```{r echo=FALSE, out.width = "100%", fig.align='center', cache=TRUE,}
 knitr::include_graphics('images/general/recommended_books.png')
