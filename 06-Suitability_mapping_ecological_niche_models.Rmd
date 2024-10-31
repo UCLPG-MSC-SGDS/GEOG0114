@@ -704,7 +704,7 @@ knitr::include_graphics('images/general/week5/image8_FinalPicture.png', error = 
 
 **Notes:**
 
-- Use the following `set.seed(set.seed(20000430)`.
+- Use the following `set.seed(20000430)`.
 - The number of pseudo-absences points should be twice the number of presence points.
 - Use the following split for training and testing data: 75:25 (i.e., 4 equal parts where 3 is for training and 1 is for testing).
 - For the predicted probability map (A), reclassify the predictions to the following categories - `0-0.2`, `0.2-0.4`, `0.4-0.6`, `0.6-0.8` and `0.8-1.0`.
