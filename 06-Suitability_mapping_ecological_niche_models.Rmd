@@ -20,7 +20,7 @@ embed_youtube('C_aGyS5Cmos', height=400) %>% use_align('center')
 
 Last week, we described how knowledge-driven methods informed by expert opinion (often drawn from experience or literature) can be used to predict locations that are suitable (or favourable) for a specific outcome given a set of environmental factors, which in turn, can be outputted as a thematic raster map. Last week's approach uses a mixed (i.e., qualitative and quantitative) methodology through the use of **Overlay Mapping** and **Analytical Hierarchy Process (AHP)** for suitability mapping, and these approaches are used strictly when there are no point occurrence data. 
 
-This week, we are using distributional niche models, often term as either: **Ecological (or Environmental) Niche Models**, or **Environmental or Habitat Suitability Models**. These are quantitative methods that use occurrence data in conjunction with environmental data to make a correlative model of the environmental conditions that meet an outcome's environmental (or ecological) requirements, which in turn, can predict the relative suitability of habitat for that outcome. It has many applications in ecology, epidemiology, disaster risk reduction and social sciences (e.g., crime patterns). Today, we are going to use the **Maximum Entropy Model (MAXENT)** to infer zones for disaster hazards such as wildfires in California given a set of predictor variables (i.e, climate, vegetation, anthropogenic and socioeconomic risk factors which are raster).
+This week, we are using distributional models, often term as either: **Ecological (or Environmental) Niche Models**, or **Environmental or Habitat Suitability Models**. These are quantitative methods that use occurrence data in conjunction with environmental data to make a correlative model of the environmental conditions that meet an outcome's environmental (or ecological) requirements, which in turn, can predict the relative suitability of habitat for that outcome. It has many applications in ecology, epidemiology, disaster risk reduction and social sciences. Today, we are going to use the **Maximum Entropy Model (MAXENT)** to infer zones for disaster hazards such as wildfires in California given a set of predictor variables (i.e, climate, vegetation, anthropogenic and socioeconomic risk factors which are raster).
 
 ### Learning outcomes 
 
@@ -45,11 +45,15 @@ For MAC, the work directory will be:
 setwd("/Users/AccountName/Desktop/GEOG0114/Week 5")
 ```
 
-### Loading and installing packages
+### Installing Java on Windows, macOS (Intel or M1/M2) operating system
 
-<div class="warning">
-IMPORTANT NOTE: We will need to install **Java** for the `rjava` package as well as the `maxent()` function and other functions associated with performing MAXENT to work. You can download the latest version of Java [**[HERE]**](https://www.java.com/en/download/)
+Before we start anything, we will need to install **Java** for the appropriate operating system in order to follow this practical. You can download the latest version of Java accordingly:
+
+- For **Windows** or **macOS (Intel)** users - please download the latest version of Java [**[HERE]**](https://www.java.com/en/download/)
+- For **macOS M1/M2** users - please download the latest version of **Azul Zulu Builds of OpenJDK** [**[HERE]**](https://www.azul.com/downloads/?package=jdk#zulu). Note that this is an open source program that supports Java and allows Java to operate smoothly on a **macOS M1/M2** system.
 </div>
+
+### Installing and loading the required packages
 
 Next, we will need to load the following packages:
 
@@ -59,12 +63,12 @@ Next, we will need to load the following packages:
 - `spdep`: Access to spatial functions such `spsample()` needed for generating background points
 - `tmap`: Thematic Mapping
 
-The above packages `raster` `sf`, `sp`, `spdep` & `tmap` should have been installed in the previous session(s). We will need to install the following new package(s):
+The above packages `raster` `sf`, `sp`, `spdep` & `tmap` should have been installed in the previous session(s). However, we will need to install the following new package(s):
 
 - `dismo`: Provides access to methods for niches distribution modelling in RStudio.
 - `rJava`: Low-level interface for Java. The `maxent()` function depends on this so it must be installed.
 - `terra`: Provides access to extra functions for processing raster data
-- `exactextractr`: Provides access to extra functions for processing raster data e.g., `exact_extract`
+- `exactextractr`: Provides access to extra functions for processing raster data e.g., `exact_extract()`
 
 ```{r, eval = FALSE}
 # Install the packages with install.package():
@@ -72,6 +76,13 @@ install.packages("dismo")
 install.packages("rJava")
 install.packages("terra")
 install.packages("exactextractr")
+```
+
+**[A]** For **Windows/macOS (Intel)** users: 
+
+Use the following code to load the packages in RStudio:
+
+```{r, eval = FALSE}
 
 # Load the packages with library():
 library("raster")
@@ -83,6 +94,29 @@ library("spdep")
 library("terra")
 library("exactextractr")
 ```
+
+**[B]** For **macOS (M1/M2)** users:
+
+Please use the following code to first configure your macOS system by setting the system's environment accordingly to this Java home path `/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home` with the `Sys.setenv()` function, and then load the packages:
+
+```{r, eval = FALSE}
+# Set the system environment to this location with Sys.setenv() 
+Sys.setenv(JAVA_HOME = "/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home")
+
+# Load the packages with library():
+library("raster")
+library("dismo")
+library("tmap")
+library("sf")
+library("rJava")
+library("spdep")
+library("terra")
+library("exactextractr")
+```
+
+<div class="note">
+**IMPORTANT NOTES**: For **macOS M1/M2** users - please use the `Sys.setenv()` function to configure your macOS system to that Java home path accordingly to prevent RStudio from crashing with that annoying **Abort** message whenever the `maxent()` function is executed.
+</div>
 
 ### Loading datasets
 
@@ -320,10 +354,23 @@ Here are some important notes on it's usage:
 3. `p`: In this argument, you must specify the column containing the presence and absence of fires in the training data frame.
 4. `args`: This allows for additional arguments. 
 
-Running the `maxent()` code should look something like:
+**[A]** For **Windows** and **macOS (Intel)** users, running the `maxent()` code should look something like:
 
 ```{r eval=FALSE}
 model_training <- maxent(x=training_data[,c(1:6)], p=training_data[,7], args=c("responsecurves"))
+```
+
+**[B]** For **macOS (M1/M2)** users, use the `tryCatch()` on the `maxent()` code to avoid the `Abort` warning! The code should look something like:
+
+```{r eval=FALSE}
+result <- tryCatch({
+	model_training <- maxent(x=training_data[,c(1:6)], p=training_data[,7], args=c("responsecurves"))
+	print("Model trained successfully!")
+	model_training
+}, error = function(e) {
+	print(paste("Error:", e$message))
+	NULL
+})
 ```
 
 ### Examination of the predictor's contribution and response curves
@@ -553,9 +600,9 @@ california_masked <- mask(california_cropped, california_border)
 
 tm_shape(california_masked) + tm_raster(style = "cont", title = "Pop/100m", palette= "Blues")
 
-# we are going to upscale the resolution of California popn grids from 1000m to approximately 5000m
+# we are going to upscale the resolution of California popn grids from the original 1000m to approximately 5000m
 # at the same time - we will aggregate the 1000m population pixel to result in total population in 5000m per pixel
-# note: its not perfect conversation!
+# note: its not perfect conversion!
 # note that 0.0008333 = 100m
 # note that 0.008333 = 1000m (1km)
 # note that 0.0417 = 5004.2m (~5km)
@@ -657,8 +704,12 @@ knitr::include_graphics('images/general/week5/image8_FinalPicture.png', error = 
 
 **Notes:**
 
+- Use the following `set.seed(set.seed(20000430)`.
+- The number of pseudo-absences points should be twice the number of presence points.
+- Use the following split for training and testing data: 75:25 (i.e., 4 equal parts where 3 is for training and 1 is for testing).
 - For the predicted probability map (A), reclassify the predictions to the following categories - `0-0.2`, `0.2-0.4`, `0.4-0.6`, `0.6-0.8` and `0.8-1.0`.
 - For the second suitability map (B), reclassify the probabilities based on the  `max TPR + TNR` threshold i.e., below it as `0` and labelled as 'None infested areas' and above as `1` labelled as 'Infested areas'.
+- Perform a 4-fold validation.
 
 This week’s homework practical was based on the original research paper:
 
