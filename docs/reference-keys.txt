@@ -107,7 +107,8 @@ maxent-analysis
 examination-of-the-predictors-contribution-and-response-curves
 model-validation
 mapping-the-predicted-probability-and-suitability
-supplementary-code-for-4-fold-analysis
+supplementary-code-1-k-fold-analysis
+supplementary-code-2-population-at-risk-analysis
 attributions-1
 references-see-reading-list-2
 data-sources-3

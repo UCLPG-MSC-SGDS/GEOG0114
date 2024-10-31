@@ -49,10 +49,9 @@ Contact me via email (**a.musah@ucl.ac.uk**) if you are having problems securing
 2. **Book**: [Theory] Stockwell, D. (2019) Niche Modeling: Predictions from Statistical Distributions; **Chapter 4: Topology**; CRC Press; pages: 45-63.
 3. **Online**: [Tutorials] Hijmans, R.J., & Elith, J. (2021) **Species distribution modelling** [**Click link**](https://rspatial.org/raster/sdm/1_sdm_introduction.html)
 4. **Online**: [Tutorials] Kerkhoff, D. (2016) **Ecological Responses to Climate Change: Species Distribution Modelling using Maxent** [**Click link**](https://rstudio-pubs-static.s3.amazonaws.com/224303_df34f170cd9144cda6477ae8232887f7.html)
-5. **Online**: [Tutorials] Dennis, M. (2020) **Practical 4: Species Distribution Modelling I** [**Click link**](https://rpubs.com/mlibxmda/GEOG70922_Week5)
-6. **Paper**: [Application] Escobar, L.E., (2020). Ecological Niche Modeling: An Introduction for Veterinarians and Epidemiologists, Frontiers in Veterinary Science [**Click link**](https://www.frontiersin.org/articles/10.3389/fvets.2020.519059/full)
-7. **Paper**: [Application] Banks, W.E., (2017). The application of ecological niche modeling methods to archaeological data in order to examine culture-environment relationships and cultural trajectories; Quarternaire [**Click link**](https://journals.openedition.org/quaternaire/7966)
-8. **Paper**: [Application] Liao, Y., Lei, Y., Ren, Z., Chen, H., & Li., D., (2017). Predicting the potential risk area of illegal vaccine trade in China; Scientific Reports, Issue 7, 3883. [**Click link**](https://www.nature.com/articles/s41598-017-03512-3)
+5. **Paper**: [Application] Escobar, L.E., (2020). Ecological Niche Modeling: An Introduction for Veterinarians and Epidemiologists, Frontiers in Veterinary Science [**Click link**](https://www.frontiersin.org/articles/10.3389/fvets.2020.519059/full)
+6. **Paper**: [Application] Banks, W.E., (2017). The application of ecological niche modeling methods to archaeological data in order to examine culture-environment relationships and cultural trajectories; Quarternaire [**Click link**](https://journals.openedition.org/quaternaire/7966)
+7. **Paper**: [Application] Liao, Y., Lei, Y., Ren, Z., Chen, H., & Li., D., (2017). Predicting the potential risk area of illegal vaccine trade in China; Scientific Reports, Issue 7, 3883. [**Click link**](https://www.nature.com/articles/s41598-017-03512-3)
 
 ## Week 6: Geostatistical Modelling {-}
 

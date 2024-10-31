@@ -63,11 +63,15 @@ The above packages `raster` `sf`, `sp`, `spdep` & `tmap` should have been instal
 
 - `dismo`: Provides access to methods for niches distribution modelling in RStudio.
 - `rJava`: Low-level interface for Java. The `maxent()` function depends on this so it must be installed.
+- `terra`: Provides access to extra functions for processing raster data
+- `exactextractr`: Provides access to extra functions for processing raster data e.g., `exact_extract`
 
 ```{r, eval = FALSE}
 # Install the packages with install.package():
 install.packages("dismo")
 install.packages("rJava")
+install.packages("terra")
+install.packages("exactextractr")
 
 # Load the packages with library():
 library("raster")
@@ -76,6 +80,8 @@ library("tmap")
 library("sf")
 library("rJava")
 library("spdep")
+library("terra")
+library("exactextractr")
 ```
 
 ### Loading datasets
@@ -122,7 +128,7 @@ california_fires <- read.csv("California_Fire_Summer_2018.csv")
 ```
 
 <div class="note">
-**IMPORTANT NOTES**: All shape file and raster data (5km resolution) were projected to the CRS: WGS84 4236.
+**IMPORTANT NOTES**: All shape file and raster data (5km resolution) were projected to the CRS: WGS84 4326.
 </div>
 
 The occurrence data imported into RStudio is a data frame object. We will need to first convert the occurrence data from data frame to a spatial points object by declaring columns `longitude` and `latitude` corresponds to `x` and `y` respectively and thus coordinates in data frame object `california_fires` 
@@ -471,7 +477,7 @@ tm_shape(suitability_wildfires) + tm_raster(style = "cat", title = "Threshold", 
 knitr::include_graphics('images/general/week5/image7_suitability.png', error = FALSE) 
 ```
 
-### Supplementary code for 4-fold analysis
+### Supplementary Code 1: K-fold analysis
 
 <details><summary>**Click here to see code:**</summary>
 ```{r eval=FALSE}
@@ -488,7 +494,6 @@ kfold_pres <- kfold(california_fires_env, folds)
 kfold_back <- kfold(background_points_env, folds)
 
 set.seed(20000430)
-# adapting loop code from https://rpubs.com/mlibxmda/GEOG70922_Week5
 # takes a long time to run 4-fold
 for (i in 1:folds) {
 	train <- california_fires_env[kfold_pres!= i,]
@@ -505,20 +510,100 @@ for (i in 1:folds) {
 aucMAX <- sapply( eMAX, function(x){slot(x, 'auc')} )
 # report 4 of the AUC
 aucMAX
+# [1] 0.9052601 0.9086170 0.9049672 0.9083264
+
 # find the mean of AUC (and it must be > 0.50)
 mean(aucMAX)
+# [1] 0.9067927
 
 #Get maxTPR+TNR for the maxnet model
 Opt_MAX<-sapply( eMAX, function(x){ x@t[which.max(x@TPR + x@TNR)] } )
 Opt_MAX
 
+# [1] 0.3703498 0.4434108 0.4275991 0.4465352
+
 Mean_OptMAX<-mean(Opt_MAX)
 Mean_OptMAX
-# use Mean_OptMAX as threshold for mapping suitability
 
-#Note: that final results is AUC: 0.9059569; threshold: 0.4338418
+# use Mean_OptMAX as threshold for mapping suitability
+#Note: that final results is AUC: 0.9067927; threshold: 0.4219737
+```
+
+```{r echo=FALSE, out.width = "100%", fig.align='center', cache=TRUE,}
+knitr::include_graphics('images/general/week5/image7_5_AUC_Max.png', error = FALSE) 
 ```
 </details>
+
+### Supplementary Code 2: Population at risk analysis
+
+<details><summary>**Click here to see code:**</summary>
+
+```{r eval=FALSE}
+# we want to estimate the fraction of the population at risk being exposed to wildfires in california
+# using the population density raster 100m (data source: WorldPop [www.worldpop.org])
+# loading the raster 'usa_pd_2018_1km.tif'
+usa_popn_dens <- raster("usa_pd_2018_1km.tif")
+
+# we are taking the extent of california from shapefile
+california_extent <- extent(california_border)
+# we are using the extent cropping the US raster down to California  
+california_cropped <- crop(usa_popn_dens, california_extent)
+# we are now masking the grids to the boundary of california
+california_masked <- mask(california_cropped, california_border)
+
+tm_shape(california_masked) + tm_raster(style = "cont", title = "Pop/100m", palette= "Blues")
+
+# we are going to upscale the resolution of California popn grids from 1000m to approximately 5000m
+# at the same time - we will aggregate the 1000m population pixel to result in total population in 5000m per pixel
+# note: its not perfect conversation!
+# note that 0.0008333 = 100m
+# note that 0.008333 = 1000m (1km)
+# note that 0.0417 = 5004.2m (~5km)
+california_popn_5km <- aggregate(california_masked, fact = 0.0417/0.008333333, fun = sum, na.rm =TRUE)
+
+# identify populations at risk from the suitability map and mask out any values that are not in the trigger zone
+high_risk_mask <- suitability_wildfires
+high_risk_pop <- california_popn_5km * high_risk_mask
+high_risk_pop[high_risk_pop == 0] <- NA
+
+tm_shape(high_risk_pop) + tm_raster(style = "cont", title = "Pop/100m", palette= "Reds") +
+	tm_shape(california_county) + tm_polygons(alpha = 0)
+
+# derive total population in a county
+california_county$total_population <- exact_extract(california_popn_5km, california_county, 'sum')
+
+# derive the total population at risk in a county
+options(scipen = 3)
+california_county$risk_population <- exact_extract(high_risk_pop, california_county, 'sum')
+# calculate the percent of the population at risk in a county
+california_county$AtRisk_percent <- california_county$risk_population/california_county$total_population * 100
+
+# creating the final map
+# create the labels
+Risk_tier <- c("<1.0%", "1.0-9.9%", "10.0-19.9%", "20.0-49.9%", "50.0% & above")
+
+# categorizing the AtRisk_percent column
+california_county$AtRiskCat <- NA
+california_county$AtRiskCat[california_county$AtRisk_percent>=0 & california_county$AtRisk_percent<1] <- 1
+california_county$AtRiskCat[california_county$AtRisk_percent>=1 & california_county$AtRisk_percent<10] <- 2
+california_county$AtRiskCat[california_county$AtRisk_percent>=10 & california_county$AtRisk_percent<20] <- 3
+california_county$AtRiskCat[california_county$AtRisk_percent>=20 & california_county$AtRisk_percent<50] <- 4
+california_county$AtRiskCat[california_county$AtRisk_percent>=50 & california_county$AtRisk_percent<101] <- 5
+
+# visualisation
+tm_shape(california_county) + 
+	tm_fill("AtRiskCat", style = "cat", title = "Popn at risk [%]", palette = c("white", "#ffffe5", "#fed976", "#fc4e2a", "#bd0026"), labels = Risk_tier) +
+	tm_borders(col = "black") + tm_text("NAME", size = "AREA") +
+	tm_scale_bar(position=c(0.02, 0.02), text.size = 1, breaks = c(0, 100, 200, 300)) +
+	tm_compass(north = 0,type = 'arrow', position = c('right', 'top'), text.size = 0.9) +
+	tm_layout(frame = FALSE, legend.outside = TRUE)
+```
+
+```{r echo=FALSE, out.width = "100%", fig.align='center', cache=TRUE,}
+knitr::include_graphics('images/general/week5/image7_6_popn_risk.png', error = FALSE) 
+```
+</details>
+
 
 ## Attributions
 This week’s practical uses content and inspiration from:
@@ -531,10 +616,9 @@ Taylor, L. 2022. The social side of fire: assessing the inclusion of human socia
 2. **Book**: [Theory] Stockwell, D. (2019) Niche Modeling: Predictions from Statistical Distributions; **Chapter 4: Topology**; CRC Press; pages: 45-63.
 3. **Online**: [Tutorials] Hijmans, R.J., & Elith, J. (2021) **Species distribution modelling** [**Click link**](https://rspatial.org/raster/sdm/1_sdm_introduction.html)
 4. **Online**: [Tutorials] Kerkhoff, D. (2016) **Ecological Responses to Climate Change: Species Distribution Modelling using Maxent** [**Click link**](https://rstudio-pubs-static.s3.amazonaws.com/224303_df34f170cd9144cda6477ae8232887f7.html)
-5. **Online**: [Tutorials] Dennis, M. (2020) **Practical 4: Species Distribution Modelling I** [**Click link**](https://rpubs.com/mlibxmda/GEOG70922_Week5)
-6. **Paper**: [Application] Escobar, L.E., (2020). Ecological Niche Modeling: An Introduction for Veterinarians and Epidemiologists, Frontiers in Veterinary Science [**Click link**](https://www.frontiersin.org/articles/10.3389/fvets.2020.519059/full)
-7. **Paper**: [Application] Banks, W.E., (2017). The application of ecological niche modeling methods to archaeological data in order to examine culture-environment relationships and cultural trajectories; Quarternaire [**Click link**](https://journals.openedition.org/quaternaire/7966)
-8. **Paper**: [Application] Liao, Y., Lei, Y., Ren, Z., Chen, H., & Li., D., (2017). Predicting the potential risk area of illegal vaccine trade in China; Scientific Reports, Issue 7, 3883. [**Click link**](https://www.nature.com/articles/s41598-017-03512-3)
+5. **Paper**: [Application] Escobar, L.E., (2020). Ecological Niche Modeling: An Introduction for Veterinarians and Epidemiologists, Frontiers in Veterinary Science [**Click link**](https://www.frontiersin.org/articles/10.3389/fvets.2020.519059/full)
+6. **Paper**: [Application] Banks, W.E., (2017). The application of ecological niche modeling methods to archaeological data in order to examine culture-environment relationships and cultural trajectories; Quarternaire [**Click link**](https://journals.openedition.org/quaternaire/7966)
+7. **Paper**: [Application] Liao, Y., Lei, Y., Ren, Z., Chen, H., & Li., D., (2017). Predicting the potential risk area of illegal vaccine trade in China; Scientific Reports, Issue 7, 3883. [**Click link**](https://www.nature.com/articles/s41598-017-03512-3)
 
 ## Data Sources
 
@@ -545,6 +629,7 @@ Taylor, L. 2022. The social side of fire: assessing the inclusion of human socia
 5. Digital Elevation Model [Source: **SRTM 90m DEM Digital Elevation Database**] [**Click Here**](https://srtm.csi.cgiar.org)
 6. Evapotranspiration (aridity) 1.0km [Source: **NASA MODIS MOD16A2**] [**Click Here**](https://modis.gsfc.nasa.gov/data/dataprod/mod16.php)
 7. Normalised Differenced Vegetation Index (NDVI) 250m [Source: **NASA MODIS MOD13Q1**] [**Click Here**](https://modis.gsfc.nasa.gov/data/dataprod/mod13.php)
+8. 2018 Population density (1km) for the United States [Source: **Worldpop**] [**Click Here**](https://hub.worldpop.org/geodata/summary?id=39728)
 
 ## Practical homework
 
