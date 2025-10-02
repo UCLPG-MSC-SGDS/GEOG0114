@@ -16,11 +16,12 @@ div.sidebar-header {
 }
 
 .styled-output .cell-output {
-  // background-color: #f7fcf5;
-  // border-radius: 4px;
+  background-color: #f7fcf5;
+  border-radius: 4px;
 }
 
-body p {
+p {
   text-align: justify;
 }
+
 

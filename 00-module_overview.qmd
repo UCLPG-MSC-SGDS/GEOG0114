@@ -22,7 +22,7 @@ In week 7, 8, and 9, we will learn specialised tools for performing spatial anal
 All lectures and computer practicals will be delivered in-person. All Lectures are held on **Monday from 01:00pm to 02:00pm** at the [**North West Wing (Room G17)**](https://www.ucl.ac.uk/maps/north-west-wing-building). All computer lab seminars are delivered on **Thursday from 03:00pm to 05:00pm** at the [**North West Wing (Room G07)**](https://www.ucl.ac.uk/maps/north-west-wing-building).
 
 :::{.callout-important}
-**IMPORTANT NOTE**: Please bring your laptops with you to the computer practicals on Thursday
+Please bring your laptops with you to the computer practicals on Thursday
 :::
 
 ## Moodle {.unnumbered}
@@ -42,16 +42,17 @@ You can download the lecture notes and data sets for the practical lesson from t
 | 6 | [**Slides**](https://tinyurl.com/4vwnxwdm); [**Data**](https://tinyurl.com/5n8fkxm)  | Geostatistics using Kriging |
 | 7 | [**Slides**](https://tinyurl.com/hhx8rcx9); [**Data**](https://tinyurl.com/3z9eb3zn) | Spatial models I (Lag & Error Regression) |
 | 8 | [**Slides**](https://tinyurl.com/yc3rvn76)                                           | Spatial models II (Geographically Weighted Regression)|
-| 9 | [**Slides**]()                                                                       | Spatial models III (Bayesian Risk Models)|
-| 10 | [**Slides**]()                                                                      | Revision |
+| 9 | [**Slides**]                                                                         | Spatial models III (Bayesian Risk Models)|
+| 10 | [**Slides**]                                                                        | Revision |
 
 **Solutions for Week**: [**[1]**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Solutions%201.zip) | [**[2]**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Solutions%202.zip) | **[3]** | **[4]** | [**[5]**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Solutions%205.zip) | [**[6]**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Solutions%206.zip) | **[7]** | **[8]** | **[9]**
 
-## Module tutors and contacts for GEOG0114 {.unnumbered}
+## Contact for GEOG0114 {.unnumbered}
 
 Feel free to contact us via email for help, or book appointments for additional support if need be. We are based at UCL Department of Geography, [**North West Wing building**](https://www.ucl.ac.uk/maps/north-west-wing-building). Our contact information and office details are:
 
 | **Name**              | **Email**               | **Room number**         |
 |-----------------------|-------------------------|-------------------------|
 | Anwar Musah           | [**a.musah\@ucl.ac.uk**](a.musah@ucl.ac.uk)| 115  |
+| Michael Xiao          | [**michael.xiao\@ucl.ac.uk**](michael.xiao@ucl.ac.uk)| Chorley Institute  |
 

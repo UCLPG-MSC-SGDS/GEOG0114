@@ -46,6 +46,7 @@ website:
       - section: "Getting Started"
         contents:
           - 01-reading_list.qmd
+          - 02-installation.qmd
       - section: "Foundation & Theory"
         contents:
       - section: "Raster-Based Analysis"

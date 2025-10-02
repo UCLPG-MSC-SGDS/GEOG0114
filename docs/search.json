@@ -1,101 +1,35 @@
 [
   {
-    "objectID": "01-reading_list.html",
-    "href": "01-reading_list.html",
-    "title": "Reading List for GEOG0114",
+    "objectID": "02-installation.html",
+    "href": "02-installation.html",
+    "title": "Installation of R and RStudio",
     "section": "",
-    "text": "Contact me via email (a.musah@ucl.ac.uk) if you are having problems securing one or any of these recommended books from the UCL library or elsewhere.\n\n\n\nBook: [Theory] Longley, P. et al (2015) Geographic Information Science & Systems (4th Edition); Chapters 2: The Nature of Geographic Data Click link (Note: use of your UCL login via institutional organisation (UK Federation) is required to access the digital book)\nBook: [Theory] Longley, P. et al (2015) Geographic Information Science & Systems (4th Edition); Chapters 3: Representing Geography Click link (Note: use of your UCL login via institutional organisation (UK Federation) is required to access the digital book)\nBook: [R Programming] Brunsdon, C. et al (2018) An Introduction to R for Spatial Analysis and Mapping; Chapter 3: Basics of Handling Spatial Data in R Click link (Note: Books can be borrowed from UCL’s Library)\nBook: [R Programming] Dorman, M. (2014) Learning R for Geospatial Analysis; Chapter 1: The R Environment Click link (Note: Digital book)\nBook: [R Programming] Dorman, M. (2014) Learning R for Geospatial Analysis; Chapter 3: Working with tables Click link (Note: Digital book)\nPaper: [R Programming] Tennekes, M. (2018). tmap: Thematic Maps in R. Journal of Statistical Software, 84(6), 1–39. https://doi.org/10.18637/jss.v084.i06 (Download)\n\n\n\n\n\nGitbook: [R Programming] Gimond, M. (2021) Intro to GIS and spatial analysis. Chapter 8: Spatial operations and vector overlays Click link\nBook: [Theory] Longley, P. et al (2015) Geographic Information Science & systems, Chapter 13: Spatial Analysis Click link\nGitbook: [R Programming] Lovelace, R., Nowosad, J. and Muenchow, J. (2021) Geocomputation with R, Chapter 4: Spatial data operations Click link\nGitbook: [R Programming] Lovelace, R., Nowosad, J. and Muenchow, J. 2021. Geocomputation with R, Chapter 5: Geometry operations Click link\nPaper: [Research] Bijnens, E. et al (2020). Residential green space and child intelligence and behavior across urban, suburban, and rural areas in Belgium: A longitudinal birth cohort study of twins. PLOS Medicine 17(8), e1003213. Click link\n\n\n\n\n\nGitbook: [R Programming] Gimond, M. (2021) Intro to GIS and spatial analysis. Chapter 13: Spatial autocorrelation Click link\nBook: [Theory] Longley, P. et al (2015) Geographic Information Science & systems (4th Edition); Chapter 2: The Nature of Geographic Data Click link\nBook: [Theory] Longley, P. et al (2015) Geographic Information Science & systems (4th Edition); Chapter 13: Spatial Analysis Click link\nPaper: [Research] Radil, S. 2016. Spatial analysis of crime. In: Huebner, B. and Bynum, T. The Handbook of Measurement Issues in Criminology and Criminal Justice, Chapter 24, pp.536-554. Click link (Note: use of your UCL login via institutional organisation (UK Federation) is required to access the digital paper)\nBook: [R Programming] Brunsdon, C. et al (2018) An Introduction to R for Spatial Analysis and Mapping; Chapter 7: Spatial Attribute Analysis with R, (See pages 257 to 262) Click link (Note: Books can be borrowed from UCL’s Library)\nBook: [R Programming] Brunsdon, C. et al (2018) An Introduction to R for Spatial Analysis and Mapping; Chapter 8: Localised Spatial Analysis, (See pages 281 to 289) Click link (Note: Books can be borrowed from UCL’s Library)\nBook: [Theory] Lloyd, C.D., et al (2010) Spatial Data Analysis: An Introduction for GIS Users; Chapter 4: Key concepts 3 - Spatial Data Analysis, (See pages 43 to 64)\nBook: [Theory] Lloyd, C.D., et al (2010) Spatial Data Analysis: An Introduction for GIS Users; Chapter 8: Local Univariate Measures, (See section 8.4.1. [Local Spatial Autocorrelation] on pages 110 to 113)\n\n\n\n\n\nPaper: [Theory] R.W. Saaty (1987). The Analytical Hierarchy Process - What it is and how it is used, Mathl Modelling, Volume 9(3-5), pages 161 to 176 Click link\nTechnical Document: [Theory] IDRISI Kilimanjaro: Guide to GIS and Image Processing. Chapter 12: Decision Support - Decision Strategy Analysis, Section on ‘A Typology of Decisions’, pages 151 to 154. Click link\nPaper: [Application] A.A. Ali, A. Ahmad (2019). Spatial susceptibility analysis of vector-borne diseases in KMC using geospatial technique and MCDM approach, Modeling Earth Systems and Environment, Issue 5, pages 1135–1159 Click link\nPaper: [Application] X. Zhao et al., (2020). Malaria Risk Map Using Spatial Multi-Criteria Decision Analysis along Yunnan Border During the Pre-elimination Period, Am J Trop Med Hyg, Volume 103 (2), pages 793–809 Click link\nPaper: [Application] B. Ahmed (2015). Landslide susceptibility mapping using multi-criteria evaluation techniques in Chittagong Metropolitan Area, Bangladesh. Landslides, Issue 12, pages 1077–1095 Click link\nBook: [R Programming] Dorman, M. (2014) Learning R for Geospatial Analysis; Chapter 3: Working with Rasters Click link (Note: Digital book)\n\n\n\n\n\nBook: [R Programming] Dorman, M. (2014) Learning R for Geospatial Analysis; Chapter 3: Working with Rasters Click link (Note: Digital book)\nBook: [Theory] Stockwell, D. (2019) Niche Modeling: Predictions from Statistical Distributions; Chapter 4: Topology; CRC Press; pages: 45-63.\nOnline: [Tutorials] Hijmans, R.J., & Elith, J. (2021) Species distribution modelling Click link\nOnline: [Tutorials] Kerkhoff, D. (2016) Ecological Responses to Climate Change: Species Distribution Modelling using Maxent Click link\nPaper: [Application] Escobar, L.E., (2020). Ecological Niche Modeling: An Introduction for Veterinarians and Epidemiologists, Frontiers in Veterinary Science Click link\nPaper: [Application] Banks, W.E., (2017). The application of ecological niche modeling methods to archaeological data in order to examine culture-environment relationships and cultural trajectories; Quarternaire Click link\nPaper: [Application] Liao, Y., Lei, Y., Ren, Z., Chen, H., & Li., D., (2017). Predicting the potential risk area of illegal vaccine trade in China; Scientific Reports, Issue 7, 3883. Click link\n\n\n\n\n\nTechnical Document: [R Programming] Gurpreet Singh and Biju Soman, (2020), Spatial Interpolation using Kriging in R. Download here\nTechnical Document: [R Programming] Fernando Antonanzas-Torres, (2014), Geostatistics examples in R: Ordinary Kriging, Universal Kriging and Inverse Distance Weighted. Download here\nTechnical Document: [R Programming] Adela Volfova and Martin Smejkal, (2012), Geostatistical Methods in R. Download here\nBook: [R Programming] Roger S. Bivand, Edzer J. Pebesma and Virgilio Gomez-Rubio, (2008), Applied Spatial Data Analysis with R, Chapter 8: Interpolation and Geostatistics, pages 191 to 235.\nBook: [R Programming] Michael Dorman, (2014), Learning R for Geospatial Analysis, Chapter 8: Spatial Interpolation of Point Data, pages 241 to 279. Click link (Note: Digital book)\nBook: [Theory] Christopher D. Lloyd, (2010), Spatial Data Analysis: An Introduction for GIS Users, Chapter 9: Spatial Interpolation (Section 9.7. Ordinary Kriging), pages 140 to 150.\n\n\n\n\n\nPaper: [Application] Guangqing Chi and Jun Zhu (2008) Spatial Regression Models for Demographic Analysis, Popul Res Policy Rev, 27:17-42. DOI 10.1007/s11113-007-9051-8\nBook Chapter: [Theory] David Darmofal, (2015), Chapter Six: Spatial Lag and Spatial Error Models (2015). Social Analysis for the Social Sciences. Cambridge Press Gain Access to PDF via Institutional login\nPaper: [Application] Wen-Ching Wang, Yu-Ju Chang & Hsueh-Ching Wang, (2019), An Application of the Spatial Autocorrelation Method on the Change of Real Estate Prices in Taitung City. Int Jour Geo-Information, (8)249, doi:10.3390/ijgi8060249\nOnline Tutorial: [R Programming] Reka Solymosi and Juanjo Medina (2022) Crime Mapping in R, Chapter 9: Spatial Regression Models Click link\n\n\n\n\n\nBook: [R Programming] Brunsdon, C. et al (2018) An Introduction to R for Spatial Analysis and Mapping; Chapter 7: Spatial Attribute Analysis with R, (See pages 257 to 262) Click link (Note: Books can be borrowed from UCL’s Library)\nBook: [R Programming] Brunsdon, C. et al (2018) An Introduction to R for Spatial Analysis and Mapping; Chapter 8: Localised Spatial Analysis, (See pages 281 to 289) Click link (Note: Books can be borrowed from UCL’s Library)\nBook: [Theory] Lloyd, C.D., et al (2010) Spatial Data Analysis: An Introduction for GIS Users; Chapter 8: Exploring spatial patterning in data values, (See section 8.5.3. [Geographically Weighted Regression] on pages 115 to 123)\nBook: [R Programming] Roger S. Bivand, Edzer J. Pebesma and Virgilio Gomez-Rubio, (2008), Applied Spatial Data Analysis with R; Chapter 10: Modelling of Areal Data, (See section 10.5.3. [Geographically Weighted Regression] on pages 305 to 309)\nPaper [Theory] Comber, A. et al (2022) A Route Map for Successful Application of Geographically Weighted Regression; Geographical Analysis; https://doi.org/10.1111/gean.12316 Click link",
+    "text": "R, or RStudio is a statistical software programming package that allows the user to carry out different types of statistical analysis. It can also be used as a GIS software to perform various kinds of spatial analysis as you will see throughout the course of GEOG0114. In the same vein, you can use it for data managing and geo-processing (i.e., importing different types of spatial formats for manipulation beforehand for spatial analysis). There are two versions:\n\n\n\n\n\n\n\n\n\nThe famous icon on the left is the version for R, and the one on the right is the version for RStudio. Both software packages are the same. The only difference is that RStudio is attractive, intuitive, and more importantly, it is user-friendly than Base R. So, we will be using this version (i.e., RStudio) throughout the course.\nLet us talk about downloading RStudio.",
     "crumbs": [
       "Getting Started",
-      "Reading List for GEOG0114"
+      "Installation of R and RStudio"
     ]
   },
   {
-    "objectID": "01-reading_list.html#spatial-analysis-for-data-science",
-    "href": "01-reading_list.html#spatial-analysis-for-data-science",
-    "title": "Reading List for GEOG0114",
+    "objectID": "02-installation.html#what-is-r-and-rstudio",
+    "href": "02-installation.html#what-is-r-and-rstudio",
+    "title": "Installation of R and RStudio",
     "section": "",
-    "text": "Book: [Theory] Longley, P. et al (2015) Geographic Information Science & Systems (4th Edition); Chapters 2: The Nature of Geographic Data Click link (Note: use of your UCL login via institutional organisation (UK Federation) is required to access the digital book)\nBook: [Theory] Longley, P. et al (2015) Geographic Information Science & Systems (4th Edition); Chapters 3: Representing Geography Click link (Note: use of your UCL login via institutional organisation (UK Federation) is required to access the digital book)\nBook: [R Programming] Brunsdon, C. et al (2018) An Introduction to R for Spatial Analysis and Mapping; Chapter 3: Basics of Handling Spatial Data in R Click link (Note: Books can be borrowed from UCL’s Library)\nBook: [R Programming] Dorman, M. (2014) Learning R for Geospatial Analysis; Chapter 1: The R Environment Click link (Note: Digital book)\nBook: [R Programming] Dorman, M. (2014) Learning R for Geospatial Analysis; Chapter 3: Working with tables Click link (Note: Digital book)\nPaper: [R Programming] Tennekes, M. (2018). tmap: Thematic Maps in R. Journal of Statistical Software, 84(6), 1–39. https://doi.org/10.18637/jss.v084.i06 (Download)",
+    "text": "R, or RStudio is a statistical software programming package that allows the user to carry out different types of statistical analysis. It can also be used as a GIS software to perform various kinds of spatial analysis as you will see throughout the course of GEOG0114. In the same vein, you can use it for data managing and geo-processing (i.e., importing different types of spatial formats for manipulation beforehand for spatial analysis). There are two versions:\n\n\n\n\n\n\n\n\n\nThe famous icon on the left is the version for R, and the one on the right is the version for RStudio. Both software packages are the same. The only difference is that RStudio is attractive, intuitive, and more importantly, it is user-friendly than Base R. So, we will be using this version (i.e., RStudio) throughout the course.\nLet us talk about downloading RStudio.",
     "crumbs": [
       "Getting Started",
-      "Reading List for GEOG0114"
+      "Installation of R and RStudio"
     ]
   },
   {
-    "objectID": "01-reading_list.html#graphical-representation-of-spatial-data",
-    "href": "01-reading_list.html#graphical-representation-of-spatial-data",
-    "title": "Reading List for GEOG0114",
-    "section": "",
-    "text": "Gitbook: [R Programming] Gimond, M. (2021) Intro to GIS and spatial analysis. Chapter 8: Spatial operations and vector overlays Click link\nBook: [Theory] Longley, P. et al (2015) Geographic Information Science & systems, Chapter 13: Spatial Analysis Click link\nGitbook: [R Programming] Lovelace, R., Nowosad, J. and Muenchow, J. (2021) Geocomputation with R, Chapter 4: Spatial data operations Click link\nGitbook: [R Programming] Lovelace, R., Nowosad, J. and Muenchow, J. 2021. Geocomputation with R, Chapter 5: Geometry operations Click link\nPaper: [Research] Bijnens, E. et al (2020). Residential green space and child intelligence and behavior across urban, suburban, and rural areas in Belgium: A longitudinal birth cohort study of twins. PLOS Medicine 17(8), e1003213. Click link",
+    "objectID": "02-installation.html#downloading-and-install-r-and-rstudio-on-to-your-laptop",
+    "href": "02-installation.html#downloading-and-install-r-and-rstudio-on-to-your-laptop",
+    "title": "Installation of R and RStudio",
+    "section": "Downloading and install R and RStudio on to your laptop",
+    "text": "Downloading and install R and RStudio on to your laptop\nRStudio is an open source software, and today its the go-to software for many researchers - its highly recommended for anyone in the domains of data science, scientific research, and technical communication.\nIt is easy to access, and easy to download and install. In order for RStudio to work you must first install R. You can follow the steps to download and install the correct version of R and RStudio for your operating system (i.e., Windows or MAC).\n\nInstallation for MacOS users\nYou will need to have the following software installed for R and RStudio to work properly on MAC.\n\nR (version 4.5.1) and RStudio (version 2025.09.0-387)\nXQuartz (version 2.8.5)\nXCode (version 26.0.1)\nGNU Fortran (version 12.2)\n\nInstallation of R (4.5.1) and RStudio (2025.09.0-387) on MAC:\n\n\n\nOS User type\nR (Base)\nRStudio Desktop\n\n\n\n\nMAC (Intel)\nR-4.5.1-x86_64.pkg\nRStudio-2025.09.0-387.dmg\n\n\nMAC (M1, M2, M3, or M4)\nR-4.5.1-arm64.pkg\nRStudio-2025.09.0-387.dmg\n\n\n\n\nFirst download the appropriate R (Base) file for the appropriate MacOS.\nDouble-click the downloaded file (i.e., R-4.5.1-x86_64.pkg or R-4.5.1-arm64.pkg) and follow the steps to complete the installation.\nNext, download the RStudio-2025.09.0-387.dmg to install RStudio.\nDouble-click the downloaded file (i.e., RStudio-2023.06.2-561.dmg) and then drag and drop the RStudio icon into the Applications folder to complete the installation.\n\nInstallation of XQuartz (2.8.5):\nSome functions in R require some of the libraries from XQuartz to function properly on your MAC.\n\nYou can download the latest version of XQuartz (XQuartz-2.8.5.pkg) by clicking on this LINK and complete the installation process by following its steps.\n\nInstallation of XCode (26.0.1):\nSome functions in R require some of the external developer tools from XCode application to function properly on your MAC.\n\nGo to the App Store application and get the XCode app downloaded by clicking on this LINK.\nOnce it is downloaded, you can click on the “OPEN” button to verify it’s been downloaded. A window will prompt you to complete installation.\n\nGNU Fortran (version 12.2):\nR (Base) and some packages require the GNU Fortran 12.2 compiler in order to function smoothly on your MacOS.\n\nDownload this specific version of GNU Fortran 12.2 (gfortran-12.2-universal.pkg) by clicking on this LINK and simply complete the installation process by following the steps on your system.\n\n\n\n\n\n\n\nNote\n\n\n\nThe above four steps should complete the installation process for R and RStudio on MAC.\n\n\n\n\nInstallation for Windows users\nYou will need to have the following software installed for the rstan package to work on Windows.\n\nR (version 4.5.1)\nRtools45 (version 4.5)\nRStudio (version 2025.09.0-387)\n\nInstallation of R (4.5.1) and RStudio RStudio (2025.09.0-387) on Windows:\n\n\n\nOS User type\nR (Base)\nRStudio Desktop\n\n\n\n\nWindows\nR-4.5.1-win.exe\nRStudio-2025.09.0-387.exe\n\n\n\n\nDownload the file for R-4.5.1-win.exe attached in the table above.\nDouble-click the downloaded file (i.e., R-4.5.1-win.exe) and follow the steps to complete the installation.\nNow, we can download the file (i.e., RStudio-2025.09.0-387.exe) for RStudio from the link provided in the above table.\nDouble-click the downloaded file (i.e., RStudio-2025.09.0-387.exe) and follow the steps from the installer to complete the installation.\n\nInstallation of Rtools 4.5\nFor Windows users, after you have completed the installation for R and RStudio, you are required to install the Rtools45 package as it contains some libraries and developer tools for the smooth functioning of R.\n\nDownload the latest version of Rtools45 by clicking on this LINK to initiate the download of the Rtools45 installer.\nDouble-click the downloaded rtools45-6608-6492.exe file and follow the steps to complete the installation.\n\n\n\n\n\n\n\nNote\n\n\n\nThe above two steps should complete the installation process for R and RStudio on Windows.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nThe installation of all programs on Windows and MacOS are specifically for R (version 4.5.1) and RStudio (version 2025.09.0-387), which are the most up-to-date versions of R and RStudio, respectively, as of writing these instructions today (02/10/2025). If an update get pushed for these software - make sure to check that supporting programs (i.e., Rtools for Windows, and XQuartz & XCode for Mac) are updated.\n\n\nThis concludes the installation section and sets your computer up for the course.",
     "crumbs": [
       "Getting Started",
-      "Reading List for GEOG0114"
-    ]
-  },
-  {
-    "objectID": "01-reading_list.html#spatial-autocorrelation",
-    "href": "01-reading_list.html#spatial-autocorrelation",
-    "title": "Reading List for GEOG0114",
-    "section": "",
-    "text": "Gitbook: [R Programming] Gimond, M. (2021) Intro to GIS and spatial analysis. Chapter 13: Spatial autocorrelation Click link\nBook: [Theory] Longley, P. et al (2015) Geographic Information Science & systems (4th Edition); Chapter 2: The Nature of Geographic Data Click link\nBook: [Theory] Longley, P. et al (2015) Geographic Information Science & systems (4th Edition); Chapter 13: Spatial Analysis Click link\nPaper: [Research] Radil, S. 2016. Spatial analysis of crime. In: Huebner, B. and Bynum, T. The Handbook of Measurement Issues in Criminology and Criminal Justice, Chapter 24, pp.536-554. Click link (Note: use of your UCL login via institutional organisation (UK Federation) is required to access the digital paper)\nBook: [R Programming] Brunsdon, C. et al (2018) An Introduction to R for Spatial Analysis and Mapping; Chapter 7: Spatial Attribute Analysis with R, (See pages 257 to 262) Click link (Note: Books can be borrowed from UCL’s Library)\nBook: [R Programming] Brunsdon, C. et al (2018) An Introduction to R for Spatial Analysis and Mapping; Chapter 8: Localised Spatial Analysis, (See pages 281 to 289) Click link (Note: Books can be borrowed from UCL’s Library)\nBook: [Theory] Lloyd, C.D., et al (2010) Spatial Data Analysis: An Introduction for GIS Users; Chapter 4: Key concepts 3 - Spatial Data Analysis, (See pages 43 to 64)\nBook: [Theory] Lloyd, C.D., et al (2010) Spatial Data Analysis: An Introduction for GIS Users; Chapter 8: Local Univariate Measures, (See section 8.4.1. [Local Spatial Autocorrelation] on pages 110 to 113)",
-    "crumbs": [
-      "Getting Started",
-      "Reading List for GEOG0114"
-    ]
-  },
-  {
-    "objectID": "01-reading_list.html#suitability-mapping-i",
-    "href": "01-reading_list.html#suitability-mapping-i",
-    "title": "Reading List for GEOG0114",
-    "section": "",
-    "text": "Paper: [Theory] R.W. Saaty (1987). The Analytical Hierarchy Process - What it is and how it is used, Mathl Modelling, Volume 9(3-5), pages 161 to 176 Click link\nTechnical Document: [Theory] IDRISI Kilimanjaro: Guide to GIS and Image Processing. Chapter 12: Decision Support - Decision Strategy Analysis, Section on ‘A Typology of Decisions’, pages 151 to 154. Click link\nPaper: [Application] A.A. Ali, A. Ahmad (2019). Spatial susceptibility analysis of vector-borne diseases in KMC using geospatial technique and MCDM approach, Modeling Earth Systems and Environment, Issue 5, pages 1135–1159 Click link\nPaper: [Application] X. Zhao et al., (2020). Malaria Risk Map Using Spatial Multi-Criteria Decision Analysis along Yunnan Border During the Pre-elimination Period, Am J Trop Med Hyg, Volume 103 (2), pages 793–809 Click link\nPaper: [Application] B. Ahmed (2015). Landslide susceptibility mapping using multi-criteria evaluation techniques in Chittagong Metropolitan Area, Bangladesh. Landslides, Issue 12, pages 1077–1095 Click link\nBook: [R Programming] Dorman, M. (2014) Learning R for Geospatial Analysis; Chapter 3: Working with Rasters Click link (Note: Digital book)",
-    "crumbs": [
-      "Getting Started",
-      "Reading List for GEOG0114"
-    ]
-  },
-  {
-    "objectID": "01-reading_list.html#suitability-mapping-ii",
-    "href": "01-reading_list.html#suitability-mapping-ii",
-    "title": "Reading List for GEOG0114",
-    "section": "",
-    "text": "Book: [R Programming] Dorman, M. (2014) Learning R for Geospatial Analysis; Chapter 3: Working with Rasters Click link (Note: Digital book)\nBook: [Theory] Stockwell, D. (2019) Niche Modeling: Predictions from Statistical Distributions; Chapter 4: Topology; CRC Press; pages: 45-63.\nOnline: [Tutorials] Hijmans, R.J., & Elith, J. (2021) Species distribution modelling Click link\nOnline: [Tutorials] Kerkhoff, D. (2016) Ecological Responses to Climate Change: Species Distribution Modelling using Maxent Click link\nPaper: [Application] Escobar, L.E., (2020). Ecological Niche Modeling: An Introduction for Veterinarians and Epidemiologists, Frontiers in Veterinary Science Click link\nPaper: [Application] Banks, W.E., (2017). The application of ecological niche modeling methods to archaeological data in order to examine culture-environment relationships and cultural trajectories; Quarternaire Click link\nPaper: [Application] Liao, Y., Lei, Y., Ren, Z., Chen, H., & Li., D., (2017). Predicting the potential risk area of illegal vaccine trade in China; Scientific Reports, Issue 7, 3883. Click link",
-    "crumbs": [
-      "Getting Started",
-      "Reading List for GEOG0114"
-    ]
-  },
-  {
-    "objectID": "01-reading_list.html#geostatistical-modelling",
-    "href": "01-reading_list.html#geostatistical-modelling",
-    "title": "Reading List for GEOG0114",
-    "section": "",
-    "text": "Technical Document: [R Programming] Gurpreet Singh and Biju Soman, (2020), Spatial Interpolation using Kriging in R. Download here\nTechnical Document: [R Programming] Fernando Antonanzas-Torres, (2014), Geostatistics examples in R: Ordinary Kriging, Universal Kriging and Inverse Distance Weighted. Download here\nTechnical Document: [R Programming] Adela Volfova and Martin Smejkal, (2012), Geostatistical Methods in R. Download here\nBook: [R Programming] Roger S. Bivand, Edzer J. Pebesma and Virgilio Gomez-Rubio, (2008), Applied Spatial Data Analysis with R, Chapter 8: Interpolation and Geostatistics, pages 191 to 235.\nBook: [R Programming] Michael Dorman, (2014), Learning R for Geospatial Analysis, Chapter 8: Spatial Interpolation of Point Data, pages 241 to 279. Click link (Note: Digital book)\nBook: [Theory] Christopher D. Lloyd, (2010), Spatial Data Analysis: An Introduction for GIS Users, Chapter 9: Spatial Interpolation (Section 9.7. Ordinary Kriging), pages 140 to 150.",
-    "crumbs": [
-      "Getting Started",
-      "Reading List for GEOG0114"
-    ]
-  },
-  {
-    "objectID": "01-reading_list.html#spatial-models-i",
-    "href": "01-reading_list.html#spatial-models-i",
-    "title": "Reading List for GEOG0114",
-    "section": "",
-    "text": "Paper: [Application] Guangqing Chi and Jun Zhu (2008) Spatial Regression Models for Demographic Analysis, Popul Res Policy Rev, 27:17-42. DOI 10.1007/s11113-007-9051-8\nBook Chapter: [Theory] David Darmofal, (2015), Chapter Six: Spatial Lag and Spatial Error Models (2015). Social Analysis for the Social Sciences. Cambridge Press Gain Access to PDF via Institutional login\nPaper: [Application] Wen-Ching Wang, Yu-Ju Chang & Hsueh-Ching Wang, (2019), An Application of the Spatial Autocorrelation Method on the Change of Real Estate Prices in Taitung City. Int Jour Geo-Information, (8)249, doi:10.3390/ijgi8060249\nOnline Tutorial: [R Programming] Reka Solymosi and Juanjo Medina (2022) Crime Mapping in R, Chapter 9: Spatial Regression Models Click link",
-    "crumbs": [
-      "Getting Started",
-      "Reading List for GEOG0114"
-    ]
-  },
-  {
-    "objectID": "01-reading_list.html#spatial-models-ii",
-    "href": "01-reading_list.html#spatial-models-ii",
-    "title": "Reading List for GEOG0114",
-    "section": "",
-    "text": "Book: [R Programming] Brunsdon, C. et al (2018) An Introduction to R for Spatial Analysis and Mapping; Chapter 7: Spatial Attribute Analysis with R, (See pages 257 to 262) Click link (Note: Books can be borrowed from UCL’s Library)\nBook: [R Programming] Brunsdon, C. et al (2018) An Introduction to R for Spatial Analysis and Mapping; Chapter 8: Localised Spatial Analysis, (See pages 281 to 289) Click link (Note: Books can be borrowed from UCL’s Library)\nBook: [Theory] Lloyd, C.D., et al (2010) Spatial Data Analysis: An Introduction for GIS Users; Chapter 8: Exploring spatial patterning in data values, (See section 8.5.3. [Geographically Weighted Regression] on pages 115 to 123)\nBook: [R Programming] Roger S. Bivand, Edzer J. Pebesma and Virgilio Gomez-Rubio, (2008), Applied Spatial Data Analysis with R; Chapter 10: Modelling of Areal Data, (See section 10.5.3. [Geographically Weighted Regression] on pages 305 to 309)\nPaper [Theory] Comber, A. et al (2022) A Route Map for Successful Application of Geographically Weighted Regression; Geographical Analysis; https://doi.org/10.1111/gean.12316 Click link",
-    "crumbs": [
-      "Getting Started",
-      "Reading List for GEOG0114"
+      "Installation of R and RStudio"
     ]
   },
   {
@@ -103,7 +37,7 @@
     "href": "00-module_overview.html",
     "title": "GEOG0114: Principles of Spatial Analysis",
     "section": "",
-    "text": "Welcome to GEOG0114: Principles of Spatial Analysis, one of the core 1st term modules for this MSc programme (Social and Geographic Data Science). This module has been designed as an introduction to the core tenets and principles of spatial analysis. Here, you will learn the key concepts and spatial analytical methods, which are applicable to the domains of social science and geography.\nIn the first three weeks, we will cover Spatial analysis for data science, Graphical representation of spatial data and Spatial autocorrelation.\nAfterwards, in week 4, 5 and 6, we will cover a variety of basic geostatistical techniques that require analysis of point and raster data - these include suitability mapping such as Analytical Hierarchical Process (AHP) and Ecological Niche Modelling; and then Geostatistical analysis using Kriging.\nIn week 7, 8, and 9, we will learn specialised tools for performing spatial analysis on vector data (e.g., point, line and areal structures) - these include the various spatial regression model families e.g., Spatial Lag & Error models, Geographical Weighted Regression (GWR) and Spatial Risk Models. All these tutorials will be covered in RStudio.\n\n\nAll lectures and computer practicals will be delivered in-person. All Lectures are held on Monday from 01:00pm to 02:00pm at the North West Wing (Room G17). All computer lab seminars are delivered on Thursday from 03:00pm to 05:00pm at the North West Wing (Room G07).\n\n\n\n\n\n\nImportant\n\n\n\nIMPORTANT NOTE: Please bring your laptops with you to the computer practicals on Thursday\n\n\n\n\n\nMoodle is the central point of your learning experience for GEOG0114. Please use it on a regular basis to check for updates concerning the schedule for weekly topics, access to the practical materials and assessment. However, note that all lecture notes, videos, practical materials including reading lists and downloadable data sets will be hosted on this webpage.\nYou can download the lecture notes and data sets for the practical lesson from the table below.\n\n\n\nWeek\nDownloads\nTopics\n\n\n\n\n1\nSlides; Data\nSpatial analysis for data science\n\n\n2\nSlides; Data\nGraphical representation of spatial data\n\n\n3\nSlides; Data\nSpatial autocorrelation\n\n\n4\nSlides; Data\nSuitability mapping I\n\n\n5\nSlides; Data\nSuitability mapping II\n\n\n\n\nReading Week\n\n\n6\nSlides; Data\nGeostatistics using Kriging\n\n\n7\nSlides; Data\nSpatial models I (Lag & Error Regression)\n\n\n8\nSlides\nSpatial models II (Geographically Weighted Regression)\n\n\n9\nSlides\nSpatial models III (Bayesian Risk Models)\n\n\n10\nSlides\nRevision\n\n\n\nSolutions for Week: [1] | [2] | [3] | [4] | [5] | [6] | [7] | [8] | [9]\n\n\n\nFeel free to contact us via email for help, or book appointments for additional support if need be. We are based at UCL Department of Geography, North West Wing building. Our contact information and office details are:\n\n\n\nName\nEmail\nRoom number\n\n\n\n\nAnwar Musah\na.musah@ucl.ac.uk\n115",
+    "text": "Welcome to GEOG0114: Principles of Spatial Analysis, one of the core 1st term modules for this MSc programme (Social and Geographic Data Science). This module has been designed as an introduction to the core tenets and principles of spatial analysis. Here, you will learn the key concepts and spatial analytical methods, which are applicable to the domains of social science and geography.\nIn the first three weeks, we will cover Spatial analysis for data science, Graphical representation of spatial data and Spatial autocorrelation.\nAfterwards, in week 4, 5 and 6, we will cover a variety of basic geostatistical techniques that require analysis of point and raster data - these include suitability mapping such as Analytical Hierarchical Process (AHP) and Ecological Niche Modelling; and then Geostatistical analysis using Kriging.\nIn week 7, 8, and 9, we will learn specialised tools for performing spatial analysis on vector data (e.g., point, line and areal structures) - these include the various spatial regression model families e.g., Spatial Lag & Error models, Geographical Weighted Regression (GWR) and Spatial Risk Models. All these tutorials will be covered in RStudio.\n\n\nAll lectures and computer practicals will be delivered in-person. All Lectures are held on Monday from 01:00pm to 02:00pm at the North West Wing (Room G17). All computer lab seminars are delivered on Thursday from 03:00pm to 05:00pm at the North West Wing (Room G07).\n\n\n\n\n\n\nImportant\n\n\n\nPlease bring your laptops with you to the computer practicals on Thursday\n\n\n\n\n\nMoodle is the central point of your learning experience for GEOG0114. Please use it on a regular basis to check for updates concerning the schedule for weekly topics, access to the practical materials and assessment. However, note that all lecture notes, videos, practical materials including reading lists and downloadable data sets will be hosted on this webpage.\nYou can download the lecture notes and data sets for the practical lesson from the table below.\n\n\n\nWeek\nDownloads\nTopics\n\n\n\n\n1\nSlides; Data\nSpatial analysis for data science\n\n\n2\nSlides; Data\nGraphical representation of spatial data\n\n\n3\nSlides; Data\nSpatial autocorrelation\n\n\n4\nSlides; Data\nSuitability mapping I\n\n\n5\nSlides; Data\nSuitability mapping II\n\n\n\n\nReading Week\n\n\n6\nSlides; Data\nGeostatistics using Kriging\n\n\n7\nSlides; Data\nSpatial models I (Lag & Error Regression)\n\n\n8\nSlides\nSpatial models II (Geographically Weighted Regression)\n\n\n9\n[Slides]\nSpatial models III (Bayesian Risk Models)\n\n\n10\n[Slides]\nRevision\n\n\n\nSolutions for Week: [1] | [2] | [3] | [4] | [5] | [6] | [7] | [8] | [9]\n\n\n\nFeel free to contact us via email for help, or book appointments for additional support if need be. We are based at UCL Department of Geography, North West Wing building. Our contact information and office details are:\n\n\n\nName\nEmail\nRoom number\n\n\n\n\nAnwar Musah\na.musah@ucl.ac.uk\n115\n\n\nMichael Xiao\nmichael.xiao@ucl.ac.uk\nChorley Institute",
     "crumbs": [
       "Module Overview",
       "Welcome"
@@ -114,7 +48,7 @@
     "href": "00-module_overview.html#structure",
     "title": "GEOG0114: Principles of Spatial Analysis",
     "section": "",
-    "text": "All lectures and computer practicals will be delivered in-person. All Lectures are held on Monday from 01:00pm to 02:00pm at the North West Wing (Room G17). All computer lab seminars are delivered on Thursday from 03:00pm to 05:00pm at the North West Wing (Room G07).\n\n\n\n\n\n\nImportant\n\n\n\nIMPORTANT NOTE: Please bring your laptops with you to the computer practicals on Thursday",
+    "text": "All lectures and computer practicals will be delivered in-person. All Lectures are held on Monday from 01:00pm to 02:00pm at the North West Wing (Room G17). All computer lab seminars are delivered on Thursday from 03:00pm to 05:00pm at the North West Wing (Room G07).\n\n\n\n\n\n\nImportant\n\n\n\nPlease bring your laptops with you to the computer practicals on Thursday",
     "crumbs": [
       "Module Overview",
       "Welcome"
@@ -125,21 +59,120 @@
     "href": "00-module_overview.html#moodle",
     "title": "GEOG0114: Principles of Spatial Analysis",
     "section": "",
-    "text": "Moodle is the central point of your learning experience for GEOG0114. Please use it on a regular basis to check for updates concerning the schedule for weekly topics, access to the practical materials and assessment. However, note that all lecture notes, videos, practical materials including reading lists and downloadable data sets will be hosted on this webpage.\nYou can download the lecture notes and data sets for the practical lesson from the table below.\n\n\n\nWeek\nDownloads\nTopics\n\n\n\n\n1\nSlides; Data\nSpatial analysis for data science\n\n\n2\nSlides; Data\nGraphical representation of spatial data\n\n\n3\nSlides; Data\nSpatial autocorrelation\n\n\n4\nSlides; Data\nSuitability mapping I\n\n\n5\nSlides; Data\nSuitability mapping II\n\n\n\n\nReading Week\n\n\n6\nSlides; Data\nGeostatistics using Kriging\n\n\n7\nSlides; Data\nSpatial models I (Lag & Error Regression)\n\n\n8\nSlides\nSpatial models II (Geographically Weighted Regression)\n\n\n9\nSlides\nSpatial models III (Bayesian Risk Models)\n\n\n10\nSlides\nRevision\n\n\n\nSolutions for Week: [1] | [2] | [3] | [4] | [5] | [6] | [7] | [8] | [9]",
+    "text": "Moodle is the central point of your learning experience for GEOG0114. Please use it on a regular basis to check for updates concerning the schedule for weekly topics, access to the practical materials and assessment. However, note that all lecture notes, videos, practical materials including reading lists and downloadable data sets will be hosted on this webpage.\nYou can download the lecture notes and data sets for the practical lesson from the table below.\n\n\n\nWeek\nDownloads\nTopics\n\n\n\n\n1\nSlides; Data\nSpatial analysis for data science\n\n\n2\nSlides; Data\nGraphical representation of spatial data\n\n\n3\nSlides; Data\nSpatial autocorrelation\n\n\n4\nSlides; Data\nSuitability mapping I\n\n\n5\nSlides; Data\nSuitability mapping II\n\n\n\n\nReading Week\n\n\n6\nSlides; Data\nGeostatistics using Kriging\n\n\n7\nSlides; Data\nSpatial models I (Lag & Error Regression)\n\n\n8\nSlides\nSpatial models II (Geographically Weighted Regression)\n\n\n9\n[Slides]\nSpatial models III (Bayesian Risk Models)\n\n\n10\n[Slides]\nRevision\n\n\n\nSolutions for Week: [1] | [2] | [3] | [4] | [5] | [6] | [7] | [8] | [9]",
     "crumbs": [
       "Module Overview",
       "Welcome"
     ]
   },
   {
-    "objectID": "00-module_overview.html#module-tutors-and-contacts-for-geog0114",
-    "href": "00-module_overview.html#module-tutors-and-contacts-for-geog0114",
+    "objectID": "00-module_overview.html#contact-for-geog0114",
+    "href": "00-module_overview.html#contact-for-geog0114",
     "title": "GEOG0114: Principles of Spatial Analysis",
     "section": "",
-    "text": "Feel free to contact us via email for help, or book appointments for additional support if need be. We are based at UCL Department of Geography, North West Wing building. Our contact information and office details are:\n\n\n\nName\nEmail\nRoom number\n\n\n\n\nAnwar Musah\na.musah@ucl.ac.uk\n115",
+    "text": "Feel free to contact us via email for help, or book appointments for additional support if need be. We are based at UCL Department of Geography, North West Wing building. Our contact information and office details are:\n\n\n\nName\nEmail\nRoom number\n\n\n\n\nAnwar Musah\na.musah@ucl.ac.uk\n115\n\n\nMichael Xiao\nmichael.xiao@ucl.ac.uk\nChorley Institute",
     "crumbs": [
       "Module Overview",
       "Welcome"
+    ]
+  },
+  {
+    "objectID": "01-reading_list.html",
+    "href": "01-reading_list.html",
+    "title": "Reading List for GEOG0114",
+    "section": "",
+    "text": "Contact me via email a.musah@ucl.ac.uk if you are having problems securing one or any of these recommended books from the UCL library or elsewhere.",
+    "crumbs": [
+      "Getting Started",
+      "Reading List for GEOG0114"
+    ]
+  },
+  {
+    "objectID": "01-reading_list.html#spatial-analysis-for-data-science",
+    "href": "01-reading_list.html#spatial-analysis-for-data-science",
+    "title": "Reading List for GEOG0114",
+    "section": "Spatial analysis for data science",
+    "text": "Spatial analysis for data science\n\nBook: [Theory] Longley, P. et al (2015) Geographic Information Science & Systems (4th Edition); Chapters 2: The Nature of Geographic Data Click link (Note: use of your UCL login via institutional organisation (UK Federation) is required to access the digital book)\nBook: [Theory] Longley, P. et al (2015) Geographic Information Science & Systems (4th Edition); Chapters 3: Representing Geography Click link (Note: use of your UCL login via institutional organisation (UK Federation) is required to access the digital book)\nBook: [R Programming] Brunsdon, C. et al (2018) An Introduction to R for Spatial Analysis and Mapping; Chapter 3: Basics of Handling Spatial Data in R Click link (Note: Books can be borrowed from UCL’s Library)\nBook: [R Programming] Dorman, M. (2014) Learning R for Geospatial Analysis; Chapter 1: The R Environment Click link (Note: Digital book)\nBook: [R Programming] Dorman, M. (2014) Learning R for Geospatial Analysis; Chapter 3: Working with tables Click link (Note: Digital book)\nPaper: [R Programming] Tennekes, M. (2018). tmap: Thematic Maps in R. Journal of Statistical Software, 84(6), 1–39. https://doi.org/10.18637/jss.v084.i06 (Download)",
+    "crumbs": [
+      "Getting Started",
+      "Reading List for GEOG0114"
+    ]
+  },
+  {
+    "objectID": "01-reading_list.html#graphical-representation-of-spatial-data",
+    "href": "01-reading_list.html#graphical-representation-of-spatial-data",
+    "title": "Reading List for GEOG0114",
+    "section": "Graphical representation of spatial data",
+    "text": "Graphical representation of spatial data\n\nGitbook: [R Programming] Gimond, M. (2021) Intro to GIS and spatial analysis. Chapter 8: Spatial operations and vector overlays Click link\nBook: [Theory] Longley, P. et al (2015) Geographic Information Science & systems, Chapter 13: Spatial Analysis Click link\nGitbook: [R Programming] Lovelace, R., Nowosad, J. and Muenchow, J. (2021) Geocomputation with R, Chapter 4: Spatial data operations Click link\nGitbook: [R Programming] Lovelace, R., Nowosad, J. and Muenchow, J. 2021. Geocomputation with R, Chapter 5: Geometry operations Click link\nPaper: [Research] Bijnens, E. et al (2020). Residential green space and child intelligence and behavior across urban, suburban, and rural areas in Belgium: A longitudinal birth cohort study of twins. PLOS Medicine 17(8), e1003213. Click link",
+    "crumbs": [
+      "Getting Started",
+      "Reading List for GEOG0114"
+    ]
+  },
+  {
+    "objectID": "01-reading_list.html#spatial-autocorrelation",
+    "href": "01-reading_list.html#spatial-autocorrelation",
+    "title": "Reading List for GEOG0114",
+    "section": "Spatial autocorrelation",
+    "text": "Spatial autocorrelation\n\nGitbook: [R Programming] Gimond, M. (2021) Intro to GIS and spatial analysis. Chapter 13: Spatial autocorrelation Click link\nBook: [Theory] Longley, P. et al (2015) Geographic Information Science & systems (4th Edition); Chapter 2: The Nature of Geographic Data Click link\nBook: [Theory] Longley, P. et al (2015) Geographic Information Science & systems (4th Edition); Chapter 13: Spatial Analysis Click link\nPaper: [Research] Radil, S. 2016. Spatial analysis of crime. In: Huebner, B. and Bynum, T. The Handbook of Measurement Issues in Criminology and Criminal Justice, Chapter 24, pp.536-554. Click link (Note: use of your UCL login via institutional organisation (UK Federation) is required to access the digital paper)\nBook: [R Programming] Brunsdon, C. et al (2018) An Introduction to R for Spatial Analysis and Mapping; Chapter 7: Spatial Attribute Analysis with R, (See pages 257 to 262) Click link (Note: Books can be borrowed from UCL’s Library)\nBook: [R Programming] Brunsdon, C. et al (2018) An Introduction to R for Spatial Analysis and Mapping; Chapter 8: Localised Spatial Analysis, (See pages 281 to 289) Click link (Note: Books can be borrowed from UCL’s Library)\nBook: [Theory] Lloyd, C.D., et al (2010) Spatial Data Analysis: An Introduction for GIS Users; Chapter 4: Key concepts 3 - Spatial Data Analysis, (See pages 43 to 64)\nBook: [Theory] Lloyd, C.D., et al (2010) Spatial Data Analysis: An Introduction for GIS Users; Chapter 8: Local Univariate Measures, (See section 8.4.1. [Local Spatial Autocorrelation] on pages 110 to 113)",
+    "crumbs": [
+      "Getting Started",
+      "Reading List for GEOG0114"
+    ]
+  },
+  {
+    "objectID": "01-reading_list.html#suitability-mapping-i",
+    "href": "01-reading_list.html#suitability-mapping-i",
+    "title": "Reading List for GEOG0114",
+    "section": "Suitability Mapping I",
+    "text": "Suitability Mapping I\n\nPaper: [Theory] R.W. Saaty (1987). The Analytical Hierarchy Process - What it is and how it is used, Mathl Modelling, Volume 9(3-5), pages 161 to 176 Click link\nTechnical Document: [Theory] IDRISI Kilimanjaro: Guide to GIS and Image Processing. Chapter 12: Decision Support - Decision Strategy Analysis, Section on ‘A Typology of Decisions’, pages 151 to 154. Click link\nPaper: [Application] A.A. Ali, A. Ahmad (2019). Spatial susceptibility analysis of vector-borne diseases in KMC using geospatial technique and MCDM approach, Modeling Earth Systems and Environment, Issue 5, pages 1135–1159 Click link\nPaper: [Application] X. Zhao et al., (2020). Malaria Risk Map Using Spatial Multi-Criteria Decision Analysis along Yunnan Border During the Pre-elimination Period, Am J Trop Med Hyg, Volume 103 (2), pages 793–809 Click link\nPaper: [Application] B. Ahmed (2015). Landslide susceptibility mapping using multi-criteria evaluation techniques in Chittagong Metropolitan Area, Bangladesh. Landslides, Issue 12, pages 1077–1095 Click link\nBook: [R Programming] Dorman, M. (2014) Learning R for Geospatial Analysis; Chapter 3: Working with Rasters Click link (Note: Digital book)",
+    "crumbs": [
+      "Getting Started",
+      "Reading List for GEOG0114"
+    ]
+  },
+  {
+    "objectID": "01-reading_list.html#suitability-mapping-ii",
+    "href": "01-reading_list.html#suitability-mapping-ii",
+    "title": "Reading List for GEOG0114",
+    "section": "Suitability Mapping II",
+    "text": "Suitability Mapping II\n\nBook: [R Programming] Dorman, M. (2014) Learning R for Geospatial Analysis; Chapter 3: Working with Rasters Click link (Note: Digital book)\nBook: [Theory] Stockwell, D. (2019) Niche Modeling: Predictions from Statistical Distributions; Chapter 4: Topology; CRC Press; pages: 45-63.\nOnline: [Tutorials] Hijmans, R.J., & Elith, J. (2021) Species distribution modelling Click link\nOnline: [Tutorials] Kerkhoff, D. (2016) Ecological Responses to Climate Change: Species Distribution Modelling using Maxent Click link\nPaper: [Application] Escobar, L.E., (2020). Ecological Niche Modeling: An Introduction for Veterinarians and Epidemiologists, Frontiers in Veterinary Science Click link\nPaper: [Application] Banks, W.E., (2017). The application of ecological niche modeling methods to archaeological data in order to examine culture-environment relationships and cultural trajectories; Quarternaire Click link\nPaper: [Application] Liao, Y., Lei, Y., Ren, Z., Chen, H., & Li., D., (2017). Predicting the potential risk area of illegal vaccine trade in China; Scientific Reports, Issue 7, 3883. Click link",
+    "crumbs": [
+      "Getting Started",
+      "Reading List for GEOG0114"
+    ]
+  },
+  {
+    "objectID": "01-reading_list.html#geostatistical-modelling",
+    "href": "01-reading_list.html#geostatistical-modelling",
+    "title": "Reading List for GEOG0114",
+    "section": "Geostatistical Modelling",
+    "text": "Geostatistical Modelling\n\nTechnical Document: [R Programming] Gurpreet Singh and Biju Soman, (2020), Spatial Interpolation using Kriging in R. Download here\nTechnical Document: [R Programming] Fernando Antonanzas-Torres, (2014), Geostatistics examples in R: Ordinary Kriging, Universal Kriging and Inverse Distance Weighted. Download here\nTechnical Document: [R Programming] Adela Volfova and Martin Smejkal, (2012), Geostatistical Methods in R. Download here\nBook: [R Programming] Roger S. Bivand, Edzer J. Pebesma and Virgilio Gomez-Rubio, (2008), Applied Spatial Data Analysis with R, Chapter 8: Interpolation and Geostatistics, pages 191 to 235.\nBook: [R Programming] Michael Dorman, (2014), Learning R for Geospatial Analysis, Chapter 8: Spatial Interpolation of Point Data, pages 241 to 279. Click link (Note: Digital book)\nBook: [Theory] Christopher D. Lloyd, (2010), Spatial Data Analysis: An Introduction for GIS Users, Chapter 9: Spatial Interpolation (Section 9.7. Ordinary Kriging), pages 140 to 150.",
+    "crumbs": [
+      "Getting Started",
+      "Reading List for GEOG0114"
+    ]
+  },
+  {
+    "objectID": "01-reading_list.html#spatial-models-i",
+    "href": "01-reading_list.html#spatial-models-i",
+    "title": "Reading List for GEOG0114",
+    "section": "Spatial Models I",
+    "text": "Spatial Models I\n\nPaper: [Application] Guangqing Chi and Jun Zhu (2008) Spatial Regression Models for Demographic Analysis, Popul Res Policy Rev, 27:17-42. DOI 10.1007/s11113-007-9051-8\nBook Chapter: [Theory] David Darmofal, (2015), Chapter Six: Spatial Lag and Spatial Error Models (2015). Social Analysis for the Social Sciences. Cambridge Press Gain Access to PDF via Institutional login\nPaper: [Application] Wen-Ching Wang, Yu-Ju Chang & Hsueh-Ching Wang, (2019), An Application of the Spatial Autocorrelation Method on the Change of Real Estate Prices in Taitung City. Int Jour Geo-Information, (8)249, doi:10.3390/ijgi8060249\nOnline Tutorial: [R Programming] Reka Solymosi and Juanjo Medina (2022) Crime Mapping in R, Chapter 9: Spatial Regression Models Click link",
+    "crumbs": [
+      "Getting Started",
+      "Reading List for GEOG0114"
+    ]
+  },
+  {
+    "objectID": "01-reading_list.html#spatial-models-ii",
+    "href": "01-reading_list.html#spatial-models-ii",
+    "title": "Reading List for GEOG0114",
+    "section": "Spatial Models II",
+    "text": "Spatial Models II\n\nBook: [R Programming] Brunsdon, C. et al (2018) An Introduction to R for Spatial Analysis and Mapping; Chapter 7: Spatial Attribute Analysis with R, (See pages 257 to 262) Click link (Note: Books can be borrowed from UCL’s Library)\nBook: [R Programming] Brunsdon, C. et al (2018) An Introduction to R for Spatial Analysis and Mapping; Chapter 8: Localised Spatial Analysis, (See pages 281 to 289) Click link (Note: Books can be borrowed from UCL’s Library)\nBook: [Theory] Lloyd, C.D., et al (2010) Spatial Data Analysis: An Introduction for GIS Users; Chapter 8: Exploring spatial patterning in data values, (See section 8.5.3. [Geographically Weighted Regression] on pages 115 to 123)\nBook: [R Programming] Roger S. Bivand, Edzer J. Pebesma and Virgilio Gomez-Rubio, (2008), Applied Spatial Data Analysis with R; Chapter 10: Modelling of Areal Data, (See section 10.5.3. [Geographically Weighted Regression] on pages 305 to 309)\nPaper [Theory] Comber, A. et al (2022) A Route Map for Successful Application of Geographically Weighted Regression; Geographical Analysis; https://doi.org/10.1111/gean.12316 Click link",
+    "crumbs": [
+      "Getting Started",
+      "Reading List for GEOG0114"
     ]
   }
 ]
