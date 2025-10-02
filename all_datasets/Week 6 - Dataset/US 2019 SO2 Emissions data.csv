@@ -1,0 +1,459 @@
+CountyRef,Longitude,Latitude,Mean_SO2
+"Jefferson, Alabama, USA",-86.815,33.553056,4.098606
+"Jefferson, Alabama, USA",-86.915,33.485556,1.840171
+"Jefferson, Alabama, USA",-86.796389,33.565278,8.26326
+"Gila, Arizona, USA",-110.867267,33.3855,13.783425
+"Gila, Arizona, USA",-110.87445,33.397433,9.05589
+"Gila, Arizona, USA",-110.785797,33.006179,26.819726
+"Maricopa, Arizona, USA",-112.095767,33.503833,1.355801
+"Pima, Arizona, USA",-110.9823,32.29515,0.245531
+"Pulaski, Arkansas, USA",-92.281296,34.756189,1.936538
+"Alameda, California, USA",-122.282347,37.814781,1.312857
+"Contra Costa, California, USA",-122.026154,37.936013,1.370278
+"Contra Costa, California, USA",-122.364852,37.948172,2.396601
+"Contra Costa, California, USA",-122.233229,38.05492,2.572527
+"Contra Costa, California, USA",-121.641918,38.006311,1.270455
+"Contra Costa, California, USA",-122.356811,37.9604,1.587288
+"Contra Costa, California, USA",-122.134467,38.012816,2.76338
+"Inyo, California, USA",-118.330783,37.360684,0.132782
+"Los Angeles, California, USA",-118.22688,34.06659,0.709418
+"Los Angeles, California, USA",-118.22,33.8025,1.972861
+"Riverside, California, USA",-117.41601,33.99958,0.664903
+"Sacramento, California, USA",-121.368014,38.613779,0.772222
+"San Bernardino, California, USA",-117.49201,34.10002,0.751156
+"San Luis Obispo, California, USA",-120.56388,35.02083,0.173077
+"Santa Barbara, California, USA",-120.02551,34.46245,0.025316
+"Santa Barbara, California, USA",-119.879511,34.414942,0
+"Santa Barbara, California, USA",-120.04692,34.48974,0.054545
+"Santa Barbara, California, USA",-120.4575,34.63782,1.53719
+"Santa Clara, California, USA",-121.894898,37.348497,0.547839
+"Solano, California, USA",-122.237976,38.102507,1.007799
+"Adams, Colorado, USA",-104.94984,39.838119,2.124478
+"Denver, Colorado, USA",-104.987625,39.751184,1.747238
+"Denver, Colorado, USA",-105.00518,39.77949,1.816374
+"El Paso, Colorado, USA",-104.839243,38.830895,2.851906
+"Fairfield, Connecticut, USA",-73.194722,41.170833,0.549025
+"Litchfield, Connecticut, USA",-73.297257,41.821342,0.273389
+"New Haven, Connecticut, USA",-72.902871,41.3014,0.455866
+"New Castle, Delaware, USA",-75.732,39.5513,0.63324
+"New Castle, Delaware, USA",-75.6036,39.57768,0.993878
+"New Castle, Delaware, USA",-75.496389,39.773889,0.853517
+"New Castle, Delaware, USA",-75.558056,39.739444,1.718659
+"Sussex, Delaware, USA",-75.16323,38.7791,0.293732
+"District of Columbia, District Of Columbia, USA",-76.958072,38.895572,0.839888
+"District of Columbia, District Of Columbia, USA",-77.013178,38.921847,1.625429
+"Broward, Florida, USA",-80.256944,26.053889,0.959249
+"Citrus, Florida, USA",-82.642965,28.958644,2.606094
+"Duval, Florida, USA",-81.635396,30.356339,2.726554
+"Duval, Florida, USA",-81.620951,30.422448,1.499133
+"Escambia, Florida, USA",-87.20355,30.525367,1.706145
+"Hillsborough, Florida, USA",-82.454539,27.928356,2.55289
+"Hillsborough, Florida, USA",-82.2304,27.96565,1.422636
+"Manatee, Florida, USA",-82.547648,27.638925,1.425698
+"Nassau, Florida, USA",-81.463168,30.658552,5.747788
+"Orange, Florida, USA",-81.3625,28.596389,0.677971
+"Pinellas, Florida, USA",-82.623153,27.863635,1.907955
+"Pinellas, Florida, USA",-82.739722,28.141667,1.006925
+"Polk, Florida, USA",-82.000084,27.939746,3.506128
+"Putnam, Florida, USA",-81.656509,29.687748,1.710435
+"Wakulla, Florida, USA",-84.161111,30.0925,0.670656
+"Ada, Idaho, USA",-116.347853,43.600699,0.756389
+"Bannock, Idaho, USA",-112.515833,42.916389,12.858082
+"Caribou, Idaho, USA",-111.594669,42.695198,7.148788
+"Champaign, Illinois, USA",-88.37251,40.05278,0.908841
+"Cook, Illinois, USA",-87.713488,41.7514,2.578022
+"Cook, Illinois, USA",-87.99057,41.66812,1.557423
+"Cook, Illinois, USA",-87.799227,42.139996,1.480781
+"La Salle, Illinois, USA",-89.049425,41.293015,1.523582
+"Macon, Illinois, USA",-88.925594,39.866834,4.02536
+"Macoupin, Illinois, USA",-89.809739,39.396075,1.052646
+"Madison, Illinois, USA",-90.105851,38.860669,2.272702
+"Saint Clair, Illinois, USA",-90.160477,38.612034,1.977008
+"Tazewell, Illinois, USA",-89.654028,40.55646,2.913295
+"Daviess, Indiana, USA",-87.214613,38.573253,2.227714
+"Clinton, Iowa, USA",-90.211982,41.823283,2.318697
+"Linn, Iowa, USA",-91.68766,41.97677,0.922753
+"Linn, Iowa, USA",-91.639535,41.948708,3.110585
+"Muscatine, Iowa, USA",-91.070975,41.419429,1.555495
+"Muscatine, Iowa, USA",-91.068449,41.401459,2.008767
+"Muscatine, Iowa, USA",-91.0616,41.4069,2.476712
+"Scott, Iowa, USA",-90.587611,41.530011,0.957967
+"Van Buren, Iowa, USA",-92.006318,40.695078,0.317729
+"Neosho, Kansas, USA",-95.47594,37.67696,1.281918
+"Sumner, Kansas, USA",-97.366399,37.47689,1.507407
+"Trego, Kansas, USA",-99.763424,38.770081,0.990769
+"Wyandotte, Kansas, USA",-94.635605,39.117219,1.42551
+"Boyd, Kentucky, USA",-82.64041,38.45934,0.386111
+"Campbell, Kentucky, USA",-84.47445,39.021881,0.921788
+"Daviess, Kentucky, USA",-87.075307,37.780776,3.70195
+"Fayette, Kentucky, USA",-84.49761,38.06503,0.557103
+"Greenup, Kentucky, USA",-82.731163,38.548136,0.997207
+"Henderson, Kentucky, USA",-87.46375,37.8712,2.627119
+"Jefferson, Kentucky, USA",-85.89804,38.06091,2.788202
+"Jefferson, Kentucky, USA",-85.65452,38.22876,2.350141
+"Jefferson, Kentucky, USA",-85.82678,38.23158,1.937815
+"Jessamine, Kentucky, USA",-84.58825,37.89147,0.541209
+"McCracken, Kentucky, USA",-88.57251,37.05822,1.107955
+"Aroostook, Maine, USA",-68.033006,46.696431,0.174924
+"Cumberland, Maine, USA",-70.268965,43.660246,0.289286
+"Hancock, Maine, USA",-68.2609,44.37705,0.119613
+"Kennebec, Maine, USA",-69.785,44.230622,0.457895
+"Baltimore, Maryland, USA",-76.474444,39.310833,1.565242
+"Dorchester, Maryland, USA",-76.141006,38.587525,0.451884
+"Garrett, Maryland, USA",-79.012,39.70595,0.807692
+"Prince George's, Maryland, USA",-76.878333,39.055277,0.413092
+"Bristol, Massachusetts, USA",-71.169235,41.685707,0.822924
+"Hampshire, Massachusetts, USA",-72.334079,42.298493,0.224566
+"Suffolk, Massachusetts, USA",-71.097163,42.348873,0.583573
+"Suffolk, Massachusetts, USA",-71.0826,42.3295,0.541834
+"Worcester, Massachusetts, USA",-71.794322,42.263955,0.626136
+"Kent, Michigan, USA",-85.671339,42.984173,0.765556
+"Monroe, Michigan, USA",-83.34573,41.923582,1.513445
+"St. Clair, Michigan, USA",-82.456229,42.953336,9.289863
+"Wayne, Michigan, USA",-83.2082,42.22862,2.177591
+"Wayne, Michigan, USA",-83.10653,42.302786,9.079614
+"Wayne, Michigan, USA",-83.153435,42.289449,3.044199
+"Wayne, Michigan, USA",-83.161145,42.283069,3.039548
+"Wayne, Michigan, USA",-83.151415,42.281869,3.825275
+"Wayne, Michigan, USA",-83.162585,42.270009,3.306407
+"Anoka, Minnesota, USA",-93.207615,45.13768,0.642659
+"Dakota, Minnesota, USA",-93.03255,44.76323,2.228767
+"Dakota, Minnesota, USA",-93.06299,44.77553,0.935813
+"Dakota, Minnesota, USA",-93.05541,44.745662,0.863694
+"Hennepin, Minnesota, USA",-93.273719,44.980995,1.7
+"Washington, Minnesota, USA",-92.9954,44.84737,3.904683
+"Hinds, Mississippi, USA",-90.182722,32.329111,0.783862
+"Jackson, Mississippi, USA",-88.53393,30.378287,1.510204
+"Franklin, Missouri, USA",-90.796911,38.572522,1.996283
+"Iron, Missouri, USA",-91.11689,37.65214,7.109167
+"Jefferson, Missouri, USA",-90.304783,38.144972,2.131474
+"Jefferson, Missouri, USA",-90.29842,38.10525,2.145205
+"Monroe, Missouri, USA",-91.788991,39.474976,1.427011
+"Saint Charles, Missouri, USA",-90.865528,38.581799,1.920548
+"Saint Louis, Missouri, USA",-90.44884,38.75264,3.083562
+"Lewis and Clark, Montana, USA",-111.987164,46.8505,0.49577
+"Yellowstone, Montana, USA",-108.45878,45.786579,4.274074
+"Douglas, Nebraska, USA",-95.973142,41.247486,0.679726
+"Douglas, Nebraska, USA",-95.938593,41.322508,2.107353
+"Washoe, Nevada, USA",-119.807717,39.525083,0.500573
+"Atlantic, New Jersey, USA",-74.448736,39.464872,0.201648
+"Essex, New Jersey, USA",-74.192892,40.720989,0.605014
+"Hudson, New Jersey, USA",-74.126081,40.67025,0.914795
+"Morris, New Jersey, USA",-74.676301,40.787628,0.557025
+"Union, New Jersey, USA",-74.208365,40.64144,0.915616
+"Warren, New Jersey, USA",-75.067815,40.92458,1.18017
+"Bernalillo, New Mexico, USA",-106.5852,35.1343,1.006425
+"San Juan, New Mexico, USA",-107.977567,36.742227,0.229692
+"San Juan, New Mexico, USA",-108.473138,36.796667,0.853741
+"San Juan, New Mexico, USA",-108.69523,36.8071,0.686296
+"Albany, New York, USA",-73.75733,42.68075,0.494444
+"Bronx, New York, USA",-73.902,40.816,1.078151
+"Bronx, New York, USA",-73.87809,40.8679,1.186575
+"Chautauqua, New York, USA",-79.31881,42.49963,0.588736
+"Dutchess, New York, USA",-73.74136,41.78555,0.39863
+"Erie, New York, USA",-78.809526,42.876907,1.654247
+"Erie, New York, USA",-78.89926,42.99813,0.696317
+"Essex, New York, USA",-73.8589,44.39308,0.256338
+"Franklin, New York, USA",-74.24593,44.43426,0.335955
+"Hamilton, New York, USA",-74.51625,43.44957,0.112605
+"Herkimer, New York, USA",-74.98538,43.68578,0.562896
+"Monroe, New York, USA",-77.54817,43.14618,0.446944
+"Nassau, New York, USA",-73.58549,40.74316,0.866391
+"Onondaga, New York, USA",-76.05921,43.05235,0.259341
+"Putnam, New York, USA",-73.70977,41.45589,0.266484
+"Queens, New York, USA",-73.82153,40.73614,1.219101
+"Steuben, New York, USA",-77.20978,42.09142,0.249025
+"Suffolk, New York, USA",-73.05754,40.82799,0.375504
+"Beaufort, North Carolina, USA",-76.7399,35.428,1.485227
+"Brunswick, North Carolina, USA",-78.019264,33.942294,7.769516
+"Cumberland, North Carolina, USA",-78.991692,35.002304,0.226966
+"Forsyth, North Carolina, USA",-80.224501,36.11094,0.829086
+"Martin, North Carolina, USA",-76.9063,35.81066,0.115203
+"Mecklenburg, North Carolina, USA",-80.785683,35.2401,0.690368
+"Person, North Carolina, USA",-79.058272,36.49002,4.749014
+"Wake, North Carolina, USA",-78.574167,35.856111,0.324566
+"Billings, North Dakota, USA",-103.37853,46.8943,1.969722
+"Burke, North Dakota, USA",-102.4018,48.64193,3.452603
+"Cass, North Dakota, USA",-96.85535,46.933754,1.038905
+"McKenzie, North Dakota, USA",-103.2995,47.5812,1.321096
+"Mercer, North Dakota, USA",-101.766944,47.298611,3.090556
+"Mercer, North Dakota, USA",-101.78128,47.371672,4.766484
+"Mercer, North Dakota, USA",-101.929099,47.400624,2.052342
+"Oliver, North Dakota, USA",-101.428056,47.185833,2.359615
+"Williams, North Dakota, USA",-102.910693,48.392666,9.697802
+"Jefferson, Ohio, USA",-80.6158,40.3663,4.892958
+"Adair, Oklahoma, USA",-94.669697,35.750735,0.80767
+"Oklahoma, Oklahoma, USA",-97.475083,35.614131,0.026706
+"Tulsa, Oklahoma, USA",-96.011664,36.149877,0.623145
+"Tulsa, Oklahoma, USA",-95.998941,36.126945,0.553977
+"Tulsa, Oklahoma, USA",-95.976537,36.204902,0.661934
+"Multnomah, Oregon, USA",-122.602877,45.496641,0.572174
+"Adams, Pennsylvania, USA",-77.30968,39.92002,0.42
+"Allegheny, Pennsylvania, USA",-80.071337,40.499767,0.648199
+"Allegheny, Pennsylvania, USA",-79.960757,40.46542,1.629609
+"Allegheny, Pennsylvania, USA",-79.868062,40.323768,17.091667
+"Allegheny, Pennsylvania, USA",-80.169943,40.375644,2.158904
+"Allegheny, Pennsylvania, USA",-79.860973,40.402328,7.663014
+"Beaver, Pennsylvania, USA",-80.503948,40.56252,1.971591
+"Beaver, Pennsylvania, USA",-80.359722,40.684722,1.28169
+"Berks, Pennsylvania, USA",-75.9686,40.38335,0.122807
+"Blair, Pennsylvania, USA",-78.370833,40.535278,1.785498
+"Cambria, Pennsylvania, USA",-78.915,40.309722,1.698225
+"Centre, Pennsylvania, USA",-77.877028,40.811389,0.318182
+"Indiana, Pennsylvania, USA",-78.919972,40.56333,3.66759
+"Luzerne, Pennsylvania, USA",-75.846389,41.265556,0.825
+"Northampton, Pennsylvania, USA",-75.341111,40.628056,1.002882
+"Philadelphia, Pennsylvania, USA",-75.080833,39.991389,1.771552
+"Philadelphia, Pennsylvania, USA",-75.186921,39.922867,1.722376
+"Warren, Pennsylvania, USA",-79.169722,41.844722,5.097143
+"Warren, Pennsylvania, USA",-79.119952,41.825708,5.140056
+"Washington, Pennsylvania, USA",-79.902222,40.146667,2.535714
+"Washington, Pennsylvania, USA",-80.420833,40.445278,1.770774
+"York, Pennsylvania, USA",-76.699444,39.965278,0.906516
+"Charleston, South Carolina, USA",-79.977538,32.882289,1.696562
+"Charleston, South Carolina, USA",-79.657187,32.941023,0.556772
+"Greenville, South Carolina, USA",-82.414585,34.843895,0.363585
+"Lexington, South Carolina, USA",-81.15495,34.051017,0.449573
+"Oconee, South Carolina, USA",-83.2377,34.805261,0.169828
+"Richland, South Carolina, USA",-80.962304,34.093959,0.398883
+"Richland, South Carolina, USA",-80.781135,33.81468,0.313081
+"York, South Carolina, USA",-81.207,34.977,0.348626
+"Jackson, South Dakota, USA",-101.941218,43.74561,2.071429
+"Minnehaha, South Dakota, USA",-96.700769,43.54792,0.666201
+"Pennington, South Dakota, USA",-103.273777,44.087397,1.1225
+"Union, South Dakota, USA",-96.707208,42.751518,0.81404
+"Blount, Tennessee, USA",-83.941606,35.63348,0.266374
+"Davidson, Tennessee, USA",-86.74472,36.205055,2.824916
+"Bexar, Texas, USA",-98.311692,29.275381,0.318095
+"Dallas, Texas, USA",-96.860117,32.820061,0.764815
+"Ellis, Texas, USA",-97.026899,32.482083,0.89194
+"El Paso, Texas, USA",-106.455227,31.765685,1.804878
+"Galveston, Texas, USA",-94.93152,29.385234,1.351576
+"Harris, Texas, USA",-95.474167,29.623889,1.162117
+"Harris, Texas, USA",-95.294722,29.686389,1.275487
+"Harris, Texas, USA",-94.983786,29.823319,0.608832
+"Harris, Texas, USA",-95.257593,29.733726,0.473056
+"Harris, Texas, USA",-95.128508,29.670025,0.934375
+"Jefferson, Texas, USA",-94.071061,30.036422,2.578448
+"Jefferson, Texas, USA",-93.991084,29.897516,5.405915
+"Kaufman, Texas, USA",-96.317687,32.564968,0.857182
+"Navarro, Texas, USA",-96.399141,32.031934,3.394633
+"Nueces, Texas, USA",-97.434262,27.76534,1.684615
+"Potter, Texas, USA",-101.787405,35.236736,0.918911
+"Salt Lake, Utah, USA",-111.872222,40.736389,1.341644
+"Salt Lake, Utah, USA",-111.931,40.78422,0.935473
+"Chittenden, Vermont, USA",-72.86884,44.52839,0.24893
+"Rutland, Vermont, USA",-72.982778,43.608056,0.709695
+"Charles, Virginia, USA",-77.25925,37.34438,1.882647
+"Fairfax, Virginia, USA",-77.10468,38.77335,0.79779
+"Henrico, Virginia, USA",-77.40027,37.55652,0.536556
+"Roanoke, Virginia, USA",-79.88452,37.28342,0.667493
+"Rockingham, Virginia, USA",-78.81952,38.47753,0.418551
+"Hampton City, Virginia, USA",-76.387017,37.103733,0.852066
+"Norfolk City, Virginia, USA",-76.30135,36.85555,0.533333
+"Clallam, Washington, USA",-124.62491,48.29786,0.113231
+"King, Washington, USA",-122.308628,47.568236,1.378994
+"Skagit, Washington, USA",-122.61428,48.52059,0.84
+"Brooke, West Virginia, USA",-80.596635,40.341023,9.249315
+"Brooke, West Virginia, USA",-80.586235,40.389655,7.063187
+"Brooke, West Virginia, USA",-80.611813,40.394651,9.446575
+"Hancock, West Virginia, USA",-80.576567,40.460138,4.81768
+"Hancock, West Virginia, USA",-80.592318,40.427372,4.802326
+"Hancock, West Virginia, USA",-80.540616,40.618353,3.32133
+"Kanawha, West Virginia, USA",-81.621161,38.346258,1.361944
+"Marshall, West Virginia, USA",-80.733858,39.915961,3.438395
+"Monongalia, West Virginia, USA",-79.920867,39.649367,2.781163
+"Wood, West Virginia, USA",-81.552367,39.323533,4.509804
+"Brown, Wisconsin, USA",-87.99344,44.50729,1.159834
+"Dane, Wisconsin, USA",-89.357298,43.100838,0.368421
+"Dodge, Wisconsin, USA",-88.621111,43.466111,0.368994
+"Milwaukee, Wisconsin, USA",-87.913504,43.060975,0.684384
+"Oneida, Wisconsin, USA",-89.41848,45.64505,2.165753
+"Carbon, Wyoming, USA",-107.12083,41.78237,0.396694
+"Carbon, Wyoming, USA",-107.08422,41.79358,0.52924
+"Laramie, Wyoming, USA",-104.778334,41.182227,1.868258
+"Natrona, Wyoming, USA",-106.23586,42.8608,2.696023
+"Sweetwater, Wyoming, USA",-109.788333,41.750556,1.618508
+"Weston, Wyoming, USA",-104.20512,43.84539,1.195068
+"Mobile, Alabama, USA",-88.087761,30.770181,2.796264
+"Shelby, Alabama, USA",-86.8072,33.0928,5.606647
+"Sumter, Alabama, USA",-88.277992,32.362606,0.965097
+"Maricopa, Arizona, USA",-112.04659,33.45797,1.432877
+"Maricopa, Arizona, USA",-112.11821,33.4265,1.808219
+"Fresno, California, USA",-119.77321,36.78538,1.116022
+"Humboldt, California, USA",-124.17949,40.77678,0.589634
+"Imperial, California, USA",-115.48307,32.67618,1.241716
+"San Bernardino, California, USA",-117.32554,34.510961,2.052676
+"San Bernardino, California, USA",-117.3714,35.77417,2.8
+"San Diego, California, USA",-116.944308,32.789565,0.19242
+"Santa Barbara, California, USA",-120.428717,34.725352,0.053571
+"Archuleta, Colorado, USA",-107.254118,37.205862,1.369182
+"Hamilton, Florida, USA",-82.794715,30.42659,1.657317
+"Hillsborough, Florida, USA",-82.383728,27.854176,2.244521
+"Hillsborough, Florida, USA",-82.419835,27.779712,2.21
+"Miami-Dade, Florida, USA",-80.38259,25.899539,0.359016
+"Bibb, Georgia, USA",-83.543493,32.805264,0.494795
+"Chatham, Georgia, USA",-81.04942,32.06848,4.26768
+"Chatham, Georgia, USA",-81.130222,32.090779,7.535928
+"DeKalb, Georgia, USA",-84.2905,33.6878,0.306906
+"Floyd, Georgia, USA",-85.3259,34.2434,3.051507
+"Fulton, Georgia, USA",-84.357316,33.720742,1.766954
+"Richmond, Georgia, USA",-82.0224,33.4339,6.181214
+"Macon, Illinois, USA",-88.894488,39.880404,2.326446
+"Macon, Illinois, USA",-88.933635,39.850712,7.123757
+"Macon, Illinois, USA",-88.923323,39.846856,6.515642
+"Monroe, Illinois, USA",-90.22728,38.15908,2.104895
+"Wabash, Illinois, USA",-87.773853,38.397789,3.225824
+"Floyd, Indiana, USA",-85.832974,38.30703,1.33284
+"Gibson, Indiana, USA",-87.748323,38.392991,4.838719
+"Lake, Indiana, USA",-87.304943,41.606662,2.896405
+"Lake, Indiana, USA",-87.435561,41.653501,3.604918
+"Lake, Indiana, USA",-87.493609,41.639306,1.988219
+"Marion, Indiana, USA",-86.186269,39.749027,0.602532
+"Marion, Indiana, USA",-86.114444,39.810833,0.683384
+"Morgan, Indiana, USA",-86.391795,39.514179,4.916564
+"Pike, Indiana, USA",-87.248598,38.518935,2.365639
+"Vanderburgh, Indiana, USA",-87.577222,38.013333,1.857349
+"Vigo, Indiana, USA",-87.401312,39.485987,1.548189
+"Henderson, Kentucky, USA",-87.511427,37.654381,10.465565
+"Bossier, Louisiana, USA",-93.747041,32.535293,0.973512
+"Calcasieu, Louisiana, USA",-93.285084,30.262604,0.991379
+"Calcasieu, Louisiana, USA",-93.285598,30.103724,3.170083
+"East Baton Rouge, Louisiana, USA",-91.179219,30.461981,1.362011
+"East Baton Rouge, Louisiana, USA",-91.235323,30.577617,1.786628
+"St. Bernard, Louisiana, USA",-89.923883,29.939614,1.462185
+"St. Bernard, Louisiana, USA",-89.97625,29.943164,6.62274
+"St. Charles, Louisiana, USA",-90.411185,29.997366,7.009945
+"St. James, Louisiana, USA",-90.670833,30.052341,0.561644
+"West Baton Rouge, Louisiana, USA",-91.213556,30.500642,3.18415
+"West Baton Rouge, Louisiana, USA",-91.284108,30.327723,2.178904
+"Allegany, Maryland, USA",-79.0638,39.4864,5.133884
+"Allegany, Maryland, USA",-79.026383,39.483617,9.21726
+"Anne Arundel, Maryland, USA",-76.511025,39.158911,2.770508
+"Hampden, Massachusetts, USA",-72.584503,42.120229,0.674636
+"Ingham, Michigan, USA",-84.562779,42.761387,1.270959
+"Ottawa, Michigan, USA",-86.196487,42.92361,1.512188
+"St. Clair, Michigan, USA",-82.527801,42.786109,5.940274
+"St. Clair, Michigan, USA",-82.47583,42.773556,5.325753
+"Wayne, Michigan, USA",-83.157893,42.261669,3.39337
+"Wayne, Michigan, USA",-83.091943,42.312158,3.462637
+"Wayne, Michigan, USA",-83.129431,42.295824,4.238904
+"Wayne, Michigan, USA",-83.103469,42.312078,4.790113
+"Franklin, Missouri, USA",-90.86326,38.52814,2.846154
+"Iron, Missouri, USA",-91.12795,37.65319,6.880548
+"Iron, Missouri, USA",-91.1498,37.64876,4.592877
+"Iron, Missouri, USA",-91.13565,37.63211,4.891233
+"Jackson, Missouri, USA",-94.57079,39.104686,1.777686
+"Jefferson, Missouri, USA",-90.37993,38.26351,2.039776
+"New Madrid, Missouri, USA",-89.56093,36.51364,97.376301
+"New Madrid, Missouri, USA",-89.56074,36.50838,74.989751
+"New Madrid, Missouri, USA",-89.57099,36.50899,13.515775
+"Saint Charles, Missouri, USA",-90.830618,38.595607,2.833803
+"St. Louis City, Missouri, USA",-90.198348,38.656429,2.050416
+"Richland, Montana, USA",-104.676944,47.8679,1.135838
+"Douglas, Nebraska, USA",-95.946404,41.316675,2.693162
+"Lancaster, Nebraska, USA",-96.78035,40.55476,1.577401
+"Clark, Nevada, USA",-115.078742,36.141875,1.367908
+"Hillsborough, New Hampshire, USA",-71.878626,42.86183,0.618234
+"Merrimack, New Hampshire, USA",-71.458246,43.13246,1.690411
+"Rockingham, New Hampshire, USA",-71.38014,42.862531,0.764184
+"Camden, New Jersey, USA",-75.125219,39.934559,1.320613
+"Hudson, New Jersey, USA",-74.066308,40.731645,1.046537
+"Union, New Jersey, USA",-74.214854,40.662435,1.14478
+"St. Lawrence, New York, USA",-74.9078,44.955468,15.86044
+"St. Lawrence, New York, USA",-74.875,44.965412,7.665205
+"Seneca, New York, USA",-76.7026,42.574106,0.472778
+"Tompkins, New York, USA",-76.6152,42.613199,0.800275
+"Buncombe, North Carolina, USA",-82.509719,35.481963,0.694618
+"Caldwell, North Carolina, USA",-81.5306,35.9359,0.072757
+"Durham, North Carolina, USA",-78.904037,36.032955,0.42
+"Haywood, North Carolina, USA",-82.852868,35.534102,4.984615
+"Burleigh, North Dakota, USA",-100.76821,46.825425,1.746197
+"Dunn, North Dakota, USA",-102.645864,47.342423,1.408219
+"Ward, North Dakota, USA",-101.571583,47.940861,1.643802
+"Williams, North Dakota, USA",-102.894086,48.465253,2.096419
+"Adams, Ohio, USA",-83.53398,38.79471,0.522034
+"Allen, Ohio, USA",-84.0539,40.770944,0.233516
+"Ashtabula, Ohio, USA",-80.572808,41.959695,1.333333
+"Belmont, Ohio, USA",-80.7464,39.9679,0.547222
+"Butler, Ohio, USA",-84.409617,39.479822,3.475
+"Butler, Ohio, USA",-84.394952,39.472436,8.241096
+"Butler, Ohio, USA",-84.40256,39.46619,4.854396
+"Clark, Ohio, USA",-83.99773,39.85567,0.36236
+"Columbiana, Ohio, USA",-80.547181,40.631545,0.689655
+"Cuyahoga, Ohio, USA",-81.682383,41.477011,3.16156
+"Cuyahoga, Ohio, USA",-81.656792,41.471782,1.630573
+"Cuyahoga, Ohio, USA",-81.662356,41.446624,3.816667
+"Franklin, Ohio, USA",-82.994424,40.002707,0.309677
+"Gallia, Ohio, USA",-82.12211,38.95018,4.184066
+"Gallia, Ohio, USA",-82.14893,38.89495,4.969188
+"Gallia, Ohio, USA",-82.1104,38.94945,6.722857
+"Hamilton, Ohio, USA",-84.69086,39.21487,3.900826
+"Hamilton, Ohio, USA",-84.50404,39.12886,2.303315
+"Jefferson, Ohio, USA",-80.62955,40.271976,0.787425
+"Jefferson, Ohio, USA",-80.639987,40.259475,0.671512
+"Lake, Ohio, USA",-81.422455,41.673006,1.98895
+"Lake, Ohio, USA",-81.242156,41.726811,1.290055
+"Lawrence, Ohio, USA",-82.659241,38.508075,0.299383
+"Lucas, Ohio, USA",-83.47583,41.66343,1.744444
+"Mahoning, Ohio, USA",-80.658867,41.096188,1.04
+"Morgan, Ohio, USA",-81.67005,39.63223,2.464387
+"Preble, Ohio, USA",-84.720524,39.83562,1.043978
+"Scioto, Ohio, USA",-82.822512,38.609338,4.363636
+"Scioto, Ohio, USA",-82.834973,38.588034,1.818681
+"Summit, Ohio, USA",-81.468956,41.063526,0.611111
+"Summit, Ohio, USA",-81.516235,41.079159,0.244382
+"Garfield, Oklahoma, USA",-97.845959,36.512363,2.802899
+"Kay, Oklahoma, USA",-97.08135,36.697186,3.726027
+"Mayes, Oklahoma, USA",-95.269196,36.228993,3.721763
+"Muskogee, Oklahoma, USA",-95.287067,35.775813,0.611888
+"Tulsa, Oklahoma, USA",-96.015845,36.15483,0.78273
+"Multnomah, Oregon, USA",-122.575278,45.5625,1.943333
+"York, Pennsylvania, USA",-76.912256,39.8751,0.841758
+"Providence, Rhode Island, USA",-71.36097,41.841039,0.470774
+"Sullivan, Tennessee, USA",-82.516306,36.532616,11.140496
+"Sullivan, Tennessee, USA",-82.502454,36.521066,6.798343
+"Sullivan, Tennessee, USA",-82.528677,36.526359,19.76338
+"Sullivan, Tennessee, USA",-82.550498,36.513026,8.451253
+"Bexar, Texas, USA",-98.332814,29.352911,0.881548
+"Freestone, Texas, USA",-96.1031,31.797813,0.832493
+"Gregg, Texas, USA",-94.711813,32.378696,3.936236
+"Harrison, Texas, USA",-94.481595,32.470228,9.303662
+"Howard, Texas, USA",-101.407137,32.280422,14.851796
+"Hutchinson, Texas, USA",-101.4401,35.6762,38.23454
+"Jefferson, Texas, USA",-93.9652,29.8442,3.150565
+"McLennan, Texas, USA",-97.070704,31.653086,1.21453
+"Milam, Texas, USA",-97.076294,30.569534,0.486982
+"Navarro, Texas, USA",-96.352,31.9041,16.658484
+"Nueces, Texas, USA",-97.555387,27.832413,1.184527
+"Nueces, Texas, USA",-97.431553,27.804489,0.989571
+"Orange, Texas, USA",-93.725897,30.153675,6.701127
+"Potter, Texas, USA",-101.7418,35.3165,13.009034
+"Robertson, Texas, USA",-96.481944,31.168889,0.74375
+"Rusk, Texas, USA",-94.570851,32.277929,14.740782
+"Titus, Texas, USA",-94.8474,33.0752,2.938218
+"Travis, Texas, USA",-97.761803,30.354944,0.439889
+"Salt Lake, Utah, USA",-112.111275,40.712146,2.762011
+"Salt Lake, Utah, USA",-111.894167,40.598056,0.854144
+"Salt Lake, Utah, USA",-111.945849,40.777145,1.248913
+"Uintah, Utah, USA",-109.43128,39.63551,0.184444
+"Botetourt, Virginia, USA",-79.986486,37.447965,3.640845
+"Giles, Virginia, USA",-80.6539,37.3863,14.977716
+"Covington City, Virginia, USA",-79.990833,37.791389,8.687363
+"Chelan, Washington, USA",-120.095556,47.334444,0.362604
+"Whatcom, Washington, USA",-122.7047,48.855274,17.047368
+"Whatcom, Washington, USA",-122.688888,48.848065,10.215193
+"Brooke, West Virginia, USA",-80.65033,40.240877,1.031153
+"Mason, West Virginia, USA",-82.08866,38.95649,5.947222
+"Mineral, West Virginia, USA",-79.0691,39.4452,9.552035
+"Forest, Wisconsin, USA",-88.8086,45.565,0.554144
+"Outagamie, Wisconsin, USA",-88.252186,44.289283,3.455956
+"Carbon, Wyoming, USA",-107.10909,41.77882,2.607242
+"Converse, Wyoming, USA",-105.79821,42.77612,2.427397
+"Fremont, Wyoming, USA",-107.60017,43.27106,9.604959
+"Laramie, Wyoming, USA",-104.52277,41.08536,0.337037
+"Park, Wyoming, USA",-109.01673,44.52612,0.298905
+"Sweetwater, Wyoming, USA",-109.755297,41.6043,1.869613
+"Sweetwater, Wyoming, USA",-109.70166,41.62993,2.384615
+"Sweetwater, Wyoming, USA",-109.53044,41.55643,1.328571
+"Teton, Wyoming, USA",-110.74526,43.48256,0.245175

@@ -49,6 +49,9 @@ website:
           - 02-installation.qmd
       - section: "Foundation & Theory"
         contents:
+          - 03-spatial_analysis_for_data_science.qmd
+          - 04-graphical_representation.qmd
+          - 05-spatial_autocorrelation.qmd
       - section: "Raster-Based Analysis"
         contents:
       - section: "Spatial Modelling"
