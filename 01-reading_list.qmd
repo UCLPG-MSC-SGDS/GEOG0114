@@ -6,7 +6,7 @@ title: "Reading List for GEOG0114"
 knitr::include_graphics('images/general/recommended_books.png')
 ```
 
-Contact me via email [**a.musah@ucl.ac.uk**](a.musah@ucl.ac.uk) if you are having problems securing one or any of these recommended books from the UCL library or elsewhere. 
+If you are having problems securing one or any of these recommended books from the UCL library or elsewhere. You can access PDF versions [**HERE**](https://drive.google.com/drive/folders/14IfboqBZu4TSfN9ZPefXHD3SivkD6m_m?usp=sharing) 
 
 ## Spatial analysis for data science {-}
 
