@@ -1,0 +1,57 @@
+---
+title: "GEOG0114: Principles of Spatial Analysis"
+format: html
+---
+
+# Welcome {.unnumbered}
+
+```{r echo=FALSE, out.width = "100%", fig.align='center', cache=TRUE,}
+knitr::include_graphics('images/general/intro_page_picture.jpeg') 
+```
+
+Welcome to **GEOG0114: Principles of Spatial Analysis**, one of the core 1st term modules for this MSc programme ([**Social and Geographic Data Science**](https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees/social-and-geographic-data-science-msc)). This module has been designed as an introduction to the core tenets and principles of spatial analysis. Here, you will learn the key concepts and spatial analytical methods, which are applicable to the domains of social science and geography.
+
+In the first three weeks, we will cover **Spatial analysis for data science**, **Graphical representation of spatial data** and **Spatial autocorrelation**.
+
+Afterwards, in week 4, 5 and 6, we will cover a variety of basic geostatistical techniques that require analysis of point and raster data - these include suitability mapping such as **Analytical Hierarchical Process (AHP)** and **Ecological Niche Modelling**; and then **Geostatistical analysis using Kriging**.
+
+In week 7, 8, and 9, we will learn specialised tools for performing spatial analysis on vector data (e.g., point, line and areal structures) - these include the various spatial regression model families e.g., **Spatial Lag & Error models**, **Geographical Weighted Regression (GWR)** and **Spatial Risk Models**. All these tutorials will be covered in RStudio.
+
+## Structure {.unnumbered}
+
+All lectures and computer practicals will be delivered in-person. All Lectures are held on **Monday from 01:00pm to 02:00pm** at the [**North West Wing (Room G17)**](https://www.ucl.ac.uk/maps/north-west-wing-building). All computer lab seminars are delivered on **Thursday from 03:00pm to 05:00pm** at the [**North West Wing (Room G07)**](https://www.ucl.ac.uk/maps/north-west-wing-building).
+
+:::{.callout-important}
+**IMPORTANT NOTE**: Please bring your laptops with you to the computer practicals on Thursday
+:::
+
+## Moodle {.unnumbered}
+
+[**Moodle**](https://moodle.ucl.ac.uk/) is the central point of your learning experience for **GEOG0114**. Please use it on a regular basis to check for updates concerning the schedule for weekly topics, access to the practical materials and assessment. However, note that all lecture notes, videos, practical materials including reading lists and downloadable data sets will be hosted on this webpage.
+
+You can download the lecture notes and data sets for the practical lesson from the table below.
+
+| **Week**        | **Downloads**   | **Topics**                            |
+|:----------------|:----------------|:--------------------------------------|
+| 1 | [**Slides**](https://shorturl.at/w3lJf);    [**Data**](https://tinyurl.com/nbhd3m5m) | Spatial analysis for data science |
+| 2 | [**Slides**](https://tinyurl.com/zb9ea3ks); [**Data**](https://tinyurl.com/3uw7eu8v) | Graphical representation of spatial data |
+| 3 | [**Slides**](https://tinyurl.com/mr29ewxb); [**Data**](https://tinyurl.com/363uejkn) | Spatial autocorrelation |
+| 4 | [**Slides**](https://tinyurl.com/bzyz27hs); [**Data**](https://tinyurl.com/2vxe3e4j) | Suitability mapping I |
+| 5 | [**Slides**](https://tinyurl.com/78ku6ser); [**Data**](https://tinyurl.com/4kue54yv) | Suitability mapping II |
+|   |                                                                                      | Reading Week |
+| 6 | [**Slides**](https://tinyurl.com/4vwnxwdm); [**Data**](https://tinyurl.com/5n8fkxm)  | Geostatistics using Kriging |
+| 7 | [**Slides**](https://tinyurl.com/hhx8rcx9); [**Data**](https://tinyurl.com/3z9eb3zn) | Spatial models I (Lag & Error Regression) |
+| 8 | [**Slides**](https://tinyurl.com/yc3rvn76)                                           | Spatial models II (Geographically Weighted Regression)|
+| 9 | [**Slides**]()                                                                       | Spatial models III (Bayesian Risk Models)|
+| 10 | [**Slides**]()                                                                      | Revision |
+
+**Solutions for Week**: [**[1]**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Solutions%201.zip) | [**[2]**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Solutions%202.zip) | **[3]** | **[4]** | [**[5]**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Solutions%205.zip) | [**[6]**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Solutions%206.zip) | **[7]** | **[8]** | **[9]**
+
+## Module tutors and contacts for GEOG0114 {.unnumbered}
+
+Feel free to contact us via email for help, or book appointments for additional support if need be. We are based at UCL Department of Geography, [**North West Wing building**](https://www.ucl.ac.uk/maps/north-west-wing-building). Our contact information and office details are:
+
+| **Name**              | **Email**               | **Room number**         |
+|-----------------------|-------------------------|-------------------------|
+| Anwar Musah           | [**a.musah\@ucl.ac.uk**](a.musah@ucl.ac.uk)| 115  |
+

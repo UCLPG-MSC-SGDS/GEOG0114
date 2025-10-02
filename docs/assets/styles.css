@@ -1,0 +1,26 @@
+div.sidebar-header {
+    text-align: center;
+}
+
+.sidebar-navigation li a {
+    cursor: pointer;
+}
+
+.explore {
+    margin-bottom: 1em;
+}
+
+.variogram>div.cell-output>div.quarto-figure>figure>p>img {
+    max-width: 100%;
+    height: auto;
+}
+
+.styled-output .cell-output {
+  // background-color: #f7fcf5;
+  // border-radius: 4px;
+}
+
+body p {
+  text-align: justify;
+}
+

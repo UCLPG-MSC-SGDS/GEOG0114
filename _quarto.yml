@@ -1,0 +1,57 @@
+project:
+  type: website
+  output-dir: docs
+  
+lang: en
+
+execute:
+  freeze: false
+  cache: false
+  
+format:
+  html:
+    theme:
+      light: minty
+      dark: darkly
+    callout-appearence: simple
+    css: assets/styles.css
+    toc: true
+    toc-depth: 4
+    smooth-scroll: true
+    highlight-style: atom-one
+    number-sections: true
+    number-depth: 4
+    pagetite: "{{< var meta.title>}}"
+
+website:
+  repo-url: https://github.com/UCLPG-MSC-SGDS/GEOG0114
+  repo-actions: [issue]
+  page-navigation: true
+  search:
+    location: sidebar
+    type: overlay
+  sidebar:
+    style: floating
+    collapse-level: 2
+    logo: images/general/ucl_logo.png
+    logo-href: https://www.ucl.ac.uk/module-catalogue/modules/GEOG0114
+    tools:
+      - icon: github
+        href: https://github.com/UCLPG-MSC-SGDS/GEOG0114
+    contents:
+      - section: "Module Overview"
+        contents: 
+          text: "Welcome"
+          file: 00-module_overview.qmd
+      - section: "Getting Started"
+        contents:
+          - 01-reading_list.qmd
+      - section: "Foundation & Theory"
+        contents:
+      - section: "Raster-Based Analysis"
+        contents:
+      - section: "Spatial Modelling"
+        contents:
+
+
+
