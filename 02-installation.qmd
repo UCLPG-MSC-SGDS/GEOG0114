@@ -86,7 +86,7 @@ Windows | [**R-4.5.1-win.exe**](https://cran.r-project.org/bin/windows/base/R-4.
 
 **Installation of Rtools 4.5**
 
-For Windows users, after you have completed the installation for R and RStudio, you are required to install the [**Rtools45 package**](https://cran.ma.imperial.ac.uk/bin/windows/Rtools/rtools42/rtools.html) as it contains some libraries and developer tools for the smooth functioning of R.
+For Windows users, after you have completed the installation for R and RStudio, you are required to install the [**Rtools45 package**](https://cran.ma.imperial.ac.uk/bin/windows/Rtools/rtools45/rtools.html) as it contains some libraries and developer tools for the smooth functioning of R.
 
 - Download the latest version of **Rtools45** by clicking on this [**LINK**](https://cran.ma.imperial.ac.uk/bin/windows/Rtools/rtools45/files/rtools45-6608-6492.exe) to initiate the download of the **Rtools45 installer**. 
 - Double-click the downloaded **rtools45-6608-6492.exe** file and follow the steps to complete the installation.
