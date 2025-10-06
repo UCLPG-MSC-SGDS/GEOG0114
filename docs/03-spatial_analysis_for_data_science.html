@@ -813,25 +813,11 @@ Important
 <h3 data-number="3.1" class="anchored" data-anchor-id="installing-packages-into-rstudio"><span class="header-section-number">3.1</span> Installing packages into RStudio</h3>
 <p>So far, we have been using functions and commands that are by default built-in RStudio. As you will become more and more proficient in RStudio, you will come to realise that there are several functions in RStudio that are in fact not built-in by default which will require external installation.</p>
 <p>For instance, the <strong><code>sf</code></strong> package which is called <strong>Simply Features</strong> allows the user to load shapefiles (a type of Vector spatial data) into RStudio’s memory. Another important package is called <strong>tmap</strong>, this package gives access to various functions that allows the user to write code and emulate RStudio as a GIS software. These are examples of packages with enables mapping of spatial data. They need to be installed as they not built-in programs in RStudio.</p>
-<p>Let us install following packages: <code>remotes</code>, <code>tmap</code> (version 3.3) and <code>sf</code> using the <code>install.packages()</code> and <code>install_version()</code> functions, and then activate the packages to make them active using the <code>library()</code> function.</p>
+<p>Let us install following packages: <code>tmap</code> and <code>sf</code> using the <code>install.packages()</code> function, and then activate the packages to make them active using the <code>library()</code> function.</p>
 <p>First install <code>remotes</code>, <code>tmap</code> and <code>sf</code> packages.:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"sf"</span>)</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_version</span>(<span class="st">"tmap"</span>, <span class="at">version =</span> <span class="st">"3.3"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If prompted with the following message: <code>Which would you like to update?</code> - type <code>1</code> for <strong>“All”</strong> and press the enter button <code>↵</code> to continue the installation for <code>tmap</code> - this will ensure all updated versions of other packages related to <code>tmap</code> are installed.</p>
-</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"sf"</span>)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tmap"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Once the installation is complete, you <strong>MUST</strong> activate the packages using the <code>library()</code> function. Type the following to perform this action:</p>
 <div class="cell">
@@ -898,21 +884,17 @@ Warning
 </tr>
 <tr class="even">
 <td><code>tm_polygon()</code></td>
-<td>This allows the user to direct customisations the added layer specified in <code>tm_shape()</code>. Note: This follows immediately after <code>tm_shape()</code></td>
+<td>This allows the user to apply direct customisations to the added layer specified in <code>tm_shape()</code>. Note: This follows immediately after <code>tm_shape()</code></td>
 </tr>
 <tr class="odd">
-<td><code>tm_fill()</code></td>
-<td>Here, we specify the variable of interest we want to map in the boundaries specified in tm_shape()</td>
-</tr>
-<tr class="even">
 <td><code>tm_layout()</code></td>
 <td>This allows the user to make heavy customisations to the main title, legends and other cosmetics to text sizes etc.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>tm_compass()</code></td>
 <td>This allows the user to add a compass visual to the map output</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>tm_scale_bar()</code></td>
 <td>This allows the user to add a scale bar to the map output</td>
 </tr>
@@ -937,15 +919,15 @@ Warning
 </div>
 </div>
 </div>
-<p>You can customise the level of transparency for both the area and borders by adding some arguments in the <code>tm_polygon()</code> [i.e., <code>alpha</code>, and <code>border.alpha</code> which only take values between 0 (full transparency) to 1 (100% solid)]. For example:</p>
+<p>You can customise the level of transparency for both the area and borders by adding some arguments in the <code>tm_polygon()</code> [i.e., <code>fill_alpha</code>, and <code>col_alpha</code> which only take values between 0 (full transparency) to 1 (100% solid)]. For example:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Controlling transparencies for borders and areas</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(Spatial_data) <span class="sc">+</span> <span class="fu">tm_polygons</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>, <span class="at">border.alpha =</span> <span class="fl">0.4</span>)</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Insert the “Spatial_data” object into the command line of </span></span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="co"># tm_shape(), and in tm_polygon(), make the background (alpha) 10% solid</span></span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="co"># and 40% for the borders (border.alpha)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co"># old tmap (version 3.3)</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(Spatial_data) <span class="sc">+</span> <span class="fu">tm_polygons</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>, <span class="at">border.alpha =</span> <span class="fl">0.4</span>)</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="co"># latest tmap (&gt; version 4.0)</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(Spatial_data) <span class="sc">+</span> <span class="fu">tm_polygons</span>(<span class="at">fill_alpha =</span> <span class="fl">0.1</span>, <span class="at">col_alpha =</span> <span class="fl">0.4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -963,15 +945,22 @@ Warning
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adding another layer</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(Spatial_data) <span class="sc">+</span> </span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>   <span class="fu">tm_polygons</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>, <span class="at">border.alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(London_borough_shapefile) <span class="sc">+</span></span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>   <span class="fu">tm_polygons</span>(<span class="at">alpha =</span> <span class="dv">0</span>, <span class="at">border.alpha =</span> <span class="dv">1</span>, <span class="at">border.col =</span> <span class="st">"black"</span>)</span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="co"># The background of the added layer has been rendered to full</span></span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="co"># transparency with alpha set to 0 and borders are fully solid with</span></span>
-<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="co"># border.alpha set to 1 and border.col (colour) set to “black” to appear</span></span>
-<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="co"># pronounced.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co"># old tmap (version 3.3)</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(Spatial_data) <span class="sc">+</span> </span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>   <span class="fu">tm_polygons</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>, <span class="at">border.alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(London_borough_shapefile) <span class="sc">+</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>   <span class="fu">tm_polygons</span>(<span class="at">alpha =</span> <span class="dv">0</span>, <span class="at">border.alpha =</span> <span class="dv">1</span>, <span class="at">border.col =</span> <span class="st">"black"</span>)</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="co"># The background of the added layer has been rendered to full</span></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="co"># transparency with alpha set to 0 and borders are fully solid with</span></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="co"># border.alpha set to 1 and border.col (colour) set to “black” to appear</span></span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="co"># pronounced.</span></span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="co"># latest tmap (&gt; version 4.0)</span></span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(Spatial_data) <span class="sc">+</span> </span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill_alpha =</span> <span class="fl">0.1</span>, <span class="at">col_alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(london_borough_shapefile) <span class="sc">+</span></span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill_alpha =</span> <span class="dv">0</span>, <span class="at">col_alpha =</span> <span class="dv">1</span>, <span class="at">col =</span> <span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -990,20 +979,33 @@ Warning
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate map IMD_Deciles</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(Spatial_data) <span class="sc">+</span> </span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_fill</span>(<span class="st">"IMD_Decile"</span>, <span class="at">style =</span> <span class="st">"cat"</span>, <span class="at">title =</span> <span class="st">"Deprivation (Deciles)"</span>, </span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">palette =</span> <span class="st">"RdYlGn"</span>) <span class="sc">+</span></span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(london_borough_shapefile) <span class="sc">+</span> </span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_polygons</span>(<span class="at">alpha =</span> <span class="dv">0</span>, <span class="at">border.alpha =</span> <span class="dv">1</span>, <span class="at">border.col =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_scale_bar</span>(<span class="at">position =</span> <span class="fu">c</span>(<span class="st">"left"</span>, <span class="st">"bottom"</span>)) <span class="sc">+</span></span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_compass</span>(<span class="at">type =</span> <span class="st">"arrow"</span>, <span class="at">position =</span> <span class="fu">c</span>(<span class="st">"right"</span>, <span class="st">"top"</span>)) <span class="sc">+</span></span>
-<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_layout</span>(<span class="at">legend.outside =</span> <span class="cn">TRUE</span>, <span class="at">legend.title.size =</span> <span class="fl">0.8</span>,  </span>
-<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>          <span class="at">legend.text.size =</span> <span class="fl">0.7</span>, </span>
-<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>          <span class="at">legend.title.fontface =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co"># old tmap (version 3.3)</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(Spatial_data) <span class="sc">+</span> </span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_fill</span>(<span class="st">"IMD_Decile"</span>, <span class="at">style =</span> <span class="st">"cat"</span>, <span class="at">title =</span> <span class="st">"Deprivation (Deciles)"</span>, </span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">palette =</span> <span class="st">"RdYlGn"</span>) <span class="sc">+</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(london_borough_shapefile) <span class="sc">+</span> </span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_polygons</span>(<span class="at">alpha =</span> <span class="dv">0</span>, <span class="at">border.alpha =</span> <span class="dv">1</span>, <span class="at">border.col =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_scale_bar</span>(<span class="at">position =</span> <span class="fu">c</span>(<span class="st">"left"</span>, <span class="st">"bottom"</span>)) <span class="sc">+</span></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_compass</span>(<span class="at">type =</span> <span class="st">"arrow"</span>, <span class="at">position =</span> <span class="fu">c</span>(<span class="st">"right"</span>, <span class="st">"top"</span>)) <span class="sc">+</span></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_layout</span>(<span class="at">legend.outside =</span> <span class="cn">TRUE</span>, <span class="at">legend.title.size =</span> <span class="fl">0.8</span>,  </span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>          <span class="at">legend.text.size =</span> <span class="fl">0.7</span>, </span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>          <span class="at">legend.title.fontface =</span> <span class="dv">2</span>)</span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a><span class="co"># latest tmap (&gt; version 4.0)</span></span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(Spatial_data) <span class="sc">+</span></span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill =</span> <span class="st">"IMD_Decile"</span>, <span class="at">fill.scale =</span> <span class="fu">tm_scale_categorical</span>(<span class="at">values =</span> <span class="st">"brewer.rd_yl_gn"</span>),</span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">fill.legend =</span> <span class="fu">tm_legend</span>(<span class="at">title =</span> <span class="st">"Deprivation (Deciles)"</span>, <span class="at">frame =</span> <span class="cn">FALSE</span>, <span class="at">item.space =</span> <span class="dv">0</span>),</span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">fill_alpha =</span> <span class="dv">1</span>, </span>
+<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">col_alpha =</span> <span class="fl">0.5</span>, </span>
+<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> <span class="st">"black"</span>, </span>
+<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">lwd =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_shape</span>(london_borough_shapefile) <span class="sc">+</span> </span>
+<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill_alpha =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_compass</span>(<span class="at">type =</span> <span class="st">"arrow"</span>, <span class="at">position =</span> <span class="fu">c</span>(<span class="st">"right"</span>, <span class="st">"top"</span>)) <span class="sc">+</span> </span>
+<span id="cb29-26"><a href="#cb29-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_scalebar</span>(<span class="at">position =</span> <span class="fu">c</span>(<span class="st">"left"</span>, <span class="st">"bottom"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>In the <code>tm_fill()</code>, we insert the variable of interest we want to visual. The <code>style</code> argument tells RStudio how to break the values into intervals for the legend and colour scheme (there are many e.g., <code>“fixed”</code>, <code>“cont”</code>, <code>“pretty”</code> and <code>“cat”</code> etc.,). We used the <code>“cat”</code> in the <code>style</code> argument because the <code>IMD_Decile</code> variable is categorical.</p>
-<p>The <code>title</code> argument applies it to the legend only (not the plot itself!). The <code>palette</code> argument controls the colour scheme of the legend. In this example, we used a spectral type of colour i.e., <code>“RdYlGn”</code> that starts from Red (to show intense poverty) to Yellow (to signify normal) and to Green (to show intense levels of being rich).</p>
-<p><strong>Geography 101</strong> – when creating a map, it is always best to add the North compass and scale bar. This is done with the <code>tm_compass()</code> and <code>tm_scale_bar()</code> functions. The <code>tm_layout()</code> allows you to make further customisations to the map such as placing the legends outside the plot region and modifying the text size etc. You can experiment with them by checking the help menu – just type: <code>?tm_layout()</code> in the console.</p>
+<p>In the <code>tm_polygons()</code>, we insert the variable of interest we want to visual at the <code>fill =</code> argument. The <code>fill.scale =</code> option allows us to select the appropriate fill scale colour scheme depending on the type of dataset we are using - here it is categorical, so we use <code>tm_scale_categorical()</code>. The <code>fill_legend()</code> allows us to apply the appropriate customisation to the legends.</p>
+<p><strong>Geography 101</strong> – when creating a map, it is always best to add the North compass and scale bar. This is done with the <code>tm_compass()</code> and <code>tm_scalebar()</code> functions. The <code>tm_layout()</code> allows you to make further customisations to the map such as placing the legends outside the plot region and modifying the text size etc. You can experiment with them by checking the help menu – just type: <code>?tm_layout()</code> in the console.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">

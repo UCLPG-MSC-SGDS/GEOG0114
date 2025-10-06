@@ -444,19 +444,14 @@ So far, we have been using functions and commands that are by default built-in R
 
 For instance, the **`sf`** package which is called **Simply Features** allows the user to load shapefiles (a type of Vector spatial data) into RStudio’s memory. Another important package is called **tmap**, this package gives access to various functions that allows the user to write code and emulate RStudio as a GIS software. These are examples of packages with enables mapping of spatial data. They need to be installed as they not built-in programs in RStudio.
 
-Let us install following packages: `remotes`, `tmap` (version 3.3) and `sf` using the `install.packages()` and `install_version()` functions, and then activate the packages to make them active using the `library()` function. 
+Let us install following packages: `tmap` and `sf` using the `install.packages()` function, and then activate the packages to make them active using the `library()` function. 
 
 First install `remotes`, `tmap` and `sf` packages.:
 
 ```{r, eval=FALSE}
-install.packages("remotes")
 install.packages("sf")
-remotes::install_version("tmap", version = "3.3")
+install.packages("tmap")
 ```
-
-:::{.callout-note}
-If prompted with the following message: `Which would you like to update?` - type `1` for **"All"** and press the enter button `↵` to continue the installation for `tmap` - this will ensure all updated versions of other packages related to `tmap` are installed.
-:::
 
 Once the installation is complete, you **MUST** activate the packages using the `library()` function. Type the following to perform this action:
 
@@ -506,8 +501,7 @@ The `tmap` is the best package for creating maps in RStudio – it’s easy to c
 **`tmap`** functions | **What it does...**
 ------------ | ------------- 
 `tm_shape()`| This allows the user to add layers to the map
-`tm_polygon()`| This allows the user to direct customisations the added layer specified in `tm_shape()`. Note: This follows immediately after `tm_shape()`
-`tm_fill()`| Here, we specify the variable of interest we want to map in the boundaries specified in tm_shape()
+`tm_polygon()`| This allows the user to apply direct customisations to the added layer specified in `tm_shape()`. Note: This follows immediately after `tm_shape()`
 `tm_layout()`| This allows the user to make heavy customisations to the main title, legends and other cosmetics to text sizes etc.
 `tm_compass()`|This allows the user to add a compass visual to the map output
 `tm_scale_bar()`| This allows the user to add a scale bar to the map output
@@ -528,16 +522,16 @@ tm_shape(Spatial_data) + tm_polygons()
 knitr::include_graphics('images/general/week1/image6_outline.png', error = FALSE) 
 ```
 
-You can customise the level of transparency for both the area and borders by adding some arguments in the `tm_polygon()` [i.e., `alpha`, and `border.alpha` which only take values between 0 (full transparency) to 1 (100% solid)]. For example:
+You can customise the level of transparency for both the area and borders by adding some arguments in the `tm_polygon()` [i.e., `fill_alpha`, and `col_alpha` which only take values between 0 (full transparency) to 1 (100% solid)]. For example:
 
 ```{r, eval=FALSE}
 # Controlling transparencies for borders and areas
 
+# old tmap (version 3.3)
 tm_shape(Spatial_data) + tm_polygons(alpha = 0.1, border.alpha = 0.4)
 
-# Insert the “Spatial_data” object into the command line of 
-# tm_shape(), and in tm_polygon(), make the background (alpha) 10% solid
-# and 40% for the borders (border.alpha)
+# latest tmap (> version 4.0)
+tm_shape(Spatial_data) + tm_polygons(fill_alpha = 0.1, col_alpha = 0.4)
 ```
 
 ```{r echo=FALSE, out.width = "100%", fig.align='center', cache=TRUE,}
@@ -551,6 +545,7 @@ Suppose you want to add another layer to show the regions (i.e., Borough) of Lon
 ```{r, eval=FALSE}
 # Adding another layer
 
+# old tmap (version 3.3)
 tm_shape(Spatial_data) + 
    tm_polygons(alpha = 0.1, border.alpha = 0.4) +
 tm_shape(London_borough_shapefile) +
@@ -560,6 +555,12 @@ tm_shape(London_borough_shapefile) +
 # transparency with alpha set to 0 and borders are fully solid with
 # border.alpha set to 1 and border.col (colour) set to “black” to appear
 # pronounced.
+
+# latest tmap (> version 4.0)
+tm_shape(Spatial_data) + 
+	tm_polygons(fill_alpha = 0.1, col_alpha = 0.4) +
+tm_shape(london_borough_shapefile) +
+	tm_polygons(fill_alpha = 0, col_alpha = 1, col = "black")
 ```
 
 ```{r echo=FALSE, out.width = "100%", fig.align='center', cache=TRUE,}
@@ -575,6 +576,7 @@ The coding would be as follows:
 ```{r, eval=FALSE}
 # Generate map IMD_Deciles
 
+# old tmap (version 3.3)
 tm_shape(Spatial_data) + 
 tm_fill("IMD_Decile", style = "cat", title = "Deprivation (Deciles)", 
         palette = "RdYlGn") +
@@ -585,13 +587,24 @@ tm_compass(type = "arrow", position = c("right", "top")) +
 tm_layout(legend.outside = TRUE, legend.title.size = 0.8,  
           legend.text.size = 0.7, 
           legend.title.fontface = 2)
+
+# latest tmap (> version 4.0)
+tm_shape(Spatial_data) +
+	tm_polygons(fill = "IMD_Decile", fill.scale = tm_scale_categorical(values = "brewer.rd_yl_gn"),
+		fill.legend = tm_legend(title = "Deprivation (Deciles)", frame = FALSE, item.space = 0),
+		fill_alpha = 1, 
+		col_alpha = 0.5, 
+		col = "black", 
+		lwd = 0.1) +
+	tm_shape(london_borough_shapefile) + 
+	tm_polygons(fill_alpha = 0, col = "black") +
+	tm_compass(type = "arrow", position = c("right", "top")) + 
+	tm_scalebar(position = c("left", "bottom"))
 ```
 
-In the `tm_fill()`, we insert the variable of interest we want to visual. The `style` argument tells RStudio how to break the values into intervals for the legend and colour scheme (there are many e.g., `“fixed”`, `“cont”`, `“pretty”` and `“cat”` etc.,). We used the `“cat”` in the `style` argument because the `IMD_Decile` variable is categorical. 
+In the `tm_polygons()`, we insert the variable of interest we want to visual at the `fill = ` argument. The `fill.scale =` option allows us to select the appropriate fill scale colour scheme depending on the type of dataset we are using - here it is categorical, so we use `tm_scale_categorical()`. The `fill_legend()` allows us to apply the appropriate customisation to the legends. 
 
-The `title` argument applies it to the legend only (not the plot itself!). The `palette` argument controls the colour scheme of the legend. In this example, we used a spectral type of colour i.e., `“RdYlGn”` that starts from Red (to show intense poverty) to Yellow (to signify normal) and to Green (to show intense levels of being rich).
-
-**Geography 101** – when creating a map, it is always best to add the North compass and scale bar. This is done with the `tm_compass()` and `tm_scale_bar()` functions. The `tm_layout()` allows you to make further customisations to the map such as placing the legends outside the plot region and modifying the text size etc. You can experiment with them by checking the help menu – just type: `?tm_layout()` in the console.
+**Geography 101** – when creating a map, it is always best to add the North compass and scale bar. This is done with the `tm_compass()` and `tm_scalebar()` functions. The `tm_layout()` allows you to make further customisations to the map such as placing the legends outside the plot region and modifying the text size etc. You can experiment with them by checking the help menu – just type: `?tm_layout()` in the console.
 
 ```{r echo=FALSE, out.width = "100%", fig.align='center', cache=TRUE,}
 knitr::include_graphics('images/general/week1/Image9_finalmap.png', error = FALSE) 
