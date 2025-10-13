@@ -58,15 +58,18 @@ We will need to load the following packages:
 The above packages `sf` and `tmap` should have been installed previously in the last session. Therefore, we do not have to install them again, we only need to activate them using the `library()` function. There will be some new packages we need to install:
 
 - `tidyverse`: this library is a efficient coding style in RStudio. It allows the use of a pipe function (`%>%`), among other things, within our work and enables more efficient programming.
-- `units`: this library provide functions that support the conversion of measurement units in R vectors, matrices and arrays, and among other thing, the simplification of units. 
+- `units`: this library provide functions that support the conversion of measurement units in R vectors, matrices and arrays, and among other thing, the simplification of units.
+- `dplyr`: this library is an R package whose set of functions are designed to enable dataframe (a spreadsheet-like data structure) manipulation in an intuitive, user-friendly way. 
 
 ```{r, eval = FALSE}
 # install the packages using the install.package()
 install.packages("tidyverse")
+install.packages("dplyr")
 install.packages("units")
 
 # Load the packages with library()
 library("tidyverse")
+library("dplyr")
 library("units")
 library("sf")
 library("tmap")
