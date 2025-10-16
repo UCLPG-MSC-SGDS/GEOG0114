@@ -120,9 +120,9 @@ Let's explore how to find different kinds of neighbours using the example of one
 ```{r eval=FALSE}
 # highlight E00004174
 tm_shape(camden_oas) +
-  tm_borders(col='black') +
-tm_shape(camden_oas[camden_oas$OA11CD=='E00004174',]) +
-  tm_fill(col='red')
+	tm_polygons(fill = "white", col= "black") +
+	tm_shape(camden_oas[camden_oas$OA11CD=='E00004174',]) +
+	tm_polygons(fill = "red")
 ```
 
 ```{r echo=FALSE, out.width = "100%", fig.align='center', cache=TRUE,}
@@ -159,17 +159,15 @@ neighbour_names <- camden_oas[chosen_oa_neighbours[[1]],]
 neighbour_names <- neighbour_names$OA11CD
 
 # inspect
+# add base layer
 tm_shape(camden_oas) + 
-  tm_borders() +
-  # highlight only the neighbours
-  tm_shape(camden_oas[camden_oas$OA11CD %in% neighbour_names,]) + 
-  tm_fill(col = 'green') +
-  # highlight only the chosen OA
-  tm_shape(camden_oas[camden_oas$OA11CD==chosen_oa,]) + 
-  tm_fill(col = 'red') +
-  tm_shape(camden_oas) + 
-  # overlay the borders
-  tm_borders(col='black')
+	tm_polygons(fill_alpha = 0, col = "black") +
+# add neighbours layer to highlight only the neighbours of E00004174
+tm_shape(camden_oas[camden_oas$OA11CD %in% neighbour_names,]) + 
+	tm_polygons(fill = "green", col = "black") +
+# add to show chosen OA E00004174
+tm_shape(camden_oas[camden_oas$OA11CD==chosen_oa,]) + 
+	tm_polygons(fill = "red", col = "black")
 ```
 
 ```{r echo=FALSE, out.width = "100%", fig.align='center', cache=TRUE,}
@@ -182,52 +180,52 @@ The next way of calculating neighbours takes into account the actual shape and l
 
 We can create two functions that check whether any polygons share boundaries or overlap one another, and then also check by how much. These new functions are based on the `st_relate()` function. The different cases of these are known as queen, and rook. These describe the relations in a similar way to the possible chess board movements of these pieces. 
 
-<div class="note">
-**Note**<br/>
+:::{.callout-note}
 Do have a look at the short lectures by Luc Anselin on [Moran's I](https://www.youtube.com/watch?v=qWQ1Pa5cbtw), the [interpretation of Moran's I](https://www.youtube.com/watch?v=_J_bmWmOF3I), and [neighbours and spatial weights](https://www.youtube.com/watch?v=xMXFvRO4cEM) for some additional explanation on measuring spatial autocorrelation with Moran's I.
-</div>
+
+These functions are created for the sole purpose of demonstrating what contiguity spatial weight matrices are:
 
 ```{r eval=FALSE}
 # for rook case
-st_rook = function(a, b = a) st_relate(a, b, pattern = 'F***1****')
+st_rook <- function(a, b = a) st_relate(a, b, pattern = 'F***1****')
 
 # for queen case
 st_queen <- function(a, b = a) st_relate(a, b, pattern = 'F***T****')
 ```
+:::
 
 Now that we've created the functions lets try them out.
 
+**Queen**
+
 ```{r eval=FALSE}
-# identify neighbours
-chosen_oa_neighbours <- st_rook(st_geometry(camden_oas[camden_oas$OA11CD==chosen_oa,]), 
-                                st_geometry(camden_oas))
+# identify neighbours based on Queen
+chosen_oa_neighbours_queen <- st_queen(st_geometry(camden_oas[camden_oas$OA11CD==chosen_oa,]), 
+	st_geometry(camden_oas))
 
 # get the names (codes) of these neighbours
-neighbour_names <- camden_oas[chosen_oa_neighbours[[1]],]
-neighbour_names <- neighbour_names$OA11CD
+neighbour_names_qn <- camden_oas[chosen_oa_neighbours_queen[[1]],]
+neighbour_names_qn <- neighbour_names_qn$OA11CD
 
 # inspect
+# add base layer
 tm_shape(camden_oas) + 
-  tm_borders() +
-  # highlight only the neighbours
-  tm_shape(camden_oas[camden_oas$OA11CD %in% neighbour_names,]) + 
-  tm_fill(col = 'green') +
-  tm_shape(camden_oas[camden_oas$OA11CD==chosen_oa,]) + 
-  # highlight only the chosen OA
-  tm_fill(col = 'red') +
-  tm_shape(camden_oas) + 
-  # overlay the borders
-  tm_borders(col='black')
+	tm_polygons(fill_alpha = 0, col = "black") +
+	# add neighbours layer to highlight only the neighbours of E00004174
+	tm_shape(camden_oas[camden_oas$OA11CD %in% neighbour_names_qn,]) + 
+	tm_polygons(fill = "green", col = "black") +
+	# add to show chosen OA E00004174
+	tm_shape(camden_oas[camden_oas$OA11CD==chosen_oa,]) + 
+	tm_polygons(fill = "red", col = "black")
 ```
 
 ```{r echo=FALSE, out.width = "100%", fig.align='center', cache=TRUE,}
 knitr::include_graphics('images/general/week3/image4_highlight_areas_with_functions.png', error = FALSE) 
 ```
 
-<div class="note">
-**Note**<br/>
+:::{.callout-note}
 Because the tolerance of the shared boundaries in the `st_rook()` pattern and the `st_queen()` pattern, in this example they both assign the same neighbours. This is true for many non-square polygons as the difference is often given as whether two shapes share one or more points. Therefore the difference can have more to do with the resolution and alignment of your polygons than the actual spatial properties they represent. They can and do find different neighbours in other situations. Follow the grid example in the `st_relate()` documentation if you want to see it working.
-</div>
+:::
 
 ### Theft in Camden
 
@@ -264,12 +262,13 @@ camden_oas$n_thefts <- lengths(st_intersects(camden_oas, camden_theft))
 
 # inspect
 tm_shape(camden_oas) +
-  tm_fill(col='n_thefts') +
-	tm_borders(lty="solid")
+	tm_polygons(fill = "n_thefts", 
+		fill.scale = tm_scale_intervals(breaks=c(0,1,50,100,150,200,250,300,350)),
+		fill.legend = tm_legend(title ="Reported Thefts"))
 ```
 
 ```{r echo=FALSE, out.width = "100%", fig.align='center', cache=TRUE,}
-knitr::include_graphics('images/general/week3/image6_counts.png', error = FALSE) 
+knitr::include_graphics('images/general/week3/image6_counts1.png', error = FALSE) 
 ```
 
 You can see our map is skewed by central London, meaning that the results in central London (the south of Camden) are so much larger than those in the north that it makes it harder to see the smaller differences between other areas. We'll take the square root of the number of thefts to remedy this.
@@ -280,12 +279,13 @@ camden_oas$sqrt_n_thefts <- sqrt(camden_oas$n_thefts)
 
 # inspect
 tm_shape(camden_oas) +
-  tm_fill(col='sqrt_n_thefts') +
-	tm_borders(lty="solid")
+	tm_polygons(fill = "sqrt_n_thefts", 
+		fill.scale = tm_scale_intervals(breaks=c(0,1,5,10,15,20)),
+		fill.legend = tm_legend(title ="Reported Thefts (Squared)"))
 ```
 
 ```{r echo=FALSE, out.width = "100%", fig.align='center', cache=TRUE,}
-knitr::include_graphics('images/general/week3/image7_sqrtroot_counts.png', error = FALSE) 
+knitr::include_graphics('images/general/week3/image7_sqrtroot_counts1.png', error = FALSE) 
 ```
 
 There: a slightly more nuanced picture
@@ -416,14 +416,14 @@ This model shows that our distribution of thefts differs significantly from a ra
 With a measurement of local spatial autocorrelation we could find hotspots of theft that are surrounded by areas of much lower theft. According to the previous global statistic these are not randomly distributed pockets but would be outliers against the general trend of clusteredness! These could be areas that contain very specific locations, where interventions could be made that drastically reduce the rate of crime rather than other areas where there is a high level of ambient crime.
 
 ```{r eval=FALSE}
-# create an nb object
-camden_oas_nb <- poly2nb(camden_oas_sp, row.names=camden_oas_sp$OA11CD)
-
-# create the list weights object
-nb_weights_list <- nb2listw(camden_oas_nb, style='W')
-
 # Local Moran's I
 local_moran_camden_oa_theft <- localmoran(camden_oas_sp$n_thefts, nb_weights_list)
+```
+
+Remember in the lecture the following conditions:
+
+```{r echo=FALSE, out.width = "100%", fig.align='center', cache=TRUE,}
+knitr::include_graphics('images/general/week3/image12_conditions.png', error = FALSE) 
 ```
 
 To properly utilise these local statistics and make an intuitively useful map, we need to combine them with our crime count variable. Because of the way the new variable will be calculated, we first need to rescale our variable so that the mean is 0. 
@@ -450,9 +450,24 @@ camden_oas_moran_stats <- st_as_sf(camden_oas_sp)
 To make a human readable version of the map we will generate some labels for our findings from the [Local Moran's I](https://en.wikipedia.org/wiki/Indicators_of_spatial_association) stats. This process calculates what the value of each polygon is compared to its neighbours and works out if they are similar or dissimilar and in which way, then gives them a text label to describe the relationship.
 
 ```{r eval=FALSE}
+# MAP 1: VERSION WITH FULL CLUSTER HH, HL, LH, LL DETAILS
+# classification without significance value
+camden_oas_moran_stats$quad_non_sig <- ifelse(camden_oas_moran_stats$scale_n_thefts > 0 & 
+                                              camden_oas_moran_stats$lag_scale_n_thefts > 0, 
+                                              'high-high', 
+                                       ifelse(camden_oas_moran_stats$scale_n_thefts <= 0 & 
+                                              camden_oas_moran_stats$lag_scale_n_thefts <= 0, 
+                                              'low-low', 
+                                       ifelse(camden_oas_moran_stats$scale_n_thefts > 0 & 
+                                              camden_oas_moran_stats$lag_scale_n_thefts <= 0, 
+                                              'high-low', 
+                                       ifelse(camden_oas_moran_stats$scale_n_thefts <= 0 & 
+                                              camden_oas_moran_stats$lag_scale_n_thefts > 0,
+                                              'low-high',NA))))
+
+# MAP 2: VERSION WITH SIGNIFICANCE
 # set a significance value
 sig_level <- 0.1
-
 # classification with significance value
 camden_oas_moran_stats$quad_sig <- ifelse(camden_oas_moran_stats$scale_n_thefts > 0 & 
                                           camden_oas_moran_stats$lag_scale_n_thefts > 0 & 
@@ -473,20 +488,6 @@ camden_oas_moran_stats$quad_sig <- ifelse(camden_oas_moran_stats$scale_n_thefts 
                                    ifelse(local_moran_camden_oa_theft[,5] > sig_level, 
                                           'not-significant', 
                                           'not-significant')))))
-
-# classification without significance value
-camden_oas_moran_stats$quad_non_sig <- ifelse(camden_oas_moran_stats$scale_n_thefts > 0 & 
-                                              camden_oas_moran_stats$lag_scale_n_thefts > 0, 
-                                              'high-high', 
-                                       ifelse(camden_oas_moran_stats$scale_n_thefts <= 0 & 
-                                              camden_oas_moran_stats$lag_scale_n_thefts <= 0, 
-                                              'low-low', 
-                                       ifelse(camden_oas_moran_stats$scale_n_thefts > 0 & 
-                                              camden_oas_moran_stats$lag_scale_n_thefts <= 0, 
-                                              'high-low', 
-                                       ifelse(camden_oas_moran_stats$scale_n_thefts <= 0 & 
-                                              camden_oas_moran_stats$lag_scale_n_thefts > 0,
-                                              'low-high',NA))))
 ```
 
 To understand how this is working we can look at the data non-spatially. As we rescaled the data, our axes should split the data neatly into their different area vs spatial lag relationship categories. Let's make the scatterplot using the scaled number of thefts for the areas in the x axis and their spatially lagged results in the y axis.
@@ -532,7 +533,7 @@ Now let's see how they are arranged spatially.
 ```{r eval=FALSE}
 # map all of the results here
 tm_shape(camden_oas_moran_stats) +
-	tm_fill(col = 'quad_non_sig', palette = c("#de2d26", "#fee0d2", "#deebf7", "#3182bd"))
+	tm_polygons(fill = "quad_non_sig", fill.scale = tm_scale_categorical(values = c("#de2d26", "#fee0d2", "#deebf7", "#3182bd")))
 ```
 
 ```{r echo=FALSE, out.width = "100%", fig.align='center', cache=TRUE,}
@@ -541,14 +542,12 @@ knitr::include_graphics('images/general/week3/image10_map_hotcold.png', error = 
 
 ```{r eval=FALSE}
 # map only the statistically significant results here
-# map only the statistically significant results here
 tm_shape(camden_oas_moran_stats) +
-	tm_fill(col = 'quad_sig', palette = c("#de2d26", "#fee0d2", "white")) +
-	tm_borders(col = "grey")
+	tm_polygons(fill = "quad_sig", fill.scale = tm_scale_categorical(values = c("#de2d26", "#deebf7", "white")))
 ```
 
 ```{r echo=FALSE, out.width = "100%", fig.align='center', cache=TRUE,}
-knitr::include_graphics('images/general/week3/image11_map_significance.png', error = FALSE) 
+knitr::include_graphics('images/general/week3/image11_map_significance1.png', error = FALSE) 
 ```
 
 As our data are so spatially clustered we can't see any outlier places (once we have ignored the non-significant results). This suggests that the pattern of theft from persons is not highly concentrated in very small areas or particular Output Areas, and instead is spread on a larger scale than we have used here. To go further than we have today it would be possible to run the exact same code but using a larger scale, perhaps LSOA, or Ward, and compare how this changes the Moran's I statistics globally and locally. Or, to gain statistical significance in looking at the difference between areas getting more data perhaps over a longer timescale, where there are less areas with 0 thefts.

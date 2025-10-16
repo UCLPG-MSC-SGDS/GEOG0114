@@ -396,9 +396,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># highlight E00004174</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(camden_oas) <span class="sc">+</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_borders</span>(<span class="at">col=</span><span class="st">'black'</span>) <span class="sc">+</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(camden_oas[camden_oas<span class="sc">$</span>OA11CD<span class="sc">==</span><span class="st">'E00004174'</span>,]) <span class="sc">+</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_fill</span>(<span class="at">col=</span><span class="st">'red'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill =</span> <span class="st">"white"</span>, <span class="at">col=</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_shape</span>(camden_oas[camden_oas<span class="sc">$</span>OA11CD<span class="sc">==</span><span class="st">'E00004174'</span>,]) <span class="sc">+</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -439,17 +439,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>neighbour_names <span class="ot">&lt;-</span> neighbour_names<span class="sc">$</span>OA11CD</span>
 <span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect</span></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(camden_oas) <span class="sc">+</span> </span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_borders</span>() <span class="sc">+</span></span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># highlight only the neighbours</span></span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_shape</span>(camden_oas[camden_oas<span class="sc">$</span>OA11CD <span class="sc">%in%</span> neighbour_names,]) <span class="sc">+</span> </span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_fill</span>(<span class="at">col =</span> <span class="st">'green'</span>) <span class="sc">+</span></span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>  <span class="co"># highlight only the chosen OA</span></span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_shape</span>(camden_oas[camden_oas<span class="sc">$</span>OA11CD<span class="sc">==</span>chosen_oa,]) <span class="sc">+</span> </span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_fill</span>(<span class="at">col =</span> <span class="st">'red'</span>) <span class="sc">+</span></span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_shape</span>(camden_oas) <span class="sc">+</span> </span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>  <span class="co"># overlay the borders</span></span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_borders</span>(<span class="at">col=</span><span class="st">'black'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="co"># add base layer</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(camden_oas) <span class="sc">+</span> </span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill_alpha =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="co"># add neighbours layer to highlight only the neighbours of E00004174</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(camden_oas[camden_oas<span class="sc">$</span>OA11CD <span class="sc">%in%</span> neighbour_names,]) <span class="sc">+</span> </span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill =</span> <span class="st">"green"</span>, <span class="at">col =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a><span class="co"># add to show chosen OA E00004174</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(camden_oas[camden_oas<span class="sc">$</span>OA11CD<span class="sc">==</span>chosen_oa,]) <span class="sc">+</span> </span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill =</span> <span class="st">"red"</span>, <span class="at">col =</span> <span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -465,38 +463,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 data-number="2.1.3" class="anchored" data-anchor-id="shared-boundary-neighbours"><span class="header-section-number">2.1.3</span> Shared boundary neighbours</h4>
 <p>The next way of calculating neighbours takes into account the actual shape and location of the polygons in our shapefile. This has only recently been added to the world of <code>sf()</code>, previously we would have reverted to using the <code>sp()</code> package and others that depend on it such as <code>spdep()</code>.</p>
 <p>We can create two functions that check whether any polygons share boundaries or overlap one another, and then also check by how much. These new functions are based on the <code>st_relate()</code> function. The different cases of these are known as queen, and rook. These describe the relations in a similar way to the possible chess board movements of these pieces.</p>
-<div class="note">
-<p><strong>Note</strong><br> Do have a look at the short lectures by Luc Anselin on <a href="https://www.youtube.com/watch?v=qWQ1Pa5cbtw">Moran’s I</a>, the <a href="https://www.youtube.com/watch?v=_J_bmWmOF3I">interpretation of Moran’s I</a>, and <a href="https://www.youtube.com/watch?v=xMXFvRO4cEM">neighbours and spatial weights</a> for some additional explanation on measuring spatial autocorrelation with Moran’s I.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Do have a look at the short lectures by Luc Anselin on <a href="https://www.youtube.com/watch?v=qWQ1Pa5cbtw">Moran’s I</a>, the <a href="https://www.youtube.com/watch?v=_J_bmWmOF3I">interpretation of Moran’s I</a>, and <a href="https://www.youtube.com/watch?v=xMXFvRO4cEM">neighbours and spatial weights</a> for some additional explanation on measuring spatial autocorrelation with Moran’s I.</p>
+<p>These functions are created for the sole purpose of demonstrating what contiguity spatial weight matrices are:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># for rook case</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>st_rook <span class="ot">=</span> <span class="cf">function</span>(a, <span class="at">b =</span> a) <span class="fu">st_relate</span>(a, b, <span class="at">pattern =</span> <span class="st">'F***1****'</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>st_rook <span class="ot">&lt;-</span> <span class="cf">function</span>(a, <span class="at">b =</span> a) <span class="fu">st_relate</span>(a, b, <span class="at">pattern =</span> <span class="st">'F***1****'</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># for queen case</span></span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>st_queen <span class="ot">&lt;-</span> <span class="cf">function</span>(a, <span class="at">b =</span> a) <span class="fu">st_relate</span>(a, b, <span class="at">pattern =</span> <span class="st">'F***T****'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
+</div>
 <p>Now that we’ve created the functions lets try them out.</p>
+<p><strong>Queen</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># identify neighbours</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>chosen_oa_neighbours <span class="ot">&lt;-</span> <span class="fu">st_rook</span>(<span class="fu">st_geometry</span>(camden_oas[camden_oas<span class="sc">$</span>OA11CD<span class="sc">==</span>chosen_oa,]), </span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>                                <span class="fu">st_geometry</span>(camden_oas))</span>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># identify neighbours based on Queen</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>chosen_oa_neighbours_queen <span class="ot">&lt;-</span> <span class="fu">st_queen</span>(<span class="fu">st_geometry</span>(camden_oas[camden_oas<span class="sc">$</span>OA11CD<span class="sc">==</span>chosen_oa,]), </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">st_geometry</span>(camden_oas))</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># get the names (codes) of these neighbours</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>neighbour_names <span class="ot">&lt;-</span> camden_oas[chosen_oa_neighbours[[<span class="dv">1</span>]],]</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>neighbour_names <span class="ot">&lt;-</span> neighbour_names<span class="sc">$</span>OA11CD</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>neighbour_names_qn <span class="ot">&lt;-</span> camden_oas[chosen_oa_neighbours_queen[[<span class="dv">1</span>]],]</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>neighbour_names_qn <span class="ot">&lt;-</span> neighbour_names_qn<span class="sc">$</span>OA11CD</span>
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(camden_oas) <span class="sc">+</span> </span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_borders</span>() <span class="sc">+</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># highlight only the neighbours</span></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_shape</span>(camden_oas[camden_oas<span class="sc">$</span>OA11CD <span class="sc">%in%</span> neighbour_names,]) <span class="sc">+</span> </span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_fill</span>(<span class="at">col =</span> <span class="st">'green'</span>) <span class="sc">+</span></span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_shape</span>(camden_oas[camden_oas<span class="sc">$</span>OA11CD<span class="sc">==</span>chosen_oa,]) <span class="sc">+</span> </span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># highlight only the chosen OA</span></span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_fill</span>(<span class="at">col =</span> <span class="st">'red'</span>) <span class="sc">+</span></span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_shape</span>(camden_oas) <span class="sc">+</span> </span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># overlay the borders</span></span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_borders</span>(<span class="at">col=</span><span class="st">'black'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co"># add base layer</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(camden_oas) <span class="sc">+</span> </span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill_alpha =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># add neighbours layer to highlight only the neighbours of E00004174</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_shape</span>(camden_oas[camden_oas<span class="sc">$</span>OA11CD <span class="sc">%in%</span> neighbour_names_qn,]) <span class="sc">+</span> </span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill =</span> <span class="st">"green"</span>, <span class="at">col =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># add to show chosen OA E00004174</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_shape</span>(camden_oas[camden_oas<span class="sc">$</span>OA11CD<span class="sc">==</span>chosen_oa,]) <span class="sc">+</span> </span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill =</span> <span class="st">"red"</span>, <span class="at">col =</span> <span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -507,8 +515,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div class="note">
-<p><strong>Note</strong><br> Because the tolerance of the shared boundaries in the <code>st_rook()</code> pattern and the <code>st_queen()</code> pattern, in this example they both assign the same neighbours. This is true for many non-square polygons as the difference is often given as whether two shapes share one or more points. Therefore the difference can have more to do with the resolution and alignment of your polygons than the actual spatial properties they represent. They can and do find different neighbours in other situations. Follow the grid example in the <code>st_relate()</code> documentation if you want to see it working.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Because the tolerance of the shared boundaries in the <code>st_rook()</code> pattern and the <code>st_queen()</code> pattern, in this example they both assign the same neighbours. This is true for many non-square polygons as the difference is often given as whether two shapes share one or more points. Therefore the difference can have more to do with the resolution and alignment of your polygons than the actual spatial properties they represent. They can and do find different neighbours in other situations. Follow the grid example in the <code>st_relate()</code> documentation if you want to see it working.</p>
+</div>
 </div>
 </section>
 </section>
@@ -549,14 +567,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect</span></span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(camden_oas) <span class="sc">+</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_fill</span>(<span class="at">col=</span><span class="st">'n_thefts'</span>) <span class="sc">+</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_borders</span>(<span class="at">lty=</span><span class="st">"solid"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill =</span> <span class="st">"n_thefts"</span>, </span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">fill.scale =</span> <span class="fu">tm_scale_intervals</span>(<span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">50</span>,<span class="dv">100</span>,<span class="dv">150</span>,<span class="dv">200</span>,<span class="dv">250</span>,<span class="dv">300</span>,<span class="dv">350</span>)),</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">fill.legend =</span> <span class="fu">tm_legend</span>(<span class="at">title =</span><span class="st">"Reported Thefts"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/general/week3/image6_counts.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+<p><img src="images/general/week3/image6_counts1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -568,14 +587,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect</span></span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(camden_oas) <span class="sc">+</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_fill</span>(<span class="at">col=</span><span class="st">'sqrt_n_thefts'</span>) <span class="sc">+</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_borders</span>(<span class="at">lty=</span><span class="st">"solid"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill =</span> <span class="st">"sqrt_n_thefts"</span>, </span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">fill.scale =</span> <span class="fu">tm_scale_intervals</span>(<span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">10</span>,<span class="dv">15</span>,<span class="dv">20</span>)),</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">fill.legend =</span> <span class="fu">tm_legend</span>(<span class="at">title =</span><span class="st">"Reported Thefts (Squared)"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/general/week3/image7_sqrtroot_counts.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+<p><img src="images/general/week3/image7_sqrtroot_counts1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -688,14 +708,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="2.4" class="anchored" data-anchor-id="local-morans-i-or-lisa"><span class="header-section-number">2.4</span> Local Moran’s I (or LISA)</h3>
 <p>With a measurement of local spatial autocorrelation we could find hotspots of theft that are surrounded by areas of much lower theft. According to the previous global statistic these are not randomly distributed pockets but would be outliers against the general trend of clusteredness! These could be areas that contain very specific locations, where interventions could be made that drastically reduce the rate of crime rather than other areas where there is a high level of ambient crime.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create an nb object</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>camden_oas_nb <span class="ot">&lt;-</span> <span class="fu">poly2nb</span>(camden_oas_sp, <span class="at">row.names=</span>camden_oas_sp<span class="sc">$</span>OA11CD)</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># create the list weights object</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>nb_weights_list <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(camden_oas_nb, <span class="at">style=</span><span class="st">'W'</span>)</span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Local Moran's I</span></span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>local_moran_camden_oa_theft <span class="ot">&lt;-</span> <span class="fu">localmoran</span>(camden_oas_sp<span class="sc">$</span>n_thefts, nb_weights_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Local Moran's I</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>local_moran_camden_oa_theft <span class="ot">&lt;-</span> <span class="fu">localmoran</span>(camden_oas_sp<span class="sc">$</span>n_thefts, nb_weights_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Remember in the lecture the following conditions:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/general/week3/image12_conditions.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
 </div>
 <p>To properly utilise these local statistics and make an intuitively useful map, we need to combine them with our crime count variable. Because of the way the new variable will be calculated, we first need to rescale our variable so that the mean is 0.</p>
 <div class="cell">
@@ -714,43 +738,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>To make a human readable version of the map we will generate some labels for our findings from the <a href="https://en.wikipedia.org/wiki/Indicators_of_spatial_association">Local Moran’s I</a> stats. This process calculates what the value of each polygon is compared to its neighbours and works out if they are similar or dissimilar and in which way, then gives them a text label to describe the relationship.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set a significance value</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>sig_level <span class="ot">&lt;-</span> <span class="fl">0.1</span></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co"># classification with significance value</span></span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>camden_oas_moran_stats<span class="sc">$</span>quad_sig <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(camden_oas_moran_stats<span class="sc">$</span>scale_n_thefts <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>                                          camden_oas_moran_stats<span class="sc">$</span>lag_scale_n_thefts <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>                                          local_moran_camden_oa_theft[,<span class="dv">5</span>] <span class="sc">&lt;=</span> sig_level, </span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">'high-high'</span>, </span>
-<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>                                   <span class="fu">ifelse</span>(camden_oas_moran_stats<span class="sc">$</span>scale_n_thefts <span class="sc">&lt;=</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
-<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>                                          camden_oas_moran_stats<span class="sc">$</span>lag_scale_n_thefts <span class="sc">&lt;=</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
-<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>                                          local_moran_camden_oa_theft[,<span class="dv">5</span>] <span class="sc">&lt;=</span> sig_level, </span>
-<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">'low-low'</span>, </span>
-<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>                                   <span class="fu">ifelse</span>(camden_oas_moran_stats<span class="sc">$</span>scale_n_thefts <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
-<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>                                          camden_oas_moran_stats<span class="sc">$</span>lag_scale_n_thefts <span class="sc">&lt;=</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
-<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>                                          local_moran_camden_oa_theft[,<span class="dv">5</span>] <span class="sc">&lt;=</span> sig_level, </span>
-<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">'high-low'</span>, </span>
-<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a>                                   <span class="fu">ifelse</span>(camden_oas_moran_stats<span class="sc">$</span>scale_n_thefts <span class="sc">&lt;=</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
-<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a>                                          camden_oas_moran_stats<span class="sc">$</span>lag_scale_n_thefts <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
-<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a>                                          local_moran_camden_oa_theft[,<span class="dv">5</span>] <span class="sc">&lt;=</span> sig_level, </span>
-<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">'low-high'</span>,</span>
-<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a>                                   <span class="fu">ifelse</span>(local_moran_camden_oa_theft[,<span class="dv">5</span>] <span class="sc">&gt;</span> sig_level, </span>
-<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">'not-significant'</span>, </span>
-<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">'not-significant'</span>)))))</span>
-<span id="cb30-24"><a href="#cb30-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-25"><a href="#cb30-25" aria-hidden="true" tabindex="-1"></a><span class="co"># classification without significance value</span></span>
-<span id="cb30-26"><a href="#cb30-26" aria-hidden="true" tabindex="-1"></a>camden_oas_moran_stats<span class="sc">$</span>quad_non_sig <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(camden_oas_moran_stats<span class="sc">$</span>scale_n_thefts <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
-<span id="cb30-27"><a href="#cb30-27" aria-hidden="true" tabindex="-1"></a>                                              camden_oas_moran_stats<span class="sc">$</span>lag_scale_n_thefts <span class="sc">&gt;</span> <span class="dv">0</span>, </span>
-<span id="cb30-28"><a href="#cb30-28" aria-hidden="true" tabindex="-1"></a>                                              <span class="st">'high-high'</span>, </span>
-<span id="cb30-29"><a href="#cb30-29" aria-hidden="true" tabindex="-1"></a>                                       <span class="fu">ifelse</span>(camden_oas_moran_stats<span class="sc">$</span>scale_n_thefts <span class="sc">&lt;=</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
-<span id="cb30-30"><a href="#cb30-30" aria-hidden="true" tabindex="-1"></a>                                              camden_oas_moran_stats<span class="sc">$</span>lag_scale_n_thefts <span class="sc">&lt;=</span> <span class="dv">0</span>, </span>
-<span id="cb30-31"><a href="#cb30-31" aria-hidden="true" tabindex="-1"></a>                                              <span class="st">'low-low'</span>, </span>
-<span id="cb30-32"><a href="#cb30-32" aria-hidden="true" tabindex="-1"></a>                                       <span class="fu">ifelse</span>(camden_oas_moran_stats<span class="sc">$</span>scale_n_thefts <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
-<span id="cb30-33"><a href="#cb30-33" aria-hidden="true" tabindex="-1"></a>                                              camden_oas_moran_stats<span class="sc">$</span>lag_scale_n_thefts <span class="sc">&lt;=</span> <span class="dv">0</span>, </span>
-<span id="cb30-34"><a href="#cb30-34" aria-hidden="true" tabindex="-1"></a>                                              <span class="st">'high-low'</span>, </span>
-<span id="cb30-35"><a href="#cb30-35" aria-hidden="true" tabindex="-1"></a>                                       <span class="fu">ifelse</span>(camden_oas_moran_stats<span class="sc">$</span>scale_n_thefts <span class="sc">&lt;=</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
-<span id="cb30-36"><a href="#cb30-36" aria-hidden="true" tabindex="-1"></a>                                              camden_oas_moran_stats<span class="sc">$</span>lag_scale_n_thefts <span class="sc">&gt;</span> <span class="dv">0</span>,</span>
-<span id="cb30-37"><a href="#cb30-37" aria-hidden="true" tabindex="-1"></a>                                              <span class="st">'low-high'</span>,<span class="cn">NA</span>))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># MAP 1: VERSION WITH FULL CLUSTER HH, HL, LH, LL DETAILS</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="co"># classification without significance value</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>camden_oas_moran_stats<span class="sc">$</span>quad_non_sig <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(camden_oas_moran_stats<span class="sc">$</span>scale_n_thefts <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>                                              camden_oas_moran_stats<span class="sc">$</span>lag_scale_n_thefts <span class="sc">&gt;</span> <span class="dv">0</span>, </span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>                                              <span class="st">'high-high'</span>, </span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>                                       <span class="fu">ifelse</span>(camden_oas_moran_stats<span class="sc">$</span>scale_n_thefts <span class="sc">&lt;=</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>                                              camden_oas_moran_stats<span class="sc">$</span>lag_scale_n_thefts <span class="sc">&lt;=</span> <span class="dv">0</span>, </span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>                                              <span class="st">'low-low'</span>, </span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>                                       <span class="fu">ifelse</span>(camden_oas_moran_stats<span class="sc">$</span>scale_n_thefts <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>                                              camden_oas_moran_stats<span class="sc">$</span>lag_scale_n_thefts <span class="sc">&lt;=</span> <span class="dv">0</span>, </span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>                                              <span class="st">'high-low'</span>, </span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>                                       <span class="fu">ifelse</span>(camden_oas_moran_stats<span class="sc">$</span>scale_n_thefts <span class="sc">&lt;=</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>                                              camden_oas_moran_stats<span class="sc">$</span>lag_scale_n_thefts <span class="sc">&gt;</span> <span class="dv">0</span>,</span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>                                              <span class="st">'low-high'</span>,<span class="cn">NA</span>))))</span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a><span class="co"># MAP 2: VERSION WITH SIGNIFICANCE</span></span>
+<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a><span class="co"># set a significance value</span></span>
+<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a>sig_level <span class="ot">&lt;-</span> <span class="fl">0.1</span></span>
+<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a><span class="co"># classification with significance value</span></span>
+<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a>camden_oas_moran_stats<span class="sc">$</span>quad_sig <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(camden_oas_moran_stats<span class="sc">$</span>scale_n_thefts <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
+<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a>                                          camden_oas_moran_stats<span class="sc">$</span>lag_scale_n_thefts <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
+<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a>                                          local_moran_camden_oa_theft[,<span class="dv">5</span>] <span class="sc">&lt;=</span> sig_level, </span>
+<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">'high-high'</span>, </span>
+<span id="cb30-24"><a href="#cb30-24" aria-hidden="true" tabindex="-1"></a>                                   <span class="fu">ifelse</span>(camden_oas_moran_stats<span class="sc">$</span>scale_n_thefts <span class="sc">&lt;=</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
+<span id="cb30-25"><a href="#cb30-25" aria-hidden="true" tabindex="-1"></a>                                          camden_oas_moran_stats<span class="sc">$</span>lag_scale_n_thefts <span class="sc">&lt;=</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
+<span id="cb30-26"><a href="#cb30-26" aria-hidden="true" tabindex="-1"></a>                                          local_moran_camden_oa_theft[,<span class="dv">5</span>] <span class="sc">&lt;=</span> sig_level, </span>
+<span id="cb30-27"><a href="#cb30-27" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">'low-low'</span>, </span>
+<span id="cb30-28"><a href="#cb30-28" aria-hidden="true" tabindex="-1"></a>                                   <span class="fu">ifelse</span>(camden_oas_moran_stats<span class="sc">$</span>scale_n_thefts <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
+<span id="cb30-29"><a href="#cb30-29" aria-hidden="true" tabindex="-1"></a>                                          camden_oas_moran_stats<span class="sc">$</span>lag_scale_n_thefts <span class="sc">&lt;=</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
+<span id="cb30-30"><a href="#cb30-30" aria-hidden="true" tabindex="-1"></a>                                          local_moran_camden_oa_theft[,<span class="dv">5</span>] <span class="sc">&lt;=</span> sig_level, </span>
+<span id="cb30-31"><a href="#cb30-31" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">'high-low'</span>, </span>
+<span id="cb30-32"><a href="#cb30-32" aria-hidden="true" tabindex="-1"></a>                                   <span class="fu">ifelse</span>(camden_oas_moran_stats<span class="sc">$</span>scale_n_thefts <span class="sc">&lt;=</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
+<span id="cb30-33"><a href="#cb30-33" aria-hidden="true" tabindex="-1"></a>                                          camden_oas_moran_stats<span class="sc">$</span>lag_scale_n_thefts <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
+<span id="cb30-34"><a href="#cb30-34" aria-hidden="true" tabindex="-1"></a>                                          local_moran_camden_oa_theft[,<span class="dv">5</span>] <span class="sc">&lt;=</span> sig_level, </span>
+<span id="cb30-35"><a href="#cb30-35" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">'low-high'</span>,</span>
+<span id="cb30-36"><a href="#cb30-36" aria-hidden="true" tabindex="-1"></a>                                   <span class="fu">ifelse</span>(local_moran_camden_oa_theft[,<span class="dv">5</span>] <span class="sc">&gt;</span> sig_level, </span>
+<span id="cb30-37"><a href="#cb30-37" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">'not-significant'</span>, </span>
+<span id="cb30-38"><a href="#cb30-38" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">'not-significant'</span>)))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>To understand how this is working we can look at the data non-spatially. As we rescaled the data, our axes should split the data neatly into their different area vs spatial lag relationship categories. Let’s make the scatterplot using the scaled number of thefts for the areas in the x axis and their spatially lagged results in the y axis.</p>
 <div class="cell">
@@ -801,7 +826,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># map all of the results here</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(camden_oas_moran_stats) <span class="sc">+</span></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_fill</span>(<span class="at">col =</span> <span class="st">'quad_non_sig'</span>, <span class="at">palette =</span> <span class="fu">c</span>(<span class="st">"#de2d26"</span>, <span class="st">"#fee0d2"</span>, <span class="st">"#deebf7"</span>, <span class="st">"#3182bd"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill =</span> <span class="st">"quad_non_sig"</span>, <span class="at">fill.scale =</span> <span class="fu">tm_scale_categorical</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#de2d26"</span>, <span class="st">"#fee0d2"</span>, <span class="st">"#deebf7"</span>, <span class="st">"#3182bd"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -814,16 +839,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># map only the statistically significant results here</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="co"># map only the statistically significant results here</span></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(camden_oas_moran_stats) <span class="sc">+</span></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_fill</span>(<span class="at">col =</span> <span class="st">'quad_sig'</span>, <span class="at">palette =</span> <span class="fu">c</span>(<span class="st">"#de2d26"</span>, <span class="st">"#fee0d2"</span>, <span class="st">"white"</span>)) <span class="sc">+</span></span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_borders</span>(<span class="at">col =</span> <span class="st">"grey"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(camden_oas_moran_stats) <span class="sc">+</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill =</span> <span class="st">"quad_sig"</span>, <span class="at">fill.scale =</span> <span class="fu">tm_scale_categorical</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#de2d26"</span>, <span class="st">"#deebf7"</span>, <span class="st">"white"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/general/week3/image11_map_significance.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+<p><img src="images/general/week3/image11_map_significance1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
