@@ -1,5 +1,5 @@
 ---
-title: "Graphical representation of spatial data"
+title: "Week 2: Graphical representation of spatial data"
 ---
 
 ## Introduction
@@ -305,16 +305,19 @@ The `st_intersects()` function is really useful as its output is a simple `TRUE`
 london_schools_prj_ss$gs_access <- st_intersects(london_schools_prj_ss, gs_buffer_400m_single, sparse=FALSE)
 ```
 
-We could go ahead and recode this to create a 1 or 0, or YES or NO after processing, but for now we'll leave it as `TRUE` or `FALSE`. We can go head and now visualise our schools based on this column, to see if they have access (`TRUE`) or do not have access (`FALSE`) to greenspace. To do this, we'll use the `tmap` library again:
+We could go ahead and recode this to create a 1 or 0, or YES or NO after processing, but for now we'll leave it as `TRUE` (green) or `FALSE` (red). We can go head and now visualise our schools based on this column, to see if they have access (`TRUE`) or do not have access (`FALSE`) to greenspace. To do this, we'll use the `tmap` library again:
 
 ```{r eval=FALSE}
 # inspect
 tm_shape(london_schools_prj_ss) + 
-  tm_dots(col='gs_access', palette='BuGn')
+	tm_dots(fill = "gs_access", 
+		fill.scale = tm_scale_categorical(values = c("red", "darkgreen")), 
+		fill.legend = tm_legend(title = "Greenspace Access", frame = FALSE)
+		)
 ```
 
 ```{r echo=FALSE, out.width = "100%", fig.align='center', cache=TRUE,}
-knitr::include_graphics('images/general/week2/image7_dots_T_F.png', error = FALSE) 
+knitr::include_graphics('images/general/week2/image7_dots_T_F1.png', error = FALSE) 
 ```
 
 You'll be pleased to read that we are finally here - we are at the last stage of our processing and can finally create the ward-level percentage of schools that have greenspace access, versus those that do not! To do this, we'll be counting the number of points in each of our polygons, i.e. the number of schools in each ward.
@@ -343,11 +346,14 @@ And that's it! We now have our greenspace rate for our wards, which we can now a
 ```{r eval=FALSE}
 # inspect
 tm_shape(london_wards) + 
-  tm_polygons(col='gs_rate', palette='Greens')
+	tm_polygons(fill = "gs_rate",
+		fill.scale = tm_scale_intervals(n = 5, style = "pretty", values = "brewer.greens"),
+		fill.legend = tm_legend(title = "Greenspace Access [%]", frame = FALSE)
+		)
 ```
 
 ```{r echo=FALSE, out.width = "100%", fig.align='center', cache=TRUE,}
-knitr::include_graphics('images/general/week2/image8_gsrate.png', error = FALSE) 
+knitr::include_graphics('images/general/week2/image8_gsrate1.png', error = FALSE) 
 ```
 
 We now have our final data set ready for analysis. Right now, we haven't introduced you to any statistical or spatial analysis techniques to fully analyse our data set - but instead, we can focus on what are data shows visually!
@@ -383,7 +389,7 @@ This week's practical uses content and inspiration from:
 4. The national & administrative areas for Turkiye [Source: **Database of Global Administrative Areas**] [**Click Here**](https://gadm.org)
 5. Building footprints in Türkiye [Source: **The Humanitarian Data Exchange**] [**Click Here**](https://data.humdata.org)
 
-## Practical homework
+## Exercise
 
 **Geoprocessing of spatial-referenced natural hazards: Earthquakes**
 
@@ -422,3 +428,225 @@ Your goal for this homework practical is to use the appropriate geoprocessing ta
 knitr::include_graphics('images/general/week2/image9_Expected_output.png', error = FALSE) 
 ```
 
+:::{.callout-note}
+Have a go at these questions before revealing the solution codes and output below
+:::
+
+<details><summary>**Click here to see solution code:**</summary>
+
+```{r set_up_path_GEOG0114_wk1, include = FALSE}
+knitr::opts_knit$set(root.dir = "~/Documents/Websites/GEOG0114/all_datasets/Week 2 - Homework Dataset")
+knitr::opts_chunk$set(cache = FALSE)
+```
+
+Load the required packages:
+
+```{r loading_packages_wk1, results='hide', message=FALSE, warning=FALSE}
+library("units")
+library("dplyr")
+library("tidyverse")
+library("sf")
+library("tmap")
+```
+
+**TASK ONE**
+
+Load datasets for Task One and Two:
+
+```{r load_dataset_wk2}
+all_earthquakes <- st_read("All_earthquake_points_in_Turkey.shp")
+turkey_adm_areas <- st_read("gadm41_TUR_1.shp")
+```
+
+Firstly, visualise to see what the data looks like:
+
+```{r map1_wk2}
+tm_shape(all_earthquakes) + 
+	tm_dots() +
+tm_shape(turkey_adm_areas) + 
+	tm_polygons(fill_alpha = 0)
+```
+
+As you can see, there are points outside the study area. Let us clip/subset them to create an outline of the region. To do this, we will need to first calculate the areas before dissolving it into one big outline:
+
+```{r dissolve1_wk2}
+turkey_adm_areas$area_est <- st_area(turkey_adm_areas)
+```
+
+Now, dissolve the areas to form the outline:
+
+```{r dissolve2_wk2}
+turkey_outline <- turkey_adm_areas %>% summarise(area = sum(area_est))
+```
+
+Now, subset or cookie-cut the earthquake points that are only within Turkey:
+
+```{r cookiecutting_wk2}
+turkey_earthquakes <- all_earthquakes[turkey_outline,]
+```
+
+Now, visualise output:
+
+```{r map2_wk2}
+tm_shape(turkey_outline) + 
+	tm_polygons(fill_alpha = 0) +
+tm_shape(turkey_earthquakes) + 
+	tm_dots()
+```
+
+**TASK TWO**
+Using the derived dataset i.e., `turkey_earthquakes`, we are aggregating the points in those administrative areas i.e., `turkey_adm_areas:
+
+```{r aggregating_points_ex_wk2}
+turkey_adm_areas$total_earthquakes <- lengths(st_intersects(turkey_adm_areas, turkey_earthquakes))
+```
+
+If you check the data frame, you can see a new column has been created with the total counts of earthquakes per region. You can see that the area **K. Maras** has the highest burden of 140 earthquake occurrences.
+
+Let us visualise this result as a map:
+
+```{r map3_wk2}
+tm_shape(turkey_adm_areas) +
+	tm_polygons(fill = "total_earthquakes", 
+		fill.scale = tm_scale_intervals(n=6, style = "pretty", values = "-brewer.rd_bu"),
+		fill.legend = tm_legend(title = "Total Earthquakes", frame = FALSE)) +
+tm_compass(type = "arrow", position = c("right", "top")) + 
+tm_scalebar(position = c("right", "bottom")) +
+tm_layout(frame = FALSE)
+```
+
+**TASK THREE**
+
+Load the datasets for Task Three:
+
+```{r loading_dataset_task3}
+focal_earthquake_point <- st_read("Earthquake_point_in_Konya.shp")
+konya_buildings <- st_read("Konya_buildings_at_risk.shp")
+```
+
+As usual, it is **always** good practice to visual the dataset at face-value to have an understanding of it:
+
+```{r map4_wk2}
+tm_shape(konya_buildings) + 
+	tm_polygons(fill_alpha = 0) +
+tm_shape(focal_earthquake_point) + 
+	# increased the size of the single focal point to 0.5 and coloured it red to standout more
+	tm_dots(size = 0.5, fill = "red", col = "red") +
+tm_compass(type = "arrow", position = c("right", "top")) + 
+tm_scalebar(position = c("right", "bottom")) +
+tm_layout(frame = FALSE)
+```
+
+:::{.call-out-warning)
+Both shapefiles have CRS of **4326 (WGS 84)** and so distance is measured in decimal degrees for this CRS. This is not a good system for distance as its unintuitive especially if you need to calculate one for creating a buffer zone! It is always best to use one that is in **metres**, **kilometres** or **miles** etc. 
+:::
+
+Let us use the **World Mecartor 3857 CRS** as its in metres. So let's change the CRS from 4326 to **3857** for the shapefiles to be in metres. This makes specifying the distance a lot easier: 
+
+```{r crs_change_wk2}
+konya_buildings_3857 <- st_transform(konya_buildings, 3857)
+focal_earthquake_point_3857 <- st_transform(focal_earthquake_point, 3857)
+```
+
+Now, let's create the three buffer zones around the focal earthquake point: 
+
+```{r three_buffer_zones}
+# create buffer for 2000m
+destroyed_buffer_2000m <- st_buffer(focal_earthquake_point_3857, dist = 2000)
+# second and third buffers are created for 0-5000 and 0-9000
+sec_buffer_5000m <- st_buffer(focal_earthquake_point_3857, dist = 5000)
+thr_buffer_9000m <- st_buffer(focal_earthquake_point_3857, dist = 9000)
+```
+
+Now, we need to calculate the number of building that exist within 2000m, within 2000-5000m and from 5000-9000m. However, the trickier ones are the zones for 2000-5000m and 5000-9000m as they are rings. Therefore, we need to create 'ringed' zones from the buffers through taking the differences between the different buffer zones.
+
+So, we can use `st_difference()` function to create the rings for buffer zones 2000-5000 and 5000-9000 through differencing:
+
+```{r buffer_diff_wk2}
+# take the second buffer zone 5000m and substract the inner 2000m buffer from it to retain 2000-5000m
+severe_damaged_buffer_2000_5000m <- st_difference(sec_buffer_5000m, destroyed_buffer_2000m)
+# take the third buffer zone 9000m and substract the inner 5000m buffer from it to retain 5000-9000m
+partial_damaged_buffer_5000_9000m <- st_difference(thr_buffer_9000m, sec_buffer_5000m)
+```
+
+:::{.callout-note}
+Do not worry about the warning message - that is just R/RStudio behaving badly!
+:::
+
+Now, visual the current output:
+
+```{r map5_wk2}
+# add buildings
+tm_shape(konya_buildings_3857) + 
+	tm_polygons(fill_alpha = 0) +
+# add the single focal point of the earthquake
+tm_shape(focal_earthquake_point_3857) + 
+	tm_dots(size = 0.5, fill = "red", col = "red") +
+# add the thirdmost outer ring (5000-9000m) and make fill colour pink, and line as dashes in pink colour
+tm_shape(partial_damaged_buffer_5000_9000m) + 
+	tm_polygons(fill = "pink", fill_alpha = 0.1, col = "pink", lwd = 1.1, lty="dashed") +
+# add the second middle ring (2000-5000m)
+tm_shape(severe_damaged_buffer_2000_5000m) + 
+	tm_polygons(fill = "red", fill_alpha = 0.2, col = "red", lwd = 1.1, lty="dashed") +
+# add the 1st ring as solid red polygon with transparency of 0.4
+tm_shape(destroyed_buffer_2000m) + 
+	tm_polygons(fill = "red", fill_alpha = 0.5, col = "red", lwd = 1.5) +
+tm_compass(type = "arrow", position = c("right", "top")) + 
+tm_scalebar(position = c("right", "bottom")) +
+tm_layout(frame = FALSE)
+```
+
+To get the total number of buildings within each ringed region, we will need to first get the centroids of each building, and then count the number of points that intersect with each zone.
+
+You can do that by using the st_centroid() function:
+
+```{r get_centroids_wk2}
+konya_buildings_points <- konya_buildings_3857 %>% st_centroid()
+```
+
+Now, calculate the number of buildings for the following:
+
+```{r total_buildings_wk2}
+# calculate the number of buildings within 2000m from the focal point
+destroyed_buffer_2000m$total_buildings <- lengths(st_intersects(destroyed_buffer_2000m, konya_buildings_points))
+# calculate the number of buildings within 2000-5000m from the focal point
+severe_damaged_buffer_2000_5000m$total_buildings <- lengths(st_intersects(severe_damaged_buffer_2000_5000m, konya_buildings_points))
+# calculate the number of buildings within 5000-9000m from the focal point
+partial_damaged_buffer_5000_9000m$total_buildings <- lengths(st_intersects(partial_damaged_buffer_5000_9000m, konya_buildings_points))
+```
+
+:::{.callout-note}
+When viewing inside these data frame - you should see the total number of buildings for each buffer. The total number of
+buildings in that regions is 28,765. We can calculatethe prevalence (or proportion) of buildings by disaster outcomes i.e., **destroyed**, **severely damage**, or **partially damaged** by the earthquake:
+
+- Prevalence of buildings that sustain partial damage (5000-9000m from focal point) = 10734/28765 = 37.31%
+- Prevalence of buildings that were severely damaged (2000-5000m from focal point) = 3180/28765 = 11.05%
+- Prevalence of buildings that were completely destroyed (<2000m from focal point) = 294/28765 = 1.02%
+- Prevalence of buildings that survival (>9000m from focal point) = 50.62%
+:::
+
+Let's put all the information together:
+
+```{r map6_wk2}
+# add buildings
+tm_shape(konya_buildings_3857) + 
+	tm_polygons(fill_alpha = 0) +
+# add the single focal point of the earthquake
+tm_shape(focal_earthquake_point_3857) + 
+	tm_dots(size = 0.5, fill = "red", col = "red") +
+# add the thirdmost outer ring (5000-9000m) and make fill colour pink, and line as dashes in pink colour
+tm_shape(partial_damaged_buffer_5000_9000m) + 
+	tm_polygons(fill = "pink", fill_alpha = 0.1, col = "pink", lwd = 1.1, lty="dashed") +
+	# add the second middle ring (2000-5000m)
+tm_shape(severe_damaged_buffer_2000_5000m) + 
+	tm_polygons(fill = "red", fill_alpha = 0.2, col = "red", lwd = 1.1, lty="dashed") +
+# add the 1st ring as solid red polygon with transparency of 0.4
+tm_shape(destroyed_buffer_2000m) + 
+	tm_polygons(fill = "red", fill_alpha = 0.5, col = "red", lwd = 1.5) +
+tm_compass(type = "arrow", position = c("right", "top")) + 
+tm_scalebar(position = c("right", "bottom")) +
+tm_layout(frame = FALSE) +
+tm_credits("Prevalence [%]\nPartial: 37.31%\nSevere: 11.05%\nDestroyed: 1.02%\nSurvived: 50.62%", position = c("left", "top"), size = 0.8)
+```
+
+</details>

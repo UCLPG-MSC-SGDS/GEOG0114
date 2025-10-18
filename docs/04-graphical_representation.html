@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Graphical representation of spatial data</title>
+<title>Week 2: Graphical representation of spatial data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -119,7 +119,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-spatial_analysis_for_data_science.html">Foundation &amp; Theory</a></li><li class="breadcrumb-item"><a href="./04-graphical_representation.html">Graphical representation of spatial data</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-spatial_analysis_for_data_science.html">Foundation &amp; Theory</a></li><li class="breadcrumb-item"><a href="./04-graphical_representation.html">Week 2: Graphical representation of spatial data</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -202,13 +202,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04-graphical_representation.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Graphical representation of spatial data</span></a>
+ <span class="menu-text">Week 2: Graphical representation of spatial data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./05-spatial_autocorrelation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Spatial autocorrelation</span></a>
+ <span class="menu-text">Week 3: Spatial autocorrelation</span></a>
   </div>
 </li>
       </ul>
@@ -256,16 +256,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#attributions_w03" id="toc-attributions_w03" class="nav-link" data-scroll-target="#attributions_w03"><span class="header-section-number">6</span> Attributions</a></li>
   <li><a href="#reading_w03" id="toc-reading_w03" class="nav-link" data-scroll-target="#reading_w03"><span class="header-section-number">7</span> References (see reading list)</a></li>
   <li><a href="#data-sources" id="toc-data-sources" class="nav-link" data-scroll-target="#data-sources"><span class="header-section-number">8</span> Data Sources</a></li>
-  <li><a href="#practical-homework" id="toc-practical-homework" class="nav-link" data-scroll-target="#practical-homework"><span class="header-section-number">9</span> Practical homework</a></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">9</span> Exercise</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UCLPG-MSC-SGDS/GEOG0114/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-spatial_analysis_for_data_science.html">Foundation &amp; Theory</a></li><li class="breadcrumb-item"><a href="./04-graphical_representation.html">Graphical representation of spatial data</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-spatial_analysis_for_data_science.html">Foundation &amp; Theory</a></li><li class="breadcrumb-item"><a href="./04-graphical_representation.html">Week 2: Graphical representation of spatial data</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Graphical representation of spatial data</h1>
+<h1 class="title">Week 2: Graphical representation of spatial data</h1>
 </div>
 
 
@@ -589,17 +589,20 @@ Note
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># greenspace access</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>london_schools_prj_ss<span class="sc">$</span>gs_access <span class="ot">&lt;-</span> <span class="fu">st_intersects</span>(london_schools_prj_ss, gs_buffer_400m_single, <span class="at">sparse=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>We could go ahead and recode this to create a 1 or 0, or YES or NO after processing, but for now we’ll leave it as <code>TRUE</code> or <code>FALSE</code>. We can go head and now visualise our schools based on this column, to see if they have access (<code>TRUE</code>) or do not have access (<code>FALSE</code>) to greenspace. To do this, we’ll use the <code>tmap</code> library again:</p>
+<p>We could go ahead and recode this to create a 1 or 0, or YES or NO after processing, but for now we’ll leave it as <code>TRUE</code> (green) or <code>FALSE</code> (red). We can go head and now visualise our schools based on this column, to see if they have access (<code>TRUE</code>) or do not have access (<code>FALSE</code>) to greenspace. To do this, we’ll use the <code>tmap</code> library again:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(london_schools_prj_ss) <span class="sc">+</span> </span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_dots</span>(<span class="at">col=</span><span class="st">'gs_access'</span>, <span class="at">palette=</span><span class="st">'BuGn'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_dots</span>(<span class="at">fill =</span> <span class="st">"gs_access"</span>, </span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">fill.scale =</span> <span class="fu">tm_scale_categorical</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"darkgreen"</span>)), </span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">fill.legend =</span> <span class="fu">tm_legend</span>(<span class="at">title =</span> <span class="st">"Greenspace Access"</span>, <span class="at">frame =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/general/week2/image7_dots_T_F.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+<p><img src="images/general/week2/image7_dots_T_F1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -623,13 +626,16 @@ Note
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(london_wards) <span class="sc">+</span> </span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_polygons</span>(<span class="at">col=</span><span class="st">'gs_rate'</span>, <span class="at">palette=</span><span class="st">'Greens'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill =</span> <span class="st">"gs_rate"</span>,</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">fill.scale =</span> <span class="fu">tm_scale_intervals</span>(<span class="at">n =</span> <span class="dv">5</span>, <span class="at">style =</span> <span class="st">"pretty"</span>, <span class="at">values =</span> <span class="st">"brewer.greens"</span>),</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">fill.legend =</span> <span class="fu">tm_legend</span>(<span class="at">title =</span> <span class="st">"Greenspace Access [%]"</span>, <span class="at">frame =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/general/week2/image8_gsrate.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+<p><img src="images/general/week2/image8_gsrate1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -670,8 +676,8 @@ Note
 <li>Building footprints in Türkiye [Source: <strong>The Humanitarian Data Exchange</strong>] <a href="https://data.humdata.org"><strong>Click Here</strong></a></li>
 </ol>
 </section>
-<section id="practical-homework" class="level2" data-number="9">
-<h2 data-number="9" class="anchored" data-anchor-id="practical-homework"><span class="header-section-number">9</span> Practical homework</h2>
+<section id="exercise" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="exercise"><span class="header-section-number">9</span> Exercise</h2>
 <p><strong>Geoprocessing of spatial-referenced natural hazards: Earthquakes</strong></p>
 <p>There are severe economic and social consequence of natural hazards such as earthquakes which result innumerable disasters that are instant (e.g., deaths, injury, homes destroyed, transport and communication links disrupted, water pipes burst and water supplies contaminated and many more) and long-term (e.g., disease may spread, re-housing, and most often refugee camps). You can download freely available open-source data on earthquake occurrence worldwide here: https://earthquake.usgs.gov/earthquakes/search/</p>
 <p>Türkiye (or Turkey) is a nation that often experience earthquakes on a frequent basis with nearly over 20 earth tremors in 2022 according to the <a href="https://en.afad.gov.tr">Turkish Disaster &amp; Emergency Management Authority</a>.</p>
@@ -704,6 +710,302 @@ Note
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Have a go at these questions before revealing the solution codes and output below</p>
+</div>
+</div>
+<details>
+<summary>
+<strong>Click here to see solution code:</strong>
+</summary>
+<p>Load the required packages:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"units"</span>)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"dplyr"</span>)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"tidyverse"</span>)</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"sf"</span>)</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"tmap"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>TASK ONE</strong></p>
+<p>Load datasets for Task One and Two:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>all_earthquakes <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"All_earthquake_points_in_Turkey.shp"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Reading layer `All_earthquake_points_in_Turkey' from data source 
+  `/Users/anwarmusah/Documents/Websites/GEOG0114/all_datasets/Week 2 - Homework Dataset/All_earthquake_points_in_Turkey.shp' 
+  using driver `ESRI Shapefile'
+Simple feature collection with 984 features and 22 fields
+Geometry type: POINT
+Dimension:     XY
+Bounding box:  xmin: 25.1435 ymin: 35.3918 xmax: 45.3486 ymax: 42.7588
+Geodetic CRS:  WGS 84</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>turkey_adm_areas <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"gadm41_TUR_1.shp"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Reading layer `gadm41_TUR_1' from data source 
+  `/Users/anwarmusah/Documents/Websites/GEOG0114/all_datasets/Week 2 - Homework Dataset/gadm41_TUR_1.shp' 
+  using driver `ESRI Shapefile'
+Simple feature collection with 81 features and 11 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: 25.66514 ymin: 35.81543 xmax: 44.83499 ymax: 42.10666
+Geodetic CRS:  WGS 84</code></pre>
+</div>
+</div>
+<p>Firstly, visualise to see what the data looks like:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(all_earthquakes) <span class="sc">+</span> </span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_dots</span>() <span class="sc">+</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(turkey_adm_areas) <span class="sc">+</span> </span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill_alpha =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="04-graphical_representation_files/figure-html/map1_wk2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>As you can see, there are points outside the study area. Let us clip/subset them to create an outline of the region. To do this, we will need to first calculate the areas before dissolving it into one big outline:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>turkey_adm_areas<span class="sc">$</span>area_est <span class="ot">&lt;-</span> <span class="fu">st_area</span>(turkey_adm_areas)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now, dissolve the areas to form the outline:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>turkey_outline <span class="ot">&lt;-</span> turkey_adm_areas <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">area =</span> <span class="fu">sum</span>(area_est))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now, subset or cookie-cut the earthquake points that are only within Turkey:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>turkey_earthquakes <span class="ot">&lt;-</span> all_earthquakes[turkey_outline,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now, visualise output:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(turkey_outline) <span class="sc">+</span> </span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill_alpha =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(turkey_earthquakes) <span class="sc">+</span> </span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_dots</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="04-graphical_representation_files/figure-html/map2_wk2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>TASK TWO</strong> Using the derived dataset i.e., <code>turkey_earthquakes</code>, we are aggregating the points in those administrative areas i.e., `turkey_adm_areas:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>turkey_adm_areas<span class="sc">$</span>total_earthquakes <span class="ot">&lt;-</span> <span class="fu">lengths</span>(<span class="fu">st_intersects</span>(turkey_adm_areas, turkey_earthquakes))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If you check the data frame, you can see a new column has been created with the total counts of earthquakes per region. You can see that the area <strong>K. Maras</strong> has the highest burden of 140 earthquake occurrences.</p>
+<p>Let us visualise this result as a map:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(turkey_adm_areas) <span class="sc">+</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill =</span> <span class="st">"total_earthquakes"</span>, </span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">fill.scale =</span> <span class="fu">tm_scale_intervals</span>(<span class="at">n=</span><span class="dv">6</span>, <span class="at">style =</span> <span class="st">"pretty"</span>, <span class="at">values =</span> <span class="st">"-brewer.rd_bu"</span>),</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">fill.legend =</span> <span class="fu">tm_legend</span>(<span class="at">title =</span> <span class="st">"Total Earthquakes"</span>, <span class="at">frame =</span> <span class="cn">FALSE</span>)) <span class="sc">+</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_compass</span>(<span class="at">type =</span> <span class="st">"arrow"</span>, <span class="at">position =</span> <span class="fu">c</span>(<span class="st">"right"</span>, <span class="st">"top"</span>)) <span class="sc">+</span> </span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_scalebar</span>(<span class="at">position =</span> <span class="fu">c</span>(<span class="st">"right"</span>, <span class="st">"bottom"</span>)) <span class="sc">+</span></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_layout</span>(<span class="at">frame =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="04-graphical_representation_files/figure-html/map3_wk2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>TASK THREE</strong></p>
+<p>Load the datasets for Task Three:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>focal_earthquake_point <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"Earthquake_point_in_Konya.shp"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Reading layer `Earthquake_point_in_Konya' from data source 
+  `/Users/anwarmusah/Documents/Websites/GEOG0114/all_datasets/Week 2 - Homework Dataset/Earthquake_point_in_Konya.shp' 
+  using driver `ESRI Shapefile'
+Simple feature collection with 1 feature and 22 fields
+Geometry type: POINT
+Dimension:     XY
+Bounding box:  xmin: 32.5587 ymin: 37.9064 xmax: 32.5587 ymax: 37.9064
+Geodetic CRS:  WGS 84</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>konya_buildings <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"Konya_buildings_at_risk.shp"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Reading layer `Konya_buildings_at_risk' from data source 
+  `/Users/anwarmusah/Documents/Websites/GEOG0114/all_datasets/Week 2 - Homework Dataset/Konya_buildings_at_risk.shp' 
+  using driver `ESRI Shapefile'
+Simple feature collection with 28765 features and 11 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: 32.39742 ymin: 37.81919 xmax: 32.66019 ymax: 38.04143
+Geodetic CRS:  WGS 84</code></pre>
+</div>
+</div>
+<p>As usual, it is <strong>always</strong> good practice to visual the dataset at face-value to have an understanding of it:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(konya_buildings) <span class="sc">+</span> </span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill_alpha =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(focal_earthquake_point) <span class="sc">+</span> </span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># increased the size of the single focal point to 0.5 and coloured it red to standout more</span></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_dots</span>(<span class="at">size =</span> <span class="fl">0.5</span>, <span class="at">fill =</span> <span class="st">"red"</span>, <span class="at">col =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_compass</span>(<span class="at">type =</span> <span class="st">"arrow"</span>, <span class="at">position =</span> <span class="fu">c</span>(<span class="st">"right"</span>, <span class="st">"top"</span>)) <span class="sc">+</span> </span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_scalebar</span>(<span class="at">position =</span> <span class="fu">c</span>(<span class="st">"right"</span>, <span class="st">"bottom"</span>)) <span class="sc">+</span></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_layout</span>(<span class="at">frame =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="04-graphical_representation_files/figure-html/map4_wk2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="{.call-out-warning)">
+<p>Both shapefiles have CRS of <strong>4326 (WGS 84)</strong> and so distance is measured in decimal degrees for this CRS. This is not a good system for distance as its unintuitive especially if you need to calculate one for creating a buffer zone! It is always best to use one that is in <strong>metres</strong>, <strong>kilometres</strong> or <strong>miles</strong> etc.</p>
+</div>
+<p>Let us use the <strong>World Mecartor 3857 CRS</strong> as its in metres. So let’s change the CRS from 4326 to <strong>3857</strong> for the shapefiles to be in metres. This makes specifying the distance a lot easier:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>konya_buildings_3857 <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(konya_buildings, <span class="dv">3857</span>)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>focal_earthquake_point_3857 <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(focal_earthquake_point, <span class="dv">3857</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now, let’s create the three buffer zones around the focal earthquake point:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create buffer for 2000m</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>destroyed_buffer_2000m <span class="ot">&lt;-</span> <span class="fu">st_buffer</span>(focal_earthquake_point_3857, <span class="at">dist =</span> <span class="dv">2000</span>)</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="co"># second and third buffers are created for 0-5000 and 0-9000</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>sec_buffer_5000m <span class="ot">&lt;-</span> <span class="fu">st_buffer</span>(focal_earthquake_point_3857, <span class="at">dist =</span> <span class="dv">5000</span>)</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>thr_buffer_9000m <span class="ot">&lt;-</span> <span class="fu">st_buffer</span>(focal_earthquake_point_3857, <span class="at">dist =</span> <span class="dv">9000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now, we need to calculate the number of building that exist within 2000m, within 2000-5000m and from 5000-9000m. However, the trickier ones are the zones for 2000-5000m and 5000-9000m as they are rings. Therefore, we need to create ‘ringed’ zones from the buffers through taking the differences between the different buffer zones.</p>
+<p>So, we can use <code>st_difference()</code> function to create the rings for buffer zones 2000-5000 and 5000-9000 through differencing:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># take the second buffer zone 5000m and substract the inner 2000m buffer from it to retain 2000-5000m</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>severe_damaged_buffer_2000_5000m <span class="ot">&lt;-</span> <span class="fu">st_difference</span>(sec_buffer_5000m, destroyed_buffer_2000m)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: attribute variables are assumed to be spatially constant throughout
+all geometries</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># take the third buffer zone 9000m and substract the inner 5000m buffer from it to retain 5000-9000m</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>partial_damaged_buffer_5000_9000m <span class="ot">&lt;-</span> <span class="fu">st_difference</span>(thr_buffer_9000m, sec_buffer_5000m)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: attribute variables are assumed to be spatially constant throughout
+all geometries</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Do not worry about the warning message - that is just R/RStudio behaving badly!</p>
+</div>
+</div>
+<p>Now, visual the current output:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add buildings</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(konya_buildings_3857) <span class="sc">+</span> </span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill_alpha =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="co"># add the single focal point of the earthquake</span></span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(focal_earthquake_point_3857) <span class="sc">+</span> </span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_dots</span>(<span class="at">size =</span> <span class="fl">0.5</span>, <span class="at">fill =</span> <span class="st">"red"</span>, <span class="at">col =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a><span class="co"># add the thirdmost outer ring (5000-9000m) and make fill colour pink, and line as dashes in pink colour</span></span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(partial_damaged_buffer_5000_9000m) <span class="sc">+</span> </span>
+<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill =</span> <span class="st">"pink"</span>, <span class="at">fill_alpha =</span> <span class="fl">0.1</span>, <span class="at">col =</span> <span class="st">"pink"</span>, <span class="at">lwd =</span> <span class="fl">1.1</span>, <span class="at">lty=</span><span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a><span class="co"># add the second middle ring (2000-5000m)</span></span>
+<span id="cb48-11"><a href="#cb48-11" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(severe_damaged_buffer_2000_5000m) <span class="sc">+</span> </span>
+<span id="cb48-12"><a href="#cb48-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill =</span> <span class="st">"red"</span>, <span class="at">fill_alpha =</span> <span class="fl">0.2</span>, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="fl">1.1</span>, <span class="at">lty=</span><span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb48-13"><a href="#cb48-13" aria-hidden="true" tabindex="-1"></a><span class="co"># add the 1st ring as solid red polygon with transparency of 0.4</span></span>
+<span id="cb48-14"><a href="#cb48-14" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(destroyed_buffer_2000m) <span class="sc">+</span> </span>
+<span id="cb48-15"><a href="#cb48-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill =</span> <span class="st">"red"</span>, <span class="at">fill_alpha =</span> <span class="fl">0.5</span>, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb48-16"><a href="#cb48-16" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_compass</span>(<span class="at">type =</span> <span class="st">"arrow"</span>, <span class="at">position =</span> <span class="fu">c</span>(<span class="st">"right"</span>, <span class="st">"top"</span>)) <span class="sc">+</span> </span>
+<span id="cb48-17"><a href="#cb48-17" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_scalebar</span>(<span class="at">position =</span> <span class="fu">c</span>(<span class="st">"right"</span>, <span class="st">"bottom"</span>)) <span class="sc">+</span></span>
+<span id="cb48-18"><a href="#cb48-18" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_layout</span>(<span class="at">frame =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="04-graphical_representation_files/figure-html/map5_wk2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>To get the total number of buildings within each ringed region, we will need to first get the centroids of each building, and then count the number of points that intersect with each zone.</p>
+<p>You can do that by using the st_centroid() function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>konya_buildings_points <span class="ot">&lt;-</span> konya_buildings_3857 <span class="sc">%&gt;%</span> <span class="fu">st_centroid</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: st_centroid assumes attributes are constant over geometries</code></pre>
+</div>
+</div>
+<p>Now, calculate the number of buildings for the following:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate the number of buildings within 2000m from the focal point</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>destroyed_buffer_2000m<span class="sc">$</span>total_buildings <span class="ot">&lt;-</span> <span class="fu">lengths</span>(<span class="fu">st_intersects</span>(destroyed_buffer_2000m, konya_buildings_points))</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate the number of buildings within 2000-5000m from the focal point</span></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>severe_damaged_buffer_2000_5000m<span class="sc">$</span>total_buildings <span class="ot">&lt;-</span> <span class="fu">lengths</span>(<span class="fu">st_intersects</span>(severe_damaged_buffer_2000_5000m, konya_buildings_points))</span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate the number of buildings within 5000-9000m from the focal point</span></span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>partial_damaged_buffer_5000_9000m<span class="sc">$</span>total_buildings <span class="ot">&lt;-</span> <span class="fu">lengths</span>(<span class="fu">st_intersects</span>(partial_damaged_buffer_5000_9000m, konya_buildings_points))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When viewing inside these data frame - you should see the total number of buildings for each buffer. The total number of buildings in that regions is 28,765. We can calculatethe prevalence (or proportion) of buildings by disaster outcomes i.e., <strong>destroyed</strong>, <strong>severely damage</strong>, or <strong>partially damaged</strong> by the earthquake:</p>
+<ul>
+<li>Prevalence of buildings that sustain partial damage (5000-9000m from focal point) = 10734/28765 = 37.31%</li>
+<li>Prevalence of buildings that were severely damaged (2000-5000m from focal point) = 3180/28765 = 11.05%</li>
+<li>Prevalence of buildings that were completely destroyed (&lt;2000m from focal point) = 294/28765 = 1.02%</li>
+<li>Prevalence of buildings that survival (&gt;9000m from focal point) = 50.62%</li>
+</ul>
+</div>
+</div>
+<p>Let’s put all the information together:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add buildings</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(konya_buildings_3857) <span class="sc">+</span> </span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill_alpha =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="co"># add the single focal point of the earthquake</span></span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(focal_earthquake_point_3857) <span class="sc">+</span> </span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_dots</span>(<span class="at">size =</span> <span class="fl">0.5</span>, <span class="at">fill =</span> <span class="st">"red"</span>, <span class="at">col =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a><span class="co"># add the thirdmost outer ring (5000-9000m) and make fill colour pink, and line as dashes in pink colour</span></span>
+<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(partial_damaged_buffer_5000_9000m) <span class="sc">+</span> </span>
+<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill =</span> <span class="st">"pink"</span>, <span class="at">fill_alpha =</span> <span class="fl">0.1</span>, <span class="at">col =</span> <span class="st">"pink"</span>, <span class="at">lwd =</span> <span class="fl">1.1</span>, <span class="at">lty=</span><span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># add the second middle ring (2000-5000m)</span></span>
+<span id="cb52-11"><a href="#cb52-11" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(severe_damaged_buffer_2000_5000m) <span class="sc">+</span> </span>
+<span id="cb52-12"><a href="#cb52-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill =</span> <span class="st">"red"</span>, <span class="at">fill_alpha =</span> <span class="fl">0.2</span>, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="fl">1.1</span>, <span class="at">lty=</span><span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb52-13"><a href="#cb52-13" aria-hidden="true" tabindex="-1"></a><span class="co"># add the 1st ring as solid red polygon with transparency of 0.4</span></span>
+<span id="cb52-14"><a href="#cb52-14" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(destroyed_buffer_2000m) <span class="sc">+</span> </span>
+<span id="cb52-15"><a href="#cb52-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill =</span> <span class="st">"red"</span>, <span class="at">fill_alpha =</span> <span class="fl">0.5</span>, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb52-16"><a href="#cb52-16" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_compass</span>(<span class="at">type =</span> <span class="st">"arrow"</span>, <span class="at">position =</span> <span class="fu">c</span>(<span class="st">"right"</span>, <span class="st">"top"</span>)) <span class="sc">+</span> </span>
+<span id="cb52-17"><a href="#cb52-17" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_scalebar</span>(<span class="at">position =</span> <span class="fu">c</span>(<span class="st">"right"</span>, <span class="st">"bottom"</span>)) <span class="sc">+</span></span>
+<span id="cb52-18"><a href="#cb52-18" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_layout</span>(<span class="at">frame =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb52-19"><a href="#cb52-19" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_credits</span>(<span class="st">"Prevalence [%]</span><span class="sc">\n</span><span class="st">Partial: 37.31%</span><span class="sc">\n</span><span class="st">Severe: 11.05%</span><span class="sc">\n</span><span class="st">Destroyed: 1.02%</span><span class="sc">\n</span><span class="st">Survived: 50.62%"</span>, <span class="at">position =</span> <span class="fu">c</span>(<span class="st">"left"</span>, <span class="st">"top"</span>), <span class="at">size =</span> <span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="04-graphical_representation_files/figure-html/map6_wk2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</details>
 
 
 </section>
@@ -1277,8 +1579,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./05-spatial_autocorrelation.html" class="pagination-link" aria-label="Spatial autocorrelation">
-        <span class="nav-page-text">Spatial autocorrelation</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./05-spatial_autocorrelation.html" class="pagination-link" aria-label="Week 3: Spatial autocorrelation">
+        <span class="nav-page-text">Week 3: Spatial autocorrelation</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

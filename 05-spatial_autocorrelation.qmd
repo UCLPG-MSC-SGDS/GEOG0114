@@ -1,5 +1,5 @@
 ---
-title: "Spatial autocorrelation"
+title: "Week 3: Spatial autocorrelation"
 ---
 
 ## Introduction
