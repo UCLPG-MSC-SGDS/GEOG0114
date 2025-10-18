@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Spatial analysis for data sciences</title>
+<title>Week 1: Spatial analysis for data sciences</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -148,7 +148,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-spatial_analysis_for_data_science.html">Foundation &amp; Theory</a></li><li class="breadcrumb-item"><a href="./03-spatial_analysis_for_data_science.html">Spatial analysis for data sciences</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-spatial_analysis_for_data_science.html">Foundation &amp; Theory</a></li><li class="breadcrumb-item"><a href="./03-spatial_analysis_for_data_science.html">Week 1: Spatial analysis for data sciences</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -225,7 +225,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03-spatial_analysis_for_data_science.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Spatial analysis for data sciences</span></a>
+ <span class="menu-text">Week 1: Spatial analysis for data sciences</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -297,16 +297,16 @@ window.Quarto = {
   <li><a href="#recommended-reading-see-reading-list" id="toc-recommended-reading-see-reading-list" class="nav-link" data-scroll-target="#recommended-reading-see-reading-list"><span class="header-section-number">4.1</span> Recommended reading (see reading list)</a></li>
   </ul></li>
   <li><a href="#data-sources" id="toc-data-sources" class="nav-link" data-scroll-target="#data-sources"><span class="header-section-number">5</span> Data Sources</a></li>
-  <li><a href="#practical-homework" id="toc-practical-homework" class="nav-link" data-scroll-target="#practical-homework"><span class="header-section-number">6</span> Practical homework</a></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">6</span> Exercise</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UCLPG-MSC-SGDS/GEOG0114/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-spatial_analysis_for_data_science.html">Foundation &amp; Theory</a></li><li class="breadcrumb-item"><a href="./03-spatial_analysis_for_data_science.html">Spatial analysis for data sciences</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-spatial_analysis_for_data_science.html">Foundation &amp; Theory</a></li><li class="breadcrumb-item"><a href="./03-spatial_analysis_for_data_science.html">Week 1: Spatial analysis for data sciences</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Spatial analysis for data sciences</h1>
+<h1 class="title">Week 1: Spatial analysis for data sciences</h1>
 </div>
 
 
@@ -880,11 +880,11 @@ Warning
 <tbody>
 <tr class="odd">
 <td><code>tm_shape()</code></td>
-<td>This allows the user to add layers to the map</td>
+<td>This allows the user to add layers to be mapped</td>
 </tr>
 <tr class="even">
-<td><code>tm_polygon()</code></td>
-<td>This allows the user to apply direct customisations to the added layer specified in <code>tm_shape()</code>. Note: This follows immediately after <code>tm_shape()</code></td>
+<td><code>tm_polygons()</code></td>
+<td>This deal with <strong>vector</strong> type dataset specifically. This allows the user to specify which column in the vector layer to be mapped using the <code>fill =</code> argument. Within the <code>tm_polygon()</code>, it also allows the user to apply the appropriate customisation to the vector layer. Examples of such arguments in 1.) <code>fill_alpha =</code> to modify the transparency; 2.) <code>col_alpha =</code> to modify the transparency of the borders; 3.) <code>col =</code> controls the colour of the line; 4.) <code>fill.scale =</code> controls the appearence and set the colour scheme of the scale that appears inside the legends block. Please note that if your data is continuous, then the appropriate argument to use in the <code>fill.scale =</code> would be either <code>tm_scale_continuous()</code> or <code>tm_scale_interval()</code> for breaking the continuous values into intervals. If they are numerical but discrete (counts) use <code>tm_scale_discrete()</code>. Otherwise, if it is categorical use <code>tm_scale_categorical()</code>; and 4.) <code>fill.legend = tm_legend(...)</code> allows the user to control the presentation of the legend. There are many arguments to experiment with - you can type <code>?tm_polygons()</code> in console to see them. Please note that the <code>tm_polygons()</code> is immediately followed after specifying the <code>tm_shape()</code> function.</td>
 </tr>
 <tr class="odd">
 <td><code>tm_layout()</code></td>
@@ -923,11 +923,8 @@ Warning
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Controlling transparencies for borders and areas</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co"># old tmap (version 3.3)</span></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(Spatial_data) <span class="sc">+</span> <span class="fu">tm_polygons</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>, <span class="at">border.alpha =</span> <span class="fl">0.4</span>)</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="co"># latest tmap (&gt; version 4.0)</span></span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(Spatial_data) <span class="sc">+</span> <span class="fu">tm_polygons</span>(<span class="at">fill_alpha =</span> <span class="fl">0.1</span>, <span class="at">col_alpha =</span> <span class="fl">0.4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(Spatial_data) <span class="sc">+</span> </span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill_alpha =</span> <span class="fl">0.1</span>, <span class="at">col_alpha =</span> <span class="fl">0.4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -945,22 +942,14 @@ Warning
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adding another layer</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co"># old tmap (version 3.3)</span></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(Spatial_data) <span class="sc">+</span> </span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>   <span class="fu">tm_polygons</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>, <span class="at">border.alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(London_borough_shapefile) <span class="sc">+</span></span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>   <span class="fu">tm_polygons</span>(<span class="at">alpha =</span> <span class="dv">0</span>, <span class="at">border.alpha =</span> <span class="dv">1</span>, <span class="at">border.col =</span> <span class="st">"black"</span>)</span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="co"># The background of the added layer has been rendered to full</span></span>
-<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="co"># transparency with alpha set to 0 and borders are fully solid with</span></span>
-<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="co"># border.alpha set to 1 and border.col (colour) set to “black” to appear</span></span>
-<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="co"># pronounced.</span></span>
-<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="co"># latest tmap (&gt; version 4.0)</span></span>
-<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(Spatial_data) <span class="sc">+</span> </span>
-<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill_alpha =</span> <span class="fl">0.1</span>, <span class="at">col_alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
-<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(london_borough_shapefile) <span class="sc">+</span></span>
-<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill_alpha =</span> <span class="dv">0</span>, <span class="at">col_alpha =</span> <span class="dv">1</span>, <span class="at">col =</span> <span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(Spatial_data) <span class="sc">+</span> </span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill_alpha =</span> <span class="fl">0.1</span>, <span class="at">col_alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(london_borough_shapefile) <span class="sc">+</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill_alpha =</span> <span class="dv">0</span>, <span class="at">col_alpha =</span> <span class="dv">1</span>, <span class="at">col =</span> <span class="st">"black"</span>)</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="co"># The background of the added layer (london_borough_shapefile) has been rendered </span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="co"># to full transparency with the fill_alpha set to 0 and it borders are fully solid </span></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="co"># using col_alpha set to 1 and col (colour) set to “black” to appear pronounced.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -974,38 +963,39 @@ Warning
 </section>
 <section id="full-visualising-of-data-in-the-maps" class="level4" data-number="3.3.3">
 <h4 data-number="3.3.3" class="anchored" data-anchor-id="full-visualising-of-data-in-the-maps"><span class="header-section-number">3.3.3</span> Full visualising of data in the maps</h4>
-<p>Suppose you want to visual the spatial data in those postcodes, we can use the <code>tm_fill()</code> function. Let us visual the <code>IMD_Decile</code> column which has <strong>DISCRETE</strong> (or CATEGORICAL) values classed from 1 to 10 to signify areas that are deprived (with 1 being the poorest) and those that are wealthier (with 10 being the least deprived).</p>
+<p>Suppose you want to visual the spatial data in those postcodes, we can use the <code>tm_polygons()</code> function. Let us visual the <code>IMD_Decile</code> column which has <strong>DISCRETE</strong> (or CATEGORICAL) values classed from 1 to 10 to signify areas that are deprived (with 1 being the poorest) and those that are wealthier (with 10 being the least deprived).</p>
 <p>The coding would be as follows:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate map IMD_Deciles</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co"># old tmap (version 3.3)</span></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(Spatial_data) <span class="sc">+</span> </span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_fill</span>(<span class="st">"IMD_Decile"</span>, <span class="at">style =</span> <span class="st">"cat"</span>, <span class="at">title =</span> <span class="st">"Deprivation (Deciles)"</span>, </span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">palette =</span> <span class="st">"RdYlGn"</span>) <span class="sc">+</span></span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(london_borough_shapefile) <span class="sc">+</span> </span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_polygons</span>(<span class="at">alpha =</span> <span class="dv">0</span>, <span class="at">border.alpha =</span> <span class="dv">1</span>, <span class="at">border.col =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_scale_bar</span>(<span class="at">position =</span> <span class="fu">c</span>(<span class="st">"left"</span>, <span class="st">"bottom"</span>)) <span class="sc">+</span></span>
-<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_compass</span>(<span class="at">type =</span> <span class="st">"arrow"</span>, <span class="at">position =</span> <span class="fu">c</span>(<span class="st">"right"</span>, <span class="st">"top"</span>)) <span class="sc">+</span></span>
-<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_layout</span>(<span class="at">legend.outside =</span> <span class="cn">TRUE</span>, <span class="at">legend.title.size =</span> <span class="fl">0.8</span>,  </span>
-<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>          <span class="at">legend.text.size =</span> <span class="fl">0.7</span>, </span>
-<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>          <span class="at">legend.title.fontface =</span> <span class="dv">2</span>)</span>
-<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a><span class="co"># latest tmap (&gt; version 4.0)</span></span>
-<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(Spatial_data) <span class="sc">+</span></span>
-<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill =</span> <span class="st">"IMD_Decile"</span>, <span class="at">fill.scale =</span> <span class="fu">tm_scale_categorical</span>(<span class="at">values =</span> <span class="st">"brewer.rd_yl_gn"</span>),</span>
-<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">fill.legend =</span> <span class="fu">tm_legend</span>(<span class="at">title =</span> <span class="st">"Deprivation (Deciles)"</span>, <span class="at">frame =</span> <span class="cn">FALSE</span>, <span class="at">item.space =</span> <span class="dv">0</span>),</span>
-<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">fill_alpha =</span> <span class="dv">1</span>, </span>
-<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">col_alpha =</span> <span class="fl">0.5</span>, </span>
-<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> <span class="st">"black"</span>, </span>
-<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">lwd =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
-<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_shape</span>(london_borough_shapefile) <span class="sc">+</span> </span>
-<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill_alpha =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_compass</span>(<span class="at">type =</span> <span class="st">"arrow"</span>, <span class="at">position =</span> <span class="fu">c</span>(<span class="st">"right"</span>, <span class="st">"top"</span>)) <span class="sc">+</span> </span>
-<span id="cb29-26"><a href="#cb29-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_scalebar</span>(<span class="at">position =</span> <span class="fu">c</span>(<span class="st">"left"</span>, <span class="st">"bottom"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(Spatial_data) <span class="sc">+</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">fill =</span> <span class="st">"IMD_Decile"</span>, </span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">fill.scale =</span> <span class="fu">tm_scale_categorical</span>(<span class="at">values =</span> <span class="st">"brewer.rd_yl_gn"</span>),</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">fill.legend =</span> <span class="fu">tm_legend</span>(<span class="at">title =</span> <span class="st">"Deprivation (Deciles)"</span>, <span class="at">frame =</span> <span class="cn">FALSE</span>, <span class="at">item.space =</span> <span class="sc">-</span><span class="fl">0.2</span>, <span class="at">position =</span> <span class="fu">tm_pos_out</span>()),</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">fill_alpha =</span> <span class="dv">1</span>, </span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">col_alpha =</span> <span class="fl">0.5</span>, </span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> <span class="st">"black"</span>, </span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">lwd =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_shape</span>(london_borough_shapefile) <span class="sc">+</span> </span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill_alpha =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_compass</span>(<span class="at">type =</span> <span class="st">"arrow"</span>, <span class="at">position =</span> <span class="fu">c</span>(<span class="st">"right"</span>, <span class="st">"top"</span>)) <span class="sc">+</span> </span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_scalebar</span>(<span class="at">position =</span> <span class="fu">c</span>(<span class="st">"left"</span>, <span class="st">"bottom"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>In the <code>tm_polygons()</code>, we insert the variable of interest we want to visual at the <code>fill =</code> argument. The <code>fill.scale =</code> option allows us to select the appropriate fill scale colour scheme depending on the type of dataset we are using - here it is categorical, so we use <code>tm_scale_categorical()</code>. The <code>fill_legend()</code> allows us to apply the appropriate customisation to the legends.</p>
-<p><strong>Geography 101</strong> – when creating a map, it is always best to add the North compass and scale bar. This is done with the <code>tm_compass()</code> and <code>tm_scalebar()</code> functions. The <code>tm_layout()</code> allows you to make further customisations to the map such as placing the legends outside the plot region and modifying the text size etc. You can experiment with them by checking the help menu – just type: <code>?tm_layout()</code> in the console.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Geography 101</strong> – when creating a map, it is always best to add the North compass and scale bar. This is done with the <code>tm_compass()</code> and <code>tm_scalebar()</code> functions. The <code>tm_layout()</code> allows you to make further customisations to the internal and external plot region of map such as turning of the plot frame or modifying the text size in output. You can experiment with them by checking the help menu – just type: <code>?tm_layout()</code> in the console.</p>
+</div>
+</div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -1041,8 +1031,8 @@ Warning
 <li>UK Shape files for different geographic units [Source: <strong>Office for National Statistics, Open Geography Portal</strong>] <a href="https://geoportal.statistics.gov.uk"><strong>Click Here</strong></a></li>
 </ol>
 </section>
-<section id="practical-homework" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="practical-homework"><span class="header-section-number">6</span> Practical homework</h2>
+<section id="exercise" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="exercise"><span class="header-section-number">6</span> Exercise</h2>
 <p><strong>Exploring the burden of fire hazards and vulnerability in London</strong></p>
 <p>An incidence rate (IR) is typically a measure of frequency used to quantify the occurrence of an event.</p>
 <p>This basic quantitative measure is often applied in social sciences (e.g., criminology for crime rates, in education on pass rates for grades), epidemiology and disaster sciences as well. The study of fire hazards and safety is an intersection of these three fields.</p>
@@ -1057,14 +1047,143 @@ Warning
 </center>
 <p><br></p>
 <ul>
-<li>Experiment with the <code>tmap</code> functions and arguments to create a map showing the incidence rate of fire hazards across LSOAs in London.</li>
-<li>In the arguments for the <code>tm_fill()</code> function - include the following: 1.) use <code>"Reds"</code> as colour palette scheme in the <code>palette =</code> argument; 2.) continuous legend scheme for the <code>style=</code> argument; and 3.) an appropriate title such as <code>"Fires per 1000"</code> for the legends in the <code>title =</code> argument.</li>
-<li>Include the following customizations: 1.) a scale bar and a north arrow in the visualisation using the <code>tm_scale_bar()</code> and <code>tm_compass()</code>; and 2.) an overlay the London Borough shapefile on top of the London LSOA shapefile, and render it transparent. Try using the <code>tm_text()</code> function to include the names of the Boroughs in the visualisation - this column is called <code>ctyua16nm</code> in the Borough’s shapefile.</li>
+<li>Experiment with the <code>tmap</code> functions and arguments to create a map showing the incidence rate of fire hazards across LSOAs in London. The output should look something as follows:</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/general/week1/Image10_solutionmap.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Use the <code>tm_shape()</code> functions to add the spatial data frame object with the incidence rates.</li>
+<li>In the arguments for the <code>tm_polygons()</code> function, inside it, it should include the following codes: 1.) use the argument <code>fill=</code> to specify the name of the column to be mapped; 2.) use the argument <code>fill.scale = tm_scale_continuous()</code> to control how the scale in the legends should appear. It should be continuous as the incidence rates are continuous values. Therefore, within the <code>tm_scale_continuous()</code> argument, use the options <code>values =</code> to control the colour gradient from blue (i.e., low intensity of fire hazards) to red (i.e., high burden) by typing the colour scheme: “-brewer.rd_bu”; 3.) use the argument <code>fill.legend = tm_legend()</code> to control the appearence of the legend block. Inside the <code>tm_legend()</code> specific <code>title =</code> as “Fires per 1,000”, and remove the plot frame around the legend block by stating <code>frame = FALSE</code>; 4.) apply the further cosmetics changes using <code>"fill_alpha = 1"</code> (transparency of areas), <code>col_alpha = 0.5</code> (transparency of lines), <code>col = "grey"</code> (color of the line) and <code>lwd = 0.1</code> (line thickness).</li>
+<li>Include the following customizations: 1.) a scale bar and a north arrow in the visualisation using the <code>tm_scale_bar()</code> and <code>tm_compass()</code>; and 2.) lastly, use the overlay of the London Borough shapefile add it on top of the London LSOA shapefile by using again, the <code>tm_shape()</code> function, and render it fully transparent. Try using the <code>tm_text()</code> function to include the names of the Boroughs in the visualisation - this column is called <code>ctyua16nm</code> in the Borough’s shapefile.</li>
 </ul>
 <p><strong>Question:</strong> How would you provide a descriptive interpretation of the spatial distribution/incidence of residential fires across LSOAs in London?</p>
-<div class="note">
-<p><strong>IMPORTANT NOTE</strong>: The solutions for this homework will be released next week</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Have a go at these questions before revealing the solution codes and output below</p>
+</div>
+</div>
+<details>
+<summary>
+<strong>Click here to see solution code:</strong>
+</summary>
+<p>Load the required packages:</p>
+<p>Load in the required dataset i.e., <code>London_LSOA_FireHazards_2019.csv</code> using the <code>read.csv()</code> function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># please be sure set the work directory according to your own PC</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="co"># setwd("/Users/anwarmusah/Documents/Websites/GEOG0114/all_datasets/Week 1 - Dataset")</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>Fire_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">"London_LSOA_FireHazards_2019.csv"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">","</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Load in the required shapefile dataset i.e., <code>London_LSOA_areas.shp</code> and <code>London_Boroughs_Shapefile.shp</code> using the <code>read_sf()</code> function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add shapefiles for LSOA and Boroughs</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>london_lsoa_shapefile <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="st">"London_LSOA_areas.shp"</span>)</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>london_borough_shapefile <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="st">"London_Boroughs_Shapefile.shp"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Merge the fire records to LSOA shapefile using the <code>merge()</code> on common key column (e.g., <code>LSOA_code</code>):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>Spatial_data <span class="ot">&lt;-</span> <span class="fu">merge</span>(london_lsoa_shapefile, Fire_data, <span class="at">by.x =</span> <span class="st">'LSOA_code'</span>, <span class="at">by.y =</span> <span class="st">'LSOA_code'</span>, <span class="at">all.x =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Calculate the incidence of fires in London’s LSOA:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the incidence rate. </span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This requires creating a new variable in the `Spatial_data` data frame.</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Let call the new variable 'IncidenceFires'. </span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co"># We are creating the 'IncidenceFires' column based on 'Fires2019' and 'TotalHouses2019'</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Its a rate per capita so we will divide the two and multiple it by 1000</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>Spatial_data<span class="sc">$</span>IncidenceFires <span class="ot">&lt;-</span> (Spatial_data<span class="sc">$</span>Fires2019<span class="sc">/</span>Spatial_data<span class="sc">$</span>TotalHouses2019)<span class="sc">*</span><span class="dv">1000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Let’s create the map that shows the burden of fires. Here, we will use a continuous scale for the colour gradient in the legend block:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate a incidence map 'with continuous scale' according to the criteria specified in the hints</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(Spatial_data) <span class="sc">+</span> </span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="st">"IncidenceFires"</span>,</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">fill.scale =</span> <span class="fu">tm_scale_continuous</span>(<span class="at">values =</span> <span class="st">"-brewer.rd_bu"</span>, <span class="at">midpoint =</span> <span class="fl">1.5</span>),</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">fill.legend =</span> <span class="fu">tm_legend</span>(<span class="at">title =</span> <span class="st">"Fires per 1,000"</span>, <span class="at">frame =</span> <span class="cn">FALSE</span>),</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">fill_alpha =</span> <span class="dv">1</span>,</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">col_alpha =</span> <span class="fl">0.5</span>,</span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> <span class="st">"white"</span>,</span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">lwd =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_shape</span>(london_borough_shapefile) <span class="sc">+</span> </span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill_alpha =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_text</span>(<span class="st">"ctyua16nm"</span>, <span class="at">size =</span> <span class="st">"AREA"</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>) <span class="sc">+</span></span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_compass</span>(<span class="at">type =</span> <span class="st">"arrow"</span>, <span class="at">position =</span> <span class="fu">c</span>(<span class="st">"right"</span>, <span class="st">"top"</span>)) <span class="sc">+</span> </span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_scalebar</span>(<span class="at">position =</span> <span class="fu">c</span>(<span class="st">"left"</span>, <span class="st">"bottom"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="03-spatial_analysis_for_data_science_files/figure-html/map1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Interpretation:</strong> From this static map, it is difficult to discern the spatial patterns in incidence of fire hazards in residential dwellings in LSOAs in London. For instance, Boroughs such as <strong>Hackney</strong> appears to have a <strong>dispersed</strong> pattern with some LSOAs reporting high incidence rates. The borough of <strong>Bexley</strong> has high incidence rates concentrated in the North-East.</p>
+</div>
+</div>
+<p>You can make this an interactive map by using the <code>tmap_mode("view")</code> code. Let us print this output in an interactive map, so we can zoom into the details and have a clearer picture:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># to map interactive using tmap_mode("view") code, and re-run the map code again</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="co"># active interactive mode</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">"view"</span>)</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="co"># re-run the map code again to show it in an interactive mode</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(Spatial_data) <span class="sc">+</span> </span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="st">"IncidenceFires"</span>,</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">fill.scale =</span> <span class="fu">tm_scale_continuous</span>(<span class="at">values =</span> <span class="st">"-brewer.rd_bu"</span>, <span class="at">midpoint =</span> <span class="fl">1.5</span>),</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">fill.legend =</span> <span class="fu">tm_legend</span>(<span class="at">title =</span> <span class="st">"Fires per 1,000"</span>, <span class="at">frame =</span> <span class="cn">FALSE</span>),</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">fill_alpha =</span> <span class="dv">1</span>,</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">col_alpha =</span> <span class="fl">0.5</span>,</span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> <span class="st">"white"</span>,</span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">lwd =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_shape</span>(london_borough_shapefile) <span class="sc">+</span> </span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill_alpha =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_text</span>(<span class="st">"ctyua16nm"</span>, <span class="at">size =</span> <span class="st">"AREA"</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>) <span class="sc">+</span></span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_compass</span>(<span class="at">type =</span> <span class="st">"arrow"</span>, <span class="at">position =</span> <span class="fu">c</span>(<span class="st">"right"</span>, <span class="st">"top"</span>)) <span class="sc">+</span> </span>
+<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_scalebar</span>(<span class="at">position =</span> <span class="fu">c</span>(<span class="st">"left"</span>, <span class="st">"bottom"</span>))</span>
+<span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a><span class="co"># switch off the interactive mode</span></span>
+<span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">"plot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>By running the code: <code>tmap_mode("view")</code>, will cause all map outputs to be generated in interactivity mode. You can switch it off by running the following code: <code>tmap_mode("plot")</code></p>
+</div>
+</div>
+</details>
 
 
 </section>

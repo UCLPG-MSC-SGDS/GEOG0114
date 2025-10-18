@@ -1,5 +1,5 @@
 ---
-title: "Spatial analysis for data sciences"
+title: "Week 1: Spatial analysis for data sciences"
 ---
 
 ## Introduction
@@ -500,8 +500,8 @@ The `tmap` is the best package for creating maps in RStudio – it’s easy to c
 
 **`tmap`** functions | **What it does...**
 ------------ | ------------- 
-`tm_shape()`| This allows the user to add layers to the map
-`tm_polygon()`| This allows the user to apply direct customisations to the added layer specified in `tm_shape()`. Note: This follows immediately after `tm_shape()`
+`tm_shape()`| This allows the user to add layers to be mapped
+`tm_polygons()`| This deal with **vector** type dataset specifically. This allows the user to specify which column in the vector layer to be mapped using the `fill = ` argument. Within the `tm_polygon()`, it also allows the user to apply the appropriate customisation to the vector layer. Examples of such arguments in 1.) `fill_alpha =` to modify the transparency; 2.) `col_alpha =` to modify the transparency of the borders; 3.) `col = ` controls the colour of the line; 4.) `fill.scale =` controls the appearence and set the colour scheme of the scale that appears inside the legends block. Please note that if your data is continuous, then the appropriate argument to use in the `fill.scale =` would be either `tm_scale_continuous()` or `tm_scale_interval()` for breaking the continuous values into intervals. If they are numerical but discrete (counts) use `tm_scale_discrete()`. Otherwise, if it is categorical use `tm_scale_categorical()`; and 4.) `fill.legend = tm_legend(...)` allows the user to control the presentation of the legend. There are many arguments to experiment with - you can type `?tm_polygons()` in console to see them. Please note that the `tm_polygons()` is immediately followed after specifying the `tm_shape()` function.
 `tm_layout()`| This allows the user to make heavy customisations to the main title, legends and other cosmetics to text sizes etc.
 `tm_compass()`|This allows the user to add a compass visual to the map output
 `tm_scale_bar()`| This allows the user to add a scale bar to the map output
@@ -527,11 +527,8 @@ You can customise the level of transparency for both the area and borders by add
 ```{r, eval=FALSE}
 # Controlling transparencies for borders and areas
 
-# old tmap (version 3.3)
-tm_shape(Spatial_data) + tm_polygons(alpha = 0.1, border.alpha = 0.4)
-
-# latest tmap (> version 4.0)
-tm_shape(Spatial_data) + tm_polygons(fill_alpha = 0.1, col_alpha = 0.4)
+tm_shape(Spatial_data) + 
+	tm_polygons(fill_alpha = 0.1, col_alpha = 0.4)
 ```
 
 ```{r echo=FALSE, out.width = "100%", fig.align='center', cache=TRUE,}
@@ -545,22 +542,14 @@ Suppose you want to add another layer to show the regions (i.e., Borough) of Lon
 ```{r, eval=FALSE}
 # Adding another layer
 
-# old tmap (version 3.3)
-tm_shape(Spatial_data) + 
-   tm_polygons(alpha = 0.1, border.alpha = 0.4) +
-tm_shape(London_borough_shapefile) +
-   tm_polygons(alpha = 0, border.alpha = 1, border.col = "black")
-
-# The background of the added layer has been rendered to full
-# transparency with alpha set to 0 and borders are fully solid with
-# border.alpha set to 1 and border.col (colour) set to “black” to appear
-# pronounced.
-
-# latest tmap (> version 4.0)
 tm_shape(Spatial_data) + 
 	tm_polygons(fill_alpha = 0.1, col_alpha = 0.4) +
 tm_shape(london_borough_shapefile) +
 	tm_polygons(fill_alpha = 0, col_alpha = 1, col = "black")
+
+# The background of the added layer (london_borough_shapefile) has been rendered 
+# to full transparency with the fill_alpha set to 0 and it borders are fully solid 
+# using col_alpha set to 1 and col (colour) set to “black” to appear pronounced.
 ```
 
 ```{r echo=FALSE, out.width = "100%", fig.align='center', cache=TRUE,}
@@ -569,42 +558,33 @@ knitr::include_graphics('images/general/week1/image8_addedlayer.png', error = FA
 
 #### Full visualising of data in the maps
 
-Suppose you want to visual the spatial data in those postcodes, we can use the `tm_fill()` function.  Let us visual the `IMD_Decile` column which has **DISCRETE** (or CATEGORICAL) values classed from 1 to 10 to signify areas that are deprived (with 1 being the poorest) and those that are wealthier (with 10 being the least deprived). 
+Suppose you want to visual the spatial data in those postcodes, we can use the `tm_polygons()` function.  Let us visual the `IMD_Decile` column which has **DISCRETE** (or CATEGORICAL) values classed from 1 to 10 to signify areas that are deprived (with 1 being the poorest) and those that are wealthier (with 10 being the least deprived). 
 
 The coding would be as follows:
 
 ```{r, eval=FALSE}
 # Generate map IMD_Deciles
 
-# old tmap (version 3.3)
-tm_shape(Spatial_data) + 
-tm_fill("IMD_Decile", style = "cat", title = "Deprivation (Deciles)", 
-        palette = "RdYlGn") +
-tm_shape(london_borough_shapefile) + 
-tm_polygons(alpha = 0, border.alpha = 1, border.col = "black") +
-tm_scale_bar(position = c("left", "bottom")) +
-tm_compass(type = "arrow", position = c("right", "top")) +
-tm_layout(legend.outside = TRUE, legend.title.size = 0.8,  
-          legend.text.size = 0.7, 
-          legend.title.fontface = 2)
-
-# latest tmap (> version 4.0)
 tm_shape(Spatial_data) +
-	tm_polygons(fill = "IMD_Decile", fill.scale = tm_scale_categorical(values = "brewer.rd_yl_gn"),
-		fill.legend = tm_legend(title = "Deprivation (Deciles)", frame = FALSE, item.space = 0),
-		fill_alpha = 1, 
-		col_alpha = 0.5, 
-		col = "black", 
-		lwd = 0.1) +
-	tm_shape(london_borough_shapefile) + 
-	tm_polygons(fill_alpha = 0, col = "black") +
-	tm_compass(type = "arrow", position = c("right", "top")) + 
-	tm_scalebar(position = c("left", "bottom"))
+    tm_polygons(
+		fill = "IMD_Decile", 
+		fill.scale = tm_scale_categorical(values = "brewer.rd_yl_gn"),
+        fill.legend = tm_legend(title = "Deprivation (Deciles)", frame = FALSE, item.space = -0.2, position = tm_pos_out()),
+        fill_alpha = 1, 
+        col_alpha = 0.5, 
+        col = "black", 
+        lwd = 0.1) +
+    tm_shape(london_borough_shapefile) + 
+    tm_polygons(fill_alpha = 0, col = "black") +
+    tm_compass(type = "arrow", position = c("right", "top")) + 
+    tm_scalebar(position = c("left", "bottom"))
 ```
 
 In the `tm_polygons()`, we insert the variable of interest we want to visual at the `fill = ` argument. The `fill.scale =` option allows us to select the appropriate fill scale colour scheme depending on the type of dataset we are using - here it is categorical, so we use `tm_scale_categorical()`. The `fill_legend()` allows us to apply the appropriate customisation to the legends. 
 
-**Geography 101** – when creating a map, it is always best to add the North compass and scale bar. This is done with the `tm_compass()` and `tm_scalebar()` functions. The `tm_layout()` allows you to make further customisations to the map such as placing the legends outside the plot region and modifying the text size etc. You can experiment with them by checking the help menu – just type: `?tm_layout()` in the console.
+:::{.callout-note}
+**Geography 101** – when creating a map, it is always best to add the North compass and scale bar. This is done with the `tm_compass()` and `tm_scalebar()` functions. The `tm_layout()` allows you to make further customisations to the internal and external plot region of map such as turning of the plot frame or modifying the text size in output. You can experiment with them by checking the help menu – just type: `?tm_layout()` in the console.
+:::
 
 ```{r echo=FALSE, out.width = "100%", fig.align='center', cache=TRUE,}
 knitr::include_graphics('images/general/week1/Image9_finalmap.png', error = FALSE) 
@@ -628,7 +608,7 @@ This concludes this computer lab session. Challenge yourself with the task place
 2. English indices for Multiple Deprivation (IMD) for 2019 [Source: **UK Gov**] [**Click Here**](https://www.gov.uk/government/statistics/english-indices-of-deprivation-2019)
 3. UK Shape files for different geographic units [Source: **Office for National Statistics, Open Geography Portal**] [**Click Here**](https://geoportal.statistics.gov.uk)
 
-## Practical homework
+## Exercise
 
 **Exploring the burden of fire hazards and vulnerability in London**
 
@@ -648,12 +628,122 @@ $I  = (E/T) × 1000$
 </center>
 </br>
 
-- Experiment with the `tmap` functions and arguments to create a map showing the incidence rate of fire hazards across LSOAs in London.
-- In the arguments for the `tm_fill()` function - include the following: 1.) use `"Reds"` as colour palette scheme in the `palette =` argument; 2.) continuous legend scheme for the `style=` argument; and 3.) an appropriate title such as `"Fires per 1000"` for the legends in the `title =` argument.
-- Include the following customizations: 1.) a scale bar and a north arrow in the visualisation using the `tm_scale_bar()` and `tm_compass()`; and 2.) an overlay the London Borough shapefile on top of the London LSOA shapefile, and render it transparent. Try using the `tm_text()` function to include the names of the Boroughs in the visualisation - this column is called `ctyua16nm` in the Borough's shapefile.
+- Experiment with the `tmap` functions and arguments to create a map showing the incidence rate of fire hazards across LSOAs in London. The output should look something as follows:
+
+```{r echo=FALSE, out.width = "100%", fig.align='center', cache=TRUE,}
+knitr::include_graphics('images/general/week1/Image10_solutionmap.png', error = FALSE) 
+```
+
+- Use the `tm_shape()` functions to add the spatial data frame object with the incidence rates.
+- In the arguments for the `tm_polygons()` function, inside it, it should include the following codes: 1.) use the argument `fill=` to specify the name of the column to be mapped; 2.) use the argument `fill.scale = tm_scale_continuous()` to control how the scale in the legends should appear. It should  be continuous as the incidence rates are continuous values. Therefore, within the `tm_scale_continuous()` argument, use the options `values =` to control the colour gradient from blue (i.e., low intensity of fire hazards) to red (i.e., high burden) by typing the colour scheme: "-brewer.rd_bu"; 3.) use the argument `fill.legend = tm_legend()` to control the appearence of the legend block. Inside the `tm_legend()` specific `title =` as "Fires per 1,000", and remove the plot frame around the legend block by stating `frame = FALSE`; 4.) apply the further cosmetics changes using `"fill_alpha = 1"` (transparency of areas), `col_alpha = 0.5` (transparency of lines), `col = "grey"` (color of the line) and `lwd = 0.1` (line thickness).
+- Include the following customizations: 1.) a scale bar and a north arrow in the visualisation using the `tm_scale_bar()` and `tm_compass()`; and 2.) lastly, use the overlay of the London Borough shapefile add it on top of the London LSOA shapefile by using again, the `tm_shape()` function, and render it fully transparent. Try using the `tm_text()` function to include the names of the Boroughs in the visualisation - this column is called `ctyua16nm` in the Borough's shapefile.
 
 **Question:** How would you provide a descriptive interpretation of the spatial distribution/incidence of residential fires across LSOAs in London? 
 
-::: note
-**IMPORTANT NOTE**: The solutions for this homework will be released next week
+:::{.callout-note}
+Have a go at these questions before revealing the solution codes and output below
 :::
+
+<details><summary>**Click here to see solution code:**</summary>
+
+```{r set_up_path_GEOG0114_wk1, include = FALSE}
+knitr::opts_knit$set(root.dir = "/Users/anwarmusah/Documents/Websites/GEOG0114/all_datasets/Week 1 - Dataset")
+knitr::opts_chunk$set(cache = FALSE)
+```
+
+Load the required packages:
+
+```{r loading_packages_wk1, include = FALSE}
+library("tmap")
+library("sf")
+```
+
+Load in the required dataset i.e., `London_LSOA_FireHazards_2019.csv` using the `read.csv()` function:
+
+```{r setting_workdir_wk1}
+# please be sure set the work directory according to your own PC
+# setwd("/Users/anwarmusah/Documents/Websites/GEOG0114/all_datasets/Week 1 - Dataset")
+
+Fire_data <- read.csv(file="London_LSOA_FireHazards_2019.csv", header = TRUE, sep = ",")
+```
+
+Load in the required shapefile dataset i.e., `London_LSOA_areas.shp` and `London_Boroughs_Shapefile.shp` using the `read_sf()` function:
+
+```{r loading_shp_wk1}
+# Add shapefiles for LSOA and Boroughs
+london_lsoa_shapefile <- read_sf("London_LSOA_areas.shp")
+london_borough_shapefile <- read_sf("London_Boroughs_Shapefile.shp")
+```
+
+Merge the fire records to LSOA shapefile using the `merge()` on common key column (e.g., `LSOA_code`):
+
+```{r, merging_data_wk1}
+Spatial_data <- merge(london_lsoa_shapefile, Fire_data, by.x = 'LSOA_code', by.y = 'LSOA_code', all.x = TRUE)
+```
+
+Calculate the incidence of fires in London's LSOA:
+
+```{r, incidence_rate}
+# Calculate the incidence rate. 
+# This requires creating a new variable in the `Spatial_data` data frame.
+# Let call the new variable 'IncidenceFires'. 
+# We are creating the 'IncidenceFires' column based on 'Fires2019' and 'TotalHouses2019'
+# Its a rate per capita so we will divide the two and multiple it by 1000
+
+Spatial_data$IncidenceFires <- (Spatial_data$Fires2019/Spatial_data$TotalHouses2019)*1000
+```
+
+Let's create the map that shows the burden of fires. Here, we will use a continuous scale for the colour gradient in the legend block: 
+
+```{r, map1}
+# Generate a incidence map 'with continuous scale' according to the criteria specified in the hints
+tm_shape(Spatial_data) + 
+	tm_polygons("IncidenceFires",
+		fill.scale = tm_scale_continuous(values = "-brewer.rd_bu", midpoint = 1.5),
+		fill.legend = tm_legend(title = "Fires per 1,000", frame = FALSE),
+		fill_alpha = 1,
+		col_alpha = 0.5,
+		col = "white",
+		lwd = 0.1) +
+	tm_shape(london_borough_shapefile) + 
+	tm_polygons(fill_alpha = 0, col = "black") +
+	tm_text("ctyua16nm", size = "AREA", fontface = "bold") +
+	tm_compass(type = "arrow", position = c("right", "top")) + 
+	tm_scalebar(position = c("left", "bottom"))
+```
+
+:::{.callout-note}
+**Interpretation:** From this static map, it is difficult to discern the spatial patterns in incidence of fire hazards in residential dwellings in LSOAs in London. For instance, Boroughs such as **Hackney** appears to have a **dispersed** pattern with some LSOAs reporting high incidence rates. The borough of **Bexley** has high incidence rates concentrated in the North-East.
+:::
+
+You can make this an interactive map by using the `tmap_mode("view")` code. Let us print this output in an interactive map, so we can zoom into the details and have a clearer picture:
+
+```{r, eval=FALSE}
+# to map interactive using tmap_mode("view") code, and re-run the map code again
+
+# active interactive mode
+tmap_mode("view")
+# re-run the map code again to show it in an interactive mode
+tm_shape(Spatial_data) + 
+	tm_polygons("IncidenceFires",
+		fill.scale = tm_scale_continuous(values = "-brewer.rd_bu", midpoint = 1.5),
+		fill.legend = tm_legend(title = "Fires per 1,000", frame = FALSE),
+		fill_alpha = 1,
+		col_alpha = 0.5,
+		col = "white",
+		lwd = 0.1) +
+	tm_shape(london_borough_shapefile) + 
+	tm_polygons(fill_alpha = 0, col = "black") +
+	tm_text("ctyua16nm", size = "AREA", fontface = "bold") +
+	tm_compass(type = "arrow", position = c("right", "top")) + 
+	tm_scalebar(position = c("left", "bottom"))
+
+# switch off the interactive mode
+tmap_mode("plot")
+```
+
+:::{.callout-note}
+By running the code: `tmap_mode("view")`, will cause all map outputs to be generated in interactivity mode. You can switch it off by running the following code: `tmap_mode("plot")`
+:::
+
+</details>
