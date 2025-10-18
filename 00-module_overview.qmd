@@ -45,7 +45,6 @@ You can download the lecture notes and data sets for the practical lesson from t
 | 9 | [**Slides**]                                                                         | Spatial models III (Bayesian Risk Models)|
 | 10 | [**Slides**]                                                                        | Revision |
 
-**Solutions for Week**: [**[1]**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Solutions%201.zip) | [**[2]**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Solutions%202.zip) | **[3]** | **[4]** | [**[5]**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Solutions%205.zip) | [**[6]**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Solutions%206.zip) | **[7]** | **[8]** | **[9]**
 
 ## Contact for GEOG0114 {.unnumbered}
 
