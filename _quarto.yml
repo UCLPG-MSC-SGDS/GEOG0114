@@ -54,6 +54,7 @@ website:
           - 05-spatial_autocorrelation.qmd
       - section: "Raster-Based Analysis"
         contents:
+          - 06-suitability_mapping_AHP.qmd
       - section: "Spatial Modelling"
         contents:
 
