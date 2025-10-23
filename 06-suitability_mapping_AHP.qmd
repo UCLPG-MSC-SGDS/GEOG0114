@@ -6,14 +6,6 @@ title: "Week 4: Multi-Decision Criteria Analysis"
 
 ## Introduction 
 
-### Computer practical video (Length: 02:00:01)
-
-```{r, warnings=FALSE, message=FALSE, echo=FALSE}
-library(vembedr)
-embed_youtube('ocXeZn8WV0I', height=400) %>% use_align('center')
-```
-[[**Watch on YouTube**]](https://youtu.be/ocXeZn8WV0I)
-
 Now, with the proliferation of open spatial dataset, risk models derived from environmental, sociodemographic and topological factors are becoming increasingly available for open research. Such models have broadly shown to be useful in delineating geographical areas of risk or suitability for a certain outcomes. Today, we are going to explore this qualitatively using a knowledge-driven approach. 
 
 ### Learning outcomes 
@@ -46,14 +38,11 @@ We will need to load the following packages:
 
 The above packages `sf`, `tmap` & `sp`  should have been installed in the previous session(s). We will need to install a new package:
 
-- `raster`: Raster/gridded data analysis and manipulation
-- `spatialEco`: Spatial Analysis and Modelling Utilities package, which provides the user further functions such as `raster.invert()` which we will need in the third section.
-- `BAMMtools`: It provides the user access to an important function `getJenksBreaks()` for the `AHP` analysis in the third section. 
+- `raster`: Raster/gridded data analysis and manipulation.
+- `spatialEco`: Spatial Analysis and Modelling Utilities package, which provides the user further functions for dealing with raster data.
 
 ```{r, eval = FALSE}
-# Install the packages: spatialEco using the install.package()
 install.packages("spatialEco")
-install.packages("BAMMtools")
 install.packages("raster")
 
 # Load the packages with library()
@@ -62,7 +51,6 @@ library("tmap")
 library("raster")
 library("sp")
 library("spatialEco")
-library("BAMMtools")
 ```
 
 ### Loading datasets
@@ -145,7 +133,7 @@ We have summarized these limits or thresholds in a table as follows:
 ------------ | -------------
 `Temperature` | > 15.0 (degree Celsius)
 `Precipitation` | > 350 (mm of rainfall)
-`Aridity` | > 0.20 (i.e., semi-arid (> 0.5) dry sub-humid)
+`Aridity` | > 0.20 (i.e., semi-arid (> 0.5) dry-sub-humid)
 `Elevation` | < 1200m (low land) 
 `Population Density` | > 0 (Inhabitants must exist source for blood meal)
 `NDVI` | > 0.5 (mild levels of vegetation)
@@ -162,10 +150,12 @@ temp
 # reclassify anything below 15 as 0, and the rest above 15 as 1
 
 # reclassify the values into two groups 
-# all values > 0 and <= 15 change to 0
-# all values > 15 and <= 30 change to 1
-temp_cl <- c(0, 15, 0, 
-						15, 30, 1)
+# all values <= 15 change to 0
+# all values > 15 change to 1
+temp_cl <- c(
+	-Inf, 15, 0, 
+	15, Inf, 1
+	)
 
 # convert into a matrix format
 temp_cl_mat <- matrix(temp_cl, ncol = 3, byrow = TRUE)
@@ -200,10 +190,12 @@ elev
 # highest value = 4865m (above sea level)
 # reclassify anything below 1200m as 1, and the rest above 1200m as 0
 
-# all values > -12 and <= 1199.999 change to 0
-# all values > 1199.999 and <= 4900 change to 1
-elev_cl <- c(-12, 1199.999, 1, 
-							1199.999, 4900, 0)
+# all values <= 1200.0 change to 1
+# all values > 1200.0 change to 0
+elev_cl <- c(
+	-Inf, 1200, 1, 
+	1200, Inf, 0
+	)
 
 # convert into a matrix format
 elev_cl_mat <- matrix(elev_cl, ncol = 3, byrow = TRUE) 
@@ -237,8 +229,10 @@ Try reclassifying the remaining raster `arid`, `prec`, `popl` and `ndvi`. The so
 # nvdi
 nvdi
 
-nvdi_cl <- c(-1, 0.5, 0, 
-	0.5, 0.9, 1)
+nvdi_cl <- c(
+	-Inf, 0.5, 0, 
+	0.5, Inf, 1
+	)
 
 nvdi_cl_mat <- matrix(nvdi_cl, ncol = 3, byrow = TRUE)
 nvdi_cl_mat
@@ -254,8 +248,10 @@ tm_shape(nvdi_recl) +
 # prec
 prec
 
-prec_cl <- c(0, 350, 0, 
-	350, 2700, 1)
+prec_cl <- c(
+	-Inf, 350, 0, 
+	350, Inf, 1
+	)
 
 prec_cl_mat <- matrix(prec_cl, ncol = 3, byrow = TRUE) 
 prec_cl_mat
@@ -272,8 +268,10 @@ tm_shape(prec_recl) +
 # popl
 popl
 
-popl_cl <- c(-1, 0, 0, 
-	0, 126300, 1)
+popl_cl <- c(
+	-Inf, 0, 0, 
+	0, Inf, 1
+	)
 
 popl_cl_mat <- matrix(popl_cl, ncol = 3, byrow = TRUE)
 popl_cl_mat
@@ -289,8 +287,10 @@ tm_shape(popl_recl) +
 # arid
 arid
 
-arid_cl <- c(0, 0.20, 0, 
-	0.20, 3, 1)
+arid_cl <- c(
+	-Inf, 0.20, 0, 
+	0.20, Inf, 1
+	)
 
 arid_cl_mat <- matrix(arid_cl, ncol = 3, byrow = TRUE)
 arid_cl_mat
@@ -358,7 +358,7 @@ Visualizing the output:
 
 ```{r, eval=FALSE}
 tm_shape(Suitable_LF_Summed) + 
-	tm_raster(col.scale = tm_scale_categorical(values = c("#FDFEFE", "#FADBD8", "#F5B7B1", "#F1948A", "#E74C3C"), 
+	tm_raster(col.scale = tm_scale_categorical(values = c("#fff5f0", "#FADBD8", "#F5B7B1", "#F1948A", "#E74C3C"), 
 		labels=c("Low (2)", "Modest (3)", "Medium (4)", "High (5)", "Highest (6)")),
 		col.legend = tm_legend(title = "Suitability Map (Summation)", frame = FALSE)) +
 	tm_shape(kenya_states) + 
@@ -385,248 +385,100 @@ We can take this into account by applying weights for each variable determined b
 
 ### Standardizing the raster variables to the same scale (from 1 to 10)
 
-We are going to use **Saaty’s Analytical Hierarchy Process (AHP)**. We will need to standardize our raster factors in order to make comparisons and combination possible, as all of them contain different measures: `temp` (degree Celsius), `prec` (mm), `elev` (meters), `popl` (counts/sqkm); while `nvdi` and `arid` are derived indices without any units. Before deriving the weights and applying to the equation that is a linear combination of the above variables to estimate the suitability index for LF, we can standardize them using the `Jenks Natural Breaks` algorithm.
+We are going to use **Saaty’s Analytical Hierarchy Process (AHP)**. We will need to standardize our raster factors in order to make comparisons and combination possible, as all of them contain different measures: `temp` (degree Celsius), `prec` (mm), `elev` (meters), `popl` (counts/sqkm); while `nvdi` and `arid` are derived indices without any units. Before deriving the weights and applying to the equation that is a linear combination of the above variables to estimate the suitability index for LF, we can standardize them on to the same scale.
 
 :::{.callout-note}
-`Jenks Natural Breaks` algorithm is the preferred approach because it calculates the optimum breakpoints while seeking to minimize the variance within categories, and at the same time maximizing the variance between categories.
+We can use the **Raster reclassification** to standardise all rasters on the scale from **0** to **10**.
+
+<center>
+$$ \text{Standardisation} = \frac{R - R_{\min}}{R_{\max} - R_{\min}} \quad (10) $$
+</center>
 :::
 
-Let's begin to standardize the first variable `temp`. There is a bit of data cleaning involved - here is the code for to calculate the breaks using Jenks algorithm to get the raster scales from 1 to 10. 
+Let's begin to standardize the first variable `temp` to get the raster scales from 1 to 10. 
 
 ```{r, eval=FALSE}
-# cleaning for temp
-# Extract values from Raster
-tempValues <- values(temp) 
-
-# Change the values from vector object to data.frame object
-tempDF <- as.data.frame(tempValues)
-
-# Remove missing values and reapply column name
-tempDF <- as.data.frame(tempDF[!is.na(tempDF$tempValues),])
-colnames(tempDF) <- "tempValues"
-
-# Use the getJenksBreaks() function. Sample 0.10 (10%) of the pixels 
-#---at random and base the categorisation on this. 
-# NOTE: Doing this on the full data will take forever - so use the subset argument. 
-tempJenks <- getJenksBreaks(tempDF$tempValues, 10, subset = nrow(tempDF)*0.10)
-
-# See value in vector
-tempJenks
-
-# shows first element
-tempJenks[1] 
-
-# shows second element
-tempJenks[2] 
-
-# so on and so further...
-# Create categorisation by using the Jenks values in the vector
-temp_jenks_cl <- c(temp@data@min-1, tempJenks[1], 1,
-tempJenks[1], tempJenks[2], 2,
-tempJenks[2], tempJenks[3], 3,
-tempJenks[3], tempJenks[4], 4,
-tempJenks[4], tempJenks[5], 5,
-tempJenks[5], tempJenks[6], 6,
-tempJenks[6], tempJenks[7], 7,
-tempJenks[7], tempJenks[8], 8,
-tempJenks[8], tempJenks[9], 9,
-tempJenks[9], temp@data@max+1, 10) 
-
-# create matrix
-temp_jenks_cl_mat <- matrix(temp_jenks_cl, ncol = 3, byrow = TRUE)
-# view categorisation in matrix
-temp_jenks_cl_mat
-# reclassify original raster using the jenks classifications
-temp_jenks_recl <- reclassify(temp, temp_jenks_cl_mat)
+temp_standardised_10 <- ((temp - temp@data@min)/(temp@data@max-temp@data@min))*10
+plot(temp_standardised_10)
 ```
 
 Visualize the output with the scale from 1 to 10:
 
 ```{r, eval=FALSE}
-tm_shape(temp_jenks_recl) + 
+tm_shape(temp_standardised_10) + 
 	tm_raster(col.scale = tm_scale_continuous(values = "-brewer.spectral"),
-		col.legend = tm_legend(title = "Temperature [Rescaled (Jenks)]", frame = FALSE)) +
+		col.legend = tm_legend(title = "Temperature [Rescaled]", frame = FALSE)) +
 	tm_shape(kenya_states) + 
 	tm_polygons(fill_alpha = 0, col = "black") +
 	tm_layout(frame = FALSE)
 ```
 
 ```{r echo=FALSE, out.width = "100%", fig.align='center', cache=TRUE,}
-knitr::include_graphics('images/general/week4/image3_1.png', error = FALSE) 
+knitr::include_graphics('images/general/week4/image3_1_1.png', error = FALSE) 
 ```
 
-We need to repeat this process of reclassification and standardization using natural breaks for the remaining raster grids for `prec`, `popl` and `ndvi`. The solutions are provided in the hidden code chunks below. For `elev`, we will treat this differently. Note that for `arid` we are going to treat as a constraint (i.e., binary). Anything below `0.2` threshold are environments considered as hyperarid (extremely dry) areas and thus mosquitoes are non-existent there (- meaning that there is no point for us to include that part of the map wit hyperarid environments in the suitability analysis!). Note that we will use the existing `arid_recl` raster later to cancel out those areas from the final AHP generated map!
+We need to repeat this process of standardisation for the remaining raster grids for `prec`, `popl` and `ndvi`. The solutions are provided in the hidden code chunks below.
 
 <details><summary>Click here</summary>
 **Solutions**
 
 ```{r, eval=FALSE}
-# 2 prec
-# Extract values from Raster
-precValues <- values(prec) 
-# Change the values from vector object to data.frame object
-precDF <- as.data.frame(precValues)
-# Remove missing values and reapply column name
-precDF <- as.data.frame(precDF[!is.na(precDF$precValues),])
-colnames(precDF) <- "precValues"
-# Use the getJenksBreaks() function. Sample 0.10 (10%) of the pixels at random and base the categorisation on this. 
-# NOTE: Doing this on the full data will take forever - so use the subset argument. 
-precJenks <- getJenksBreaks(precDF$precValues, 10, subset = nrow(precDF)*0.10)
-# See value in vector
-precJenks
-# shows first element
-precJenks[1] 
-# shows second element
-precJenks[2] 
-# so on and so further...
-# Create categorisation by using the Jenks values in the vector
-prec_jenks_cl <- c(prec@data@min-1, precJenks[1], 1,
-precJenks[1], precJenks[2], 2,
-precJenks[2], precJenks[3], 3,
-precJenks[3], precJenks[4], 4,
-precJenks[4], precJenks[5], 5,
-precJenks[5], precJenks[6], 6,
-precJenks[6], precJenks[7], 7,
-precJenks[7], precJenks[8], 8,
-precJenks[8], precJenks[9], 9,
-precJenks[9], prec@data@max+1, 10) 
-# create matrix
-prec_jenks_cl_mat <- matrix(prec_jenks_cl, ncol = 3, byrow = TRUE)
-# view categorisation in matrix
-prec_jenks_cl_mat
-# reclassify original raster using the jenks classifications
-prec_jenks_recl <- reclassify(prec, prec_jenks_cl_mat)
+# precipitation
+prec_standardised_10 <- ((prec - prec@data@min)/(prec@data@max-prec@data@min))*10
+plot(prec_standardised_10)
 
+# population
+popl_standardised_10 <- ((popl - popl@data@min)/(popl@data@max-popl@data@min))*10
+plot(popl_standardised_10)
 
-# 3. popl
-# Extract values from Raster
-poplValues <- values(popl)
-# Change the values from vector object to data.frame object
-poplDF <- as.data.frame(poplValues)
-# Remove missing values and reapply column name
-poplDF <- as.data.frame(poplDF[!is.na(poplDF$poplValues),])
-colnames(poplDF) <- "poplValues"
-# Use the getJenksBreaks() function. Sample 0.10 (10%) of the pixels at random and base the categorisation on this. 
-# NOTE: Doing this on the full data will take forever - so use the subset argument. 
-poplJenks <- getJenksBreaks(poplDF$poplValues, 10, subset = nrow(poplDF)*0.10)
-# See value in vector
-poplJenks
-# shows first element
-poplJenks[1] 
-# shows second element
-poplJenks[2] 
-# so on and so further...
-# Create categorisation by using the Jenks values in the vector
-popl_jenks_cl <- c(popl@data@min-1, poplJenks[1], 1,
-poplJenks[1], poplJenks[2], 2,
-poplJenks[2], poplJenks[3], 3,
-poplJenks[3], poplJenks[4], 4,
-poplJenks[4], poplJenks[5], 5,
-poplJenks[5], poplJenks[6], 6,
-poplJenks[6], poplJenks[7], 7,
-poplJenks[7], poplJenks[8], 8,
-poplJenks[8], poplJenks[9], 9,
-poplJenks[9], popl@data@max+1, 10) 
-# create matrix
-popl_jenks_cl_mat <- matrix(popl_jenks_cl, ncol = 3, byrow = TRUE)
-# view categorisation in matrix
-popl_jenks_cl_mat
-# reclassify original raster using the jenks classifications
-popl_jenks_recl <- reclassify(popl, popl_jenks_cl_mat)
-
-
-# 4 nvdi
-# Extract values from Raster
-nvdiValues <- values(nvdi) 
-# Change the values from vector object to data.frame object
-nvdiDF <- as.data.frame(nvdiValues)
-# Remove missing values and reapply column name
-nvdiDF <- as.data.frame(nvdiDF[!is.na(nvdiDF$nvdiValues),])
-colnames(nvdiDF) <- "nvdiValues"
-# Use the getJenksBreaks() function. Sample 0.10 (10%) of the pixels at random and base the categorisation on this. 
-# NOTE: Doing this on the full data will take forever - so use the subset argument. 
-# EXTRA NOTE: The values for nvdi are very close to each other and so the algorithm splits it to just two cateogries
-nvdiJenks <- getJenksBreaks(nvdiDF$tempValues, 2, subset = nrow(nvdiDF)*0.10)
-# See value in vector
-nvdiJenks
-# shows first element
-nvdiJenks[1] 
-# shows second element
-nvdiJenks[2] 
-# so on and so further...
-# Create categorisation by using the Jenks values in the vector
-nvdi_jenks_cl <- c(nvdi@data@min-1, nvdiJenks[1], 1,
-nvdiJenks[1], nvdi@data@max+1, 2)
-# create matrix
-nvdi_jenks_cl_mat <- matrix(nvdi_jenks_cl, ncol = 3, byrow = TRUE)
-# view categorisation in matrix
-nvdi_jenks_cl_mat
-# reclassify original raster using the jenks classifications
-nvdi_jenks_recl <- reclassify(nvdi, nvdi_jenks_cl_mat)
+# normalised vegetation difference index
+nvdi_standardised_10 <- ((nvdi - nvdi@data@min)/(nvdi@data@max-nvdi@data@min))*10
+plot(nvdi_standardised_10)
 ```
 </details>
 
-For elevation, the risk of LF.decreases with higher values for elevation. Therefore, after applying the Jenks intervals, we need to flip the raster values accordingly.
+For `elev`, we will treat this differently - of course, we'll apply the standardisation. But for elevation, the risk of LF decreases with higher values for elevation. Therefore, we need to flip the raster values accordingly to invert the raster to appear as increasing values reflect that elevation is decreasing
 
 ```{r, eval=FALSE}
-# 6. elev
 
-# Extract values from Raster
-elevValues <- values(elev) 
-# Change the values from vector object to data.frame object
-elevDF <- as.data.frame(elevValues)
-# Remove missing values and reapply column name
-elevDF <- as.data.frame(elevDF[!is.na(elevDF$elevValues),])
-colnames(elevDF) <- "elevValues"
-# Use the getJenksBreaks() function. Sample 0.10 (10%) of the pixels at random and base the categorisation on this. 
-# NOTE: Doing this on the full data will take forever - so use the subset argument. 
-elevJenks <- getJenksBreaks(elevDF$elevValues, 10, subset = nrow(elevDF)*0.10)
-# See value in vector
-elevJenks
-# shows first element
-elevJenks[1] 
-# shows second element
-elevJenks[2] 
-# so on and so further...
-# Create categorisation by using the Jenks values in the vector
-elev_jenks_cl <- c(elev@data@min-1, elevJenks[1], 1,
-									 elevJenks[1], elevJenks[2], 2,
-									 elevJenks[2], elevJenks[3], 3,
-									 elevJenks[3], elevJenks[4], 4,
-									 elevJenks[4], elevJenks[5], 5,
-									 elevJenks[5], elevJenks[6], 6,
-									 elevJenks[6], elevJenks[7], 7,
-									 elevJenks[7], elevJenks[8], 8,
-									 elevJenks[8], elevJenks[9], 9,
-									 elevJenks[9], elev@data@max+1, 10) 
-# create matrix
-elev_jenks_cl_mat <- matrix(elev_jenks_cl, ncol = 3, byrow = TRUE)
-# view categorisation in matrix
-elev_jenks_cl_mat
-# reclassify original raster using the Jenks classifications
-elev_jenks_recl <- reclassify(elev, elev_jenks_cl_mat)
+# see what the original raster looks like
+plot(elev)
 
-# see plot in its original form
-plot(elev_jenks_recl)
-# Now flip the values by subtracting the values from the max value (here its 10)
-rev_elev_jenks_recl <- elev_jenks_recl
-values(rev_elev_jenks_recl) <- elev_jenks_recl@data@max - values(elev_jenks_recl)
-# see plot flipped/inverted
-plot(rev_elev_jenks_recl)
+# standardise the elevation
+elev_standardised_10 <- ((elev - elev@data@min)/(elev@data@max-elev@data@min))*10
+plot(elev_standardised_10)
+
+# clone the standardised elevation layer and rename it
+flipped_elev_standardised_10 <- elev_standardised_10
+# invert the raster simply that taking the maximum value from it and subtract it by its pixel value
+values(flipped_elev_standardised_10) <- elev_standardised_10@data@max - values(elev_standardised_10)
+# view inverted raster
+plot(flipped_elev_standardised_10)
 ```
 
 Visualize the inverted output (NOTE: Blue: High elevation, Red: low elevation):
+
 ```{r, eval = FALSE}
-tm_shape(rev_elev_jenks_recl) + 
-	tm_raster(col.scale = tm_scale_continuous(values = "-brewer.spectral"),
-		col.legend = tm_legend(title = "Inverted Elev (m)(on Jenks scale)", frame = FALSE)) +
-	tm_shape(kenya_states) + 
-	tm_polygons(fill_alpha = 0, col = "black") +
-	tm_layout(frame = FALSE
+tm_shape(flipped_elev_standardised_10) + 
+    tm_raster(col.scale = tm_scale_continuous(values = "-brewer.spectral"),
+        col.legend = tm_legend(title = "Inverted Elev (Rescale)", frame = FALSE)) +
+    tm_shape(kenya_states) + 
+    tm_polygons(fill_alpha = 0, col = "black") +
+    tm_layout(frame = FALSE)
 ```
 
 ```{r echo=FALSE, out.width = "100%", fig.align='center', cache=TRUE,}
-knitr::include_graphics('images/general/week4/image3_2.png', error = FALSE) 
+knitr::include_graphics('images/general/week4/image3_2_2.png', error = FALSE) 
+```
+
+Note that for `arid`, we are going to treat it as a constraint (i.e., binary). Anything below `0.2` threshold are environments considered as hyperarid (extremely dry) areas and thus mosquitoes are non-existent there (- meaning that there is no point for us to include that part of the map with hyperarid environments in the suitability analysis!). We will simply mask out that entire region with any pixel contain that value `0`. 
+
+Let's create that masking layer:
+
+```{r, eval = FALSE}
+# to filter only the values == 1
+arid_recl[arid_recl[] !=0 ] = NA
+plot(arid_recl)
 ```
 
 ### Determining the weight of each variable using Saaty's AHP
@@ -651,54 +503,87 @@ Our model uses the **Weighted Linear Combination (WLC)** approach as the decisio
 **Suitability (LF)** = **$w_1x_1 + w_2x_2 + w_3x_3 + w_4x_4 + w_5x_5 + w_6x_6$**
 </center>
 
-The $w_i$ and $x_i$ represent the weights deprived from AHP analysis and raster variables, respectively. The weights are multiplied to its corresponding raster to obtain a raster with values weighted but ultimately scaled with an upper limit of `10`. We will also multiply the summed product with the `arid_recl` binary raster to retain or constraint the output to non-hyperarid areas (> 0.2).
+The $w_i$ and $x_i$ represent the weights deprived from AHP analysis and raster variables, respectively. The weights are multiplied to its corresponding raster to obtain a raster with values weighted but ultimately scaled with an upper limit of `10`.
 
 This is the derived formula to use in calculating the suitability regions for LF in RStudio:
 
 ```{r, eval=FALSE}
 # use the rescaled columns in the formula
-suitablemap_WLC <- (0.372*prec_jenks_recl + 0.356*temp_jenks_recl + 0.159*popl_jenks_recl + 0.077*rev_elev_jenks_recl + 0.037*nvdi_jenks_recl) * arid_recl 
-# see plot
-plot(suitablemap_WLC)
+suitablemap_WLC <- 0.372*prec_standardised_10 + 0.356*temp_standardised_10 + 0.159*popl_standardised_10 + 0.077*flipped_elev_standardised_10 + 0.037 * nvdi_standardised_10
+# see information
+suitablemap_WLC
 ```
 
-Finally, visualize the output:
+:::{.callout-important}
+
+**EXPLANATION**
+
+| Component                      | Max Contribution (approx) |
+| ------------------------------ | ------------------------- |
+| 0.372 × 10 (precipitation)     | 3.72                      |
+| 0.356 × 10 (temperature)       | 3.56                      |
+| 0.159 × 10 (population)        | 1.59                      |
+| 0.077 × 10 (flipped elevation) | 0.77                      |
+| 0.037 × 10 (NDVI)              | 0.37                      |
+| **Total Theoretical Max**      | **10.01**                 |
+
+The observed max ≈ 6.786, after taking the weighted sums, meaning that no pixel achieved the maximum 10 across all factors simultaneous. So, 6.786 is highest achievable weighted suitability given your dataset. Likewise, 2.81112 is the lowest achieveable weighted suitability from that given dataset.
+
+**Optional**: Re-standardised weighted suitability map to 0-10, add the constrained by aridity layer, and finally apply a criteria to help with the interpretation of risk
+
+| Range       | Category  |
+| ----------- | --------- |
+| 0.00 – 0.20 | Very Low  |
+| 0.20 – 0.40 | Low       |
+| 0.40 – 0.60 | Moderate  |
+| 0.60 – 0.80 | High      |
+| 0.80 – 1.00 | Very High |
+
+:::
+
+Final output:
 
 ```{r, eval=FALSE}
-# create custom map by categorising the final raster output
-suitablemap_WLC_cl <- c(-1, 1, 1,
-	1, 2, 2,
-	2, 3, 3,
-	3, 4, 4,
-	4, 5, 5,
-	5, 6, 6,
-	6, 7, 7,
-	7, 8, 8,
-	8, 10, 9)
+# re-standardised weighted suitability map, constrained by aridity layer
+SWLC_standardised_10 <- ((suitablemap_WLC - suitablemap_WLC@data@min)/(suitablemap_WLC@data@max-suitablemap_WLC@data@min))*10
+plot(SWLC_standardised_10)
 
-suitablemap_WLC_cl_mat <- matrix(suitablemap_WLC_cl, ncol = 3, byrow = TRUE)
-suitablemap_WLC_cl_recl <- reclassify(suitablemap_WLC, suitablemap_WLC_cl_mat)
+# create the classification i.e., risk labels
+SWLC_cl <- c(
+	-Inf,0,0,
+  0,2,1,
+	2,4,2, 
+	4,6,3, 
+	6,8,4, 
+	8,10,5
+	)
 
-# tabulate as see the distribution of score to inform the labelling in map
-table(suitablemap_WLC_cl_recl@data@values
+SWLC_cl_mat <- matrix(SWLC_cl, ncol = 3, byrow = TRUE)
+SWLC_cl_mat
+SWLC_recl <- reclassify(SWLC_standardised_10, SWLC_cl_mat)
+
+table(SWLC_recl@data@values)
 
 # code for producing the final output
-tm_shape(suitablemap_WLC_cl_recl) + 
-	tm_raster(col.scale = tm_scale_categorical(values = "brewer.reds", 
-		labels = c("0", "4", "5", "6", "7", "8", "9")),
+tm_shape(SWLC_recl) + 
+	tm_raster(col.scale = tm_scale_categorical(values = c("white", "#74add1", "#e0f3f8", "#ffffbf", "#fee08b", "#f46d43"), 
+		labels = c("Not Suitable (0)", "Very Low (1)", "Low (2)", "Moderate (3)", "High (4)", "Very High (5)")),
 		col.legend = tm_legend(title = "Suitability Map (MCDA-AHP)", frame = FALSE)) +
+tm_shape(arid_recl) + 
+	tm_raster(col.scale = tm_scale_categorical(values = "white"), 
+		col.legend = tm_legend(show = FALSE)) + 
 	tm_shape(kenya_states) + 
-	tm_polygons(fill_alpha = 0, col = "black") +
-	tm_text("NAME_1", size = "AREA") +
+		tm_polygons(fill_alpha = 0, col = "black") +
+	tm_text("NAME_1", size = 0.8) +
 	tm_layout(frame = FALSE)
 ```
 
 ```{r echo=FALSE, out.width = "100%", fig.align='center', cache=TRUE,}
-knitr::include_graphics('images/general/week4/image3_3_1.png', error = FALSE) 
+knitr::include_graphics('images/general/week4/image3_3_2.png', error = FALSE) 
 ```
 
 :::{.callout-note}
-Areas with high suitability for mosquito occupancy based on the optimal conditions (from selected environmental variables) are locations in south-east, and deep west of Kenya.
+Areas with high suitability for mosquito occupancy based on the optimal conditions (from selected environmental variables and constrained on aridity) are locations in the far south-east region, small pockets in the central region, and far into the deep-west region of Kenya.
 :::
 
 ## References (see reading list)
