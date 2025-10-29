@@ -55,6 +55,7 @@ website:
       - section: "Raster-Based Analysis"
         contents:
           - 06-suitability_mapping_AHP.qmd
+          - 07-suitability_mapping_Niche.qmd
       - section: "Spatial Modelling"
         contents:
 
