@@ -6,22 +6,6 @@ title: "Week 5: Ecological Niche Models"
 
 ## Introduction
 
-### Lecture video (Length: 01:06:42)
-
-```{r, warnings=FALSE, message=FALSE, echo=FALSE}
-library(vembedr)
-embed_youtube('uAakkG-l-r0', height=400) %>% use_align('center')
-```
-[[**Watch on YouTube**]](https://youtu.be/uAakkG-l-r0)
-
-### Computer practical video (Length 02:00:01)
-
-```{r, warnings=FALSE, message=FALSE, echo=FALSE}
-library(vembedr)
-embed_youtube('C_aGyS5Cmos', height=400) %>% use_align('center')
-```
-[[**Watch on YouTube**]](https://youtu.be/C_aGyS5Cmos)
-
 Last week, we described how knowledge-driven methods informed by expert opinion (often drawn from experience or literature) can be used to predict locations that are suitable (or favourable) for a specific outcome given a set of environmental factors, which in turn, can be outputted as a thematic raster map. Last week's approach uses a mixed (i.e., qualitative and quantitative) methodology through the use of **Overlay Mapping** and **Analytical Hierarchy Process (AHP)** for suitability mapping, and these approaches are used strictly when there are no point occurrence data. 
 
 This week, we are using distributional models, often term as either: **Ecological (or Environmental) Niche Models**, or **Environmental or Habitat Suitability Models**. These are quantitative methods that use occurrence data in conjunction with environmental data to make a correlative model of the environmental conditions that meet an outcome's environmental (or ecological) requirements, which in turn, can predict the relative suitability of habitat for that outcome. It has many applications in ecology, epidemiology, disaster risk reduction and social sciences. Today, we are going to use the **Maximum Entropy Model (MAXENT)** to infer zones for disaster hazards such as wildfires in California given a set of predictor variables (i.e, climate, vegetation, anthropogenic and socioeconomic risk factors which are raster).
@@ -54,7 +38,7 @@ setwd("/Users/AccountName/Desktop/GEOG0114/Week 5")
 Before we start anything, we will need to install **Java** for the appropriate operating system in order to follow this practical. You can download the latest version of Java accordingly:
 
 :::{.callout-warning}
-- For **Windows** or **macOS (Intel or M1/2/3)** users - please download the latest version of Java [**[HERE]**](https://www.java.com/en/download/). For **macOS M1/2/3** users - please download **Java for macOS ARM64**. If you are running on a macOS Intel (x86_64) - please make sure to download the **x86_64 version of the JRE**.
+- For **Windows** or **macOS (Intel or M1/2/3)** users - please download the latest version of Java [**[HERE]**](https://www.java.com/en/download/). For **macOS M1/2/3** users - please download **Java for macOS ARM64**. If you are running on a macOS Intel - please make sure to download the **x86_64 version of the JRE**.
 :::
 
 ### Installing and loading the required packages

@@ -4,22 +4,6 @@ title: "Week 3: Spatial autocorrelation"
 
 ## Introduction
 
-### Lecture video (Length: 01:06:42)
-
-```{r, warnings=FALSE, message=FALSE, echo=FALSE}
-library(vembedr)
-embed_youtube('znukVzQEQUQ', height=400) %>% use_align('center')
-```
-[[**Watch on YouTube**]](https://youtu.be/znukVzQEQUQ)
-
-### Computer practical video (Length: 02:00:01)
-
-```{r, warnings=FALSE, message=FALSE, echo=FALSE}
-library(vembedr)
-embed_youtube('1QqA1Sqkk0A', height=400) %>% use_align('center')
-```
-[[**Watch on YouTube**]](https://youtu.be/1QqA1Sqkk0A)
-
 This week, we focus on the first of two key properties of spatial data: spatial dependence. Spatial dependence is the idea that the observed value of a variable in one location is often dependent (to some degree) on the observed value of the same value in a nearby location. For spatial analysis, this dependence can be assessed and measured statistically by considering the level of spatial autocorrelation between values of a specific variable, observed in either different locations or between pairs of variables observed at the same location. Spatial autocorrelation occurs when these values are not independent of one another and instead cluster together across geographic space.
 
 A critical first step of spatial autocorrelation is to define the criteria under which a spatial unit (e.g. an areal or point unit) can be understood as a "neighbour" to another unit. As highlighted in previous weeks, spatial properties can often take on several meanings, and as a result, have an impact on the validity and accuracy of spatial analysis. This multiplicity also can be applied to the concept of spatial neighbours which can be defined through adjacency, contiguity or distance-based measures. As the specification of these criteria can impact the results, the definition followed therefore need to be grounded in particular theory that aims to represent the process and variable investigated. 

@@ -4,22 +4,6 @@ title: "Week 1: Spatial analysis for data sciences"
 
 ## Introduction
 
-### Lecture video (Length: 01:00:01)
-
-```{r, warnings=FALSE, message=FALSE, echo=FALSE}
-library(vembedr)
-embed_youtube('a-HcI_VfyYI', height=400) %>% use_align('center')
-```
-[[**Watch on YouTube**]](https://youtu.be/a-HcI_VfyYI)
-
-### Computer practical video (Length: 01:59:49)
-
-```{r, warnings=FALSE, message=FALSE, echo=FALSE}
-library(vembedr)
-embed_youtube('B2NGHIX5704', height=400) %>% use_align('center')
-```
-[[**Watch on YouTube**]](https://youtu.be/B2NGHIX5704)
-
 The goal for this week’s session is to get you started with using RStudio, and being familiar with its environment. The session aims to introduce you to the basic programming etiquette, as well as building confidence for using RStudio as a GIS tool. At the end of this session, you should be able to perform some basic data managing tasks as well as generate a simple choropleth map in RStudio.
 
 ### Learning outcomes

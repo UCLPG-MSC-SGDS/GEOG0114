@@ -104,7 +104,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
-<link href="site_libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -163,7 +162,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="https://www.ucl.ac.uk/module-catalogue/modules/GEOG0114" class="sidebar-logo-link">
-      <img src="./images/general/ucl_logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./images/general/ucl_logo1.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/UCLPG-MSC-SGDS/GEOG0114" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
@@ -266,8 +265,21 @@ window.Quarto = {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Spatial Modelling</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Video Archive</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-video_achives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2023-2024/25</span></a>
+  </div>
+</li>
+      </ul>
   </li>
     </ul>
     </div>
@@ -281,12 +293,10 @@ window.Quarto = {
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a>
   <ul>
-  <li><a href="#lecture-video-length-010001" id="toc-lecture-video-length-010001" class="nav-link" data-scroll-target="#lecture-video-length-010001"><span class="header-section-number">1.1</span> Lecture video (Length: 01:00:01)</a></li>
-  <li><a href="#computer-practical-video-length-015949" id="toc-computer-practical-video-length-015949" class="nav-link" data-scroll-target="#computer-practical-video-length-015949"><span class="header-section-number">1.2</span> Computer practical video (Length: 01:59:49)</a></li>
-  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes"><span class="header-section-number">1.3</span> Learning outcomes</a></li>
-  <li><a href="#becoming-familiar-with-the-panels-in-rstudio" id="toc-becoming-familiar-with-the-panels-in-rstudio" class="nav-link" data-scroll-target="#becoming-familiar-with-the-panels-in-rstudio"><span class="header-section-number">1.4</span> Becoming familiar with the panels in RStudio</a></li>
-  <li><a href="#using-r-console-as-a-calculator" id="toc-using-r-console-as-a-calculator" class="nav-link" data-scroll-target="#using-r-console-as-a-calculator"><span class="header-section-number">1.5</span> Using R Console as a Calculator</a></li>
-  <li><a href="#creating-basic-objects-and-assigning-values-to-it" id="toc-creating-basic-objects-and-assigning-values-to-it" class="nav-link" data-scroll-target="#creating-basic-objects-and-assigning-values-to-it"><span class="header-section-number">1.6</span> Creating basic objects and assigning values to it</a></li>
+  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes"><span class="header-section-number">1.1</span> Learning outcomes</a></li>
+  <li><a href="#becoming-familiar-with-the-panels-in-rstudio" id="toc-becoming-familiar-with-the-panels-in-rstudio" class="nav-link" data-scroll-target="#becoming-familiar-with-the-panels-in-rstudio"><span class="header-section-number">1.2</span> Becoming familiar with the panels in RStudio</a></li>
+  <li><a href="#using-r-console-as-a-calculator" id="toc-using-r-console-as-a-calculator" class="nav-link" data-scroll-target="#using-r-console-as-a-calculator"><span class="header-section-number">1.3</span> Using R Console as a Calculator</a></li>
+  <li><a href="#creating-basic-objects-and-assigning-values-to-it" id="toc-creating-basic-objects-and-assigning-values-to-it" class="nav-link" data-scroll-target="#creating-basic-objects-and-assigning-values-to-it"><span class="header-section-number">1.4</span> Creating basic objects and assigning values to it</a></li>
   </ul></li>
   <li><a href="#basics-of-managing-data-in-rstudio" id="toc-basics-of-managing-data-in-rstudio" class="nav-link" data-scroll-target="#basics-of-managing-data-in-rstudio"><span class="header-section-number">2</span> Basics of managing data in RStudio</a>
   <ul>
@@ -344,40 +354,14 @@ window.Quarto = {
 
 <section id="introduction" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
-<section id="lecture-video-length-010001" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="lecture-video-length-010001"><span class="header-section-number">1.1</span> Lecture video (Length: 01:00:01)</h3>
-<div class="cell" data-warnings="false">
-<div class="cell-output-display">
-<div class="vembedr" align="center">
-<div>
-<iframe src="https://www.youtube.com/embed/a-HcI_VfyYI" width="711" height="400" frameborder="0" allowfullscreen="" data-external="1"></iframe>
-</div>
-</div>
-</div>
-</div>
-<p><a href="https://youtu.be/a-HcI_VfyYI">[<strong>Watch on YouTube</strong>]</a></p>
-</section>
-<section id="computer-practical-video-length-015949" class="level3" data-number="1.2">
-<h3 data-number="1.2" class="anchored" data-anchor-id="computer-practical-video-length-015949"><span class="header-section-number">1.2</span> Computer practical video (Length: 01:59:49)</h3>
-<div class="cell" data-warnings="false">
-<div class="cell-output-display">
-<div class="vembedr" align="center">
-<div>
-<iframe src="https://www.youtube.com/embed/B2NGHIX5704" width="711" height="400" frameborder="0" allowfullscreen="" data-external="1"></iframe>
-</div>
-</div>
-</div>
-</div>
-<p><a href="https://youtu.be/B2NGHIX5704">[<strong>Watch on YouTube</strong>]</a></p>
 <p>The goal for this week’s session is to get you started with using RStudio, and being familiar with its environment. The session aims to introduce you to the basic programming etiquette, as well as building confidence for using RStudio as a GIS tool. At the end of this session, you should be able to perform some basic data managing tasks as well as generate a simple choropleth map in RStudio.</p>
-</section>
-<section id="learning-outcomes" class="level3" data-number="1.3">
-<h3 data-number="1.3" class="anchored" data-anchor-id="learning-outcomes"><span class="header-section-number">1.3</span> Learning outcomes</h3>
+<section id="learning-outcomes" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="learning-outcomes"><span class="header-section-number">1.1</span> Learning outcomes</h3>
 <p>The first task includes getting you started with RStudio by installing the needed software(s) (i.e., <strong>RStudio</strong> and <strong>R</strong>) on to your personal laptop, and becoming familiar with its environment and panels. We will begin a soft introduction on the basics of managing data in RStudio. This includes learning how to create various objects in RStudio such as <strong>vector</strong> and <strong>data frame</strong> objects. The crucial part of this session we be to know how to the set working directories as well as import your dataset in RStudio. Finally, we will learn how to perform the basic visualisation of spatial data in RStudio.</p>
 <p>Let us begin.</p>
 </section>
-<section id="becoming-familiar-with-the-panels-in-rstudio" class="level3" data-number="1.4">
-<h3 data-number="1.4" class="anchored" data-anchor-id="becoming-familiar-with-the-panels-in-rstudio"><span class="header-section-number">1.4</span> Becoming familiar with the panels in RStudio</h3>
+<section id="becoming-familiar-with-the-panels-in-rstudio" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="becoming-familiar-with-the-panels-in-rstudio"><span class="header-section-number">1.2</span> Becoming familiar with the panels in RStudio</h3>
 <p>You should by now have opened RStudio on your laptop. When opening RStudio for the first time, you are greeted with its interface. The window is split into three panels: 1.) R Console, 2.) Environments and 3.) Files, help &amp; Output.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -403,8 +387,8 @@ window.Quarto = {
 <p><strong>Important Notes:</strong> Throughout the course, and in all practical tutorials, you will be encouraged to use an R Script for collating and saving the codes you have written for carrying out spatial analysis. However, we will start writing codes in a script later when we reach to section 1.3 of this tutorial. For now, let us start with the absolute basics, which is interacting with the R Console and using it as a basic calculator for typing simple code.</p>
 </div>
 </section>
-<section id="using-r-console-as-a-calculator" class="level3" data-number="1.5">
-<h3 data-number="1.5" class="anchored" data-anchor-id="using-r-console-as-a-calculator"><span class="header-section-number">1.5</span> Using R Console as a Calculator</h3>
+<section id="using-r-console-as-a-calculator" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="using-r-console-as-a-calculator"><span class="header-section-number">1.3</span> Using R Console as a Calculator</h3>
 <p>The R console window (i.e., Panel 1) is the place where RStudio is waiting for you to tell it what to do. It will show the code you have commanded RStudio to execute, and it will also show the results from that command. You can type the commands directly into the window for execution as well.</p>
 <p>Let us start by using the console window as a basic calculator for typing in addition (<code>+</code>), subtraction (<code>-</code>), multiplication (<code>*</code>), division (<code>/</code>), exponents (<code>^</code>) and performing other complex sums.</p>
 <p>Click inside the R Console window and type <code>19+8</code>, and press enter key button <code>↵</code> to get your answer. Quickly perform the following maths by typing them inside the R Console window:</p>
@@ -441,8 +425,8 @@ window.Quarto = {
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="creating-basic-objects-and-assigning-values-to-it" class="level3" data-number="1.6">
-<h3 data-number="1.6" class="anchored" data-anchor-id="creating-basic-objects-and-assigning-values-to-it"><span class="header-section-number">1.6</span> Creating basic objects and assigning values to it</h3>
+<section id="creating-basic-objects-and-assigning-values-to-it" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="creating-basic-objects-and-assigning-values-to-it"><span class="header-section-number">1.4</span> Creating basic objects and assigning values to it</h3>
 <p>Now that we are familiar with using the console as a calculator. Let us build from this and learn one of the most important codes in RStudio which is called the <strong>Assignment Operator</strong>.</p>
 <p>This arrow symbol <code>&lt;-</code> is called the <strong>Assignment Operator</strong>. It is typed by pressing the less than symbol key <code>&lt;</code> followed by the hyphen symbol key <code>-</code>. It allows the user to assign values to an <strong>Object</strong> in R.</p>
 <p><strong>Objects</strong> are defined as stored quantities in RStudio’s environment. These objects can be assigned anything from numeric values to character string values. For instance, say we want to create a numeric object called <code>x</code> and assign it with a value of <code>3</code>. We do this by typing <code>x &lt;- 3</code>. When you enter the object <code>x</code> in the console and press enter <code>↵</code>, it will return the numeric value <code>3</code>.</p>

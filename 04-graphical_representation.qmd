@@ -4,22 +4,6 @@ title: "Week 2: Graphical representation of spatial data"
 
 ## Introduction
 
-### Lecture video (Length: 43:13)
-
-```{r, warnings=FALSE, message=FALSE, echo=FALSE}
-library(vembedr)
-embed_youtube('9ONOy4NvRPM', height=400) %>% use_align('center')
-```
-[[**Watch on YouTube**]](https://youtu.be/9ONOy4NvRPM)
-
-### Computer practical video (Length: 01:59:48)
-
-```{r, warnings=FALSE, message=FALSE, echo=FALSE}
-library(vembedr)
-embed_youtube('MejBelvj7Jg', height=400) %>% use_align('center')
-```
-[[**Watch on YouTube**]](https://youtu.be/MejBelvj7Jg)
-
 The goal for this week’s session is to introduce you to the various and most common geoprocessing (i.e., spatial operations) and data managing techniques for handling geospatial **vector** datasets. **Geoprocessing** is a framework and set of tools for processing geographic and related data - having this under your sleeve will help you to efficiently analyse and represent geospatial data. 
 
 ### Learning outcomes

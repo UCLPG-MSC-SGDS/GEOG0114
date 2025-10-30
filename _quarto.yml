@@ -33,7 +33,7 @@ website:
   sidebar:
     style: floating
     collapse-level: 2
-    logo: images/general/ucl_logo.png
+    logo: images/general/ucl_logo1.png
     logo-href: https://www.ucl.ac.uk/module-catalogue/modules/GEOG0114
     tools:
       - icon: github
@@ -56,8 +56,9 @@ website:
         contents:
           - 06-suitability_mapping_AHP.qmd
           - 07-suitability_mapping_Niche.qmd
-      - section: "Spatial Modelling"
+      - section: "Video Archive"
         contents:
+          - 11-video_achives.qmd
 
 
 
