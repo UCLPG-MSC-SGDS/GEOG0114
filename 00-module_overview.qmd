@@ -1,5 +1,5 @@
 ---
-title: "Principles of Spatial Analysis"
+title: "Principles of Spatial Analysis (2025/26)"
 format: html
 ---
 
