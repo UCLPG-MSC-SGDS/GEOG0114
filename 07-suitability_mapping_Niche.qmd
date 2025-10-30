@@ -705,7 +705,7 @@ Taylor, L. 2022. The social side of fire: assessing the inclusion of human socia
 7. Normalised Differenced Vegetation Index (NDVI) 250m [Source: **NASA MODIS MOD13Q1**] [**Click Here**](https://modis.gsfc.nasa.gov/data/dataprod/mod13.php)
 8. 2018 Population density (1km) for the United States [Source: **Worldpop**] [**Click Here**](https://hub.worldpop.org/geodata/summary?id=39728)
 
-## Practical homework
+## Exercise
 
 **Suitability mapping of the Aedes mosquito and infestation in Brazil**
 
@@ -741,3 +741,7 @@ knitr::include_graphics('images/general/week5/image8_FinalPicture.png', error = 
 This week’s homework practical was based on the original research paper:
 
 - Musah _et al_ (2023). Coalescing disparate data sources for the geospatial prediction of mosquito abundance, using Brazil as a motivating case study. **Frontiers in Tropical Diseases**. Volume 4. DOI: https://doi.org/10.3389/fitd.2023.1039735
+
+:::{.callout-important}
+Have a go at these questions before using solution codes which can be downloaded from [**[HERE]**](https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Solutions%205.zip)
+:::
