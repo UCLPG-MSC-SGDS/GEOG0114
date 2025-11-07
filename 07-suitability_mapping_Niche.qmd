@@ -38,7 +38,8 @@ setwd("/Users/AccountName/Desktop/GEOG0114/Week 5")
 Before we start anything, we will need to install **Java** for the appropriate operating system in order to follow this practical. You can download the latest version of Java accordingly:
 
 :::{.callout-warning}
-- For **Windows** or **macOS (Intel or M1/2/3)** users - please download the latest version of Java [**[HERE]**](https://www.java.com/en/download/). For **macOS M1/2/3** users - please download **Java for macOS ARM64**. If you are running on a macOS Intel - please make sure to download the **x86_64 version of the JRE**.
+- For **Windows** or **macOS (Intel or M1/2/3)** users - please download the latest version of Java [**[HERE]**](https://www.java.com/en/download/). For **macOS M1/2/3** users - please download **Java for macOS ARM64**. If you are running on a macOS Intel - please make sure to download the **x86_64 version of the JRE**. 
+- For **macOS** users, after you have downloaded the appropriate version of Java, please proceed to download the latest version of **Azul Zulu Builds of OpenJDK** [**[HERE]**](https://www.azul.com/downloads/?package=jdk#zulu).
 :::
 
 ### Installing and loading the required packages
