@@ -667,7 +667,7 @@ knitr::include_graphics('images/general/week6/image3_3.png', error = FALSE)
 4. The Global Atlas for Helminths Infections (GAHI) [**Click Here**](https://www.thiswormyworld.org)
 5. Expanded Special Project for Elimination of Neglected Tropical Diseases (ESPEN-NTD) [**Click Here**](https://espen.afro.who.int)
 
-## Practical homework
+## Exercise
 
 **Case study: Village survey of hookworm infection in Uganda and Tanzania**
 

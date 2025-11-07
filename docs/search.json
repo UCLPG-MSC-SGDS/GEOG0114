@@ -790,5 +790,16 @@
       "Getting Started",
       "Installation of R and RStudio"
     ]
+  },
+  {
+    "objectID": "08-geostatistics_kriging.html#exercise",
+    "href": "08-geostatistics_kriging.html#exercise",
+    "title": "Week 6: Geostatistics using Kriging",
+    "section": "",
+    "text": "Case study: Village survey of hookworm infection in Uganda and Tanzania\nWe will use data on the prevalence of hookworm collected from 393 villages in Uganda and Tanzania. The dataset includes coordinates for each village, which have been geo-referenced to a specific longitude and latitude, as well as the boundaries of the study area for the two countries:\n\nPoint data: Soil_Transmitted_Helminth_Data.csv\nShapefile of region: Study_Area_UG_TZ.shp\nShapefile of region with districts: Study_Area_UG_TZ_Districts.shp\n\nThese data can be downloaded [HERE]\nAs shown in the practical, this analysis involves going through five stages:\n\nData preparation and checking the distribution of points within the study area\nVariogram analysis for generating an empirical variogram\nVariogram analysis for generating a theoretical variogram to determine the appropriate model\nGeostatistical prediction (Ordinary Kriging [null model])\nThematic mapping and visualisation.\n\nUse Kriging to generate a predicted prevalence map of Hookworm infection for the entire study area in Uganda and Tanzania. The World Health Organisation has a classification for grading disease burden of this type of illness in the Global South:\n\nAreas with prevalence of &lt; 1% are deemed as “Negligible”\nAreas with a prevalence from 1% to 10% are deemed “Low risk”\nAreas with a prevalence from 10% to 20% are deemed “Moderate risk”\nAreas with a prevalence from 20% to 50% are deemed “High risk”\nAreas with a prevalence from 50% and more are zones where risks are “Excessive”\n\nProduce an output that reflect the WHO’s classification for this disease.\n\n\n\n\n\n\nImportant\n\n\n\nHave a go at these questions before using solution codes which can be downloaded from [HERE]",
+    "crumbs": [
+      "Raster-Based Analysis",
+      "Week 6: Geostatistics using Kriging"
+    ]
   }
 ]
