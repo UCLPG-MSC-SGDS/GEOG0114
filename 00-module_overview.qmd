@@ -40,8 +40,8 @@ You can download the lecture notes and data sets for the practical lesson from t
 | 5 | [**Slides**](https://tinyurl.com/78ku6ser); [**Data**](https://tinyurl.com/4kue54yv) | Suitability mapping II |
 |   |                                                                                      | Reading Week |
 | 6 | [**Slides**](https://tinyurl.com/4vwnxwdm); [**Data**](https://tinyurl.com/5n8fkxm)  | Geostatistics using Kriging |
-| 7 | [**Slides**](https://tinyurl.com/hhx8rcx9); [**Data**](https://tinyurl.com/3z9eb3zn) | Spatial models I (Lag & Error Regression) |
-| 8 | [**Slides**](https://tinyurl.com/yc3rvn76)                                           | Spatial models II (Geographically Weighted Regression)|
+| 7 | [**Slides**](https://tinyurl.com/3jhx6jsn); [**Data**](https://tinyurl.com/3z9eb3zn) | Spatial models I (Lag & Error Regression) |
+| 8 | [**Slides**](https://tinyurl.com/2s3vmset)                                            | Spatial models II (Geographically Weighted Regression)|
 | 9 | [**Slides**]                                                                         | Spatial models III (Bayesian Risk Models)|
 | 10 | [**Slides**]                                                                        | Revision |
 
