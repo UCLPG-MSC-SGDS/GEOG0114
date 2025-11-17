@@ -57,6 +57,8 @@ website:
           - 06-suitability_mapping_AHP.qmd
           - 07-suitability_mapping_Niche.qmd
           - 08-geostatistics_kriging.qmd
+      - section: "Spatial Models"
+        contents:
       - section: "Video Archive"
         contents:
           - 11-video_achives.qmd
