@@ -1,0 +1,4 @@
+---
+title: "Week 8: Geographically Weighted Regression (GWR)"
+---
+

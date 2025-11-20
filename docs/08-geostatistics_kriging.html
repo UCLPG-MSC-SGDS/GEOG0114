@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./11-video_achives.html" rel="next">
+<link href="./09-spatial_lag_error_regressions.html" rel="next">
 <link href="./07-suitability_mapping_Niche.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -439,8 +439,33 @@ window.Quarto = {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Spatial Models</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Spatial Models</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-spatial_lag_error_regressions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 7: Spatial Lag &amp; Error Regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-gwr_models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 8: Geographically Weighted Regression (GWR)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-icar_bayesian_models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 9: Spatial Bayesian Risk Modelling</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
@@ -453,7 +478,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11-video_achives.html" class="sidebar-item-text sidebar-link">
+  <a href="./12-video_achives.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2023-2024/25</span></a>
   </div>
 </li>
@@ -915,9 +940,9 @@ Note
 </div>
 <p>Now, let us visualise the predictions:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(exp.variance_masked, <span class="at">bbox =</span> frameExtent) <span class="sc">+</span> </span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_raster</span>(<span class="at">col.scale =</span> <span class="fu">tm_scale_continuous</span>(<span class="at">values =</span> <span class="st">"brewer.oranges"</span>), </span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">col.legend =</span> <span class="fu">tm_legend</span>(<span class="at">title =</span> <span class="st">"Variance for SO2 ppb"</span>, <span class="at">frame =</span> <span class="cn">FALSE</span>)) <span class="sc">+</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(exp.prediction_masked, <span class="at">bbox =</span> frameExtent) <span class="sc">+</span> </span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_raster</span>(<span class="at">col.scale =</span> <span class="fu">tm_scale_continuous</span>(<span class="at">values =</span> <span class="st">"brewer.reds"</span>), </span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">col.legend =</span> <span class="fu">tm_legend</span>(<span class="at">title =</span> <span class="st">"Predicted SO2 ppb"</span>, <span class="at">frame =</span> <span class="cn">FALSE</span>)) <span class="sc">+</span></span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(US_State_Border_shp) <span class="sc">+</span> </span>
 <span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill_alpha =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">"black"</span>) <span class="sc">+</span> <span class="fu">tm_text</span>(<span class="st">"STUSPS"</span>, <span class="at">size =</span> <span class="st">"AREA"</span>) <span class="sc">+</span></span>
 <span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(datafile_sf_prj) <span class="sc">+</span> </span>
@@ -1733,8 +1758,8 @@ Important
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./11-video_achives.html" class="pagination-link" aria-label="2023-2024/25">
-        <span class="nav-page-text">2023-2024/25</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./09-spatial_lag_error_regressions.html" class="pagination-link" aria-label="Week 7: Spatial Lag &amp; Error Regression">
+        <span class="nav-page-text">Week 7: Spatial Lag &amp; Error Regression</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

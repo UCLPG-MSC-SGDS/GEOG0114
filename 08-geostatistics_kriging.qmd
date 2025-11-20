@@ -342,9 +342,9 @@ The above values are essentially the coordinates that form a rectangle, a rectan
 Now, let us visualise the predictions:
 
 ```{r, eval=FALSE}
-tm_shape(exp.variance_masked, bbox = frameExtent) + 
-	tm_raster(col.scale = tm_scale_continuous(values = "brewer.oranges"), 
-		col.legend = tm_legend(title = "Variance for SO2 ppb", frame = FALSE)) +
+tm_shape(exp.prediction_masked, bbox = frameExtent) + 
+	tm_raster(col.scale = tm_scale_continuous(values = "brewer.reds"), 
+		col.legend = tm_legend(title = "Predicted SO2 ppb", frame = FALSE)) +
 tm_shape(US_State_Border_shp) + 
 	tm_polygons(fill_alpha = 0, col = "black") + tm_text("STUSPS", size = "AREA") +
 tm_shape(datafile_sf_prj) + 
