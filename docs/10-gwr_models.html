@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -425,8 +460,37 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a>
+  <ul>
+  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes"><span class="header-section-number">1.1</span> Learning outcomes</a></li>
+  <li><a href="#datasets-setting-up-the-work-directory" id="toc-datasets-setting-up-the-work-directory" class="nav-link" data-scroll-target="#datasets-setting-up-the-work-directory"><span class="header-section-number">1.2</span> Datasets &amp; setting up the work directory</a>
+  <ul class="collapse">
+  <li><a href="#installing-packages" id="toc-installing-packages" class="nav-link" data-scroll-target="#installing-packages"><span class="header-section-number">1.2.1</span> Installing packages</a></li>
+  <li><a href="#loading-datasets" id="toc-loading-datasets" class="nav-link" data-scroll-target="#loading-datasets"><span class="header-section-number">1.2.2</span> Loading datasets</a></li>
+  </ul></li>
+  <li><a href="#implementing-the-linear-regression-model" id="toc-implementing-the-linear-regression-model" class="nav-link" data-scroll-target="#implementing-the-linear-regression-model"><span class="header-section-number">1.3</span> Implementing the Linear Regression model</a>
+  <ul class="collapse">
+  <li><a href="#obtaining-the-residuals-from-a-non-spatial-model" id="toc-obtaining-the-residuals-from-a-non-spatial-model" class="nav-link" data-scroll-target="#obtaining-the-residuals-from-a-non-spatial-model"><span class="header-section-number">1.3.1</span> Obtaining the residuals from a non-spatial model</a></li>
+  <li><a href="#use-residuals-and-test-for-spatial-autocorrelation" id="toc-use-residuals-and-test-for-spatial-autocorrelation" class="nav-link" data-scroll-target="#use-residuals-and-test-for-spatial-autocorrelation"><span class="header-section-number">1.3.2</span> Use residuals and test for spatial autocorrelation</a></li>
+  </ul></li>
+  <li><a href="#geographically-weighted-regression-gwr" id="toc-geographically-weighted-regression-gwr" class="nav-link" data-scroll-target="#geographically-weighted-regression-gwr"><span class="header-section-number">1.4</span> Geographically Weighted Regression (GWR)</a>
+  <ul class="collapse">
+  <li><a href="#preparing-the-data-for-gwr-analysis" id="toc-preparing-the-data-for-gwr-analysis" class="nav-link" data-scroll-target="#preparing-the-data-for-gwr-analysis"><span class="header-section-number">1.4.1</span> Preparing the data for GWR analysis</a></li>
+  <li><a href="#fitting-a-gwr-using-gwr.sel-and-gwr" id="toc-fitting-a-gwr-using-gwr.sel-and-gwr" class="nav-link" data-scroll-target="#fitting-a-gwr-using-gwr.sel-and-gwr"><span class="header-section-number">1.4.2</span> Fitting a GWR using <code>gwr.sel()</code> and <code>gwr()</code></a></li>
+  <li><a href="#model-results" id="toc-model-results" class="nav-link" data-scroll-target="#model-results"><span class="header-section-number">1.4.3</span> Model results</a></li>
+  </ul></li>
+  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks"><span class="header-section-number">1.5</span> Tasks</a></li>
+  <li><a href="#attributions" id="toc-attributions" class="nav-link" data-scroll-target="#attributions"><span class="header-section-number">1.6</span> Attributions</a></li>
+  <li><a href="#references-see-reading-list" id="toc-references-see-reading-list" class="nav-link" data-scroll-target="#references-see-reading-list"><span class="header-section-number">1.7</span> References (see reading list)</a></li>
+  <li><a href="#data-sources" id="toc-data-sources" class="nav-link" data-scroll-target="#data-sources"><span class="header-section-number">1.8</span> Data Sources</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/UCLPG-MSC-SGDS/GEOG0114/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -451,8 +515,540 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+<p>The goal for this week’s session is to introduce you to a type of spatial model known as the <strong>Geographically Weighted Regression (GWR)</strong>. GWR is a statistical model which can indicate where non-stationarity may take place across space; it can be used to identify how <strong>locally</strong> weighted regression coefficients may vary across the study area (unlike its counterpart i.e., the <strong>Spatial Lagged and/or Error Models</strong> which provides <strong>global coefficients</strong>). Similar to last week’s sessions, we will first need to explore the residuals from a linear regression model to identify evidence of <strong>spatial autocorrelation</strong> before implementing a spatial model. But, this time round, we will run a GWR and observe how the coefficients for a set of independent variables vary across space.</p>
+<section id="learning-outcomes" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="learning-outcomes"><span class="header-section-number">1.1</span> Learning outcomes</h2>
+<p>In this tutorial we will be using last week’s on the house price dataset in London, alongside the social-risk factor variables such as public transport accessibility (PTA), average income and socioeconomic deprivation (IMD) to see how their association with house prices vary across space. This will be achieved using the GWR model.</p>
+</section>
+<section id="datasets-setting-up-the-work-directory" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="datasets-setting-up-the-work-directory"><span class="header-section-number">1.2</span> Datasets &amp; setting up the work directory</h2>
+<p>We will be using the data from last week. You should have already downloaded all this data for last week’s practical lesson - if you have not done so already you can access them by <a href="https://github.com/UCLPG-MSC-SGDS/GEOG0114/raw/main/Week%207%20-%20Dataset.zip"><strong>clicking here</strong></a>.</p>
+<section id="installing-packages" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="installing-packages"><span class="header-section-number">1.2.1</span> Installing packages</h3>
+<p>We will need to load the following packages:</p>
+<ul>
+<li><code>sf</code>: Simple Features</li>
+<li><code>tmap</code>: Thematic Mapping</li>
+<li><code>spdep</code>: Spatial Dependence (Weighting schemes &amp; Spatial Statistics)</li>
+<li><code>sp</code>: Package for providing classes for spatial data (points, lines, polygons and grids)</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load packages using library() function</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"sf"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"tmap"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"spdep"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"sp"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>There is a new package we will need to install:</p>
+<ul>
+<li><code>spgwr</code>: this library enable functions for computing geographically weighted regression models in RStudio. This is based on the work by Chris Brunsdon, Martin Charlton and Stewart Fotheringham. The <code>spgwr</code> package will need the following packages installed in the background for it to work: <code>terra</code> and <code>spDataLarge</code></li>
+<li><code>car</code>: this library enable functions for assessing multicollinearity among independent variables within a regression. A common test is the variance inflation factor (VIF) using the function <code>vif()</code> with threshold of 10.</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install the packages using the install.package()</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"spgwr"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"terra"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"spDataLarge"</span>, <span class="at">repos=</span><span class="st">"https://nowosad.github.io/drat/"</span>, <span class="at">type=</span><span class="st">"source"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"car"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># load the packages with library()</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"spgwr"</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"car"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>You will see the following message after using the <code>library()</code> function <code>spgwr</code> package:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>NOTE<span class="sc">:</span> This package does not constitute approval of GWR</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>as a method of spatial analysis; see <span class="fu">example</span>(gwr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>You can ignore this message.</p>
+</section>
+<section id="loading-datasets" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="loading-datasets"><span class="header-section-number">1.2.2</span> Loading datasets</h3>
+<p>Remember, in last week’s practical, we used the <code>London LSOA 2015 data.csv</code> in RStudio to implement a spatial lag and error model. It contained the following the description for each column as follows:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 52%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Column Name</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>LSOACODE</code></td>
+<td>Unique identification code for the geographic area</td>
+</tr>
+<tr class="even">
+<td><code>AVEPRICE</code> (Dependent variable)</td>
+<td>Average house price estimated for the LSOA in 2015</td>
+</tr>
+<tr class="odd">
+<td><code>AVEINCOME</code></td>
+<td>Estimated average annual income for households within an LSOA in 2015</td>
+</tr>
+<tr class="even">
+<td><code>IMDSCORE</code></td>
+<td>Deprivation score for an LSOA in 2015</td>
+</tr>
+<tr class="odd">
+<td><code>PTAINDEX</code></td>
+<td>Measures levels of access/connectivity to public transport</td>
+</tr>
+<tr class="even">
+<td><code>PTACAT</code></td>
+<td><code>PTAINDEX</code> rendered into a categorical variable</td>
+</tr>
+</tbody>
+</table>
+<p>You were also provided two sets of spatial data, one that is LSOA-level required for the statistical analysis and the other for Boroughs which is for customising your map. The shapefile names are as follows:</p>
+<ul>
+<li>London LSOA shape file: <code>London LSOA Areas.shp</code></li>
+<li>London Borough shape file: <code>London Borough Areas.shp</code></li>
+</ul>
+<p>Use the following functions <code>read.csv()</code> and <code>read_sf()</code> to import the above datasets into RStudio’s memory. The codes are essentially the same as last week’s practical:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add house price and covariate data </span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>data.london <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"London LSOA 2015 data.csv"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># import shapefile data</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>lsoa.shp <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="st">"London LSOA Areas.shp"</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>borough.shp <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="st">"London Borough Areas.shp"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>The code chunk below generates an empty map with the <code>tmap</code> functions. It inspects the spatial configuration of London’s LSOA with the Boroughs superimposed.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(LSOAshp) <span class="sc">+</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>() <span class="sc">+</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(BOROUGHshp) <span class="sc">+</span> </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill_alpha =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_compass</span>(<span class="at">position =</span> <span class="fu">c</span>(<span class="st">"right"</span>, <span class="st">"top"</span>)) <span class="sc">+</span> </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_scalebar</span>(<span class="at">position =</span> <span class="fu">c</span>(<span class="st">"left"</span>, <span class="st">"bottom"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Output from the above <code>tmap()</code> functions:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/general/week10/Tab1-image1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Use the <code>merge()</code> function to bring together the LSOA shapefile and house price dataset create a spatial data frame object.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge the two files using the "LSOACODE" column</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>spatialdatafile <span class="ot">&lt;-</span> <span class="fu">merge</span>(lsoa.shp, data.london, <span class="at">by.x =</span> <span class="st">"LSOACODE"</span>, <span class="at">by.y =</span> <span class="st">"LSOACODE"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+</section>
+<section id="implementing-the-linear-regression-model" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="implementing-the-linear-regression-model"><span class="header-section-number">1.3</span> Implementing the Linear Regression model</h2>
+<section id="obtaining-the-residuals-from-a-non-spatial-model" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="obtaining-the-residuals-from-a-non-spatial-model"><span class="header-section-number">1.3.1</span> Obtaining the residuals from a non-spatial model</h3>
+<p>The GWR is a spatial regression model akin to the lag and error models taught last week. Similarly, in order to implement a GWR, we need to first test the residuals for evidence of spatial autocorrelation. To do this, we must first run a linear regression model get the residuals.</p>
+<p>Recall from last week, we can do this for the log-transformed <code>house price</code> against the independent variables (i.e., income, deprivation and accessibility) using the <code>lm()</code> function:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># lm() function builds a regression model and stores model output into the object 'modelMLR'</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>modelMLR <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">log10</span>(AVEPRICE) <span class="sc">~</span> <span class="fu">log10</span>(AVEINCOME) <span class="sc">+</span> <span class="fu">log10</span>(IMDSCORE) <span class="sc">+</span> <span class="fu">log10</span>(PTAINDEX), <span class="at">data =</span> spatialdatafile)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Include the 'scipen=7' argument in the summary() function remove those annoying scientific notation!</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">7</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># summary() calls report the output stored in object 'modelMLR'</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modelMLR)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>Call<span class="sc">:</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(<span class="at">formula =</span> <span class="fu">log10</span>(AVEPRICE) <span class="sc">~</span> <span class="fu">log10</span>(IMDSCORE) <span class="sc">+</span> <span class="fu">log10</span>(AVEINCOME) <span class="sc">+</span> </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">log10</span>(PTAINDEX), <span class="at">data =</span> spatialdatafile)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>Residuals<span class="sc">:</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>     Min       <span class="dv">1</span>Q   Median       <span class="dv">3</span>Q      Max </span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="fl">0.39249</span> <span class="sc">-</span><span class="fl">0.06489</span> <span class="sc">-</span><span class="fl">0.00572</span>  <span class="fl">0.06046</span>  <span class="fl">0.62993</span> </span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>Coefficients<span class="sc">:</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>                  Estimate Std. Error t value       <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)    </span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>(Intercept)      <span class="sc">-</span><span class="fl">4.100992</span>   <span class="fl">0.095592</span> <span class="sc">-</span><span class="fl">42.901</span>        <span class="sc">&lt;</span> <span class="fl">2e-16</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="fu">log10</span>(IMDSCORE)   <span class="fl">0.136713</span>   <span class="fl">0.007681</span>  <span class="fl">17.798</span>        <span class="sc">&lt;</span> <span class="fl">2e-16</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="fu">log10</span>(AVEINCOME)  <span class="fl">2.036354</span>   <span class="fl">0.019340</span> <span class="fl">105.292</span>        <span class="sc">&lt;</span> <span class="fl">2e-16</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="fu">log10</span>(PTAINDEX)   <span class="fl">0.030055</span>   <span class="fl">0.004816</span>   <span class="fl">6.241</span> <span class="fl">0.000000000471</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>Signif. codes<span class="sc">:</span>  <span class="dv">0</span> ‘<span class="sc">**</span><span class="er">*</span>’ <span class="fl">0.001</span> ‘<span class="sc">**</span>’ <span class="fl">0.01</span> ‘<span class="sc">*</span>’ <span class="fl">0.05</span> ‘.’ <span class="fl">0.1</span> ‘ ’ <span class="dv">1</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>Residual standard error<span class="sc">:</span> <span class="fl">0.1027</span> on <span class="dv">4964</span> degrees of freedom</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>Multiple R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.789</span>, Adjusted R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.7889</span> </span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>F<span class="sc">-</span>statistic<span class="sc">:</span>  <span class="dv">6189</span> on <span class="dv">3</span> and <span class="dv">4964</span> DF,  p<span class="sc">-</span>value<span class="sc">:</span> <span class="er">&lt;</span> <span class="fl">2.2e-16</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>For interpretation of the above global coefficients see last week’s practical!</p>
+<p>You can check if presence of <strong>multicollinearity</strong> among the independent variable by using the <code>vif()</code> to ensure the independent variables are not co-linear with each other by ensuring their <strong>Variance Inflation Factor (VIF)</strong> is less than 10. If it exceeds 10, then those variables will have to be discarded from the model, and such regression will need to be re-run again without those discarded variables.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vif</span>(modelMLR)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Output from <code>vif()</code> function:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log10</span>(AVEINCOME)  <span class="fu">log10</span>(IMDSCORE)  <span class="fu">log10</span>(PTAINDEX) </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>        <span class="fl">1.963519</span>         <span class="fl">2.066221</span>         <span class="fl">1.403051</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>All variables are not co-linear with each other since the VIFs are all less than 10. No need to discard any of the variables.</p>
+<p>Now, extract the residuals and deposit them into our spatial data frame <code>spatialdatafile</code></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract residuals from "modelLMR" object and dump into "spatialdatafile" and call the column "RESIDUALS"</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>spatialdatafile<span class="sc">$</span>RESIDUALS <span class="ot">&lt;-</span> modelMLR<span class="sc">$</span>residuals</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Output shows mapped residuals:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(spatialdatafile) <span class="sc">+</span> </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill =</span> <span class="st">"RESIDUALS"</span>, </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">fill.scale =</span> <span class="fu">tm_scale_continuous</span>(<span class="at">midpoint =</span> <span class="dv">0</span>, <span class="at">values =</span> <span class="st">"-brewer.rd_bu"</span>),</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">fill.legend =</span> <span class="fu">tm_legend</span>(<span class="at">frame =</span> <span class="cn">FALSE</span>)) <span class="sc">+</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(borough.shp) <span class="sc">+</span> <span class="fu">tm_polygons</span>(<span class="at">fill_alpha =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_text</span>(<span class="st">"BOROUGHN"</span>, <span class="at">size =</span> <span class="st">"AREA"</span>) <span class="sc">+</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_compass</span>(<span class="at">position =</span> <span class="fu">c</span>(<span class="st">"right"</span>, <span class="st">"top"</span>)) <span class="sc">+</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_scalebar</span>(<span class="at">position =</span> <span class="fu">c</span>(<span class="st">"left"</span>, <span class="st">"bottom"</span>)) <span class="sc">+</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_layout</span>(<span class="at">frame =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/general/week10/Tab2-image3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Notice the spatial patterning and clusters of the LSOA areas where there’s an over-prediction of the house prices (i.e., areas that have negative residuals, or blue tones) and under-prediction (i.e., areas that positive residuals, or red tones). This visual inspection of the residuals is an indication that spatial autocorrelation may be present. We can confirm by using an Moran’s I test.</p>
+</section>
+<section id="use-residuals-and-test-for-spatial-autocorrelation" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="use-residuals-and-test-for-spatial-autocorrelation"><span class="header-section-number">1.3.2</span> Use residuals and test for spatial autocorrelation</h3>
+<p>Create an adjacency spatial weight matrix apply Moran’s I test using the <code>lm.morantest()</code>:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#generate unique number for each row</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>spatialdatafile<span class="sc">$</span>ROWNUM <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(spatialdatafile)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># We need to coerce the sf spatialdatafile object into a new sp object</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>spatialdatafile_2<span class="fl">.0</span> <span class="ot">&lt;-</span> <span class="fu">as</span>(spatialdatafile, <span class="st">"Spatial"</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create spatial weights matrix for areas</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>Weights <span class="ot">&lt;-</span> <span class="fu">poly2nb</span>(spatialdatafile_2<span class="fl">.0</span>, <span class="at">row.names =</span> spatialdatafile_2<span class="fl">.0</span><span class="sc">$</span>ROWNUM)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>WeightsMatrix <span class="ot">&lt;-</span> <span class="fu">nb2mat</span>(Weights, <span class="at">style=</span><span class="st">'B'</span>)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>Residual_WeightMatrix <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(WeightsMatrix , <span class="at">style=</span><span class="st">'W'</span>)</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the test on the regression model output object "modelMLR" using lm.morantest()</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="fu">lm.morantest</span>(modelMLR, Residual_WeightMatrix, <span class="at">alternative=</span><span class="st">"two.sided"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Output from <code>lm.morantest()</code>:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>Global Moran I <span class="cf">for</span> regression residuals</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>data<span class="sc">:</span>  </span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>model<span class="sc">:</span> <span class="fu">lm</span>(<span class="at">formula =</span> <span class="fu">log10</span>(AVEPRICE) <span class="sc">~</span> <span class="fu">log10</span>(AVEINCOME) <span class="sc">+</span> <span class="fu">log10</span>(IMDSCORE) <span class="sc">+</span> <span class="fu">log10</span>(PTAINDEX),</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="at">data =</span> spatialdatafile)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>weights<span class="sc">:</span> Residual_WeightMatrix</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>Moran I statistic standard deviate <span class="ot">=</span> <span class="fl">56.28</span>, p<span class="sc">-</span>value <span class="sc">&lt;</span> <span class="fl">2.2e-16</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>alternative hypothesis<span class="sc">:</span> two.sided</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>sample estimates<span class="sc">:</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>Observed Moran I      Expectation         Variance </span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>   <span class="fl">0.47489527088</span>   <span class="sc">-</span><span class="fl">0.00060260241</span>    <span class="fl">0.00007138138</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>The Moran’s I value is <code>0.475</code>, which is a statistically significant value (i.e., p-value <code>&lt;0.001</code>). This indicates strong evidence of spatial autocorrelation. Now, let’s see how we can use a different spatial model such as a GWR to derive <strong>local</strong> associations for each area.</p>
+</section>
+</section>
+<section id="geographically-weighted-regression-gwr" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="geographically-weighted-regression-gwr"><span class="header-section-number">1.4</span> Geographically Weighted Regression (GWR)</h2>
+<p>GWR overcomes the limitation of the the <strong>standard linear</strong>, and <strong>spatial lag and error regression models</strong> of generating a global set of estimates. The basic idea behind GWR is to examine the way in which the relationships between a dependent variable and a set of predictors might vary over space. As explained in the lecture, the GWR operates by moving a search window from one regression point to the next, working sequentially through all the existing regression points in the dataset. A set of regions is then defined around each regression point and within the search window. A regression model is then fitted to all data contained in each of the identified regions around a regression point, with data points closer to the sample point being weighted more heavily than are those farther away. This process is repeated for all samples points in the dataset. For a data set of 4968 observations GWR will fit 4968 weighted regression models. The resulting local estimates can then be mapped at the locations of the regression points to view possible variations in the relationships between variables.</p>
+<section id="preparing-the-data-for-gwr-analysis" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="preparing-the-data-for-gwr-analysis"><span class="header-section-number">1.4.1</span> Preparing the data for GWR analysis</h3>
+<p>The analysis requires points since the weights are distance-based and thus, to appropriately implement a GWR model on LSOA area data, we will need to calculate the centroids from the LSOAs and then deposit them as coordinates within the spatial data frame.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate the centroids from geometries</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>spatialdatafile <span class="ot">&lt;-</span> <span class="fu">st_centroid</span>(spatialdatafile)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># insert coordinates into spatialdatafile note longitude column is X and latitude column is Y</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>spatialdatafile <span class="ot">&lt;-</span> <span class="fu">cbind</span>(spatialdatafile, <span class="fu">st_coordinates</span>(spatialdatafile))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="fitting-a-gwr-using-gwr.sel-and-gwr" class="level3" data-number="1.4.2">
+<h3 data-number="1.4.2" class="anchored" data-anchor-id="fitting-a-gwr-using-gwr.sel-and-gwr"><span class="header-section-number">1.4.2</span> Fitting a GWR using <code>gwr.sel()</code> and <code>gwr()</code></h3>
+<p>Let demonstrate with an example using the <strong>Adaptive Bandwidth</strong>, which is the preferred approach since the algorithm will compute and specify the adaptive kernel that involves using varying bandwidth to define a region around regression points - instead of using some <strong>Fixed Bandwidth</strong>.</p>
+<p>Let’s find the optimal bandwidth using the <strong>Adaptive Bandwidth</strong> approach using <code>gwr.sel()</code> function:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># finding the bandwidth </span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>BwG <span class="ot">&lt;-</span> <span class="fu">gwr.sel</span>(<span class="fu">log10</span>(AVEPRICE) <span class="sc">~</span> <span class="fu">log10</span>(AVEINCOME) <span class="sc">+</span> <span class="fu">log10</span>(IMDSCORE) <span class="sc">+</span> <span class="fu">log10</span>(PTAINDEX), <span class="at">data =</span> spatialdatafile, <span class="at">coords =</span> <span class="fu">cbind</span>(spatialdatafile<span class="sc">$</span>X, spatialdatafile<span class="sc">$</span>Y), <span class="at">adapt =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># see optimal bandwidth</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>BwG</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>The optimal bandwidth is <code>0.001270292</code> indicating the proportion of observations (or k-nearest neighbours) to be included in the weighting scheme. In this example, the optimal bandwidth indicates that for a given LSOA, <code>0.127%</code> of its nearest neighbours should be used to calibrate the relevant local regression; that is about 6 LSOAs. The search window will thus be variable in size depending on the extent of LSOAs.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Important note</strong>: Here the optimal bandwidth is defined based on a data point’s k-nearest neighbours. It can also be defined by geographical distance as done above for the fixed spatial kernel.</p>
+</div>
+</div>
+<p>We next fit a GWR based on an adaptive bandwidth using the <code>gwr()</code> function:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># start timer to time how long it takes to run a gwr() on computer</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>start.timer <span class="ot">&lt;-</span> <span class="fu">proc.time</span>()</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># gwr() model. You need hatmatrix and se.fit specified as TRUE for testing statistical significance </span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>gwr.model <span class="ot">&lt;-</span> <span class="fu">gwr</span>(<span class="fu">log10</span>(AVEPRICE) <span class="sc">~</span> <span class="fu">log10</span>(AVEINCOME) <span class="sc">+</span> <span class="fu">log10</span>(IMDSCORE) <span class="sc">+</span> <span class="fu">log10</span>(PTAINDEX), <span class="at">data =</span> spatialdatafile, <span class="at">coords =</span> <span class="fu">cbind</span>(spatialdatafile<span class="sc">$</span>X, spatialdatafile<span class="sc">$</span>Y), <span class="at">adapt=</span>BwG, <span class="at">hatmatrix=</span><span class="cn">TRUE</span>, <span class="at">se.fit=</span><span class="cn">TRUE</span>)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co"># end timer and calculate how it took for model to complete churning</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>end.timer <span class="ot">&lt;-</span> <span class="fu">proc.time</span>() <span class="sc">-</span> start.timer</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="co"># report time taken</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>end.timer</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Output on time taken:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>    user   system  elapsed </span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fl">1490.684</span>   <span class="fl">96.123</span> <span class="fl">1586.152</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>IMPORTANT NOTE:</strong> Due to the following options specified in the <code>gwr()</code> (i.e., <code>hatmatrix</code> and <code>se.fit</code> as TRUE) it might take sometime for the <code>gwr()</code> to complete the estimation of local <strong>coefficients</strong>, <strong>area-specific R2</strong>, and <strong>standard error</strong>. This take approximately <code>1490.684</code> seconds (<code>24.84</code> minutes) on a desktop with 3 GHz 6-core Intel Core i5 processor with 32 GB of RAM memory. It will be interesting to see how long it takes on a standard UCL desktop or on your personal laptops. Here is the ideal time for you to have a second coffee break while it churns.</p>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># see results, finally!</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>gwr.model</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Output of <code>gwr.model</code> object:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>Call<span class="sc">:</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gwr</span>(<span class="at">formula =</span> <span class="fu">log10</span>(AVEPRICE) <span class="sc">~</span> <span class="fu">log10</span>(AVEINCOME) <span class="sc">+</span> <span class="fu">log10</span>(IMDSCORE) <span class="sc">+</span> </span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">log10</span>(PTAINDEX), <span class="at">data =</span> spatialdatafile, <span class="at">coords =</span> <span class="fu">cbind</span>(spatialdatafile<span class="sc">$</span>X, </span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    spatialdatafile<span class="sc">$</span>Y), <span class="at">adapt =</span> BwG, <span class="at">hatmatrix =</span> <span class="cn">TRUE</span>, <span class="at">se.fit =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>Kernel <span class="cf">function</span><span class="sc">:</span> gwr.Gauss </span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>Adaptive quantile<span class="sc">:</span> <span class="fl">0.001270292</span> (about <span class="dv">6</span> of <span class="dv">4968</span> data points)</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>Summary of GWR coefficient estimates at data points<span class="sc">:</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>                         Min.      <span class="dv">1</span>st Qu.       Median      <span class="dv">3</span>rd Qu.         Max.  Global</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>X.Intercept.     <span class="sc">-</span><span class="fl">15.43999209</span>  <span class="sc">-</span><span class="fl">4.26990561</span>  <span class="sc">-</span><span class="fl">1.88765409</span>   <span class="fl">0.41755910</span>  <span class="fl">17.35599732</span> <span class="sc">-</span><span class="fl">4.1010</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>log10.AVEINCOME.  <span class="sc">-</span><span class="fl">2.44598947</span>   <span class="fl">1.14890387</span>   <span class="fl">1.61696094</span>   <span class="fl">2.08452831</span>   <span class="fl">4.27148364</span>  <span class="fl">2.0364</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>log10.IMDSCORE.   <span class="sc">-</span><span class="fl">0.94681986</span>  <span class="sc">-</span><span class="fl">0.10975325</span>  <span class="sc">-</span><span class="fl">0.00013244</span>   <span class="fl">0.12469522</span>   <span class="fl">1.08510758</span>  <span class="fl">0.1367</span></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>log10.PTAINDEX.   <span class="sc">-</span><span class="fl">0.58629189</span>  <span class="sc">-</span><span class="fl">0.07460266</span>  <span class="sc">-</span><span class="fl">0.02198655</span>   <span class="fl">0.02452116</span>   <span class="fl">0.33555611</span>  <span class="fl">0.0301</span></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>Number of data points<span class="sc">:</span> <span class="dv">4968</span> </span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>Effective number of <span class="fu">parameters</span> (residual<span class="sc">:</span> <span class="dv">2</span>traceS <span class="sc">-</span> traceS<span class="st">'S): 1549.125 </span></span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a><span class="st">Effective degrees of freedom (residual: 2traceS - traceS'</span>S)<span class="sc">:</span> <span class="fl">3418.875</span> </span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a><span class="fu">Sigma</span> (residual<span class="sc">:</span> <span class="dv">2</span>traceS <span class="sc">-</span> traceS<span class="st">'S): 0.07033289 </span></span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a><span class="st">Effective number of parameters (model: traceS): 1118.3 </span></span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a><span class="st">Effective degrees of freedom (model: traceS): 3849.7 </span></span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a><span class="st">Sigma (model: traceS): 0.06628063 </span></span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a><span class="st">Sigma (ML): 0.05834576 </span></span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a><span class="st">AICc (GWR p. 61, eq 2.33; p. 96, eq. 4.21): -11242.87 </span></span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a><span class="st">AIC (GWR p. 96, eq. 4.22): -13014.96 </span></span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a><span class="st">Residual sum of squares: 16.9122 </span></span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a><span class="st">Quasi-global R2: 0.9318326 </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Upon first glance, much of the outputs, especially the global coefficients, are identical to the outputs of the linear model. However, if we compare the Global R-square values we can see that GWR performs way better than the linear model (i.e, GWR: <code>0.9318 (93.18%)</code> versus LM: <code>0.7889 (78.89%)</code>). Let’s proceed to now report the various outputs of this model across each polygon.</p>
+</section>
+<section id="model-results" class="level3" data-number="1.4.3">
+<h3 data-number="1.4.3" class="anchored" data-anchor-id="model-results"><span class="header-section-number">1.4.3</span> Model results</h3>
+<p>The results are always stored as a <code>SDF</code> object within the <code>gwr.model</code> output we generated from the <code>gwr()</code>. We can extract the <code>SDF</code> object according with the code below:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>gwr.data <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(gwr.model<span class="sc">$</span>SDF)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co"># save the output as a csv so you don't have to run the model again and use in the future!</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(gwr.data, <span class="at">file =</span> <span class="st">"gwr output.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Very important notes</strong> about the <code>gwr.data</code> object:</p>
+<ol type="1">
+<li>The following columns in the <code>gwr.data</code> contain our LSOA-specific coefficients for log-transformed income, deprivation and accessibility: <code>log10.AVEINCOME.</code>, <code>log10.IMDSCORE.</code> and <code>log10.PTAINDEX.</code> respectively. These results tell us the association between the dependent and independent variable within an LSOA.</li>
+<li>The following columns in the <code>gwr.data</code> contain our LSOA-specific standard error estimates for log-transformed income, deprivation and accessibility: <code>log10.AVEINCOME._se</code>, <code>log10.IMDSCORE._se</code> and <code>log10.PTAINDEX._se</code>. These results helps us calculate a test statistic for assessing whether an association found between the dependent and independent variable in an LSOA is statistically significant or not.</li>
+<li>The following column <code>localR2</code> in the <code>gwr.data</code> helps us to assess the model’s performance. Values close to 1 is an indication of a very good model and vice versa.</li>
+</ol>
+<p>We can generate these results as maps. Now, let us bring the results together into one clean spatial data frame:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create neat spatial data frame by keeping first two columns</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>lsoa_result <span class="ot">&lt;-</span> <span class="fu">st_drop_geometry</span>(spatialdatafile[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)])</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># insert coefficients into lsoa_result object</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>lsoa_result<span class="sc">$</span>CoefLogInc <span class="ot">&lt;-</span> gwr.data[,<span class="st">"log10.AVEINCOME."</span>]</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>lsoa_result<span class="sc">$</span>CoefLogIMD <span class="ot">&lt;-</span> gwr.data[,<span class="st">"log10.IMDSCORE."</span>]</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>lsoa_result<span class="sc">$</span>CoefLogPTAL <span class="ot">&lt;-</span> gwr.data[,<span class="st">"log10.PTAINDEX."</span>]</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="co"># insert standard errors into lsoa_result object</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>lsoa_result<span class="sc">$</span>SELogInc <span class="ot">&lt;-</span> gwr.data[,<span class="st">"log10.AVEINCOME._se"</span>]</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>lsoa_result<span class="sc">$</span>SELogIMD <span class="ot">&lt;-</span> gwr.data[,<span class="st">"log10.IMDSCORE._se"</span>]</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>lsoa_result<span class="sc">$</span>SELogPTAL <span class="ot">&lt;-</span> gwr.data[,<span class="st">"log10.PTAINDEX._se"</span>]</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a><span class="co"># insert localR2 estimates into lsoa_result object</span></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>lsoa_result<span class="sc">$</span>localR2 <span class="ot">&lt;-</span> gwr.data[,<span class="st">"localR2"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Using deprivation score, we report its associated impact on house prices across the LSOAs in London by mapping its LSOA-specific coefficients using the code:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(lsoa_result) <span class="sc">+</span> </span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill =</span> <span class="st">"CoefLogIMD"</span>, </span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">fill.scale =</span> <span class="fu">tm_scale_continuous</span>(<span class="at">midpoint =</span> <span class="dv">0</span>, <span class="at">values =</span> <span class="st">"-brewer.rd_bu"</span>),</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">fill.legend =</span> <span class="fu">tm_legend</span>(<span class="at">frame =</span> <span class="cn">FALSE</span>, <span class="at">title=</span><span class="st">"Coefficient: Log(IMD) [%]"</span>)) <span class="sc">+</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_shape</span>(borough.shp) <span class="sc">+</span> <span class="fu">tm_polygons</span>(<span class="at">fill_alpha =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_text</span>(<span class="st">"BOROUGHN"</span>, <span class="at">size =</span> <span class="st">"AREA"</span>) <span class="sc">+</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_compass</span>(<span class="at">position =</span> <span class="fu">c</span>(<span class="st">"right"</span>, <span class="st">"top"</span>)) <span class="sc">+</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_scalebar</span>(<span class="at">position =</span> <span class="fu">c</span>(<span class="st">"left"</span>, <span class="st">"bottom"</span>)) <span class="sc">+</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_layout</span>(<span class="at">frame =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Output from the above <code>tmap()</code> functions:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/general/week10/Coef_IMD.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Also use the <code>summary()</code> to help with the interpretation:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lsoa_result<span class="sc">$</span>CoefLogIMD)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Output from the above <code>summary()</code> function:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>      Min.    <span class="dv">1</span>st Qu.     Median       Mean    <span class="dv">3</span>rd Qu.       Max. </span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="fl">0.9468199</span> <span class="sc">-</span><span class="fl">0.1097532</span> <span class="sc">-</span><span class="fl">0.0001324</span>  <span class="fl">0.0066443</span>  <span class="fl">0.1246952</span>  <span class="fl">1.0851076</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>INTEPRETATION:</strong> There is spatial variability in the relationship between our variable socioeconomic deprivation (transformed) and averaged house price (transformed) in London. The GWR outputs reveals that local coefficients range from a minimum value of <code>-0.946</code> to a maximum value of <code>1.085</code>, indicating that one percentage point increase in the levels of deprivation in LSOAs of London is associated with a reduction of <code>0.946%</code> in house prices in some LSOAs and (weirdly) an increase of <code>1.085%</code> in others. Broadly, the relationship are opposing.</p>
+</div>
+</div>
+<p>Now, while the above map offer some valuable insights to understand the spatial pattering of relationships, they do not identify whether these associations are <strong>statistically significant</strong>. They may or may not be. Roughly, for a sample that is sufficiently large - if take a coefficient estimate and divide it by its corresponding standard error to get an absolute value (i.e., t-score) that exceeds either <code>-1.96</code> or <code>+1.96</code>, then it is statistically significant.</p>
+<p>We can easily compute estimates to determine significance:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># compute t-score statistic</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>lsoa_result<span class="sc">$</span>tstatIMD <span class="ot">&lt;-</span> lsoa_result<span class="sc">$</span>CoefLogIMD <span class="sc">/</span> lsoa_result<span class="sc">$</span>SELogIMD</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co"># create significance column with: "Reduction: Significant", "Not Significant", "Increase: Significant" </span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>lsoa_result<span class="sc">$</span>significant <span class="ot">&lt;-</span> <span class="fu">cut</span>(lsoa_result<span class="sc">$</span>tstatIMD,</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks=</span><span class="fu">c</span>(<span class="fu">min</span>(lsoa_result<span class="sc">$</span>tstatIMD), <span class="sc">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="fu">max</span>(lsoa_result<span class="sc">$</span>tstatIMD)),</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels=</span><span class="fu">c</span>(<span class="st">"Reduction: Significant"</span>,<span class="st">"Not Significant"</span>, <span class="st">"Increase: Significant"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Now, let us report which relationship are significant or not by mapping the significance categories using the code:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(lsoa_result) <span class="sc">+</span> </span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill =</span> <span class="st">"significant"</span>, </span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">fill.scale =</span> <span class="fu">tm_scale_categorical</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"white"</span>, <span class="st">"blue"</span>), </span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Reduction: Significant"</span>, <span class="st">"Not Significant"</span>, <span class="st">"Increase: Significant"</span>)),</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">fill.legend =</span> <span class="fu">tm_legend</span>(<span class="at">frame =</span> <span class="cn">FALSE</span>)) <span class="sc">+</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_shape</span>(borough.shp) <span class="sc">+</span> <span class="fu">tm_polygons</span>(<span class="at">fill_alpha =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_text</span>(<span class="st">"BOROUGHN"</span>, <span class="at">size =</span> <span class="st">"AREA"</span>) <span class="sc">+</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_compass</span>(<span class="at">position =</span> <span class="fu">c</span>(<span class="st">"right"</span>, <span class="st">"top"</span>)) <span class="sc">+</span></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_scalebar</span>(<span class="at">position =</span> <span class="fu">c</span>(<span class="st">"left"</span>, <span class="st">"bottom"</span>)) <span class="sc">+</span></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_layout</span>(<span class="at">frame =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Output from the above <code>tmap()</code> functions:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/general/week10/Sig_IMD.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>INTEPRETATION:</strong> For instance, in the Borough of Hounslow, we can see a significant reduction in house prices in relation to increased levels of socioeconomic deprivation (adjusted for income and accessibility). Such reduction are clustered in the <strong>mid-section</strong> of Borough of Hounslow which were coloured <strong>red</strong>. Note that in <strong>far north eastern</strong> section of the Borough of Hounslow with pockets of LSOA’s coloured <strong>blue</strong> shows a significant increase in house price in relationship to IMD which is difficult to explain and thus can be interpreted as a chance finding. All sections that are <strong>white</strong> are not significant.</p>
+</div>
+</div>
+<p>Let finally map the local r-square values to examine model performance:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># map localR2 to examine model performance</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(lsoa_result) <span class="sc">+</span> </span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_polygons</span>(<span class="at">fill =</span> <span class="st">"localR2"</span>, </span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">fill.scale =</span> <span class="fu">tm_scale_continuous</span>(<span class="at">midpoint =</span> <span class="dv">0</span>, <span class="at">values =</span> <span class="st">"-brewer.spectral"</span>),</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">fill.legend =</span> <span class="fu">tm_legend</span>(<span class="at">frame =</span> <span class="cn">FALSE</span>, <span class="at">title=</span><span class="st">"Adaptive: Local R2"</span>)) <span class="sc">+</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_shape</span>(borough.shp) <span class="sc">+</span> <span class="fu">tm_polygons</span>(<span class="at">fill_alpha =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_text</span>(<span class="st">"BOROUGHN"</span>, <span class="at">size =</span> <span class="st">"AREA"</span>) <span class="sc">+</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_compass</span>(<span class="at">position =</span> <span class="fu">c</span>(<span class="st">"right"</span>, <span class="st">"top"</span>)) <span class="sc">+</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_scalebar</span>(<span class="at">position =</span> <span class="fu">c</span>(<span class="st">"left"</span>, <span class="st">"bottom"</span>)) <span class="sc">+</span></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tm_layout</span>(<span class="at">frame =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Output from the above <code>tmap()</code> functions:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/general/week10/LocalR2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>INTEPRETATION:</strong> The areas that are going towards the shade of dark reds are local regression models that have broadly performed poorly in its prediction for house price and its association with the three variables (income, deprivation and PTAL). Likewise, the areas that are going towards the shade of dark blues are local regression models that have broadly performed very well in its prediction for house price and its association with the three variables (income, deprivation and PTAL).</p>
+</div>
+</div>
+</section>
+</section>
+<section id="tasks" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="tasks"><span class="header-section-number">1.5</span> Tasks</h2>
+<p>Map the local coefficients and significance categories for <strong>average income</strong> and <strong>PTAL</strong>. What is the interpretation for the spatial patterning and association with house prices in London?</p>
+</section>
+<section id="attributions" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="attributions"><span class="header-section-number">1.6</span> Attributions</h2>
+<p>This week’s practical was inspired from:</p>
+<ol type="1">
+<li>Cheshire, J. &amp; Lansley, G. (2016). An Introduction to Spatial Data Analysis and Visualisation in R. (A) GWR tutorials were originally hosted on the CDRC website (Requires a log in account) <a href="https://data.cdrc.ac.uk/dataset/introduction-spatial-data-analysis-and-visualisation-r"><strong>LINK</strong></a>. (B) Direct link to the GWR tutorials posted by Professor James Cheshire as a Bookdown via his Github account <a href="https://jamescheshire.github.io/learningR/geographically-weighted-regression.html"><strong>LINK</strong></a></li>
+<li>Rowe, F. &amp; Arribas-Bel, D. (2022). Spatial Modelling for Data Scientists, Chapter 9: Geographically Weighted Regression <a href="https://gdsl-ul.github.io/san/gwr.html"><strong>LINK</strong></a></li>
+</ol>
+</section>
+<section id="references-see-reading-list" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="references-see-reading-list"><span class="header-section-number">1.7</span> References (see reading list)</h2>
+<ol type="1">
+<li><strong>Book</strong>: [R Programming] Brunsdon, C. <em>et al</em> (2018) An Introduction to R for Spatial Analysis and Mapping; <strong>Chapter 7: Spatial Attribute Analysis with R</strong>, (See pages 257 to 262) <a href="https://ucl.primo.exlibrisgroup.com/discovery/search?query=any,contains,An%20Introduction%20to%20R%20for%20Spatial%20Analysis%20and%20Mapping&amp;tab=Everything&amp;search_scope=MyInst_and_CI&amp;sortby=date_d&amp;vid=44UCL_INST:UCL_VU2&amp;facet=frbrgroupid,include,9076326046905167101&amp;offset=0"><strong>Click link</strong></a> (Note: Books can be borrowed from UCL’s Library)</li>
+<li><strong>Book</strong>: [R Programming] Brunsdon, C. <em>et al</em> (2018) An Introduction to R for Spatial Analysis and Mapping; <strong>Chapter 8: Localised Spatial Analysis</strong>, (See pages 281 to 289) <a href="https://ucl.primo.exlibrisgroup.com/discovery/search?query=any,contains,An%20Introduction%20to%20R%20for%20Spatial%20Analysis%20and%20Mapping&amp;tab=Everything&amp;search_scope=MyInst_and_CI&amp;sortby=date_d&amp;vid=44UCL_INST:UCL_VU2&amp;facet=frbrgroupid,include,9076326046905167101&amp;offset=0"><strong>Click link</strong></a> (Note: Books can be borrowed from UCL’s Library)</li>
+<li><strong>Book</strong>: [Theory] Lloyd, C.D., <em>et al</em> (2010) Spatial Data Analysis: An Introduction for GIS Users; <strong>Chapter 8: Exploring spatial patterning in data values</strong>, (See section 8.5.3. [Geographically Weighted Regression] on pages 115 to 123)</li>
+<li><strong>Book</strong>: [R Programming] Roger S. Bivand, Edzer J. Pebesma and Virgilio Gomez-Rubio, (2008), Applied Spatial Data Analysis with R; <strong>Chapter 10: Modelling of Areal Data</strong>, (See section 10.5.3. [Geographically Weighted Regression] on pages 305 to 309)</li>
+<li><strong>Paper</strong> [Theory] Comber, A. <em>et al</em> (2022) A Route Map for Successful Application of Geographically Weighted Regression; Geographical Analysis; https://doi.org/10.1111/gean.12316 <a href="https://onlinelibrary.wiley.com/doi/epdf/10.1111/gean.12316"><strong>Click link</strong></a></li>
+</ol>
+</section>
+<section id="data-sources" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="data-sources"><span class="header-section-number">1.8</span> Data Sources</h2>
+<ol type="1">
+<li>English indices for Multiple Deprivation (IMD) for 2019 [Source: <strong>UK Gov</strong>] <a href="https://www.gov.uk/government/statistics/english-indices-of-deprivation-2019"><strong>Click Here</strong></a></li>
+<li>UK Shape files for different geographic units [Source: <strong>Office for National Statistics, Open Geography Portal</strong>] <a href="https://geoportal.statistics.gov.uk"><strong>Click Here</strong></a></li>
+<li>The following indicators for averaged house prices, income and PTAL estimates were obtained from <a href="https://data.london.gov.uk/dataset/"><strong>London DATASTORE</strong></a></li>
+</ol>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -885,5 +1481,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/UCLPG-MSC-SGDS/GEOG0114/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UCLPG-MSC-SGDS/GEOG0114/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
