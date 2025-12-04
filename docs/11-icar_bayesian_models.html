@@ -1139,7 +1139,16 @@ Note
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>analysis_long_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Lira_2017_Longitudinal.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>This dataset had already be been prepared with the expected value in place, and records aligned by area and time. We already have our spatial adjacency matrix created from <strong>PART A</strong>. But we will need to create the unique index for <strong>structured</strong>, <strong>unstructured</strong> and <strong>temporal</strong> effects in order to create our spatial temporal model:</p>
+<p>This dataset had already be been prepared with the expected value in place, and records aligned by area and time. We already have our spatial adjacency matrix created from <strong>PART A</strong>. But we will need to create the unique index for <strong>structured</strong>, <strong>unstructured</strong> and <strong>temporal</strong> effects in order to create our spatial temporal model as shown in lecture notes (slide 28).</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/general/week9_1/6_model_temp.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>analysis_long_data<span class="sc">$</span>id_area_structured <span class="ot">&lt;-</span> analysis_long_data<span class="sc">$</span>NeighNum</span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>analysis_long_data<span class="sc">$</span>id_area_unstructured <span class="ot">&lt;-</span> analysis_long_data<span class="sc">$</span>NeighNum</span>

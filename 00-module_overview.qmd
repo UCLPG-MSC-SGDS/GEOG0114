@@ -42,7 +42,7 @@ You can download the lecture notes and data sets for the practical lesson from t
 | 6 | [**Slides**](https://tinyurl.com/4vwnxwdm); [**Data**](https://tinyurl.com/5n8fkxm)  | Geostatistics using Kriging |
 | 7 | [**Slides**](https://tinyurl.com/3jhx6jsn); [**Data**](https://tinyurl.com/3z9eb3zn) | Spatial models I (Lag & Error Regression) |
 | 8 | [**Slides**](https://tinyurl.com/2s3vmset);                                          | Spatial models II (Geographically Weighted Regression)|
-| 9 | [**Slides**](https://tinyurl.com/uey4rvu4); [**Data**]                               | Spatial models III (Bayesian Risk Models)|
+| 9 | [**Slides**](https://tinyurl.com/uey4rvu4); [**Data**](https://tinyurl.com/3z9eb3zn) | Spatial models III (Bayesian Risk Models)|
 | 10 | [**Slides**]                                                                        | Revision |
 
 

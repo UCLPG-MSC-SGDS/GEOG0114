@@ -634,7 +634,11 @@ This section will be quite brief. It is essential a repeat of **PART A**. Only d
 analysis_long_data <- read.csv("Lira_2017_Longitudinal.csv")
 ```
 
-This dataset had already be been prepared with the expected value in place, and records aligned by area and time. We already have our spatial adjacency matrix created from **PART A**. But we will need to create the unique index for **structured**, **unstructured** and **temporal** effects in order to create our spatial temporal model:
+This dataset had already be been prepared with the expected value in place, and records aligned by area and time. We already have our spatial adjacency matrix created from **PART A**. But we will need to create the unique index for **structured**, **unstructured** and **temporal** effects in order to create our spatial temporal model as shown in lecture notes (slide 28).
+
+```{r echo=FALSE, out.width = "100%", fig.align='center', cache=TRUE,}
+knitr::include_graphics('images/general/week9_1/6_model_temp.png', error = FALSE) 
+```
 
 ```{r, eval=FALSE}
 analysis_long_data$id_area_structured <- analysis_long_data$NeighNum
