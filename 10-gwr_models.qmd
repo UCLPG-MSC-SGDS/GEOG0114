@@ -365,6 +365,9 @@ lsoa_result$SELogPTAL <- gwr.data[,"log10.PTAINDEX._se"]
 lsoa_result$localR2 <- gwr.data[,"localR2"]
 ```
 
+
+The object `lsoa_res
+
 Using deprivation score, we report its associated impact on house prices across the LSOAs in London by mapping its LSOA-specific coefficients using the code:
 
 ```{r eval=FALSE}
