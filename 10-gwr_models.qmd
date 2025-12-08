@@ -365,21 +365,23 @@ lsoa_result$SELogPTAL <- gwr.data[,"log10.PTAINDEX._se"]
 lsoa_result$localR2 <- gwr.data[,"localR2"]
 ```
 
+The object `lsoa_result` is a non-spatial data frame containing our results. We need to merge them back into the shapefile.
 
-The object `lsoa_res
+```{r eval = FALSE}
+lsoa_result_gwr <- merge(lsoa.shp, lsoa_result, by.x = "LSOACODE", by.y = "LSOACODE")
+```
 
 Using deprivation score, we report its associated impact on house prices across the LSOAs in London by mapping its LSOA-specific coefficients using the code:
 
 ```{r eval=FALSE}
-tm_shape(lsoa_result) + 
-	tm_polygons(fill = "CoefLogIMD", 
-		fill.scale = tm_scale_continuous(midpoint = 0, values = "-brewer.rd_bu"),
-		fill.legend = tm_legend(frame = FALSE, title="Coefficient: Log(IMD) [%]")) +
-	tm_shape(borough.shp) + tm_polygons(fill_alpha = 0, col = "black") +
-	tm_text("BOROUGHN", size = "AREA") +
-	tm_compass(position = c("right", "top")) +
-	tm_scalebar(position = c("left", "bottom")) +
-	tm_layout(frame = FALSE)
+tm_shape(lsoa_result_gwr) + 
+  tm_polygons(fill = "CoefLogIMD", col_alpha = 0.1, 
+              fill.scale = tm_scale_continuous(midpoint = 0, values = "brewer.rd_bu"),
+              fill.legend = tm_legend(frame = FALSE, title="Coefficient: Log(IMD) [%]", bg.alpha = 0, position = tm_pos_out())) +
+  tm_shape(borough.shp) + tm_polygons(fill_alpha = 0, col = "black") +
+  tm_compass(type = "arrow", position = c("right", "top")) +
+  tm_scalebar(position = c("left", "bottom")) +
+  tm_layout(frame = FALSE)
 ```
 
 Output from the above `tmap()` functions:
@@ -391,7 +393,7 @@ knitr::include_graphics('images/general/week10/Coef_IMD.png', error = FALSE)
 Also use the `summary()` to help with the interpretation:
 
 ```{r eval = FALSE}
-summary(lsoa_result$CoefLogIMD)
+summary(lsoa_result_gwr$CoefLogIMD)
 ```
 
 Output from the above `summary()` function:
@@ -411,26 +413,22 @@ We can easily compute estimates to determine significance:
 
 ```{r eval=FALSE}
 # compute t-score statistic
-lsoa_result$tstatIMD <- lsoa_result$CoefLogIMD / lsoa_result$SELogIMD
-# create significance column with: "Reduction: Significant", "Not Significant", "Increase: Significant" 
-lsoa_result$significant <- cut(lsoa_result$tstatIMD,
-	breaks=c(min(lsoa_result$tstatIMD), -2, 2, max(lsoa_result$tstatIMD)),
-	labels=c("Reduction: Significant","Not Significant", "Increase: Significant"))
+lsoa_result_gwr$tstatIMD <- lsoa_result_gwr$CoefLogIMD/lsoa_result_gwr$SEfLogIMD
+# create significance column with: "Reduction: Significant", "Not Significant", "Increase: Significant"
+lsoa_result_gwr$significant <- cut(lsoa_result_gwr$tstatIMD,
+                                   breaks = c(min(lsoa_result_gwr$tstatIMD), -1.96, 1.96, max(lsoa_result_gwr$tstatIMD)),
+                                   labels = c("Reduction: Significant", "Not Significant", "Increase: Significant"))
 ```
 
 Now, let us report which relationship are significant or not by mapping the significance categories using the code:
 
 ```{r eval=FALSE}
-tm_shape(lsoa_result) + 
-	tm_polygons(fill = "significant", 
-		fill.scale = tm_scale_categorical(values = c("red", "white", "blue"), 
-			labels = c("Reduction: Significant", "Not Significant", "Increase: Significant")),
-		fill.legend = tm_legend(frame = FALSE)) +
-	tm_shape(borough.shp) + tm_polygons(fill_alpha = 0, col = "black") +
-	tm_text("BOROUGHN", size = "AREA") +
-	tm_compass(position = c("right", "top")) +
-	tm_scalebar(position = c("left", "bottom")) +
-	tm_layout(frame = FALSE)
+tm_shape(lsoa_result_gwr) +
+  tm_polygons(fill = "significant", col_alpha = 0.1, 
+  	fill.scale = tm_scale_categorical(values = c("red", "white", "blue"),
+    labels = c("Reduction: Significant", "Not Significant", "Increase: Significant")),
+    fill.legend = tm_legend(frame = FALSE, title = "Significance", position = tm_pos_out(), item.space = -0.2)) +
+tm_layout(frame = FALSE)
 ```
 
 Output from the above `tmap()` functions:
@@ -447,15 +445,14 @@ Let finally map the local r-square values to examine model performance:
 
 ```{r eval=FALSE}
 # map localR2 to examine model performance
-tm_shape(lsoa_result) + 
-	tm_polygons(fill = "localR2", 
-		fill.scale = tm_scale_continuous(midpoint = 0, values = "-brewer.spectral"),
-		fill.legend = tm_legend(frame = FALSE, title="Adaptive: Local R2")) +
-	tm_shape(borough.shp) + tm_polygons(fill_alpha = 0, col = "black") +
-	tm_text("BOROUGHN", size = "AREA") +
-	tm_compass(position = c("right", "top")) +
-	tm_scalebar(position = c("left", "bottom")) +
-	tm_layout(frame = FALSE)
+tm_shape(lsoa_result_gwr) + 
+  tm_polygons(fill = "localR2", col_alpha = 0.1, 
+              fill.scale = tm_scale_continuous(values = "brewer.spectral"),
+              fill.legend = tm_legend(frame = FALSE, title="Adaptive: Local R2", position = tm_pos_out())) +
+  tm_shape(borough.shp) + tm_polygons(fill_alpha = 0, col = "black") +
+  tm_compass(position = c("right", "top")) +
+  tm_scalebar(position = c("left", "bottom")) +
+  tm_layout(frame = FALSE)
 ```
 
 Output from the above `tmap()` functions:
