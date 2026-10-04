@@ -1,5 +1,5 @@
 ---
-title: "Principles of Spatial Analysis (2025/26)"
+title: "Principles of Spatial Analysis (26/27)"
 format: html
 ---
 
@@ -15,11 +15,13 @@ In the first three weeks, we will cover **Spatial analysis for data science**, *
 
 Afterwards, in week 4, 5 and 6, we will cover a variety of basic geostatistical techniques that require analysis of point and raster data - these include suitability mapping such as **Analytical Hierarchical Process (AHP)** and **Ecological Niche Modelling**; and then **Geostatistical analysis using Kriging**.
 
-In week 7, 8, and 9, we will learn specialised tools for performing spatial analysis on vector data (e.g., point, line and areal structures) - these include the various spatial regression model families e.g., **Spatial Lag & Error models**, **Geographical Weighted Regression (GWR)** and **Spatial Risk Models**. All these tutorials will be covered in RStudio.
+In weeks 7 and 8, we will explore specialised spatial analysis techniques, including **Geodemographics** for understanding the spatial distribution of population characteristics and **Accessibility Analysis** for evaluating access to services and opportunities, respectively
+
+Lastly, in weeks 9 and 10, we will learn specialised techniques for performing evidence-based spatial analysis on vector data (e.g., point, line and areal data), with a particular focus on identifying, quantifying and interpreting spatial relationships. These will include various families of spatial regression models, such as **Spatial Lag** and **Spatial Error models**, as well as **Geographically Weighted Regression (GWR)**, allowing us to examine both global and spatially varying relationships. All practical tutorials will be conducted in RStudio.
 
 ## Structure {.unnumbered}
 
-All lectures and computer practicals will be delivered in-person. All Lectures are held on **Monday from 01:00pm to 02:00pm** at the [**North West Wing (Room G17)**](https://www.ucl.ac.uk/maps/north-west-wing-building). All computer lab seminars are delivered on **Thursday from 03:00pm to 05:00pm** at the [**North West Wing (Room G07)**](https://www.ucl.ac.uk/maps/north-west-wing-building).
+All lectures and computer practicals will be delivered in-person. All Lectures are held on **Monday from 01:00pm to 02:00pm** at the [**Room 304, Birkbeck Euston Road (373)**](https://maps.app.goo.gl/1cwci3SwYxFxbKFp8). All computer lab seminars are delivered on **Thursday from 03:00pm to 05:00pm** at the [**B07 Teal Room, Torrington Place 1-19**](https://maps.app.goo.gl/yj3iDkcVVLSaJWps9).
 
 :::{.callout-important}
 Please bring your laptops with you to the computer practicals on Thursday
@@ -33,17 +35,17 @@ You can download the lecture notes and data sets for the practical lesson from t
 
 | **Week**        | **Downloads**   | **Topics**                            |
 |:----------------|:----------------|:--------------------------------------|
-| 1 | [**Slides**](https://shorturl.at/w3lJf);    [**Data**](https://tinyurl.com/nbhd3m5m) | Spatial analysis for data science |
-| 2 | [**Slides**](https://tinyurl.com/zb9ea3ks); [**Data**](https://tinyurl.com/3uw7eu8v) | Graphical representation of spatial data |
-| 3 | [**Slides**](https://tinyurl.com/mr29ewxb); [**Data**](https://tinyurl.com/363uejkn) | Spatial autocorrelation |
-| 4 | [**Slides**](https://tinyurl.com/bzyz27hs); [**Data**](https://tinyurl.com/2vxe3e4j) | Suitability mapping I |
-| 5 | [**Slides**](https://tinyurl.com/78ku6ser); [**Data**](https://tinyurl.com/4kue54yv) | Suitability mapping II |
-|   |                                                                                      | Reading Week |
-| 6 | [**Slides**](https://tinyurl.com/4vwnxwdm); [**Data**](https://tinyurl.com/5n8fkxm)  | Geostatistics using Kriging |
-| 7 | [**Slides**](https://tinyurl.com/3jhx6jsn); [**Data**](https://tinyurl.com/3z9eb3zn) | Spatial models I (Lag & Error Regression) |
-| 8 | [**Slides**](https://tinyurl.com/2s3vmset);                                          | Spatial models II (Geographically Weighted Regression)|
-| 9 | [**Slides**](https://tinyurl.com/uey4rvu4); [**Data**](https://tinyurl.com/3z9eb3zn) | Spatial models III (Bayesian Risk Models)|
-| 10 | [**Slides**](https://tinyurl.com/yc2xnp5a)                                          | Revision |
+| 01 | [**Slides**](https://tinyurl.com/3vehmpua); [**Data**](https://tinyurl.com/nbhd3m5m) | Spatial analysis for data science |
+| 02 | [**Slides**](https://tinyurl.com/zb9ea3ks); [**Data**](https://tinyurl.com/3uw7eu8v) | Graphical representation of spatial data |
+| 03 | [**Slides**](https://tinyurl.com/mr29ewxb); [**Data**](https://tinyurl.com/363uejkn) | Spatial autocorrelation |
+| 04 | [**Slides**](https://tinyurl.com/bzyz27hs); [**Data**](https://tinyurl.com/2vxe3e4j) | Suitability mapping I |
+| 05 | [**Slides**](https://tinyurl.com/78ku6ser); [**Data**](https://tinyurl.com/4kue54yv) | Suitability mapping II |
+|    |                                                                                      | Reading Week |
+| 06 | [**Slides**](https://tinyurl.com/4vwnxwdm); [**Data**](https://tinyurl.com/5n8fkxm)  | Geostatistics using Kriging |
+| 07 |  																																										| [**Geostatistics using Kriging**](https://jtvandijk.github.io/GEOG0114/01-geodemographics.html) |
+| 08 |  																																										| [**Accessibility Analysis**](https://jtvandijk.github.io/GEOG0114/02-network.html) |
+| 09 | [**Slides**](https://tinyurl.com/hhx8rcx9); [**Data**](https://tinyurl.com/3z9eb3zn) | Spatial models I (Lag & Error Regression) |
+| 10 | [**Slides**](https://tinyurl.com/yc3rvn76);                                          | Spatial models II (Geographically Weighted Regression)|
 
 
 ## Contact for GEOG0114 {.unnumbered}
@@ -53,4 +55,5 @@ Feel free to contact us via email for help, or book appointments for additional 
 | **Name**              | **Email**               | **Room number**         |
 |-----------------------|-------------------------|-------------------------|
 | Anwar Musah           | [**a.musah\@ucl.ac.uk**](a.musah@ucl.ac.uk)| 115  |
+| Justin van Dijk       | [**a.musah\@ucl.ac.uk**](a.musah@ucl.ac.uk)| 117  |
 | Michael Xiao          | [**michael.xiao\@ucl.ac.uk**](michael.xiao@ucl.ac.uk)| Chorley Institute  |

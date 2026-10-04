@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Principles of Spatial Analysis (2025/26)</title>
+<title>Principles of Spatial Analysis (26/27)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -394,12 +394,6 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Week 8: Geographically Weighted Regression (GWR)</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./11-icar_bayesian_models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 9: Spatial Bayesian Risk Modelling</span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -413,7 +407,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./12-video_achives.html" class="sidebar-item-text sidebar-link">
+  <a href="./11-video_achives.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2023-2024/25</span></a>
   </div>
 </li>
@@ -444,7 +438,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-module_overview.html">Module Overview</a></li><li class="breadcrumb-item"><a href="./00-module_overview.html">Welcome</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Principles of Spatial Analysis (2025/26)</h1>
+<h1 class="title">Principles of Spatial Analysis (26/27)</h1>
 </div>
 
 
@@ -475,10 +469,11 @@ ul.task-list li input[type="checkbox"] {
 <p>Welcome to <strong>GEOG0114: Principles of Spatial Analysis</strong>, one of the core 1st term modules for this MSc programme (<a href="https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees/social-and-geographic-data-science-msc"><strong>Social and Geographic Data Science</strong></a>). This module has been designed as an introduction to the core tenets and principles of spatial analysis. Here, you will learn the key concepts and spatial analytical methods, which are applicable to the domains of social science and geography.</p>
 <p>In the first three weeks, we will cover <strong>Spatial analysis for data science</strong>, <strong>Graphical representation of spatial data</strong> and <strong>Spatial autocorrelation</strong>.</p>
 <p>Afterwards, in week 4, 5 and 6, we will cover a variety of basic geostatistical techniques that require analysis of point and raster data - these include suitability mapping such as <strong>Analytical Hierarchical Process (AHP)</strong> and <strong>Ecological Niche Modelling</strong>; and then <strong>Geostatistical analysis using Kriging</strong>.</p>
-<p>In week 7, 8, and 9, we will learn specialised tools for performing spatial analysis on vector data (e.g., point, line and areal structures) - these include the various spatial regression model families e.g., <strong>Spatial Lag &amp; Error models</strong>, <strong>Geographical Weighted Regression (GWR)</strong> and <strong>Spatial Risk Models</strong>. All these tutorials will be covered in RStudio.</p>
+<p>In weeks 7 and 8, we will explore specialised spatial analysis techniques, including <strong>Geodemographics</strong> for understanding the spatial distribution of population characteristics and <strong>Accessibility Analysis</strong> for evaluating access to services and opportunities, respectively</p>
+<p>Lastly, in weeks 9 and 10, we will learn specialised techniques for performing evidence-based spatial analysis on vector data (e.g., point, line and areal data), with a particular focus on identifying, quantifying and interpreting spatial relationships. These will include various families of spatial regression models, such as <strong>Spatial Lag</strong> and <strong>Spatial Error models</strong>, as well as <strong>Geographically Weighted Regression (GWR)</strong>, allowing us to examine both global and spatially varying relationships. All practical tutorials will be conducted in RStudio.</p>
 <section id="structure" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="structure">Structure</h2>
-<p>All lectures and computer practicals will be delivered in-person. All Lectures are held on <strong>Monday from 01:00pm to 02:00pm</strong> at the <a href="https://www.ucl.ac.uk/maps/north-west-wing-building"><strong>North West Wing (Room G17)</strong></a>. All computer lab seminars are delivered on <strong>Thursday from 03:00pm to 05:00pm</strong> at the <a href="https://www.ucl.ac.uk/maps/north-west-wing-building"><strong>North West Wing (Room G07)</strong></a>.</p>
+<p>All lectures and computer practicals will be delivered in-person. All Lectures are held on <strong>Monday from 01:00pm to 02:00pm</strong> at the <a href="https://maps.app.goo.gl/1cwci3SwYxFxbKFp8"><strong>Room 304, Birkbeck Euston Road (373)</strong></a>. All computer lab seminars are delivered on <strong>Thursday from 03:00pm to 05:00pm</strong> at the <a href="https://maps.app.goo.gl/yj3iDkcVVLSaJWps9"><strong>B07 Teal Room, Torrington Place 1-19</strong></a>.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -507,27 +502,27 @@ Important
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">1</td>
-<td style="text-align: left;"><a href="https://shorturl.at/w3lJf"><strong>Slides</strong></a>; <a href="https://tinyurl.com/nbhd3m5m"><strong>Data</strong></a></td>
+<td style="text-align: left;">01</td>
+<td style="text-align: left;"><a href="https://tinyurl.com/3vehmpua"><strong>Slides</strong></a>; <a href="https://tinyurl.com/nbhd3m5m"><strong>Data</strong></a></td>
 <td style="text-align: left;">Spatial analysis for data science</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">2</td>
+<td style="text-align: left;">02</td>
 <td style="text-align: left;"><a href="https://tinyurl.com/zb9ea3ks"><strong>Slides</strong></a>; <a href="https://tinyurl.com/3uw7eu8v"><strong>Data</strong></a></td>
 <td style="text-align: left;">Graphical representation of spatial data</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">3</td>
+<td style="text-align: left;">03</td>
 <td style="text-align: left;"><a href="https://tinyurl.com/mr29ewxb"><strong>Slides</strong></a>; <a href="https://tinyurl.com/363uejkn"><strong>Data</strong></a></td>
 <td style="text-align: left;">Spatial autocorrelation</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">4</td>
+<td style="text-align: left;">04</td>
 <td style="text-align: left;"><a href="https://tinyurl.com/bzyz27hs"><strong>Slides</strong></a>; <a href="https://tinyurl.com/2vxe3e4j"><strong>Data</strong></a></td>
 <td style="text-align: left;">Suitability mapping I</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">5</td>
+<td style="text-align: left;">05</td>
 <td style="text-align: left;"><a href="https://tinyurl.com/78ku6ser"><strong>Slides</strong></a>; <a href="https://tinyurl.com/4kue54yv"><strong>Data</strong></a></td>
 <td style="text-align: left;">Suitability mapping II</td>
 </tr>
@@ -537,29 +532,29 @@ Important
 <td style="text-align: left;">Reading Week</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">6</td>
+<td style="text-align: left;">06</td>
 <td style="text-align: left;"><a href="https://tinyurl.com/4vwnxwdm"><strong>Slides</strong></a>; <a href="https://tinyurl.com/5n8fkxm"><strong>Data</strong></a></td>
 <td style="text-align: left;">Geostatistics using Kriging</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">7</td>
-<td style="text-align: left;"><a href="https://tinyurl.com/3jhx6jsn"><strong>Slides</strong></a>; <a href="https://tinyurl.com/3z9eb3zn"><strong>Data</strong></a></td>
+<td style="text-align: left;">07</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://jtvandijk.github.io/GEOG0114/01-geodemographics.html"><strong>Geostatistics using Kriging</strong></a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">08</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://jtvandijk.github.io/GEOG0114/02-network.html"><strong>Accessibility Analysis</strong></a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">09</td>
+<td style="text-align: left;"><a href="https://tinyurl.com/hhx8rcx9"><strong>Slides</strong></a>; <a href="https://tinyurl.com/3z9eb3zn"><strong>Data</strong></a></td>
 <td style="text-align: left;">Spatial models I (Lag &amp; Error Regression)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">8</td>
-<td style="text-align: left;"><a href="https://tinyurl.com/2s3vmset"><strong>Slides</strong></a>;</td>
-<td style="text-align: left;">Spatial models II (Geographically Weighted Regression)</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">9</td>
-<td style="text-align: left;"><a href="https://tinyurl.com/uey4rvu4"><strong>Slides</strong></a>; <a href="https://tinyurl.com/3z9eb3zn"><strong>Data</strong></a></td>
-<td style="text-align: left;">Spatial models III (Bayesian Risk Models)</td>
-</tr>
-<tr class="odd">
 <td style="text-align: left;">10</td>
-<td style="text-align: left;"><a href="https://tinyurl.com/yc2xnp5a"><strong>Slides</strong></a></td>
-<td style="text-align: left;">Revision</td>
+<td style="text-align: left;"><a href="https://tinyurl.com/yc3rvn76"><strong>Slides</strong></a>;</td>
+<td style="text-align: left;">Spatial models II (Geographically Weighted Regression)</td>
 </tr>
 </tbody>
 </table>
@@ -582,6 +577,11 @@ Important
 <td>115</td>
 </tr>
 <tr class="even">
+<td>Justin van Dijk</td>
+<td><a href="a.musah@ucl.ac.uk"><strong>a.musah@ucl.ac.uk</strong></a></td>
+<td>117</td>
+</tr>
+<tr class="odd">
 <td>Michael Xiao</td>
 <td><a href="michael.xiao@ucl.ac.uk"><strong>michael.xiao@ucl.ac.uk</strong></a></td>
 <td>Chorley Institute</td>

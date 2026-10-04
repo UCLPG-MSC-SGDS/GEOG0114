@@ -395,12 +395,6 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Week 8: Geographically Weighted Regression (GWR)</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./11-icar_bayesian_models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 9: Spatial Bayesian Risk Modelling</span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -414,7 +408,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./12-video_achives.html" class="sidebar-item-text sidebar-link">
+  <a href="./11-video_achives.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2023-2024/25</span></a>
   </div>
 </li>
@@ -474,7 +468,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>The famous icon on the left is the version for <a href="https://www.r-project.org"><strong>R</strong></a>, and the one on the right is the version for <a href="https://www.rstudio.com"><strong>RStudio</strong></a>. Both software packages are the same. The only difference is that RStudio is attractive, intuitive, and more importantly, it is user-friendly than Base R. So, we will be using this version (i.e., RStudio) throughout the course.</p>
+<p>The famous icon on the left is the version for <a href="https://www.r-project.org"><strong>R</strong></a>, and the one on the right is the version for <a href="https://docs.posit.co/ide/user/#rstudio-ide-oss-downloads"><strong>RStudio</strong></a>. Both software packages are the same. The only difference is that RStudio is attractive, intuitive, and more importantly, it is user-friendly than Base R. So, we will be using this version (i.e., RStudio) throughout the course.</p>
 <p>Let us talk about downloading RStudio.</p>
 </section>
 <section id="downloading-and-install-r-and-rstudio-on-to-your-laptop" class="level2 unnumbered">
@@ -485,12 +479,12 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="unnumbered anchored" data-anchor-id="installation-for-macos-users">Installation for MacOS users</h3>
 <p>You will need to have the following software installed for <code>R</code> and <code>RStudio</code> to work properly on MAC.</p>
 <ol type="1">
-<li>R (version 4.5.1) and RStudio (version 2025.09.0-387)</li>
-<li>XQuartz (version 2.8.5)</li>
-<li>XCode (version 26.0.1)</li>
+<li>R (version 4.6.1) and RStudio (version 2026.09.0-174)</li>
+<li>XQuartz (version 2.8.6)</li>
+<li>XCode (version 27.0)</li>
 <li>GNU Fortran (version 12.2)</li>
 </ol>
-<p><strong>Installation of R (4.5.1) and RStudio (2025.09.0-387) on MAC:</strong></p>
+<p><strong>Installation of R (4.6.1) and RStudio (2026.09.0-174) on MAC:</strong></p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -502,38 +496,40 @@ ul.task-list li input[type="checkbox"] {
 <tbody>
 <tr class="odd">
 <td>MAC (Intel)</td>
-<td><a href="https://cran.r-project.org/bin/macosx/big-sur-x86_64/base/R-4.5.1-x86_64.pkg"><strong>R-4.5.1-x86_64.pkg</strong></a></td>
-<td><a href="https://download1.rstudio.org/electron/macos/RStudio-2025.09.0-387.dmg"><strong>RStudio-2025.09.0-387.dmg</strong></a></td>
+<td><a href="https://cran.r-project.org/bin/macosx/big-sur-x86_64/base/R-4.6.1-x86_64.pkg"><strong>R-4.6.1-x86_64.pkg</strong></a></td>
+<td><a href="https://download1.rstudio.org/electron/macos/RStudio-2026.09.0-174.dmg"><strong>RStudio-2026.09.0-174.dmg</strong></a></td>
 </tr>
 <tr class="even">
 <td>MAC (M1, M2, M3, or M4)</td>
-<td><a href="https://cran.r-project.org/bin/macosx/big-sur-arm64/base/R-4.5.1-arm64.pkg"><strong>R-4.5.1-arm64.pkg</strong></a></td>
-<td><a href="https://download1.rstudio.org/electron/macos/RStudio-2025.09.0-387.dmg"><strong>RStudio-2025.09.0-387.dmg</strong></a></td>
+<td><a href="https://cran.r-project.org/bin/macosx/sonoma-arm64/base/R-4.6.1-arm64.pkg"><strong>R-4.6.1-arm64.pkg</strong></a></td>
+<td><a href="https://download1.rstudio.org/electron/macos/RStudio-2026.09.0-174.dmg"><strong>RStudio-2026.09.0-174.dmg</strong></a></td>
 </tr>
 </tbody>
 </table>
-<ul>
+<ol type="1">
 <li>First download the appropriate <strong>R (Base)</strong> file for the appropriate MacOS.</li>
-<li>Double-click the downloaded file (i.e., <code>R-4.5.1-x86_64.pkg</code> or <code>R-4.5.1-arm64.pkg</code>) and follow the steps to complete the installation.</li>
-<li>Next, download the <code>RStudio-2025.09.0-387.dmg</code> to install <strong>RStudio</strong>.</li>
-<li>Double-click the downloaded file (i.e., <code>RStudio-2023.06.2-561.dmg</code>) and then drag and drop the RStudio icon into the <strong>Applications</strong> folder to complete the installation.</li>
-</ul>
-<p><strong>Installation of XQuartz (2.8.5):</strong></p>
+<li>Double-click the downloaded file (i.e., <code>R-4.6.1-x86_64.pkg</code> or <code>R-4.6.1-arm64.pkg</code>) and follow the steps to complete the installation.</li>
+<li>Next, download the <code>RStudio-2026.09.0-174.dmg</code> to install <strong>RStudio</strong>.</li>
+<li>Double-click the downloaded file (i.e., <code>RStudio-2026.09.0-174.dmg</code>) and then drag and drop the RStudio icon into the <strong>Applications</strong> folder to complete the installation.</li>
+</ol>
+<p><strong>Installation of XQuartz (2.8.6):</strong></p>
 <p>Some functions in <strong>R</strong> require some of the libraries from <strong>XQuartz</strong> to function properly on your MAC.</p>
-<ul>
-<li>You can download the latest version of <strong>XQuartz</strong> (<strong>XQuartz-2.8.5.pkg</strong>) by clicking on this <a href="https://www.xquartz.org"><strong>LINK</strong></a> and complete the installation process by following its steps.</li>
-</ul>
-<p><strong>Installation of XCode (26.0.1):</strong></p>
-<p>Some functions in R require some of the external developer tools from <strong>XCode</strong> application to function properly on your MAC.</p>
+<ol type="1">
+<li>You can download the latest version of <strong>XQuartz</strong> (<strong>XQuartz-2.8.6.pkg</strong>) by clicking on this <a href="https://www.xquartz.org"><strong>LINK</strong></a> and complete the installation process by following its steps.</li>
+</ol>
+<p><strong>Installation of XCode (27.0):</strong></p>
+<p>Some functions in R require external developer tools provided by the <strong>XCode</strong> application to function properly on your Mac.</p>
 <ol type="1">
 <li>Go to the App Store application and get the <strong>XCode</strong> app downloaded by clicking on this <a href="https://apps.apple.com/us/app/xcode/id497799835?mt=12"><strong>LINK</strong></a>.</li>
-<li>Once it is downloaded, you can click on the “OPEN” button to verify it’s been downloaded. A window will prompt you to complete installation.</li>
+<li>Once <strong>XCode</strong> has been downloaded, click the <strong>OPEN</strong> button to launch the application. You may be prompted to complete the installation of additional components.</li>
+<li>Follow the on-screen instructions and allow <strong>XCode</strong> to install any required developer tools and components.</li>
+<li>Finally, make sure that you read and accept the <strong>XCode</strong> licence agreement when prompted. This is an important step, as some R packages and external tools that require C/C++ compilation may not function correctly until the <strong>XCode</strong> licence has been accepted.</li>
 </ol>
 <p><strong>GNU Fortran (version 12.2):</strong></p>
 <p><strong>R (Base)</strong> and some packages require the <strong>GNU Fortran 12.2</strong> compiler in order to function smoothly on your MacOS.</p>
-<ul>
+<ol type="1">
 <li>Download this specific version of <strong>GNU Fortran 12.2</strong> (<code>gfortran-12.2-universal.pkg</code>) by clicking on this <a href="https://mac.r-project.org/tools/gfortran-12.2-universal.pkg"><strong>LINK</strong></a> and simply complete the installation process by following the steps on your system.</li>
-</ul>
+</ol>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -550,13 +546,13 @@ Note
 </section>
 <section id="installation-for-windows-users" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="installation-for-windows-users">Installation for Windows users</h3>
-<p>You will need to have the following software installed for the <code>rstan</code> package to work on Windows.</p>
+<p>You will need to have the following software installed for <code>R</code> and <code>RStudio</code> to work properly on Windows 11.</p>
 <ol type="1">
-<li>R (version 4.5.1)</li>
+<li>R (version 4.6.1)</li>
 <li>Rtools45 (version 4.5)</li>
-<li>RStudio (version 2025.09.0-387)</li>
+<li>RStudio (version 2026.09.0-174)</li>
 </ol>
-<p><strong>Installation of R (4.5.1) and RStudio RStudio (2025.09.0-387) on Windows:</strong></p>
+<p><strong>Installation of R (4.6.1) and RStudio RStudio (2026.09.0-174) on Windows:</strong></p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -568,22 +564,22 @@ Note
 <tbody>
 <tr class="odd">
 <td>Windows</td>
-<td><a href="https://cran.r-project.org/bin/windows/base/R-4.5.1-win.exe"><strong>R-4.5.1-win.exe</strong></a></td>
-<td><a href="https://download1.rstudio.org/electron/windows/RStudio-2025.09.0-387.exe"><strong>RStudio-2025.09.0-387.exe</strong></a></td>
+<td><a href="https://cran.r-project.org/bin/windows/base/R-4.6.1-win.exe"><strong>R-4.6.1-win.exe</strong></a></td>
+<td><a href="https://download1.rstudio.org/electron/windows/RStudio-2026.09.0-174.exe"><strong>RStudio-2026.09.0-174.exe</strong></a></td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>Download the file for <code>R-4.5.1-win.exe</code> attached in the table above.</li>
-<li>Double-click the downloaded file (i.e., <code>R-4.5.1-win.exe</code>) and follow the steps to complete the installation.</li>
-<li>Now, we can download the file (i.e., <code>RStudio-2025.09.0-387.exe</code>) for <strong>RStudio</strong> from the link provided in the above table.</li>
-<li>Double-click the downloaded file (i.e., <code>RStudio-2025.09.0-387.exe</code>) and follow the steps from the installer to complete the installation.</li>
+<li>Download the file for <code>R-4.6.1-win.exe</code> attached in the table above.</li>
+<li>Double-click the downloaded file (i.e., <code>R-4.6.1-win.exe</code>) and follow the steps to complete the installation.</li>
+<li>Now, we can download the file (i.e., <code>RStudio-2026.09.0-174.exe</code>) for <strong>RStudio</strong> from the link provided in the above table.</li>
+<li>Double-click the downloaded file (i.e., <code>RStudio-2026.09.0-174.exe</code>) and follow the steps from the installer to complete the installation.</li>
 </ul>
 <p><strong>Installation of Rtools 4.5</strong></p>
 <p>For Windows users, after you have completed the installation for R and RStudio, you are required to install the <a href="https://cran.ma.imperial.ac.uk/bin/windows/Rtools/rtools45/rtools.html"><strong>Rtools45 package</strong></a> as it contains some libraries and developer tools for the smooth functioning of R.</p>
 <ul>
-<li>Download the latest version of <strong>Rtools45</strong> by clicking on this <a href="https://cran.ma.imperial.ac.uk/bin/windows/Rtools/rtools45/files/rtools45-6608-6492.exe"><strong>LINK</strong></a> to initiate the download of the <strong>Rtools45 installer</strong>.</li>
-<li>Double-click the downloaded <strong>rtools45-6608-6492.exe</strong> file and follow the steps to complete the installation.</li>
+<li>Download the latest version of <strong>Rtools45</strong> by clicking on this <a href="https://cran.ma.imperial.ac.uk/bin/windows/Rtools/rtools45/files/rtools45-6768-6492.exe"><strong>LINK</strong></a> to initiate the download of the <strong>Rtools45 installer</strong>.</li>
+<li>Double-click the downloaded <strong>rtools45-6768-6492.exe</strong> file and follow the steps to complete the installation.</li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -608,7 +604,7 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The installation of all programs on <strong>Windows</strong> and <strong>MacOS</strong> are specifically for <strong>R (version 4.5.1)</strong> and <strong>RStudio (version 2025.09.0-387)</strong>, which are the most up-to-date versions of <strong>R</strong> and <strong>RStudio</strong>, respectively, as of writing these instructions today <strong>(02/10/2025)</strong>. If an update get pushed for these software - make sure to check that supporting programs (i.e., <strong>Rtools</strong> for <strong>Windows</strong>, and <strong>XQuartz</strong> &amp; <strong>XCode</strong> for <strong>Mac</strong>) are updated.</p>
+<p>The installation of all programs on <strong>Windows</strong> and <strong>MacOS</strong> are specifically for <strong>R (version 4.6.1)</strong> and <strong>RStudio (version 2026.09.0-174)</strong>, which are the most up-to-date versions of <strong>R</strong> and <strong>RStudio</strong>, respectively, as of writing these instructions on <strong>(04/10/2026)</strong>. If an update gets pushed for R and RStudio, please ensure they are updated. Also, do make sure to check that the supporting programs (i.e., <strong>Rtools</strong> for <strong>Windows</strong>, and <strong>XQuartz</strong> &amp; <strong>XCode</strong> for <strong>Mac</strong>) are updated as well.</p>
 </div>
 </div>
 <p>This concludes the installation section and sets your computer up for the course.</p>

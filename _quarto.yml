@@ -61,10 +61,9 @@ website:
         contents:
           - 09-spatial_lag_error_regressions.qmd
           - 10-gwr_models.qmd
-          - 11-icar_bayesian_models.qmd
       - section: "Video Archive"
         contents:
-          - 12-video_achives.qmd
+          - 11-video_achives.qmd
 
 
 
